@@ -1,0 +1,49 @@
+
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, li, a {
+  font-family: $primary-font;
+}
+
+p {
+  text-align: justify;
+}
+
+img {
+  max-width: 100%;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+form, input, textarea {
+  outline: none;
+}
+
+
+.gap-sm {
+  padding: 1em;
+}
+
+.gap-md {
+  padding: 2em;
+}
+
+.gap-lg {
+  padding-bottom: 4em;
+}
+
+.announcement-container {
+  padding: 4em;
+}
+
+.announcement-list {
+  padding: 45px 0;
+}

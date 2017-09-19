@@ -1,0 +1,8 @@
+.form-control {
+  width: 100%;
+  padding: 3px;
+  &:focus {
+    outline: none;
+    border: 1px solid skyblue;
+  }
+}

@@ -1,0 +1,30 @@
+
+
+.service {
+  background: darken($white, 2);
+  iframe {
+    width: 100%;
+    height: 50em;
+  }
+  .content {
+    padding: 1em;
+    h1 {
+      color: #63605b;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    p {
+      color: darken(#aaa, 40);
+      font-family: $primary-font;
+      text-align: justify;
+    }
+  }
+}
+
+.list-heading {
+  color: $white;
+  text-align: center;
+  font-weight: 300;
+  font-size: 2.5rem;
+  letter-spacing: .2rem;
+}
