@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "license": "Apache",
   "scripts": {
-    "start": "node ./build/server.js",
+    "start": "node ./app/build/server.js",
     "client:dev": "webpack-dev-server",
     "client:prod": "NODE_ENV='production' webpack -p",
-    "server:dev": "tsc && node ./app/build/server.js"
+    "server:dev": "tsc && node ./build/server.js"
   },
   "dependencies": {
     "axios": "^0.16.2",
