@@ -60,7 +60,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "53e8225004eee2fe0e4f"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "148747949d680388359d"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -6417,7 +6417,7 @@ var isExtraneousPopstateEvent = exports.isExtraneousPopstateEvent = function isE
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.CLIENT_ROOT_URL = exports.API_URL = undefined;
+exports.API_URL = undefined;
 exports.errorHandler = errorHandler;
 exports.getData = getData;
 exports.postData = postData;
@@ -6430,8 +6430,9 @@ var _axios2 = _interopRequireDefault(_axios);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var API_URL = exports.API_URL = 'http://localhost:3000/api/v1';
-var CLIENT_ROOT_URL = exports.CLIENT_ROOT_URL = 'http://localhost:8080';
+var API_URL = exports.API_URL = 'http://sdb-api-dev.us-west-2.elasticbeanstalk.com/api/v1';
+// export const CLIENT_ROOT_URL = 'http://localhost:8080';
+
 
 // error handler
 function errorHandler(dispatch, error, type) {
