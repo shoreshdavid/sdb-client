@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "license": "Apache",
   "scripts": {
-    "start": "node ./app/build/server.js",
+    "start": "node ./build/server.js",
     "client:dev": "webpack-dev-server",
     "client:prod": "NODE_ENV='production' webpack -p",
     "server:dev": "tsc && node ./build/server.js"
