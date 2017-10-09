@@ -1,14 +1,13 @@
 import React from 'react';
-import Nav from './Nav';
-import Footer from './Footer';
+import { Nav } from './Nav';
+import { Footer } from './Footer';
 
-const AppIndex = props => {
+export const AppIndex = props => {
   return (
     <div>
       <Nav />
-      {props.children}
+        {props.children}
+      <Footer />
     </div>
   );
 }
-
-export default AppIndex;

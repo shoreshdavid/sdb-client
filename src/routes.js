@@ -3,8 +3,8 @@ import { Route, IndexRoute } from 'react-router';
 
 
 // global components
-import AppIndex from './app/AppIndex';
-import NotFound from './app/NotFound';
+import { AppIndex } from './app/AppIndex';
+import { NotFound } from './app/NotFound';
 
 import {
   Home,
