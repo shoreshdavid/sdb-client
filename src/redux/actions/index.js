@@ -1,11 +1,22 @@
 import axios from 'axios';
-export const API_URL = 'http://sdb-api-dev.us-west-2.elasticbeanstalk.com/api/v1';
-// export const CLIENT_ROOT_URL = 'http://localhost:8080';
 
+const API_URL = 'http://localhost:3000/api/v1';
 
+// export function fetchPosts() {
+//   const request = axios({
+//     method: 'get',
+//     url: `${ROOT_URL}/posts`,
+//     headers: [],
+//   });
+
+//   return {
+//     type: types.FETCH_POSTS,
+//     payload: request,
+//   };
+// }
 
 // error handler
-export function errorHandler(dispatch, error, type) {
+export const errorHandler = (dispatch, error, type) => {
   console.log('Error type: ', type);
   console.log(error);
 
@@ -17,9 +28,8 @@ export function errorHandler(dispatch, error, type) {
   });
 }
 
-
-// GET Request
-export function getData(action, errorType, url, dispatch) {
+// GET request
+export const getData = (action, errorType, url, dispatch) => {
   const requestUrl = API_URL + url;
   let headers = {};
 
@@ -35,11 +45,8 @@ export function getData(action, errorType, url, dispatch) {
   });
 }
 
-
-
-
-// POST Request
-export function postData(action, errorType, url, dispatch, data) {
+// POST request
+export const postData = (action, errorType, url, dispatch, data) => {
   const requestUrl = API_URL + url;
   let headers = {};
 
@@ -55,11 +62,8 @@ export function postData(action, errorType, url, dispatch, data) {
   });
 }
 
-
-
-
-// PUT Request
-export function putData(action, errorType, url, dispatch, data) {
+// PUT request
+export const putData = (action, errorType, url, dispatch, data) => {
   const requestUrl = API_URL + url;
   let headers = {};
 
@@ -76,11 +80,8 @@ export function putData(action, errorType, url, dispatch, data) {
 }
 
 
-
-
-
-// DELETE Request
-export function deleteData(action, errorType, url, dispatch) {
+// DELETE request
+export const deleteData = (action, errorType, url, dispatch) => {
   const requestUrl = API_URL + url;
   let headers = {};
 

@@ -1,16 +1,18 @@
 import { combineReducers } from 'redux';
-import announcements from './announcement_reducer';
-import pages from './page_reducer';
-import posts from './post_reducer';
-import products from './product_reducer';
-import services from './service_reducer';
+import { reducer as form } from 'redux-form';
+import { announcements } from './announcements';
+import { articles } from './articles';
+import { auth } from './auth';
+import { products } from './products';
+import { services } from './services';
+import { users } from './users';
 
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
+  form,
   announcements,
-  pages,
-  posts,
+  articles,
+  auth,
   products,
-  services
+  services,
+  users,
 });
-
-export default rootReducer;

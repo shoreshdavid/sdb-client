@@ -1,0 +1,15 @@
+.post h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.post img {
+  width: 100%;
+}
+
+.post p {
+  padding: 15px;
+  font-size: 18px;
+  text-align: justify;
+}

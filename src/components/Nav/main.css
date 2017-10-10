@@ -1,0 +1,26 @@
+
+.nav {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background: rgb(30, 36, 39);
+  padding: 1rem;
+  border-radius: 0;
+}
+
+.nav {
+  align-content: flex-start;
+}
+
+.nav a {
+  color: #63605b;
+  margin: 0 1rem;
+  transition: all 300ms ease-in-out;
+}
+
+.nav a:hover {
+  color: white;
+}

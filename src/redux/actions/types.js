@@ -1,3 +1,8 @@
+export const AUTH_USER_REQUEST = 'AUTH_USER_REQUEST';
+export const AUTH_USER_SUCCESS = 'AUTH_USER_SUCCESS';
+export const AUTH_USER_FAILURE = 'AUTH_USER_FAILURE';
+
+
 /**************************************
 ===== announcement action types
 **************************************/
@@ -10,18 +15,18 @@ export const FETCH_ANNOUNCEMENTS_FAILURE = 'FETCH_ANNOUNCEMENTS_FAILURE';
 
 
 /**************************************
-===== post action types
+===== article action types
 **************************************/
 
-// fetch post
-export const FETCH_POST_REQUEST = 'FETCH_POST_REQUEST';
-export const FETCH_POST_SUCCESS = 'FETCH_POST_SUCCESS';
-export const FETCH_POST_FAILURE = 'FETCH_POST_FAILURE';
+// fetch article
+export const FETCH_ARTICLE_REQUEST = 'FETCH_ARTICLE_REQUEST';
+export const FETCH_ARTICLE_SUCCESS = 'FETCH_ARTICLE_SUCCESS';
+export const FETCH_ARTICLE_FAILURE = 'FETCH_ARTICLE_FAILURE';
 
-// fetch posts
-export const FETCH_POSTS_REQUEST = 'FETCH_POSTS_REQUEST';
-export const FETCH_POSTS_SUCCESS = 'FETCH_POSTS_SUCCESS';
-export const FETCH_POSTS_FAILURE = 'FETCH_POSTS_FAILURE';
+// fetch articles
+export const FETCH_ARTICLES_REQUEST = 'FETCH_ARTICLES_REQUEST';
+export const FETCH_ARTICLES_SUCCESS = 'FETCH_ARTICLES_SUCCESS';
+export const FETCH_ARTICLES_FAILURE = 'FETCH_ARTICLES_FAILURE';
 
 
 /**************************************
@@ -55,15 +60,30 @@ export const FETCH_PRODUCTS_FAILURE = 'FETCH_PRODUCTS_FAILURE';
 
 
 /**************************************
-===== page action types
+===== user action types
 **************************************/
 
-// fetch page
-export const FETCH_PAGE_REQUEST = 'FETCH_PAGE_REQUEST';
-export const FETCH_PAGE_SUCCESS = 'FETCH_PAGE_SUCCESS';
-export const FETCH_PAGE_FAILURE = 'FETCH_PAGE_FAILURE';
+// fetch user
+export const FETCH_USER_REQUEST = 'FETCH_USER_REQUEST';
+export const FETCH_USER_SUCCESS = 'FETCH_USER_SUCCESS';
+export const FETCH_USER_FAILURE = 'FETCH_USER_FAILURE';
 
-// fetch products
-// export const FETCH_PRODUCTS_REQUEST = 'FETCH_PRODUCTS_REQUEST';
-// export const FETCH_PRODUCTS_SUCCESS = 'FETCH_PRODUCTS_SUCCESS';
-// export const FETCH_PRODUCTS_FAILURE = 'FETCH_PRODUCTS_FAILURE';
+// fetch users
+export const FETCH_USERS_REQUEST = 'FETCH_USERS_REQUEST';
+export const FETCH_USERS_SUCCESS = 'FETCH_USERS_SUCCESS';
+export const FETCH_USERS_FAILURE = 'FETCH_USERS_FAILURE';
+
+// create user
+export const CREATE_USER_REQUEST = 'CREATE_USER_REQUEST';
+export const CREATE_USER_SUCCESS = 'CREATE_USER_SUCCESS';
+export const CREATE_USER_FAILURE = 'CREATE_USER_FAILURE';
+
+// update user
+export const UPDATE_USER_REQUEST = 'CREATE_USER_REQUEST';
+export const UPDATE_USER_SUCCESS = 'CREATE_USER_SUCCESS';
+export const UPDATE_USER_FAILURE = 'CREATE_USER_FAILURE';
+
+// delete user
+export const DELETE_USER_REQUEST = 'CREATE_USER_REQUEST';
+export const DELETE_USER_SUCCESS = 'CREATE_USER_SUCCESS';
+export const DELETE_USER_FAILURE = 'CREATE_USER_FAILURE';

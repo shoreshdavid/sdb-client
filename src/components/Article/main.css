@@ -1,0 +1,43 @@
+.article-card img {
+  height: 300px;
+}
+
+.article-card a {
+  text-align: center;
+}
+
+
+
+
+
+.article {
+  background: white;
+}
+
+.article-meta {
+  display: inline-block;
+}
+
+.article img {
+  width: 100%;
+}
+
+
+
+.article .content {
+  padding: 1rem;
+}
+
+.article h1 {
+  color: #63605b;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.article .content p {
+  color: darken(#aaa, 30);
+  font-family: '';
+  font-size: 18px;
+  letter-spacing: .5px;
+  text-align: justify;
+}
