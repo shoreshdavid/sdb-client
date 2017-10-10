@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "NODE_PATH=src:src/components:src/containers:src/redux BROWSER=none PORT=8080 react-scripts start",
-    "build": "react-scripts build",
+    "build": "NODE_PATH=src:src/components:src/containers:src/redux react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },

@@ -9,7 +9,7 @@ import { App } from 'components/App';
 import { Error } from 'containers/Error';
 import { rootReducer } from 'redux/reducers';
 import routes from './routes';
-import registerServiceWorker from 'registerServiceWorker';
+import registerServiceWorker from './registerServiceWorker';
 
 // create store with middleware
 const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
