@@ -14,7 +14,11 @@
 }
 
 .footer-nav a {
-  font-size: 18px;
+  text-decoration: none;
+  color: #bbb;
+  margin: 0 10px;
+  letter-spacing: 2px;
+  text-align: center;
 }
 
 .footer-nav ul {

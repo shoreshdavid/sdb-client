@@ -1,7 +1,7 @@
-.announcement-container {
+.announcement {
   padding: 4em;
 }
 
-.announcement-list {
-  padding: 45px 0;
+.announcement p {
+  text-align: justify;
 }

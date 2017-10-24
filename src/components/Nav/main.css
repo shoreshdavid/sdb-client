@@ -1,5 +1,4 @@
-
-.nav {
+/* .nav {
   display: flex;
   flex: 1;
   flex-direction: row;
@@ -23,4 +22,67 @@
 
 .nav a:hover {
   color: white;
+} */
+
+
+.navbar {
+  display: block;
+  padding: 15px;
+  background: white;
+  border-radius: 0;
+  box-sizing: border-box;
+  box-shadow: 0 0 25px 0 #eee;
+  min-width: 100%;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #bbb;
+  margin: 0 20px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.navbar .active {
+  color: black;
+}
+
+.hamburger {
+  font-size: 22px;
+  margin: 0 22px;
+  float: right;
+}
+
+.hamburger i {
+  font-size: 32px;
+}
+
+.logo {
+  float: left;
+  width: 50px;
+  height: 50px;
+  margin: 0 18px;
+  text-align: center;
+}
+
+.links {
+  float: right;
+  text-align: center;
+  margin-top: 13px;
+}
+
+@media (max-width: 678px) {
+  .hamburger {
+    margin-top: 5px;
+    float: right;
+  }
+  .links {
+    display: none;
+  }
+}
+
+@media (min-width: 678px) {
+  .hamburger {
+    display: none;
+  }
 }

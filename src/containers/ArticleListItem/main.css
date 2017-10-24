@@ -1,14 +1,18 @@
-.post h1 {
+.article {
+  margin-top: -20px;
+}
+
+.article h1 {
   text-align: center;
   font-weight: 700;
   font-size: 32px;
 }
 
-.post img {
+.article img {
   width: 100%;
 }
 
-.post p {
+.article p {
   padding: 15px;
   font-size: 18px;
   text-align: justify;

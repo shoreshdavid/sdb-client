@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router';
 import ReactHtmlParser from 'react-html-parser';
 import './main.css';
 
@@ -11,14 +10,14 @@ export const Announcement = ({ announcement }) => {
   }
 
   return (
-    <div className='announcement-list'>
+    <div className='announcement'>
       <div className='row'>
         <div className='col-lg-5'>
           <div className='box'>
-            <img src={announcement.featuredImage} />
+            <img src={announcement.featuredImage} alt={announcement.slug} />
           </div>
         </div>
-        <div className='col-lg-7'>
+        <div className='col-lg-5 col-lg-offset-1'>
           <h3>{announcement.title}</h3>
           { ReactHtmlParser(announcement.content) }
         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, browserHistory } from 'react-router';
+import { BrowserRouter } from 'react-router-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import reduxThunk from 'redux-thunk';
@@ -8,7 +8,6 @@ import reduxThunk from 'redux-thunk';
 import { App } from 'components/App';
 import { Error } from 'containers/Error';
 import { rootReducer } from 'redux/reducers';
-import routes from './routes';
 import registerServiceWorker from './registerServiceWorker';
 
 // create store with middleware
@@ -23,11 +22,11 @@ const store = createStoreWithMiddleware(
 
 render(
   <Provider store={store}>
-    <Router routes={routes} history={browserHistory}>
+    <BrowserRouter>
       <Error>
         <App />
       </Error>
-    </Router>
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 );

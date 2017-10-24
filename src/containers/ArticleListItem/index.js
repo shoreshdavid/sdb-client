@@ -7,7 +7,7 @@ class ArticleListItem extends Component {
 
   componentDidMount() {
     const { dispatch } = this.props;
-    dispatch(actions.fetchArticle(this.props.params.slug));
+    dispatch(actions.fetchArticle(this.props.match.params.slug));
   }
 
   render() {

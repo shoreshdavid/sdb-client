@@ -13,7 +13,7 @@ class AnnouncementList extends Component {
 
   render() {
     return (
-      <div className='announcement-container'>
+      <div className='announcement'>
         {this.props.announcements.map(node =>
           <Announcement key={node._id} announcement={node}  />
         )}

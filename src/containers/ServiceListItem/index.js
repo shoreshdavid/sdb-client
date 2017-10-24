@@ -9,8 +9,8 @@ import './main.css';
 class ServiceListItem extends Component {
   
   componentDidMount() {
-    const { dispatch, params } = this.props;
-    dispatch(actions.fetchService(params.slug));
+    const { dispatch, match } = this.props;
+    dispatch(actions.fetchService(match.params.slug));
   }
 
   render() {

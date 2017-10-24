@@ -1,6 +1,6 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import ReactHtmlParser from 'react-html-parser';
 
 export const Service = ({ service }) => {
