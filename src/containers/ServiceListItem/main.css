@@ -1,5 +1,6 @@
 .service {
   background: darken(white, 2);
+  margin-top: -20px;
 }
 
 .service iframe {

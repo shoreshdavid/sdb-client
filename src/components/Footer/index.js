@@ -13,15 +13,15 @@ export const Footer = () => {
         <li><Link to='/privacy'>Privacy</Link></li>
       </ul>
       <div className='footer-social'>
-        <a href='https://www.facebook.com/shoreshdavidbrandon/' target='_blank'>
+        <Link to='https://www.facebook.com/shoreshdavidbrandon/' target='_blank'>
           <i className='fa fa-facebook-square'></i>
-        </a>
-        <a href='' target='_blank'>
+        </Link>
+        <Link to='https://www.pinterest.com/shoreshdavidbrandon/' target='_blank'>
           <i className='fa fa-pinterest-square'></i>
-        </a>
-        <a href='' target='_blank'>
+        </Link>
+        <Link to='https://www.youtube.com/c/shoreshdavidbrandon/' target='_blank'>
           <i className='fa fa-youtube-square'></i>
-        </a>
+        </Link>
       </div>
     </div>
   );

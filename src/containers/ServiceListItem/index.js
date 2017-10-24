@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import ReactHtmlParser from 'react-html-parser';
 import * as actions from 'actions/services';
-import { Service } from 'components/Service';
 import './main.css';
 
 class ServiceListItem extends Component {
@@ -22,11 +21,11 @@ class ServiceListItem extends Component {
 
     return (
       <div className='service'>
-        <iframe width="853" height="480" src={`${service.videoUri}?rel=0&amp;showinfo=0`} frameBorder="0" allowFullScreen />
+        <iframe width="853" height="480" src={`${service.videoUri}?rel=0&amp;showinfo=0`} title={service.title} frameBorder='0' allowFullScreen />
         <div className='content'>
           <h1>{service.title}</h1>
           <p>{ ReactHtmlParser(service.content) }</p>
-          <a href='#'>{service.category}</a>
+          <Link to='/services/categories'>{service.category}</Link>
         </div>
       </div>
     );

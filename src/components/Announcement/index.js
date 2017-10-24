@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import ReactHtmlParser from 'react-html-parser';
 import './main.css';
 
@@ -24,13 +23,4 @@ export const Announcement = ({ announcement }) => {
       </div>
     </div>
   );
-}
-
-
-Announcement.propTypes = {
-  _id: PropTypes.string,
-  title: PropTypes.string,
-  slug: PropTypes.string,
-  featuredImage: PropTypes.string,
-  content: PropTypes.string
 }

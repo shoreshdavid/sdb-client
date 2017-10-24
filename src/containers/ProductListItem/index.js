@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Product } from 'components/Product';
 import * as actions from 'actions/products';
-import ReactHtmlParser from 'react-html-parser';
 
 class SingleProduct extends Component {  
   
@@ -25,7 +21,7 @@ class SingleProduct extends Component {
         <div className='gap-md'></div>
         <div className='row'>
           <div className='col-md-4'>
-            <img src={product.featuredImage} />
+            <img src={product.featuredImage} alt={product.name} />
           </div>
           <div className='col-lg-6'>
             <div className='product-meta'>

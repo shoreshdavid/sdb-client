@@ -8,7 +8,7 @@ export const Service = ({ service }) => {
     <div className='col-md-3'>
       <div className='card'>
         <Link to={`services/${service.slug}`}>
-          <img src={service.featuredImage} />
+          <img src={service.featuredImage} alt={service.title} />
           <div className='details'>
             <p className='title'>{ ReactHtmlParser(service.title) }</p>
           </div>
