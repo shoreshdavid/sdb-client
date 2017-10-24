@@ -14,26 +14,27 @@ class SingleProduct extends Component {
   }
 
   render() {
-    if (!this.props.product) {
+    const { product } = this.props;
+
+    if (!product) {
       return <h1>Loading...</h1>;
     }
-    const { name, slug, description, featuredImage, price } = this.props.product;
+
     return (
       <div>
         <div className='gap-md'></div>
         <div className='row'>
           <div className='col-md-4'>
-              <img src={featuredImage} />
+            <img src={product.featuredImage} />
           </div>
           <div className='col-lg-6'>
-              <div className='product-meta'>
-                <h1>{name}</h1>
-                <p>${price}</p>
-                <i className='fa fa-heart-o fa-lg'></i>
-              </div>
+            <div className='product-meta'>
+              <h1>{product.name}</h1>
+              <p>${product.price}</p>
+              <i className='fa fa-heart-o fa-lg'></i>
             </div>
+          </div>
         </div>
-        {/*<div className='gap-md'></div>*/}
         <div className='row center-sm'>
           <div className='col-sm-10'>
             <div className='box'>

@@ -12,9 +12,15 @@ class ServiceList extends Component {
   }
 
   render() {
+    const { services } = this.props;
+
+    if (!services) {
+      return <h1>Loading...</h1>
+    }
+
     return (
       <div className='container-fluid'>
-        {this.props.services.map(node =>
+        {services.map(node =>
           <Service key={node._id} service={node} />
         )}
       </div>

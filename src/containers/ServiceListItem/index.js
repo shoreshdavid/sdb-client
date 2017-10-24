@@ -14,15 +14,19 @@ class ServiceListItem extends Component {
   }
 
   render() {
-    if (!this.props.service) return <h1>Loading..</h1>;
-    const { title, slug, content, videoUri, videos, tags, category } = this.props.service;
+    const { service } = this.props;
+    
+    if (!service) {
+      return <h1>Loading...</h1>;
+    }
+
     return (
       <div className='service'>
-        <iframe width="853" height="480" src={`${videoUri}?rel=0&amp;showinfo=0`} frameBorder="0" allowFullScreen />
+        <iframe width="853" height="480" src={`${service.videoUri}?rel=0&amp;showinfo=0`} frameBorder="0" allowFullScreen />
         <div className='content'>
-          <h1>{ title }</h1>
-          <p>{ ReactHtmlParser(content) }</p>
-          <a href='#'>{category}</a>
+          <h1>{service.title}</h1>
+          <p>{ ReactHtmlParser(service.content) }</p>
+          <a href='#'>{service.category}</a>
         </div>
       </div>
     );

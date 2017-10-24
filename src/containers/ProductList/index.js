@@ -13,7 +13,9 @@ class ProductList extends Component {
 
   render() {
 
-    if (!this.props.products) {
+    const { products } = this.props;
+
+    if (!products) {
       return (
         <h1>No Products...</h1>
       );
@@ -21,7 +23,7 @@ class ProductList extends Component {
 
     return (
       <div className='container-fluid'>
-        {this.props.products.map(node =>
+        {products.map(node =>
           <Product key={node._id} product={node} />
         )}
       </div>
