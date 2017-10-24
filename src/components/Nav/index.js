@@ -22,7 +22,7 @@ export const Nav = () => {
         <NavLink exact to='/services'>Services</NavLink>
         <NavLink exact to='/products'>Store</NavLink>
         <NavLink exact to='/articles'>Articles</NavLink>
-        <NavLink exact to={donateLink}>Donate</NavLink>
+        <NavLink to={donateLink} target='_blank'>Donate</NavLink>
         <NavLink exact to='/contact'>Contact</NavLink>
       </div>
     </div> 
