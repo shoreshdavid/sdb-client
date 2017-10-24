@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import * as actions from '../../redux/actions/products';
+import * as actions from 'actions/products';
 import { Product } from 'components/Product';
 
 class ProductList extends Component {

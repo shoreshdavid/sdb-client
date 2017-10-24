@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Product } from 'components/Product';
-import * as actions from '../../redux/actions/products';
+import * as actions from 'actions/products';
 import ReactHtmlParser from 'react-html-parser';
 
 class SingleProduct extends Component {  

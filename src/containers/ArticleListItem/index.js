@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import * as actions from '../../redux/actions/articles';
+import * as actions from 'actions/articles';
 import { connect } from 'react-redux';
 import './main.css';
 
 class ArticleListItem extends Component {
 
   componentDidMount() {
-    const { dispatch } = this.props;
-    dispatch(actions.fetchArticle(this.props.match.params.slug));
+    const { dispatch, match } = this.props;
+    dispatch(actions.fetchArticle(match.params.slug));
   }
 
   render() {

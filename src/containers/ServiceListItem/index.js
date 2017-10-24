@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ReactHtmlParser from 'react-html-parser';
-import * as actions from '../../redux/actions/services';
+import * as actions from 'actions/services';
 import { Service } from 'components/Service';
 import './main.css';
 
