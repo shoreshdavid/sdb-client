@@ -12,10 +12,12 @@ class AnnouncementList extends Component {
 
   render() {
     return (
-      <div className='announcement'>
-        {this.props.announcements.map(node =>
-          <Announcement key={node._id} announcement={node}  />
-        )}
+      <div className='container-fluid'>
+        <div className='col-lg-10 col-lg-offset-1'>
+          {this.props.announcements.map(node =>
+            <Announcement key={node._id} announcement={node}  />
+          )}
+        </div>
       </div>
     );
   }

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Nav } from 'components/Nav';
-import { Footer } from 'components/Footer';
 import './normalize.css';
 import './main.css';
 
@@ -40,8 +39,6 @@ export const App = () => {
         <Route exact path='/contact' component={Contact} />
         <Route component={NotFound} />
       </Switch>
-
-      <Footer />
 
     </div>
   );

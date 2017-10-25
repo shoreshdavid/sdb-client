@@ -9,12 +9,10 @@ export const Announcement = ({ announcement }) => {
   }
 
   return (
-    <div className='announcement'>
+    <div className='announcement tile'>
       <div className='row'>
         <div className='col-lg-5'>
-          <div className='box'>
-            <img src={announcement.featuredImage} alt={announcement.slug} />
-          </div>
+          <img src={announcement.featuredImage} alt={announcement.slug} />
         </div>
         <div className='col-lg-5 col-lg-offset-1'>
           <h3>{announcement.title}</h3>

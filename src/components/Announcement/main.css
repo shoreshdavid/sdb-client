@@ -1,7 +1,16 @@
 .announcement {
-  padding: 4em;
+  padding: 2em;
 }
 
 .announcement p {
   text-align: justify;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.announcement h3 {
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 2px;
+  line-height: 30px;
 }
