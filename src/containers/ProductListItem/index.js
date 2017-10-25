@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actions from 'actions/products';
+import { fetchProduct } from 'sdb-redux';
 
 class SingleProduct extends Component {  
   
   componentDidMount() {
     const { dispatch, params } = this.props;
-    dispatch(actions.fetchProduct(params.slug));
+    dispatch(fetchProduct(params.slug));
   }
 
   render() {

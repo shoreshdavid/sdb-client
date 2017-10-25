@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import ReactHtmlParser from 'react-html-parser';
-import * as actions from 'actions/services';
+import { fetchService } from 'sdb-redux';
 import './main.css';
 
 class ServiceListItem extends Component {
   
   componentDidMount() {
     const { dispatch, match } = this.props;
-    dispatch(actions.fetchService(match.params.slug));
+    dispatch(fetchService(match.params.slug));
   }
 
   render() {

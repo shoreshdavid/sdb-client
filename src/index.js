@@ -7,7 +7,7 @@ import reduxThunk from 'redux-thunk';
 
 import { App } from 'components/App';
 import { Error } from 'containers/Error';
-import { rootReducer } from 'redux/reducers';
+import { rootReducer } from 'sdb-redux';
 import registerServiceWorker from './registerServiceWorker';
 
 // create store with middleware

@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { fetchArticles } from 'sdb-redux';
 import { Article } from 'components/Article';
-import * as actions from 'actions/articles';
 
 class ArticleList extends Component {
 
   componentDidMount() {
     const { dispatch } = this.props;
-    dispatch(actions.fetchArticles());
+    dispatch(fetchArticles());
   }
 
   render() {

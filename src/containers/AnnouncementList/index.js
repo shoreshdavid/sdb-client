@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actions from 'actions/announcements';
+import { fetchAnnouncements } from 'sdb-redux';
 import { Announcement } from 'components/Announcement';
 
 class AnnouncementList extends Component {
   
   componentDidMount() {
     const { dispatch } = this.props;
-    dispatch(actions.fetchAnnouncements())
+    dispatch(fetchAnnouncements())
   }
 
   render() {

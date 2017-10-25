@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actions from 'actions/products';
+import { fetchProducts } from 'sdb-redux';
 import { Product } from 'components/Product';
 
 class ProductList extends Component {
 
   componentDidMount() {
     const { dispatch } = this.props;
-    dispatch(actions.fetchProducts());
+    dispatch(fetchProducts());
   }
 
   render() {
