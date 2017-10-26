@@ -5538,10 +5538,9 @@ redux-form@^7.1.0:
     prop-types "^15.5.9"
 
 redux-form@^7.1.1:
-  version "7.1.1"
-  resolved "https://registry.yarnpkg.com/redux-form/-/redux-form-7.1.1.tgz#4d9ab1d9c03beb3a8b5f8e5d0f398cff4209081f"
+  version "7.1.2"
+  resolved "https://registry.yarnpkg.com/redux-form/-/redux-form-7.1.2.tgz#6b0f25c57fd8130a05ce00f6435fe1b051f402af"
   dependencies:
-    babel-jest "^21.2.0"
     deep-equal "^1.0.1"
     es6-error "^4.0.0"
     hoist-non-react-statics "^2.3.1"
@@ -5813,11 +5812,13 @@ schema-utils@^0.3.0:
   dependencies:
     ajv "^5.0.0"
 
-sdb-redux@0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/sdb-redux/-/sdb-redux-0.2.0.tgz#acad6436912c4367372883e2a40026a8cbfeaae1"
+sdb-redux@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/sdb-redux/-/sdb-redux-0.5.0.tgz#7fbbfd0fff62c948ca972e4a9ef4926cb60b1e0f"
   dependencies:
     axios "^0.17.0"
+    react "^16.0.0"
+    react-redux "^5.0.6"
     redux "^3.7.2"
     redux-form "^7.1.1"
 
