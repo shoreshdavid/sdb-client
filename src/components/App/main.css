@@ -21,16 +21,25 @@ a:hover {
 
 .tile {
   border: 1px solid #eee;
+  border-radius: 5px;
   box-sizing: border-box;
   box-shadow: 0 0 35px 0 #eee;
-  padding: 15px;
-  margin-bottom: 25px;
+  margin-bottom: 35px;
+  z-index: 60000;
+  position: relative;
+  transition: all 200ms ease;
 }
 
-.tile img {
+.tile:hover {
+  /* -webkit-backface-visibility: hidden; */
+  transform: scale(1.01, 1.01); 
+}
+
+/* .tile img {
   height: 100%;
   width: 100%;
-}
+} */
+
 
 
 .card {
@@ -53,16 +62,5 @@ a:hover {
 }
 
 .card a {
-  color: black;
-}
-
-.card a:hover {
-  transform: scale(3.01, 1.01);
-}
-
-
-/* Gaps */
-
-.sm-gap {
-  padding: 25px 0;
+  color: #aaa;
 }

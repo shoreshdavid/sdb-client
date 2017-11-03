@@ -24,7 +24,7 @@ export const Home = props => {
   return (
     <div className='container-fluid'>
       <div className='row'>
-        <div className='col-lg-12'>
+        <div className='col-lg-10 col-lg-offset-1'>
           <iframe src={homeVideo} title='Home video' width='100%' height='700px' frameBorder="0" allowFullScreen></iframe>
         </div>
       </div>

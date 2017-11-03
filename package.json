@@ -22,7 +22,7 @@
     "redux": "^3.7.2",
     "redux-form": "^7.1.0",
     "redux-thunk": "^2.2.0",
-    "sdb-redux": "^0.5.0"
+    "sdb-redux": "^0.10.0"
   },
   "devDependencies": {}
 }

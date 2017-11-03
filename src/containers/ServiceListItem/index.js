@@ -21,7 +21,7 @@ class ServiceListItem extends Component {
 
     return (
       <div className='service'>
-        <iframe width="853" height="480" src={`${service.videoUri}?rel=0&amp;showinfo=0`} title={service.title} frameBorder='0' allowFullScreen />
+        <iframe src={`${service.videoUri}?rel=0&amp;showinfo=0`} title={service.title} frameBorder='0' allowFullScreen />
         <div className='content'>
           <h1>{service.title}</h1>
           <p>{ ReactHtmlParser(service.content) }</p>

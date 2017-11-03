@@ -5812,9 +5812,9 @@ schema-utils@^0.3.0:
   dependencies:
     ajv "^5.0.0"
 
-sdb-redux@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/sdb-redux/-/sdb-redux-0.5.0.tgz#7fbbfd0fff62c948ca972e4a9ef4926cb60b1e0f"
+sdb-redux@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/sdb-redux/-/sdb-redux-0.10.0.tgz#92265e671a5747548e3c5d57bca6e2616713ed82"
   dependencies:
     axios "^0.17.0"
     react "^16.0.0"

@@ -1,7 +1,7 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import ReactHtmlParser from 'react-html-parser';
+// import './main.css';
 
 export const Service = ({ service }) => {
   return (
@@ -17,12 +17,3 @@ export const Service = ({ service }) => {
     </div>
   );
 }
-
-
-// Service.propTypes = {
-//   id: PropTypes.string.isRequired,
-//   title: PropTypes.string.isRequired,
-//   slug: PropTypes.string.isRequired,
-//   content: PropTypes.string.isRequired,
-//   timestamp: PropTypes.string.isRequired
-// }

@@ -5,7 +5,7 @@ export const Contact = () => {
   return (
     <div className="inner contact">
       <div className="contact-form">
-        <form id="contact-us" method="post" action="#">
+        <form id="contact-us">
           <div className="col-md-6 wow animated slideInLeft">
             <input type="text" name="name" id="name"className="form" placeholder="Name" />
             <input type="email" name="mail" id="mail" className="form" placeholder="Email" />
