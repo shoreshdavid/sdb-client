@@ -27,19 +27,7 @@ a:hover {
   margin-bottom: 35px;
   z-index: 60000;
   position: relative;
-  transition: all 200ms ease;
 }
-
-.tile:hover {
-  /* -webkit-backface-visibility: hidden; */
-  transform: scale(1.01, 1.01); 
-}
-
-/* .tile img {
-  height: 100%;
-  width: 100%;
-} */
-
 
 
 .card {
