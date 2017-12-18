@@ -11,14 +11,16 @@ import LiveStream from 'components/LiveStream';
 import { NotFound } from 'components/NotFound';
 
 // containers
-import ArticleList from 'containers/ArticleList';
 import ArticleListItem from 'containers/ArticleListItem';
 import { Login } from 'containers/Login';
 import ProductList from 'containers/ProductList';
 import ProductListItem from 'containers/ProductListItem';
 import ServiceList from 'containers/ServiceList';
 import ServiceListItem from 'containers/ServiceListItem';
+
+// pages
 import { AnnouncementPage } from 'pages/AnnouncementPage';
+import { ArticleListPage } from 'pages/ArticleListPage';
 
 export class App extends Component {
 
@@ -32,7 +34,7 @@ export class App extends Component {
           <Route exact path='/login' component={Login} />
           <Route exact path='/live' component={LiveStream} />
           <Route exact path='/announcements' component={AnnouncementPage} />
-          <Route exact path='/articles' component={ArticleList} />
+          <Route exact path='/articles' component={ArticleListPage} />
           <Route exact path='/articles/:slug' component={ArticleListItem} />
           <Route exact path='/products' component={ProductList} />
           <Route exact path='/products/:slug' component={ProductListItem} />

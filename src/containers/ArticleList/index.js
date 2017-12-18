@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { fetchArticles } from 'sdb-redux';
-import { Article } from 'components/Article';
 
-class ArticleList extends Component {
+class ArticleList extends React.Component {
 
   componentDidMount() {
     const { dispatch } = this.props;
@@ -11,16 +10,9 @@ class ArticleList extends Component {
   }
 
   render() {
-    if (!this.props.articles) {
-      return <h1>Hey, where did the articles go?</h1>;
-    }
-    return (
-      <div className='container-fluid'>
-        {this.props.articles.map((node) => 
-          <Article key={node._id} article={node} />
-        )}
-      </div>
-    );
+    const { articles } = this.props;
+    
+    return this.props.render(articles);
   }
 }
 
