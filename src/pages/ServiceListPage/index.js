@@ -4,7 +4,7 @@ import { Service } from 'components/Service';
 
 export const ServiceListPage = () => {
   return (
-    <div className='container-fluid'>
+    <div className='grid-wrapper'>
       <ServiceList
         render={(services) => {
           if (!services) { return <h1>Loading...</h1> }

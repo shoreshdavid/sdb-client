@@ -4,7 +4,7 @@ import { Article } from 'components/Article';
 
 export const ArticleListPage = () => {
   return (
-    <div className='container-fluid'>
+    <div className='grid-wrapper'>
       <ArticleList
         render={(articles) => {
           if (articles.length === 0) { return <h1>No articles</h1> }

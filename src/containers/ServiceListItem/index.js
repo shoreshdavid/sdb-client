@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchService } from 'sdb-redux';
-// import './main.css';
 
 class ServiceListItem extends React.Component { 
   componentDidMount() {

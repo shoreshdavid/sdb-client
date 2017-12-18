@@ -1,0 +1,14 @@
+.tile {
+  border: 1px solid #eee;
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 0 0 35px 0 #eee;
+  margin-bottom: 35px;
+  z-index: 60000;
+  position: relative;
+}
+
+.tile img {
+  height: 300px;
+  width: 700px;
+}

@@ -1,13 +1,7 @@
 import React from 'react';
 import ReactHtmlParser from 'react-html-parser';
-import './main.css';
 
 export const Announcement = ({ announcement }) => {
-
-  if (!announcement) {
-    return <div>Loading...</div>;
-  }
-
   return (
     <div className='announcement tile'>
       <div className='row'>

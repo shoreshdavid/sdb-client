@@ -1,19 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ReactHtmlParser from 'react-html-parser';
-// import './main.css';
+import { Card } from 'components/Card';
 
 export const Service = ({ service }) => {
   return (
-    <div className='col-md-3'>
-      <div className='card'>
+    <div className='grid-item'>
+      <Card>
         <Link to={`services/${service.slug}`}>
           <img src={service.featuredImage} alt={service.title} />
           <div className='details'>
             <p className='title'>{ ReactHtmlParser(service.title) }</p>
           </div>
         </Link>
-      </div>
+      </Card>
     </div>
   );
 }

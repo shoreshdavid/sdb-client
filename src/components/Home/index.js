@@ -1,9 +1,6 @@
 import React from 'react';
 import { homeContent, homeVideo, mapIframe } from '../../constants';
 import ReactHtmlParser from 'react-html-parser';
-import './main.css';
-
-
 
 const EmailForm = () => {
   return (
@@ -18,7 +15,6 @@ const EmailForm = () => {
     </div>
   );
 }
-
 
 export const Home = props => {
   return (

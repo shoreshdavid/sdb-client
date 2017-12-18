@@ -1,33 +1,19 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
-import './main.css';
+import { Card } from 'components/Card';
 
 export const Article = ({ article }) => {
   return (
-    <div className='col-lg-3'>
-      <div className='card'>
+    <div className='grid-item'>
+      <Card>
         <Link to={`/articles/${article.slug}`}>
           <img src={article.featuredImage} alt={article.title} />
           <div className='details'>
             <p className='title'>{article.title}</p>
           </div>
         </Link>
-      </div>
+      </Card>
     </div>
   );
-};
-
-Article.propTypes = {
-  title: PropTypes.string.isRequired,
-  slug: PropTypes.string.isRequired,
-  imageUri: PropTypes.string.isRequired,
-  body: PropTypes.string.isRequired,
-};
-
-Article.defaultProps = {
-  title: '',
-  slug: '',
-  imageUri: '',
-  body: '',
 };

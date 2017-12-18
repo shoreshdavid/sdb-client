@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { Nav } from 'components/Nav';
-import './normalize.css';
-import './main.css';
 
 // components
+import { Nav } from 'components/Nav';
 import { Contact } from 'components/Contact';
 import { Home } from 'components/Home';
 import LiveStream from 'components/LiveStream';
@@ -23,7 +21,6 @@ import { ServiceListPage } from 'pages/ServiceListPage';
 import { SingleServicePage } from 'pages/SingleServicePage';
 
 export class App extends Component {
-
   render() {
     return (
       <React.Fragment>
