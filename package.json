@@ -3,26 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "NODE_PATH=src:src/components:src/containers BROWSER=none PORT=8080 react-scripts start",
-    "build": "NODE_PATH=src:src/components:src/containers react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "start": "NODE_PATH=src BROWSER=none PORT=8080 react-scripts start",
+    "build": "NODE_PATH=src react-scripts build",
+    "test": "NODE_PATH=src react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "deploy": "aws s3 cp build s3://sdb-client --recursive"
   },
   "dependencies": {
-    "axios": "^0.16.2",
-    "prop-types": "^15.6.0",
-    "raven-js": "^3.18.1",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-html-parser": "^2.0.1",
-    "react-redux": "^5.0.6",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "1.0.14",
-    "redux": "^3.7.2",
-    "redux-form": "^7.1.0",
-    "redux-thunk": "^2.2.0",
-    "sdb-redux": "0.12.0"
+    "axios": "0.17.1",
+    "prop-types": "15.6.0",
+    "raven-js": "3.21.0",
+    "react": "16.2.0",
+    "react-dom": "16.2.0",
+    "react-html-parser": "2.0.2",
+    "react-redux": "5.0.6",
+    "react-router-dom": "4.2.2",
+    "react-scripts": "1.0.17",
+    "redux": "3.7.2",
+    "redux-form": "7.2.0",
+    "redux-thunk": "2.2.0",
+    "sdb-redux": "0.13.0"
   },
   "devDependencies": {}
 }
