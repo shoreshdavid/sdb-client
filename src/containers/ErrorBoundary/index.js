@@ -8,7 +8,7 @@ function logException(ex, context) {
   window.console && console.error && console.error(ex);
 }
 
-export class Error extends Component {
+export class ErrorBoundary extends Component {
   constructor(props) {
     super(props);
     this.state = { hasError: false };
