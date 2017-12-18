@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ReactHtmlParser from 'react-html-parser';
 import ServiceListItem from 'containers/ServiceListItem';
+import { Loading } from 'shared/Loading';
 
 export const SingleServicePage = (props) => {
   return (
@@ -9,7 +10,7 @@ export const SingleServicePage = (props) => {
       <ServiceListItem
         slug={props.match.params.slug}
         render={(service) => {
-          if (!service) { return <h1>Loading...</h1> }
+          if (!service) { return <Loading /> }
 
           return (
             <div className='service'>

@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductListItem from 'containers/ProductListItem';
+import { Loading } from 'shared/Loading';
 
 export const SingleProductPage = (props) => {
   return (
@@ -7,7 +8,7 @@ export const SingleProductPage = (props) => {
       <ProductListItem
         slug={props.match.params.slug}
         render={(product) => {
-          if (!product) { return <h1>Loading...</h1> }
+          if (!product) { return <Loading /> }
 
           return (
             <React.Fragment>
