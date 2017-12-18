@@ -11,7 +11,6 @@ import LiveStream from 'components/LiveStream';
 import { NotFound } from 'components/NotFound';
 
 // containers
-import AnnouncementList from 'containers/AnnouncementList';
 import ArticleList from 'containers/ArticleList';
 import ArticleListItem from 'containers/ArticleListItem';
 import { Login } from 'containers/Login';
@@ -19,19 +18,20 @@ import ProductList from 'containers/ProductList';
 import ProductListItem from 'containers/ProductListItem';
 import ServiceList from 'containers/ServiceList';
 import ServiceListItem from 'containers/ServiceListItem';
+import { AnnouncementPage } from 'pages/AnnouncementPage';
 
 export class App extends Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <Nav />
 
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/live' component={LiveStream} />
-          <Route exact path='/announcements' component={AnnouncementList} />
+          <Route exact path='/announcements' component={AnnouncementPage} />
           <Route exact path='/articles' component={ArticleList} />
           <Route exact path='/articles/:slug' component={ArticleListItem} />
           <Route exact path='/products' component={ProductList} />
@@ -42,7 +42,7 @@ export class App extends Component {
           <Route component={NotFound} />
         </Switch>
 
-      </div>
+      </React.Fragment>
     );
   }
 }
