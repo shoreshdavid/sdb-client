@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ReactHtmlParser from 'react-html-parser';
-import { Card } from 'components/Card';
+import { Card } from 'shared/Card';
 
 export const Service = ({ service }) => {
   return (
