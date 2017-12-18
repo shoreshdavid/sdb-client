@@ -1,24 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { fetchArticle } from 'sdb-redux';
 import { connect } from 'react-redux';
 import './main.css';
 
-class ArticleListItem extends Component {
+class ArticleListItem extends React.Component {
 
   componentDidMount() {
-    const { dispatch, match } = this.props;
-    dispatch(fetchArticle(match.params.slug));
+    this.props.dispatch(fetchArticle(this.props.slug));
   }
 
   render() {
     const { article } = this.props;
-    return (
-      <div className='article'>
-        <img src={article.featuredImage} alt={article.title} />
-        <h1>{article.title}</h1>
-        <p>{article.body}</p>
-      </div>
-    );
+    return this.props.render(article);
   }
 }
 
