@@ -12,7 +12,6 @@ import { NotFound } from 'components/NotFound';
 
 // containers
 import { Login } from 'containers/Login';
-import ProductList from 'containers/ProductList';
 import ProductListItem from 'containers/ProductListItem';
 import ServiceList from 'containers/ServiceList';
 import ServiceListItem from 'containers/ServiceListItem';
@@ -21,6 +20,7 @@ import ServiceListItem from 'containers/ServiceListItem';
 import { AnnouncementPage } from 'pages/AnnouncementPage';
 import { ArticleListPage } from 'pages/ArticleListPage';
 import { SingleArticle } from 'pages/SingleArticle';
+import { ProductListPage } from 'pages/ProductListPage';
 
 export class App extends Component {
 
@@ -36,7 +36,7 @@ export class App extends Component {
           <Route exact path='/announcements' component={AnnouncementPage} />
           <Route exact path='/articles' component={ArticleListPage} />
           <Route exact path='/articles/:slug' component={SingleArticle} />
-          <Route exact path='/products' component={ProductList} />
+          <Route exact path='/products' component={ProductListPage} />
           <Route exact path='/products/:slug' component={ProductListItem} />
           <Route exact path='/services' component={ServiceList} />
           <Route exact path='/services/:slug' component={ServiceListItem} />
