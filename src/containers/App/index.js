@@ -12,7 +12,6 @@ import { NotFound } from 'components/NotFound';
 
 // containers
 import { Login } from 'containers/Login';
-import ServiceListItem from 'containers/ServiceListItem';
 
 // pages
 import { AnnouncementPage } from 'pages/AnnouncementPage';
@@ -21,6 +20,7 @@ import { SingleArticle } from 'pages/SingleArticle';
 import { ProductListPage } from 'pages/ProductListPage';
 import { SingleProductPage } from 'pages/SingleProductPage';
 import { ServiceListPage } from 'pages/ServiceListPage';
+import { SingleServicePage } from 'pages/SingleServicePage';
 
 export class App extends Component {
 
@@ -39,7 +39,7 @@ export class App extends Component {
           <Route exact path='/products' component={ProductListPage} />
           <Route exact path='/products/:slug' component={SingleProductPage} />
           <Route exact path='/services' component={ServiceListPage} />
-          <Route exact path='/services/:slug' component={ServiceListItem} />
+          <Route exact path='/services/:slug' component={SingleServicePage} />
           <Route exact path='/contact' component={Contact} />
           <Route component={NotFound} />
         </Switch>
