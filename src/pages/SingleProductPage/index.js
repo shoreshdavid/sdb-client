@@ -3,14 +3,14 @@ import ProductListItem from 'containers/ProductListItem';
 
 export const SingleProductPage = (props) => {
   return (
-    <div>
+    <React.Fragment>
       <ProductListItem
         slug={props.match.params.slug}
         render={(product) => {
           if (!product) { return <h1>Loading...</h1> }
 
           return (
-            <div>
+            <React.Fragment>
               <div className='gap-md'></div>
               <div className='row'>
                 <div className='col-md-4'>
@@ -34,10 +34,10 @@ export const SingleProductPage = (props) => {
                   </div>
                 </div>
               </div>
-            </div>
+            </React.Fragment>
           );
         }}
       />
-    </div>
+    </React.Fragment>
   );
 }
