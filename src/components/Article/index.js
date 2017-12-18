@@ -1,6 +1,7 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Card } from 'shared/Card';
+import { Card } from 'components/Card';
 
 export const Article = ({ article }) => {
   return (
