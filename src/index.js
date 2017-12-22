@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from 'sdb-redux';
 
-import { App } from 'containers/App';
+import { Root } from 'containers/Root';
 import { ErrorBoundary } from 'containers/ErrorBoundary';
 import registerServiceWorker from './registerServiceWorker';
 import 'styles/application.css';
@@ -13,7 +13,7 @@ render(
   <Provider store={store}>
     <BrowserRouter>
       <ErrorBoundary>
-        <App />
+        <Root />
       </ErrorBoundary>
     </BrowserRouter>
   </Provider>,
