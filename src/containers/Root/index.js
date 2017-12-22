@@ -5,7 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 import { Nav } from 'components/Nav';
 import { Contact } from 'components/Contact';
 import { Home } from 'components/Home';
-import LiveStream from 'components/LiveStream';
+import { LiveStream } from 'components/LiveStream';
 import { NotFound } from 'components/NotFound';
 
 // pages
