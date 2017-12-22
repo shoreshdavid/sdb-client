@@ -2,9 +2,8 @@
   border: 1px solid #eee;
   border-radius: 5px;
   box-sizing: border-box;
-  box-shadow: 0 0 35px 0 #eee;
+  box-shadow: 0 0 35px #eee;
   margin-bottom: 35px;
-  z-index: 60000;
   position: relative;
 }
 

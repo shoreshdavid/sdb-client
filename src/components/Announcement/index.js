@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactHtmlParser from 'react-html-parser';
+import { Tile } from 'shared/Tile';
 
 export const Announcement = ({ announcement }) => {
   return (
-    <div className='announcement tile'>
+    <div className='announcement'>
+      <Tile>
       <div className='row'>
         <div className='col-lg-5'>
           <img src={announcement.featuredImage} alt={announcement.slug} />
@@ -13,6 +15,7 @@ export const Announcement = ({ announcement }) => {
           { ReactHtmlParser(announcement.content) }
         </div>
       </div>
+      </Tile>
     </div>
   );
 }
