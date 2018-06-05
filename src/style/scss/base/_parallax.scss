@@ -1,0 +1,25 @@
+.parallax {
+  background-image: url('https://tikvaproductions.com/wp-content/uploads/2018/05/homepageBANNERnew.jpg');
+  height: 700px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax-header {
+  color: $white;
+  // font-family: $changa;
+  font-weight: 700;
+  text-align: center;
+}
+
+.parallax-subheader {
+  color: $white;
+  font-family: $changa;
+  text-align: center;
+}
+
+.parallax-button-group {
+  text-align: center;
+}
