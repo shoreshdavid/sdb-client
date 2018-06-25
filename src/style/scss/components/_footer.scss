@@ -1,12 +1,41 @@
 .footer {
+  border-top: 1px solid #e7e4e2;
   background-color: #ffffff;
-  border-color: #e7e4e2;
-  border-top-width: 1px;
   background-image: url(https://tikvaproductions.com/wp-content/uploads/2018/02/footerbackgroundimage2.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: scroll;
   background-size: cover;
-  padding-top: 95px;
-  padding-bottom: 85px;
+  padding-top: 75px;
+  padding-bottom: 75px;
+
+  ul {
+    list-style: none;
+  }
+}
+
+.footer-list {
+  padding: 0;
+  li,
+  i {
+    margin-right: 9.8px;
+  }
+  li,
+  a {
+    color: #333c4e;
+    transition: color 250ms ease-in-out;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+.footer-list-title {
+  text-transform: uppercase;
+  color: #333c4e;
+  font-weight: 700;
+  line-height: 1.5;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin: 0 0 28px;
 }
