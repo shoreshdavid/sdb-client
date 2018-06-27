@@ -13,8 +13,7 @@ textarea {
 
 a {
   text-decoration: none;
-  &:hover
-   {
+  &:hover {
     text-decoration: none;
     color: $primary-color !important;
   }
@@ -30,4 +29,3 @@ img {
   max-width: 100%;
   max-height: 100%;
 }
-
