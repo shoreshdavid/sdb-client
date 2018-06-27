@@ -1,7 +1,23 @@
 .topbar {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  flex-wrap: wrap;
+  // justify-content: center;
+  align-items: center;
   background-color: $brand-orange;
   padding: 15px;
-  // height: 50px;
+  .topbar-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .topbar-right {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
   a {
     color: $white;
     &:hover {
@@ -10,29 +26,13 @@
   }
   i {
     color: $white;
-    margin-right: 10px;
+    margin-right: 5px;
     margin-left: 20px;
     font-size: 14px;
   }
 }
 
-.topbar-left {
-  float: left;
-  margin-left: 25px;
-  a {
-    &:hover {
-      color: $white !important;
-    }
-  }
-}
-
-.topbar-right {
-  float: right;
-  margin-right: 25px;
-}
-
 // Media Queries
-
 @media only screen and (max-width: 800px) {
   .topbar {
     padding: 10px;
@@ -42,12 +42,14 @@
   }
 
   .topbar-left {
-    float: none;
+    align-items: center;
+    justify-content: center !important;
     margin-left: 0;
   }
 
   .topbar-right {
-    float: none;
+    align-items: center;
+    justify-content: center !important;
     margin-right: 0;
   }
 }
