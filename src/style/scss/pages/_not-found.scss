@@ -1,0 +1,53 @@
+.not-found-container {
+  // padding: 150px 0;
+  padding: 100px;
+  margin: 0 auto;
+}
+
+.not-found-page-title {
+  margin-bottom: 50px;
+  color: #333c4e;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.not-found-status-code {
+  color: #f0f0f0;
+  font-size: 170px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.not-found-col-heading {
+  color: #333c4e;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.not-found-links {
+  font-size: 14px;
+  line-height: 23.8px;
+  list-style: none;
+  padding: 0;
+  a {
+    margin-left: 15px;
+    letter-spacing: 1px;
+  }
+  li {
+    margin-bottom: 15px;
+  }
+  li,
+  a {
+    color: #f09a3e;
+  }
+}
+
+
+// Media Queries
+
+@media only screen and (max-width: 800px) {
+  .not-found-container {
+    padding: 25px;
+  }
+}

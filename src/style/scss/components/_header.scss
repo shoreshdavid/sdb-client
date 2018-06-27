@@ -1,3 +1,26 @@
+header {
+  padding: 35px;
+  position: sticky;
+  z-index: 999;
+  max-width: 100%;
+  border-bottom: 1px solid #eee;
+  top: 0;
+  bottom: 125px;
+  background-color: $white;
+  box-shadow: 0 4px 30px -10px #ccc;
+  .header-links {
+    float: right;
+    a {
+      color: $brand-charcoal;
+      letter-spacing: 1.1px;
+      margin-left: 25px;
+      margin-top: 0;
+      font-size: 16px;
+      font-weight: 700;
+    }
+  }
+}
+
 .active-link a {
-  color: $primary-color;
+  color: $brand-orange;
 }

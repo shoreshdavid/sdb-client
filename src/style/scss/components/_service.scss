@@ -1,0 +1,13 @@
+.service-icons {
+  i {
+    color: #8f8f8f;
+    font-size: 12px;
+    margin-right: 30px;
+    &:nth-child(4) {
+      float: right;
+    }
+    &:hover {
+      color: black;
+    }
+  }
+}

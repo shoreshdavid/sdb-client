@@ -1,0 +1,54 @@
+.topbar {
+  background-color: $brand-orange;
+  padding: 15px;
+  // height: 50px;
+  a {
+    color: $white;
+    &:hover {
+      color: $white;
+    }
+  }
+  i {
+    color: $white;
+    margin-right: 10px;
+    margin-left: 20px;
+    font-size: 14px;
+  }
+}
+
+.topbar-left {
+  float: left;
+  margin-left: 25px;
+  a {
+    &:hover {
+      color: $white !important;
+    }
+  }
+}
+
+.topbar-right {
+  float: right;
+  margin-right: 25px;
+}
+
+
+// Media Queries
+
+@media only screen and (max-width: 800px) {
+  .topbar {
+    padding: 10px;
+    i {
+      margin-right: 5px;
+    }
+  }
+
+  .topbar-left {
+    float: none;
+    margin-left: 0;
+  }
+
+  .topbar-right {
+    float: none;
+    margin-right: 0;
+  }
+}

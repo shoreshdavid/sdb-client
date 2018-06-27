@@ -1,0 +1,22 @@
+.jewish-card {
+  background-color: #faf9f8;
+  padding: 35px;
+  margin-bottom: 25px;
+  img {
+    border-radius: 100%;
+    height: 200px;
+    width: auto;
+  }
+  p {
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: .5px;
+    text-align: justify;
+  }
+}
+
+.jewish-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: $brand-charcoal;
+}
