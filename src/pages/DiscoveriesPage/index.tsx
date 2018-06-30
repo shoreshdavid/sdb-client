@@ -1,34 +1,32 @@
+import { Article } from 'components/Article';
 import { EmailBanner } from 'components/EmailBanner';
 import { Error } from 'components/Error';
 import { Loading } from 'components/Loading';
-import { Service } from 'components/Service';
 import gql from 'graphql-tag';
-import { tabData } from 'pages/ServiceListPage/tabs';
+import { discoveryTabs } from 'pages/DiscoveriesPage/tabs';
 import * as React from 'react';
 import { Query } from 'react-apollo';
-// import { Link } from 'react-router-dom';
 import { Col, Container, ListGroup, ListGroupItem, Row } from 'reactstrap';
 
 const query = gql`
   {
-    services {
+    articles {
       title
       slug
       featuredImage
-      content
-      createdAt
+      category
     }
   }
 `;
 
-export const ServiceListPage = () => {
+export const DiscoveriesPage = () => {
   return (
     <React.Fragment>
       <Container fluid>
         <Row className="padding-50">
           <Col lg="3">
             <ListGroup>
-              {tabData.map(tab => (
+              {discoveryTabs.map(tab => (
                 <ListGroupItem
                   key={tab.id}
                   action
@@ -50,9 +48,10 @@ export const ServiceListPage = () => {
                   if (error) {
                     return <Error error={error} />;
                   }
-                  return data.services.map(service => (
-                    <Col lg="4" key={service.slug}>
-                      <Service service={service} />
+                  console.log(data);
+                  return data.articles.map(article => (
+                    <Col lg="4" key={article.slug}>
+                      <Article article={article} />
                     </Col>
                   ));
                 }}

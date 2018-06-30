@@ -4,7 +4,7 @@ import * as React from 'react';
 import { Query } from 'react-apollo';
 
 const query = gql`
-  {
+  query article($slug: String) {
     article(where: { slug: $slug }) {
       title
       featuredImage

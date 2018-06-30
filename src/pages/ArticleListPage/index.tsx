@@ -7,31 +7,37 @@ import { Query } from 'react-apollo';
 const ArticlesQuery = gql`
   {
     articles {
+      createdAt
       title
       featuredImage
       slug
+      content
     }
   }
 `;
 
 export const ArticleListPage = () => {
   return (
-    <div className="grid-wrapper">
-      <Query query={ArticlesQuery}>
-        {({ loading, error, data }) => {
-          if (loading) {
-            return <Loading />;
-          }
+    <main id="main" style={{ paddingLeft: 30, paddingRight: 30 }}>
+      <div className="post-content">
+        <div>
+          <Query query={ArticlesQuery}>
+            {({ loading, error, data }) => {
+              if (loading) {
+                return <Loading />;
+              }
 
-          if (error) {
-            return <div>Error</div>;
-          }
+              if (error) {
+                return <div>Error</div>;
+              }
 
-          return data.articles.map(article => {
-            return <Article key={article.slug} article={article} />;
-          });
-        }}
-      </Query>
-    </div>
+              return data.articles.map(article => {
+                return <Article key={article.slug} article={article} />;
+              });
+            }}
+          </Query>
+        </div>
+      </div>
+    </main>
   );
 };

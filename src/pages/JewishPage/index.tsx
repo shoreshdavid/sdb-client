@@ -5,16 +5,19 @@ import { Button } from 'reactstrap';
 import { jewishData } from './data';
 
 const JewishCard = ({ image, title, body, link }) => {
-  const shrinkBody = body.substring(0, 156) + '...';
+  const shrinkTitle = title.substring(0, 32) + '...';
+  const shrinkBody = body.substring(0, 116) + '...';
   return (
     <div className="jewish-card center">
       <img src={image} alt={title} />
       <Link to={link}>
-        <h3 className="jewish-card-title">{title}</h3>
+        <h3 className="jewish-card-title">{shrinkTitle}</h3>
       </Link>
       <p>{shrinkBody}</p>
       <Link to={link} target="_blank">
-        <Button block>Read More</Button>
+        <Button block color="primary">
+          Read More
+        </Button>
       </Link>
     </div>
   );
@@ -26,9 +29,8 @@ export const JewishPage = () => {
       <div className="jewish-page">
         <Row>
           {jewishData.map(data => (
-            <Col sm="12" lg="4">
+            <Col sm="12" lg="4" key={data.id}>
               <JewishCard
-                key={data.id}
                 image={data.image}
                 title={data.title}
                 body={data.body}
