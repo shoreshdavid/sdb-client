@@ -7,19 +7,12 @@
   align-items: center;
   background-color: $brand-orange;
   padding: 15px;
-  .topbar-left {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-  .topbar-right {
-    display: flex;
-    flex: 1;
-    justify-content: flex-end;
-    align-items: flex-end;
-  }
   a {
     color: $white;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0px;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     &:hover {
       color: $white;
     }
@@ -28,8 +21,26 @@
     color: $white;
     margin-right: 5px;
     margin-left: 20px;
-    font-size: 14px;
+    font-size: 16px;
   }
+}
+
+.topbar-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 20px;
+  i {
+    font-size: 12px;
+  }
+}
+
+.topbar-right {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-right: 20px;
 }
 
 // Media Queries

@@ -1,6 +1,9 @@
 // Variables
 @import 'variables';
 
+// Mixins
+@import 'mixins';
+
 // Base
 @import 'base/reset';
 @import 'base/general';
@@ -18,8 +21,12 @@
 @import 'components/card';
 @import 'components/series';
 @import 'components/containers';
+@import 'components/hr';
 
 // Pages
+@import 'pages/pages';
+@import 'pages/home';
 @import 'pages/not-found';
 @import 'pages/donate';
 @import 'pages/jewish';
+@import 'pages/events';

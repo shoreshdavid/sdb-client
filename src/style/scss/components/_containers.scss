@@ -1,26 +1,48 @@
 .intro-container {
-  padding: 100px;
+  @include padding-container(100px);
   background-color: $white;
-  margin: 0 auto;
+  h3 {
+    color: $black;
+    font-weight: 700;
+  }
+  p {
+    text-align: justify;
+    font-size: 16px;
+    line-height: 32px;
+    margin-top: 20px;
+  }
+  a {
+    font-weight: 700;
+    font-size: 24px;
+  }
+  iframe {
+    margin-top: -90px;
+  }
 }
 
 .accordion-container {
-  padding: 100px;
+  @include padding-container(100px);
   background-color: #f7f5f4;
 }
 
 .rabbi-container {
-  padding: 100px;
+  @include padding-container(100px);
   background-color: $white;
+  p {
+    text-align: justify;
+  }
 }
 
 .about-container {
-  padding: 100px;
+  @include padding-container(100px);
   background-color: #f7f5f4;
+  h3 {
+    font-weight: 700;
+  }
 }
 
 .map-container {
-  padding: 100px;
+  @include padding-container(100px);
   background-color: $white;
 }
 
@@ -28,7 +50,6 @@
   width: 100%;
   height: 902px;
   position: relative;
-  z-index: -1;
   top: 0px;
   left: 0px;
   opacity: 1;
@@ -37,6 +58,55 @@
   background-size: cover;
   background-image: url('https://tikvaproductions.com/wp-content/uploads/2018/05/SDBanner2.jpg');
   min-height: 150px;
+  .desktop-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    color: $white;
+    margin-top: 100px;
+    margin-bottom: 30px;
+  }
+  h2,
+  p {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+  }
+  h2 {
+    color: $white;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  p {
+    font-size: 20px;
+    color: #b3b7ba;
+  }
+  .live-btn-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    button {
+      width: 700px;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+      padding: 10px;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+      word-wrap: break-word;
+      white-space: normal;
+      i {
+        margin-right: 10px;
+      }
+    }
+  }
   // transform: translate3d(-18.8799px, -2px, 0px);
 }
 
@@ -65,5 +135,17 @@
   .padding-100,
   .padding-50 {
     padding: 25px;
+  }
+  .live-stream-container {
+    .live-btn-group {
+      button {
+        width: 350px;
+      }
+    }
+  }
+  .intro-container {
+    iframe {
+      margin-top: 0;
+    }
   }
 }
