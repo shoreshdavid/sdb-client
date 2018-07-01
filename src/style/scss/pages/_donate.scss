@@ -1,5 +1,6 @@
 .donate-ul {
   list-style: none;
+  padding: 0;
   li {
     margin-bottom: 25px;
   }
@@ -8,11 +9,19 @@
     color: $primary-color;
     text-align: center;
     font-size: 18px;
+    &:hover {
+      text-decoration: underline !important;
+    }
   }
 }
 
 .donate-child-icon {
-  font-size: 90px;
   text-align: center;
-  color: $primary-color;
+  margin-top: 25px;
+  margin-bottom: 50px;
+  i {
+    font-size: 90px;
+    text-align: center;
+    color: $primary-color;
+  }
 }

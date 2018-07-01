@@ -31,7 +31,6 @@ export const SingleServicePage = ({ match }) => (
           if (error) {
             return <Error error={error} />;
           }
-          console.log(data.service);
 
           const { service } = data;
 

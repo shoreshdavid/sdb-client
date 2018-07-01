@@ -47,13 +47,13 @@ export class EmailBanner extends React.Component<any, any> {
             return (
               <React.Fragment>
                 {loading && <Loading />}
-                  {error && <Error error={error} />}
-                  
-                  {data && (
-                    <div style={{ color: 'red', margin: '20px 0' }}>
-                      {data.subscribeUser.success}
-                    </div>
-                  )}
+                {error && <Error error={error} />}
+
+                {data && (
+                  <div style={{ color: 'red', margin: '20px 0' }}>
+                    {data.subscribeUser.success}
+                  </div>
+                )}
                 <form onSubmit={e => this.handleSubmit(e, subscribeUser)}>
                   <FormGroup>
                     <Input

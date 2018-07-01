@@ -9,11 +9,13 @@ import { ErrorBoundary } from 'containers/ErrorBoundary';
 // components
 import { Footer } from 'components/Footer';
 import { Header } from 'components/Header';
+import { ScrollToTop } from 'components/ScrollToTop';
 import { SubFooter } from 'components/SubFooter';
 import { TopBar } from 'components/TopBar';
 
 // pages
 import { ArticleListPage } from 'pages/ArticleListPage';
+import { DiscoveriesPage } from 'pages/DiscoveriesPage';
 import { DonatePage } from 'pages/DonatePage';
 import { EventsPage } from 'pages/EventsPage';
 import { HomePage } from 'pages/HomePage';
@@ -25,28 +27,20 @@ import { ServiceListPage } from 'pages/ServiceListPage';
 import { SingleArticle } from 'pages/SingleArticle';
 import { SingleServicePage } from 'pages/SingleServicePage';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { ScrollToTop } from 'components/ScrollToTop';
+import './assets/scss/bootstrap.scss';
+
 import 'style/scss/application.scss';
 import { API_URL } from './constants';
 
 const client = new ApolloClient({
   uri: API_URL,
-  request: async operation => {
-    const token = await localStorage.getItem('token');
-    operation.setContext({
-      headers: {
-        authorization: token,
-      },
-    });
-  },
 });
 
 render(
   <ApolloProvider client={client}>
     <BrowserRouter>
-      <ScrollToTop>
-        <ErrorBoundary>
+      <ErrorBoundary>
+        <ScrollToTop>
           <React.Fragment>
             <TopBar />
             <Header />
@@ -63,6 +57,7 @@ render(
                 path="/services/:slug"
                 component={SingleServicePage}
               />
+              <Route exact path="/discoveries" component={DiscoveriesPage} />
               <Route exact path="/events" component={EventsPage} />
               <Route exact path="/jewish" component={JewishPage} />
               <Route exact path="/donate" component={DonatePage} />
@@ -71,8 +66,8 @@ render(
             <Footer />
             <SubFooter />
           </React.Fragment>
-        </ErrorBoundary>
-      </ScrollToTop>
+        </ScrollToTop>
+      </ErrorBoundary>
     </BrowserRouter>
   </ApolloProvider>,
   document.getElementById('root'),

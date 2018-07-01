@@ -7,7 +7,8 @@ input[type='text'],
 input[type='password'],
 input[type='number'],
 select,
-textarea {
+textarea,
+button {
   outline: none;
   &:hover {
     outline: none;

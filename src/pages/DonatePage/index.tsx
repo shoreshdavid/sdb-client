@@ -3,15 +3,12 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Col, Container } from 'reactstrap';
 
-const donateLink =
-  'http://www.mcssl.com/SecureCart/ViewCart.aspx?mid=2C37E45F-149B-4853-9879-DC5AA7B39A34&sctoken=438e6301091e4bd09f6e7dbbd2e8d32a&bhjs=1&bhqs=1';
-
 export const DonatePage = () => (
   <React.Fragment>
-    <Container fluid className="donate-page">
+    <Container fluid className="padding-50">
       <Col sm="12" lg={{ size: 8, offset: 2 }}>
-        <div style={{ textAlign: 'center', marginBottom: 50, marginTop: 50 }}>
-          <i className="donate-child-icon fa fa-child" />
+        <div className="donate-child-icon">
+          <i className=" fa fa-child" />
         </div>
         <p style={{ textAlign: 'center', fontSize: 20 }}>
           We appreciate your donation. Out of all funds that we receive each
@@ -78,7 +75,10 @@ export const DonatePage = () => (
             <Link to="http://www.jewishjewels.org/">Jewish Jewels</Link>
           </li>
         </ul>
-        <Link to={donateLink} target="_blank" rel="noopener noreferrer">
+        <Link
+          to="http://www.mcssl.com/SecureCart/ViewCart.aspx?mid=2C37E45F-149B-4853-9879-DC5AA7B39A34&sctoken=438e6301091e4bd09f6e7dbbd2e8d32a&bhjs=1&bhqs=1"
+          target="_blank"
+        >
           <Button block color="primary">
             Donate Now
           </Button>

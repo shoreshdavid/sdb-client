@@ -13,12 +13,16 @@ export class Accordion extends React.Component<any, any> {
     return (
       <div>
         <Button
-          color="primary"
+          color="secondary"
           block
           onClick={this.toggle}
           className="accordion-button"
         >
-          <i className={`icon-primary fas fa-${this.state.collapse ? 'minus' : 'plus'}`} />{' '}
+          <i
+            className={`icon-primary fas fa-${
+              this.state.collapse ? 'minus' : 'plus'
+            }`}
+          />{' '}
           <span>{heading}</span>
         </Button>
         <Collapse isOpen={this.state.collapse}>

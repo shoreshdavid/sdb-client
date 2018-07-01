@@ -1,18 +1,30 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+import {
+  Button,
+  Card,
+  CardBody,
+  CardFooter,
+  CardImg,
+  CardSubtitle,
+  CardText,
+  CardTitle,
+} from 'reactstrap';
 
 export const Product = ({ product }) => {
   return (
-    <div className="col-md-3">
-      <div className="product-card">
-        <Link to={product.storeLink} target="_blank">
-          <img src={product.featuredImage} alt={product.name} />
-          <div className="details">
-            <p className="title">{product.name}</p>
-            <p>${product.price}</p>
-          </div>
-        </Link>
-      </div>
-    </div>
+    <Card>
+      <CardImg src={product.featuredImage} alt={product.name} />
+      <Link to={product.storeLink} target="_blank">
+        <CardBody className="card-block">
+          <CardTitle>{product.name}</CardTitle>
+          <CardSubtitle>${product.price}</CardSubtitle>
+          <CardText>{product.description}</CardText>
+        </CardBody>
+        <CardFooter>
+          <Button>Purchase</Button>
+        </CardFooter>
+      </Link>
+    </Card>
   );
 };

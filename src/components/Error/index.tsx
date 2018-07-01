@@ -1,13 +1,12 @@
 import * as React from 'react';
+import { Alert } from 'reactstrap';
 
 interface IProps {
-  error: Object;
+  error: any;
 }
 
-export const Error = ({ error }: IProps) => {
-  return (
-    <div>
-      Error: <span style={{ color: 'red' }}>{error}</span>
-    </div>
-  );
-};
+export const Error = ({ error }: IProps) => (
+  <div>
+    <Alert color="danger">Error: {error}</Alert>
+  </div>
+);
