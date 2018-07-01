@@ -15,53 +15,81 @@ const query = gql`
       title
       slug
       featuredImage
+      videoUri
       content
       createdAt
+      category
     }
   }
 `;
 
-export const ServiceListPage = () => {
-  return (
-    <React.Fragment>
-      <Container fluid>
-        <Row className="padding-50">
-          <Col lg="3">
-            <ListGroup>
-              {tabData.map(tab => (
-                <ListGroupItem
-                  key={tab.id}
-                  action
-                  tag="a"
-                  style={{ marginBottom: 10 }}
-                >
-                  {tab.title}
-                </ListGroupItem>
-              ))}
-            </ListGroup>
-          </Col>
-          <Col>
-            <Row>
-              <Query query={query}>
-                {({ loading, error, data }) => {
-                  if (loading) {
-                    return <Loading />;
-                  }
-                  if (error) {
-                    return <Error error={error} />;
-                  }
-                  return data.services.map(service => (
-                    <Col lg="4" key={service.slug}>
-                      <Service service={service} />
-                    </Col>
-                  ));
-                }}
-              </Query>
-            </Row>
-          </Col>
-        </Row>
-      </Container>
-      <EmailBanner />
-    </React.Fragment>
-  );
-};
+export class ServiceListPage extends React.Component<any, any> {
+  public state = {
+    category: 'weekly-teachings',
+  };
+
+  public toggleFilter = category => {
+    this.setState({
+      category: category,
+    });
+  }
+  public render() {
+    console.log(this.state.category);
+    return (
+      <React.Fragment>
+        <Container fluid>
+          <Row className="padding-50">
+            <Col lg="3">
+              <ListGroup>
+                {tabData.map(tab => (
+                  <ListGroupItem
+                    key={tab.category}
+                    action
+                    tag="button"
+                    style={{ marginBottom: 10, cursor: 'pointer' }}
+                    active={this.state.category === tab.category}
+                    onClick={() => this.toggleFilter(tab.category)}
+                  >
+                    {tab.title}
+                  </ListGroupItem>
+                ))}
+              </ListGroup>
+            </Col>
+            <Col>
+              <Row>
+                <Query query={query}>
+                  {({ loading, error, data }) => {
+                    if (loading) {
+                      return <Loading />;
+                    }
+                    if (error) {
+                      return <Error error={error} />;
+                    }
+
+                    const filteredService = data.services.filter(s => {
+                      return (
+                        s.category.toLowerCase() ===
+                        this.state.category.toLowerCase()
+                      );
+                    });
+
+                    return filteredService.length ? (
+                      filteredService.map(service => (
+                          <Col lg="4" key={service.slug}>
+                            <Service service={service} />
+                          </Col>
+                        ))
+                    ) : (
+                      <div>No results in {this.state.category}</div>
+                    );
+                  }}
+                </Query>
+              </Row>
+            </Col>
+          </Row>
+        </Container>
+        <EmailBanner />
+      </React.Fragment>
+    );
+  }
+}
