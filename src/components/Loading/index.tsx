@@ -1,9 +1,14 @@
 import * as React from 'react';
 
-export const Loading = () => {
-  return (
-    <div>
-      <h1 className="text-center">Loading</h1>
-    </div>
-  );
-};
+export const Loading = () => (
+  <div className="lds-roller">
+    <div />
+    <div />
+    <div />
+    <div />
+    <div />
+    <div />
+    <div />
+    <div />
+  </div>
+);
