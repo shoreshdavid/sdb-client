@@ -14,7 +14,7 @@
     letter-spacing: 0px;
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     &:hover {
-      color: $white;
+      color: $white !important;
     }
   }
   i {

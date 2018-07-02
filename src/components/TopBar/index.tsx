@@ -18,8 +18,24 @@ export const TopBar = () => {
             Fridays @ 7:30PM
           </Badge>
         </Link>
+
+        {/*  */}
+        <div>
+          <a href="#">
+            <i className="fa fa-home" />
+            445 Lithia Pinecrest Rd. Brandon, FL 33511
+          </a>
+        </div>
+
+        <div>
+          <a href="mailto:rabbi@1messiah.org">
+            <i className="fa fa-envelope" />
+            rabbi@1messiah.org
+          </a>
+        </div>
+
+        {/*  */}
       </span>
-      {/* <div className="clearfix" /> */}
       <span className="topbar-right">
         <Link
           to="https://www.facebook.com/shoreshdavidbrandon/"
