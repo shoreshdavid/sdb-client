@@ -7,13 +7,14 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { ErrorBoundary } from 'containers/ErrorBoundary';
 
 // components
-import { Footer } from 'components/Footer';
 import { Header } from 'components/Header';
 import { ScrollToTop } from 'components/ScrollToTop';
+import { StickyEmail } from 'components/StickyEmail';
 import { SubFooter } from 'components/SubFooter';
 import { TopBar } from 'components/TopBar';
 
 // pages
+import { SharedPDF } from 'components/SharedPDF';
 import { ArticleListPage } from 'pages/ArticleListPage';
 import { DiscoveriesPage } from 'pages/DiscoveriesPage';
 import { DonatePage } from 'pages/DonatePage';
@@ -41,31 +42,26 @@ render(
     <BrowserRouter>
       <ErrorBoundary>
         <ScrollToTop>
-          <React.Fragment>
-            <TopBar />
-            <Header />
+          <TopBar />
+          <Header />
 
-            <Switch>
-              <Route exact path="/" component={HomePage} />
-              <Route exact path="/live" component={LiveStreamPage} />
-              <Route exact path="/articles" component={ArticleListPage} />
-              <Route exact path="/articles/:slug" component={SingleArticle} />
-              <Route exact path="/store" component={ProductListPage} />
-              <Route exact path="/services" component={ServiceListPage} />
-              <Route
-                exact
-                path="/services/:slug"
-                component={SingleServicePage}
-              />
-              <Route exact path="/discoveries" component={DiscoveriesPage} />
-              <Route exact path="/events" component={EventsPage} />
-              <Route exact path="/jewish" component={JewishPage} />
-              <Route exact path="/donate" component={DonatePage} />
-              <Route component={NotFoundPage} />
-            </Switch>
-            <Footer />
-            <SubFooter />
-          </React.Fragment>
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/live" component={LiveStreamPage} />
+            <Route exact path="/articles" component={ArticleListPage} />
+            <Route exact path="/articles/:slug" component={SingleArticle} />
+            <Route exact path="/store" component={ProductListPage} />
+            <Route exact path="/services" component={ServiceListPage} />
+            <Route exact path="/services/:slug.pdf" component={SharedPDF} />
+            <Route exact path="/services/:slug" component={SingleServicePage} />
+            <Route exact path="/discoveries" component={DiscoveriesPage} />
+            <Route exact path="/events" component={EventsPage} />
+            <Route exact path="/jewish" component={JewishPage} />
+            <Route exact path="/donate" component={DonatePage} />
+            <Route component={NotFoundPage} />
+          </Switch>
+          <StickyEmail />
+          <SubFooter />
         </ScrollToTop>
       </ErrorBoundary>
     </BrowserRouter>
