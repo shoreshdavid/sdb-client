@@ -1,8 +1,23 @@
+import { Error } from 'components/Error';
+import { Loading } from 'components/Loading';
+import gql from 'graphql-tag';
 import * as React from 'react';
+import { Query } from 'react-apollo';
 import { Link } from 'react-router-dom';
 import { Col, Container, Row } from 'reactstrap';
 import { Button } from 'reactstrap';
-import { jewishData } from './data';
+
+const query = gql`
+  {
+    jewishes {
+      id
+      title
+      description
+      link
+      featuredImage
+    }
+  }
+`;
 
 const JewishCard = ({ image, title, body, link }) => {
   const shrinkTitle = title.substring(0, 32) + '...';
@@ -26,20 +41,34 @@ const JewishCard = ({ image, title, body, link }) => {
 export const JewishPage = () => {
   return (
     <Container fluid className="padding-50">
-      <div className="jewish-page">
-        <Row>
-          {jewishData.map(data => (
-            <Col sm="12" lg="4" key={data.id}>
-              <JewishCard
-                image={data.image}
-                title={data.title}
-                body={data.body}
-                link={data.link}
-              />
-            </Col>
-          ))}
-        </Row>
-      </div>
+      <Query query={query}>
+        {({ loading, error, data }) => {
+          if (loading) {
+            return <Loading />;
+          }
+          if (error) {
+            return <Error error={error} />;
+          }
+
+          const { jewishes } = data;
+          return (
+            <div className="jewish-page">
+              <Row>
+                {jewishes.map(jewish => (
+                  <Col sm="12" lg="4" key={data.id}>
+                    <JewishCard
+                      image={jewish.featuredImage}
+                      title={jewish.title}
+                      body={jewish.description}
+                      link={jewish.link}
+                    />
+                  </Col>
+                ))}
+              </Row>
+            </div>
+          );
+        }}
+      </Query>
     </Container>
   );
 };
