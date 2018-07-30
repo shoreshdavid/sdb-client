@@ -6,15 +6,21 @@ input,
 input[type='text'],
 input[type='password'],
 input[type='number'],
+input[type='button'],
 select,
 textarea,
-button {
+button,
+a,
+.btn {
   outline: none;
   &:hover {
-    outline: none;
+    outline: none !important;
   }
   &:focus {
-    outline: none;
+    outline: none !important;
+  }
+  &:active {
+    outline: none !important;
   }
 }
 
@@ -39,4 +45,8 @@ iframe {
 img {
   max-width: 100%;
   max-height: 100%;
+}
+
+.btn-primary {
+  color: #fff !important;
 }

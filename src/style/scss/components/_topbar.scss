@@ -3,7 +3,7 @@
   flex: 1;
   flex-direction: row;
   flex-wrap: wrap;
-  // justify-content: center;
+  justify-content: center;
   align-items: center;
   background-color: $brand-orange;
   padding: 15px;
@@ -47,20 +47,41 @@
 @media only screen and (max-width: 800px) {
   .topbar {
     padding: 10px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
     i {
       margin-right: 5px;
     }
+    div {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-content: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .topbar-right {
+      display: flex;
+      flex: 1;
+      justify-content: flex-end;
+      align-items: flex-end;
+      flex-direction: row;
+    }
   }
 
-  .topbar-left {
-    align-items: center;
-    justify-content: center !important;
-    margin-left: 0;
-  }
+  // .topbar-left {
+  //   align-items: center;
+  //   justify-content: center !important;
+  //   margin-left: 0;
+  // }
 
-  .topbar-right {
-    align-items: center;
-    justify-content: center !important;
-    margin-right: 0;
-  }
+  // .topbar-right {
+  //   align-items: center;
+  //   justify-content: center !important;
+  //   margin-right: 0;
+  // }
 }

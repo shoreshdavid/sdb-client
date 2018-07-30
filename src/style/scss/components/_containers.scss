@@ -2,7 +2,7 @@
   @include padding-container(100px);
   background-color: $white;
   h3 {
-    color: $black;
+    color: #333c4e;
     font-weight: 700;
   }
   p {
@@ -11,23 +11,38 @@
     line-height: 32px;
     margin-top: 20px;
   }
-  a {
+  iframe {
+    margin-top: -90px;
+  }
+  .intro-container-address {
     font-weight: 700;
     font-size: 24px;
   }
-  iframe {
-    margin-top: -90px;
+  .brand-hr {
+    width: 140px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .intro-container-break {
+    margin-top: 30px !important;
+    margin-bottom: 50px !important;
   }
 }
 
 .accordion-container {
   @include padding-container(100px);
   background-color: #f7f5f4;
+  h3 {
+    color: #333c4e;
+  }
 }
 
 .rabbi-container {
   @include padding-container(100px);
   background-color: $white;
+  h3 {
+    color: #333c4e;
+  }
   p {
     text-align: justify;
   }
@@ -38,12 +53,16 @@
   background-color: #f7f5f4;
   h3 {
     font-weight: 700;
+    color: #333c4e;
   }
 }
 
 .map-container {
   @include padding-container(100px);
   background-color: $white;
+  h3 {
+    color: #333c4e;
+  }
 }
 
 .live-stream-container {

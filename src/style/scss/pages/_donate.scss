@@ -9,8 +9,10 @@
     color: $primary-color;
     text-align: center;
     font-size: 18px;
+    text-decoration: underline !important;
     &:hover {
       text-decoration: underline !important;
+      color: $brand-charcoal !important;
     }
   }
 }

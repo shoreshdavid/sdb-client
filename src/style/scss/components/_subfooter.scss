@@ -6,6 +6,7 @@
   background-color: #ffffff;
   border-top: 1px solid #e7e4e2;
   padding: 20px;
+  position: relative;
 }
 
 .subfooter-copyright {
@@ -30,6 +31,10 @@
 @media only screen and (max-width: 800px) {
   .subfooter-copyright,
   .subfooter-social {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     align-content: center;
     justify-content: center;
