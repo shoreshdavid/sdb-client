@@ -1,4 +1,3 @@
-import { EmailBanner } from 'components/EmailBanner';
 import { Error } from 'components/Error';
 import { Loading } from 'components/Loading';
 import { Product } from 'components/Product';
@@ -44,7 +43,6 @@ export const ProductListPage = () => {
           </Query>
         </div>
       </Container>
-      <EmailBanner />
     </React.Fragment>
   );
 };

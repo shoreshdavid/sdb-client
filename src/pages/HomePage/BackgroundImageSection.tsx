@@ -8,7 +8,7 @@ export const BackgroundImageSection = () => {
       <div>
         <h1 className="parallax-header">A Joyous Messianic Synagogue</h1>
         <h3 className="parallax-subheader">
-          Where both Jews and Gentiles worship in loving harmony.
+          Where both Jews and non-Jews worship in loving harmony.
         </h3>
         <div className="parallax-button-group">
           <Link to="/events">

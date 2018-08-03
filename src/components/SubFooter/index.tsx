@@ -5,23 +5,40 @@ export const SubFooter = () => {
   return (
     <footer className="subfooter clearfix">
       <div className="subfooter-copyright">
-        <div>2018 © Shoresh David of Brandon | All Rights Reserved </div>
+        <div>
+          2018 © Shoresh David of Brandon | All Rights Reserved |{' '}
+          <Link to="/privacy-policy">Privacy Policy</Link>
+        </div>
       </div>
 
       <div className="subfooter-social">
-        <Link
-          to="https://www.facebook.com/shoreshdavidbrandon/"
+        {/* Facebook */}
+        <a href="https://www.facebook.com/shoreshdavidbrandon/" target="_blank">
+          <i className="fab fa-facebook" />
+        </a>
+        {/* Twitter */}
+        <a href="https://twitter.com/shoreshdavidbrandon" target="_blank">
+          <i className="fab fa-twitter" />
+        </a>
+        {/* Twitter */}
+        <a href="https://instagram.com/shoreshdavidbrandon" target="_blank">
+          <i className="fab fa-instagram" />
+        </a>
+        {/* YouTube */}
+        <a
+          href="https://www.youtube.com/channel/UC1yOFqmKt-1ruHxg6fBiAFg?view_as=subscriber"
           target="_blank"
-        >
-          <i className="fab fa-facebook-f" />
-        </Link>
-        <Link
-          to="https://www.youtube.com/channel/UC1yOFqmKt-1ruHxg6fBiAFg?view_as=subscriber"
-          target="_blank"
-          rel="noopener noreferrer"
         >
           <i className="fab fa-youtube" />
-        </Link>
+        </a>
+        {/* Medium */}
+        <a href="https://medium.com/@shoreshdavidbrandon" target="_blank">
+          <i className="fab fa-medium" />
+        </a>
+        {/* Anchor */}
+        <a href="https://anchor.fm/shoreshdavidbrandon" target="_blank">
+          <i className="fas fa-anchor" />
+        </a>
       </div>
     </footer>
   );

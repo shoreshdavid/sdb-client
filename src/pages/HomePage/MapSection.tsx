@@ -1,8 +1,8 @@
+/* tslint:disable */
 import * as React from 'react';
-import { Container } from 'reactstrap';
 
 export const MapSection = () => (
-  <Container fluid className="map-container">
+  <div className="container-fluid map-container">
     <h3>Address to SDB</h3>
     <hr />
     <iframe
@@ -11,5 +11,5 @@ export const MapSection = () => (
       className="map-embed"
       allowFullScreen
     />
-  </Container>
+  </div>
 );

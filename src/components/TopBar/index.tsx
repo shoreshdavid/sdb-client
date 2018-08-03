@@ -4,12 +4,28 @@ import { Badge } from 'reactstrap';
 
 export const TopBar = () => {
   return (
-    <div className="topbar clearfix">
-      <span className="topbar-left">
+    <div className="topbar">
+      <div className="topbar-left">
+        {/* Phone */}
         <a href="tel:8138581328">
           <i className="fa fa-phone" />{' '}
           <span className="topbar-text">813.699.4155</span>
         </a>
+        {/* Email */}
+        <div>
+          <a href="mailto:rabbi@1messiah.org">
+            <i className="fa fa-envelope" />
+            rabbi@1messiah.org
+          </a>
+        </div>
+        {/* Address */}
+        <div>
+          <a href="#">
+            <i className="fa fa-home" />
+            445 Lithia Pinecrest Rd. Brandon, FL 33511
+          </a>
+        </div>
+        {/* Live Stream */}
         <Link to="/live">
           <i className="fa fa-video" /> Watch Us Live<Badge
             color="danger"
@@ -18,25 +34,8 @@ export const TopBar = () => {
             Fridays @ 7:30PM
           </Badge>
         </Link>
-
-        {/*  */}
-        <div>
-          <a href="#">
-            <i className="fa fa-home" />
-            445 Lithia Pinecrest Rd. Brandon, FL 33511
-          </a>
-        </div>
-
-        <div>
-          <a href="mailto:rabbi@1messiah.org">
-            <i className="fa fa-envelope" />
-            rabbi@1messiah.org
-          </a>
-        </div>
-
-        {/*  */}
-      </span>
-      <span className="topbar-right">
+      </div>
+      <div className="topbar-right">
         <Link
           to="https://www.facebook.com/shoreshdavidbrandon/"
           target="_blank"
@@ -49,8 +48,7 @@ export const TopBar = () => {
         >
           <i className="fab fa-youtube" />
         </Link>
-      </span>
-      {/* <div className="clearfix" /> */}
+      </div>
     </div>
   );
 };

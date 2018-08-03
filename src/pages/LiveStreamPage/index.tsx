@@ -1,7 +1,10 @@
-import { EmailBanner } from 'components/EmailBanner';
 import * as React from 'react';
-import { Link } from 'react-router-dom';
 import { Button, Col, Container, Row } from 'reactstrap';
+
+const baseUrl = 'http://www.mcssl.com/SecureCart/SecureCart.aspx';
+const restUrl =
+  '?mid=2C37E45F-149B-4853-9879-DC5AA7B39A34&pid=0938126f8abc48f5b748f0113768436a';
+const fullUrl = baseUrl + restUrl;
 
 export const LiveStreamPage = () => {
   return (
@@ -21,33 +24,24 @@ export const LiveStreamPage = () => {
             </div>
           </Row>
           <Row>
-            <Col xs="12" sm="12" lg="6">
+            <Col>
               <iframe
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                  overflow: 'hidden',
-                  borderStyle: 'none',
-                }}
                 src="http://embed.truthcasting.com/video/100002774/161796"
                 scrolling="no"
-                // width={640}
-                // height={360}
                 allowFullScreen
+                className="livestream-iframe"
               />
             </Col>
-            <Col xs="12" sm="12" lg="6">
-              <h2 className="center">Donate Now!</h2>
-              <Link to="/donations">
+            <Col lg="6">
+              <a href={fullUrl} target="_blank">
                 <Button color="primary" block>
-                  Click Here
+                  Please Donate Here Now – Thank You!
                 </Button>
-              </Link>
+              </a>
             </Col>
           </Row>
         </div>
       </Container>
-      <EmailBanner />
     </React.Fragment>
   );
 };

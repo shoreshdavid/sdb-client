@@ -1,4 +1,3 @@
-import { EmailBanner } from 'components/EmailBanner';
 import { AboutSection } from 'pages/HomePage/AboutSection';
 import { BackgroundImageSection } from 'pages/HomePage/BackgroundImageSection';
 import { IntroSection } from 'pages/HomePage/IntroSection';
@@ -18,7 +17,6 @@ export const HomePage = props => {
       <RabbiSection />
       <AboutSection />
       <MapSection />
-      <EmailBanner />
     </React.Fragment>
   );
 };

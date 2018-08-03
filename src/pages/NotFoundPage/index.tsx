@@ -35,7 +35,7 @@ export const NotFoundPage = () => {
             </li>
             <li>
               <i className="fa fa-angle-right" />
-              <Link to="/sdb/god-bible">DISCOVERIES</Link>
+              <Link to="/discoveries">DISCOVERIES</Link>
             </li>
             <li>
               <i className="fa fa-angle-right" />
@@ -47,7 +47,7 @@ export const NotFoundPage = () => {
             </li>
             <li>
               <i className="fa fa-angle-right" />
-              <Link to="/donations">DONATE</Link>
+              <Link to="/donate">DONATE</Link>
             </li>
           </ul>
         </Col>

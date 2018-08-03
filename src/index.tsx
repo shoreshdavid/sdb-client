@@ -14,8 +14,7 @@ import { SubFooter } from 'components/SubFooter';
 import { TopBar } from 'components/TopBar';
 
 // pages
-import { SharedPDF } from 'components/SharedPDF';
-import { ArticleListPage } from 'pages/ArticleListPage';
+// import { ArticleListPage } from 'pages/ArticleListPage';
 import { DiscoveriesPage } from 'pages/DiscoveriesPage';
 import { DonatePage } from 'pages/DonatePage';
 import { EventsPage } from 'pages/EventsPage';
@@ -23,12 +22,13 @@ import { HomePage } from 'pages/HomePage';
 import { JewishPage } from 'pages/JewishPage';
 import { LiveStreamPage } from 'pages/LiveStreamPage';
 import { NotFoundPage } from 'pages/NotFoundPage';
+import { PrivacyPolicyPage } from 'pages/PrivacyPolicyPage';
 import { ProductListPage } from 'pages/ProductListPage';
 import { ServiceListPage } from 'pages/ServiceListPage';
-import { SingleArticle } from 'pages/SingleArticle';
 import { SingleServicePage } from 'pages/SingleServicePage';
 
 import './assets/scss/bootstrap.scss';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 import 'style/scss/application.scss';
 import { API_URL } from './constants';
@@ -48,16 +48,16 @@ render(
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/live" component={LiveStreamPage} />
-            <Route exact path="/articles" component={ArticleListPage} />
-            <Route exact path="/articles/:slug" component={SingleArticle} />
+            {/* <Route exact path="/articles" component={ArticleListPage} /> */}
+            {/* <Route exact path="/articles/:slug" component={SingleArticle} /> */}
             <Route exact path="/store" component={ProductListPage} />
             <Route exact path="/services" component={ServiceListPage} />
-            <Route exact path="/services/:slug.pdf" component={SharedPDF} />
             <Route exact path="/services/:slug" component={SingleServicePage} />
             <Route exact path="/discoveries" component={DiscoveriesPage} />
             <Route exact path="/events" component={EventsPage} />
             <Route exact path="/jewish" component={JewishPage} />
             <Route exact path="/donate" component={DonatePage} />
+            <Route exact path="/privacy-policy" component={PrivacyPolicyPage} />
             <Route component={NotFoundPage} />
           </Switch>
           <StickyEmail />

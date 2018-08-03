@@ -55,7 +55,7 @@ export const JewishPage = () => {
             <div className="jewish-page">
               <Row>
                 {jewishes.map(jewish => (
-                  <Col sm="12" lg="4" key={data.id}>
+                  <Col sm="12" lg="4" key={jewish.id}>
                     <JewishCard
                       image={jewish.featuredImage}
                       title={jewish.title}
