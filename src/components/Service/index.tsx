@@ -1,34 +1,12 @@
-import { VideoModal } from 'components/VideoModal';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
 
 export class Service extends React.Component<any, any> {
-  public state = {
-    showModal: false,
-  };
-
-  public toggleVideoClick = event => {
-    this.setState({
-      showModal: !this.state.showModal,
-    });
-  }
-
-  public renderVideoModal = () => (
-    <div>
-      <VideoModal modal={true} />
-    </div>
-  )
-
   public render() {
     const { service } = this.props;
     return (
       <React.Fragment>
-        <VideoModal
-          modal={this.state.showModal}
-          video={service.videoUri}
-          toggle={e => this.toggleVideoClick(e)}
-        />
         <div className="card-item">
           <div className="card-thumb">
             <a>
@@ -38,7 +16,6 @@ export class Service extends React.Component<any, any> {
                 alt={service.slug}
               />
             </a>
-            {/* {service.isSeries} */}
             <Button color="primary" size="sm" className="card-series">
               Series
             </Button>
@@ -59,9 +36,27 @@ export class Service extends React.Component<any, any> {
             </div>
             <div className="card-links">
               <div>
-                <i className="fa fa-video" onClick={this.toggleVideoClick} />
-                <i className="fa fa-microphone" />
-                <i className="fa fa-receipt" />
+                <a
+                  href="https://youtube.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fa fa-video" />
+                </a>
+                <a
+                  href="https://anchor.fm/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fa fa-microphone" />
+                </a>
+                <a
+                  href="https://medium.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fa fa-receipt" />
+                </a>
               </div>
               <Link to={`/services/${service.slug}`} className="card-read-more">
                 <i className="fa fa-arrow-right" />
