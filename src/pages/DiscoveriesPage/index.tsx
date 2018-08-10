@@ -1,9 +1,7 @@
 import { Article } from 'components/Article';
-import { EmailBanner } from 'components/EmailBanner';
 import { Error } from 'components/Error';
 import { Loading } from 'components/Loading';
 import gql from 'graphql-tag';
-import { discoveryTabs } from 'pages/DiscoveriesPage/tabs';
 import * as React from 'react';
 import { Query } from 'react-apollo';
 import { Col, Container, ListGroup, ListGroupItem, Row } from 'reactstrap';
@@ -16,12 +14,18 @@ const query = gql`
       featuredImage
       category
     }
+    tabs {
+      id
+      label
+      slug
+      page
+    }
   }
 `;
 
 export class DiscoveriesPage extends React.Component<any, any> {
   public state = {
-    category: 'usa-jerusalem-and-president-trump',
+    category: 'witness-real-stories',
   };
   public toggleFilter = category => {
     this.setState({
@@ -30,59 +34,76 @@ export class DiscoveriesPage extends React.Component<any, any> {
   }
   public render() {
     return (
-      <React.Fragment>
-        <Container fluid>
-          <Row className="padding-50">
-            <Col lg="3">
-              <ListGroup>
-                {discoveryTabs.map(tab => (
-                  <ListGroupItem
-                    key={tab.category}
-                    action
-                    tag="button"
-                    style={{ marginBottom: 10 }}
-                    active={this.state.category === tab.category}
-                    onClick={() => this.toggleFilter(tab.category)}
-                  >
-                    {tab.title}
-                  </ListGroupItem>
-                ))}
-              </ListGroup>
-            </Col>
-            <Col>
-              <Row>
-                <Query query={query}>
-                  {({ loading, error, data }) => {
-                    if (loading) {
-                      return <Loading />;
-                    }
-                    if (error) {
-                      return <Error error={error} />;
-                    }
+      <Query query={query}>
+        {({ loading, error, data }) => {
+          if (loading) {
+            return <Loading />;
+          }
+          if (error) {
+            return <Error error={error} />;
+          }
 
-                    const filteredArticles = data.articles.filter(a => {
-                      return (
-                        a.category.toLowerCase() === this.state.category.toLowerCase()
-                      );
-                    });
+          // Tabs Filter/Map
 
-                    return filteredArticles.length ? (
-                      filteredArticles.map(article => (
-                        <Col lg="4" key={article.slug}>
-                          <Article article={article} />
-                        </Col>
-                      ))
-                    ) : (
-                      <div>No results in {this.state.category}</div>
-                    );
+          const filteredTabs = data.tabs.filter(tab => {
+            return tab.page.toLowerCase() === 'discoveries';
+          });
+          const renderTabs = filteredTabs.length ? (
+            filteredTabs.map(tab => {
+              console.log('skhbkdsbdskbskbskbsbdbk: ', tab);
+              return (
+                <ListGroupItem
+                  key={tab.id}
+                  action
+                  tag="button"
+                  style={{
+                    marginBottom: 10,
+                    cursor: 'pointer',
+                    fontWeight: 700,
                   }}
-                </Query>
+                  active={this.state.category === tab.slug}
+                  onClick={() => this.toggleFilter(tab.slug)}
+                >
+                  {tab.label}
+                </ListGroupItem>
+              );
+            })
+          ) : (
+            <div>No results here</div>
+          );
+
+          // Articles Filter/Map
+
+          const filteredArticles = data.articles.filter(a => {
+            return (
+              a.category.toLowerCase() === this.state.category.toLowerCase()
+            );
+          });
+
+          const renderArticles = filteredArticles.length ? (
+            filteredArticles.map(article => (
+              <Col xs="12" sm="12" md="4" lg="3" xl="4" key={article.slug}>
+                <Article article={article} />
+              </Col>
+            ))
+          ) : (
+            <div>No results in {this.state.category}</div>
+          );
+
+          return (
+            <Container fluid>
+              <Row className="padding-50">
+                <Col xs="12" sm="12" lg="4" xl="3">
+                  <ListGroup>{renderTabs}</ListGroup>
+                </Col>
+                <Col>
+                  <Row>{renderArticles}</Row>
+                </Col>
               </Row>
-            </Col>
-          </Row>
-        </Container>
-        <EmailBanner />
-      </React.Fragment>
+            </Container>
+          );
+        }}
+      </Query>
     );
   }
 }
