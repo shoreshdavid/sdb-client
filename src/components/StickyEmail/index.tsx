@@ -8,7 +8,7 @@ import { Button, Collapse, FormGroup, Input } from 'reactstrap';
 const mutation = gql`
   mutation subscribeUser($email: String!, $name: String!) {
     subscribeUser(data: { email: $email, name: $name }) {
-      success
+      message
     }
   }
 `;
@@ -31,13 +31,7 @@ export class StickyEmail extends React.Component {
         email: e.target.email.value,
         name: e.target.name.value,
       },
-    })
-      .then(data => {
-        console.log(data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    });
   }
   public render() {
     return (
@@ -66,7 +60,7 @@ export class StickyEmail extends React.Component {
                           overflow: 'hidden',
                         }}
                       >
-                        {data.subscribeUser.success}
+                        {data.subscribeUser.message}
                       </p>
                     )}
                     <form onSubmit={e => this.handleSubmit(e, subscribeUser)}>

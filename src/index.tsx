@@ -1,9 +1,11 @@
 import ApolloClient from 'apollo-boost';
+// import { onError } from 'apollo-link-error';
 import * as React from 'react';
 import { ApolloProvider } from 'react-apollo';
 import { render } from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+// Containers
 import { ErrorBoundary } from 'containers/ErrorBoundary';
 
 // components
@@ -14,7 +16,6 @@ import { SubFooter } from 'components/SubFooter';
 import { TopBar } from 'components/TopBar';
 
 // pages
-// import { ArticleListPage } from 'pages/ArticleListPage';
 import { DiscoveriesPage } from 'pages/DiscoveriesPage';
 import { DonatePage } from 'pages/DonatePage';
 import { EventsPage } from 'pages/EventsPage';
@@ -33,8 +34,22 @@ import './assets/scss/bootstrap.scss';
 import 'style/scss/application.scss';
 import { API_URL } from './constants';
 
+// const link: ApolloLink = onError(({ graphQLErrors, networkError }) => {
+//   if (graphQLErrors) {
+//     graphQLErrors.map(({ message, locations, path }) =>
+//       console.log(
+//         `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`,
+//       ),
+//     );
+//   }
+//   if (networkError) {
+//     console.log(`[Network error]: ${networkError}`);
+//   }
+// });
+
 const client = new ApolloClient({
   uri: API_URL,
+  // link,
 });
 
 render(
