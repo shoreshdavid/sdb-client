@@ -39,12 +39,14 @@ export const TopBar = () => {
         <Link
           to="https://www.facebook.com/shoreshdavidbrandon/"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <i className="fab fa-facebook-f" />
         </Link>
         <Link
           to="https://www.youtube.com/channel/UC1yOFqmKt-1ruHxg6fBiAFg"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <i className="fab fa-youtube" />
         </Link>
