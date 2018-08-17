@@ -1,23 +1,10 @@
+import Axios from 'axios';
 import { Error } from 'components/Error';
 import { Loading } from 'components/Loading';
-import gql from 'graphql-tag';
 import * as React from 'react';
-import { Query } from 'react-apollo';
-import { Link } from 'react-router-dom';
 import { Col, Container, Row } from 'reactstrap';
 import { Button } from 'reactstrap';
-
-const query = gql`
-  {
-    jewishes {
-      id
-      title
-      description
-      link
-      featuredImage
-    }
-  }
-`;
+import { API_URL } from '../../constants';
 
 const JewishCard = ({ image, title, body, link }) => {
   const shrinkTitle = title.substring(0, 32) + '...';
@@ -25,50 +12,58 @@ const JewishCard = ({ image, title, body, link }) => {
   return (
     <div className="jewish-card center">
       <img src={image} alt={title} />
-      <Link to={link}>
+      <a href={link} target="_blank" rel="noopener noreferrer">
         <h3 className="jewish-card-title">{shrinkTitle}</h3>
-      </Link>
+      </a>
       <p>{shrinkBody}</p>
-      <Link to={link} target="_blank">
+      <a href={link} target="_blank" rel="noopener noreferrer">
         <Button block color="primary">
           Read More
         </Button>
-      </Link>
+      </a>
     </div>
   );
 };
 
-export const JewishPage = () => {
-  return (
-    <Container fluid className="padding-50">
-      <Query query={query}>
-        {({ loading, error, data }) => {
-          if (loading) {
-            return <Loading />;
-          }
-          if (error) {
-            return <Error error={error} />;
-          }
-
-          const { jewishes } = data;
-          return (
-            <div className="jewish-page">
-              <Row>
-                {jewishes.map(jewish => (
-                  <Col sm="12" lg="4" key={jewish.id}>
-                    <JewishCard
-                      image={jewish.featuredImage}
-                      title={jewish.title}
-                      body={jewish.description}
-                      link={jewish.link}
-                    />
-                  </Col>
-                ))}
-              </Row>
-            </div>
-          );
-        }}
-      </Query>
-    </Container>
-  );
-};
+export class JewishPage extends React.Component<any, any> {
+  public state = {
+    loading: true,
+    error: null,
+    jewish: [] as any,
+  };
+  public componentDidMount() {
+    Axios.get(`${API_URL}/jewish`)
+      .then(res => {
+        this.setState({ loading: false, jewish: res.data.data });
+      })
+      .catch(err => {
+        this.setState({ loading: false, error: err });
+      });
+  }
+  public render() {
+    if (this.state.loading) {
+      return <Loading />;
+    }
+    if (this.state.error) {
+      return <Error error={this.state.error} />;
+    }
+    return (
+      <Container fluid className="padding-50">
+        <div className="jewish-page">
+          <Row>
+            {this.state.jewish.map(j => (
+              <Col sm="12" lg="4" key={j._id}>
+                <JewishCard
+                  image={j.featuredImage}
+                  title={j.title}
+                  body={j.description}
+                  link={j.link}
+                />
+              </Col>
+            ))}
+          </Row>
+        </div>
+      </Container>
+    );
+  }
+}
