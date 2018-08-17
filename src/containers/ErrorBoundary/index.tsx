@@ -2,13 +2,21 @@ import { Error } from 'components/Error';
 import * as Raven from 'raven-js';
 import * as React from 'react';
 
+interface Props {
+  error?: string;
+}
+
+interface State {
+  hasError: boolean;
+}
+
 const logException = (ex, context) => {
   Raven.captureException(ex, {
     extra: context,
   });
 };
 
-export class ErrorBoundary extends React.Component<any, any> {
+export class ErrorBoundary extends React.Component<Props, State> {
   public state = { hasError: false };
 
   public componentDidCatch(error: any, info: any) {
