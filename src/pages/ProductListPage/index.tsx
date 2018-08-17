@@ -1,48 +1,51 @@
+import Axios from 'axios';
 import { Error } from 'components/Error';
 import { Loading } from 'components/Loading';
 import { Product } from 'components/Product';
-import gql from 'graphql-tag';
 import * as React from 'react';
-import { Query } from 'react-apollo';
-import { Col, Container } from 'reactstrap';
+import { Col, Container, Row } from 'reactstrap';
+import { API_URL } from '../../constants';
 
-const ProductsQuery = gql`
-  {
-    products {
-      id
-      slug
-      name
-      price
-      featuredImage
-      storeLink
-      description
-    }
+export class ProductListPage extends React.Component<any, any> {
+  public state = {
+    loading: true,
+    error: null,
+    products: [] as any,
+  };
+
+  public componentDidMount() {
+    Axios.get(`${API_URL}/products`)
+      .then(res => {
+        this.setState({
+          loading: false,
+          products: res.data.data,
+        });
+      })
+      .catch(err => {
+        console.log(err);
+        this.setState({
+          loading: false,
+          error: err,
+        });
+      });
   }
-`;
-
-export const ProductListPage = () => {
-  return (
-    <React.Fragment>
-      <Container fluid>
-        <div className="padding-50">
-          <Query query={ProductsQuery}>
-            {({ loading, error, data }) => {
-              if (loading) {
-                return <Loading />;
-              }
-              if (error) {
-                return <Error error={error} />;
-              }
-
-              return data.products.map(product => (
-                <Col lg="3" key={product.slug}>
-                  <Product product={product} />
-                </Col>
-              ));
-            }}
-          </Query>
-        </div>
+  public render() {
+    if (this.state.loading) {
+      return <Loading />;
+    }
+    if (this.state.error) {
+      return <Error error={this.state.error} />;
+    }
+    return (
+      <Container fluid className="padding-50">
+      <Row>
+          {this.state.products.map(product => (
+            <Col lg="3" key={product.slug}>
+              <Product product={product} />
+            </Col>
+          ))};
+          </Row>
       </Container>
-    </React.Fragment>
-  );
-};
+    );
+  }
+}
