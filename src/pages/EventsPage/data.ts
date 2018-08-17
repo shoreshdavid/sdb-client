@@ -1,13 +1,17 @@
+// import * as moment from 'moment';
+
 let today = new Date();
 let y = today.getFullYear();
 let m = today.getMonth();
 let d = today.getDate();
 
+// const tod = moment(today, moment.ISO_8601).toDate();
+
 export const events = [
   {
-    title: 'All Day Event',
+    title: 'Awesome one',
     allDay: false,
-    start: new Date(y, m, 1),
+    start: today,
     end: new Date(y, m, 1),
     color: 'default',
   },

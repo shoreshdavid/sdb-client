@@ -7,7 +7,7 @@ import { RabbiSection } from 'pages/HomePage/RabbiSection';
 import { StatementSection } from 'pages/HomePage/StatementSection';
 import * as React from 'react';
 
-export const HomePage = props => {
+export const HomePage = () => {
   return (
     <React.Fragment>
       <BackgroundImageSection />
