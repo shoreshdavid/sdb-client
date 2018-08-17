@@ -1,7 +1,4 @@
-import ApolloClient from 'apollo-boost';
-// import { onError } from 'apollo-link-error';
 import * as React from 'react';
-import { ApolloProvider } from 'react-apollo';
 import { render } from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
@@ -26,60 +23,43 @@ import { NotFoundPage } from 'pages/NotFoundPage';
 import { PrivacyPolicyPage } from 'pages/PrivacyPolicyPage';
 import { ProductListPage } from 'pages/ProductListPage';
 import { ServiceListPage } from 'pages/ServiceListPage';
+import { SingleDiscoveryPage } from 'pages/SingleDiscoveryPage';
 import { SingleServicePage } from 'pages/SingleServicePage';
 
 import './assets/scss/bootstrap.scss';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 import 'style/scss/application.scss';
-import { API_URL } from './constants';
-
-// const link: ApolloLink = onError(({ graphQLErrors, networkError }) => {
-//   if (graphQLErrors) {
-//     graphQLErrors.map(({ message, locations, path }) =>
-//       console.log(
-//         `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`,
-//       ),
-//     );
-//   }
-//   if (networkError) {
-//     console.log(`[Network error]: ${networkError}`);
-//   }
-// });
-
-const client = new ApolloClient({
-  uri: API_URL,
-  // link,
-});
 
 render(
-  <ApolloProvider client={client}>
-    <BrowserRouter>
-      <ErrorBoundary>
-        <ScrollToTop>
-          <TopBar />
-          <Header />
+  <BrowserRouter>
+    <ErrorBoundary>
+      <ScrollToTop>
+        <TopBar />
+        <Header />
 
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/live" component={LiveStreamPage} />
-            {/* <Route exact path="/articles" component={ArticleListPage} /> */}
-            {/* <Route exact path="/articles/:slug" component={SingleArticle} /> */}
-            <Route exact path="/store" component={ProductListPage} />
-            <Route exact path="/services" component={ServiceListPage} />
-            <Route exact path="/services/:slug" component={SingleServicePage} />
-            <Route exact path="/discoveries" component={DiscoveriesPage} />
-            <Route exact path="/events" component={EventsPage} />
-            <Route exact path="/jewish" component={JewishPage} />
-            <Route exact path="/donate" component={DonatePage} />
-            <Route exact path="/privacy-policy" component={PrivacyPolicyPage} />
-            <Route component={NotFoundPage} />
-          </Switch>
-          <StickyEmail />
-          <SubFooter />
-        </ScrollToTop>
-      </ErrorBoundary>
-    </BrowserRouter>
-  </ApolloProvider>,
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/live" component={LiveStreamPage} />
+          <Route exact path="/store" component={ProductListPage} />
+          <Route exact path="/services" component={ServiceListPage} />
+          <Route exact path="/services/:slug" component={SingleServicePage} />
+          <Route exact path="/discoveries" component={DiscoveriesPage} />
+          <Route
+            exact
+            path="/discoveries/:slug"
+            component={SingleDiscoveryPage}
+          />
+          <Route exact path="/events" component={EventsPage} />
+          <Route exact path="/jewish" component={JewishPage} />
+          <Route exact path="/donate" component={DonatePage} />
+          <Route exact path="/privacy-policy" component={PrivacyPolicyPage} />
+          <Route component={NotFoundPage} />
+        </Switch>
+        <StickyEmail />
+        <SubFooter />
+      </ScrollToTop>
+    </ErrorBoundary>
+  </BrowserRouter>,
   document.getElementById('root'),
 );
