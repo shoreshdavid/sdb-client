@@ -1,4 +1,4 @@
-import * as moment from 'moment';
+// import * as moment from 'moment';
 import * as React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import {
@@ -10,7 +10,7 @@ import {
   NavItem,
 } from 'reactstrap';
 
-export class Header extends React.Component {
+export class Header extends React.Component<any, any> {
   public state = {
     isOpen: false,
   };
@@ -22,20 +22,20 @@ export class Header extends React.Component {
   }
 
   public render() {
-    const today = moment();
-    const otherDate = moment().isoWeekday(5);
-    const isToday = today.toString() === otherDate.toString();
+    // const today = moment();
+    // const otherDate = moment().isoWeekday(5);
+    // const isToday = today.toString() === otherDate.toString();
 
-    const renderStreamBadge = isToday ? (
-      <Badge style={{ backgroundColor: '#aa4ee0' }}>LIVE NOW!</Badge>
-    ) : null;
+    // const renderStreamBadge = isToday ? (
+    //   <Badge style={{ backgroundColor: '#aa4ee0' }}>LIVE NOW!</Badge>
+    // ) : null;
 
     return (
       <div className="sdb-nav">
         <Navbar light expand="md">
           <Link to="/">
             <img
-              src="https://tikvaproductions.com/wp-content/uploads/2018/02/page-1-tree.png"
+              src="http://tikvaproductions.com/wp-content/uploads/2018/02/page-1-tree.png"
               alt="Shoresh David Brandon logo"
             />
           </Link>
@@ -54,7 +54,7 @@ export class Header extends React.Component {
               </NavItem>
               <NavItem>
                 <NavLink exact to="/live" activeClassName="navlink-active">
-                  Streaming {renderStreamBadge}
+                  Streaming
                 </NavLink>
               </NavItem>
               <NavItem>
