@@ -13,30 +13,51 @@ export const SubFooter = () => {
 
       <div className="subfooter-social">
         {/* Facebook */}
-        <a href="https://www.facebook.com/shoreshdavidbrandon/" target="_blank">
+        <a
+          href="https://www.facebook.com/shoreshdavidbrandon/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <i className="fab fa-facebook" />
         </a>
         {/* Twitter */}
-        <a href="https://twitter.com/shoreshdavidbrandon" target="_blank">
+        <a
+          href="https://twitter.com/shoreshdavid"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <i className="fab fa-twitter" />
         </a>
         {/* Twitter */}
-        <a href="https://instagram.com/shoreshdavidbrandon" target="_blank">
+        <a
+          href="https://instagram.com/shoreshdavidbrandon"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <i className="fab fa-instagram" />
         </a>
         {/* YouTube */}
         <a
           href="https://www.youtube.com/channel/UC1yOFqmKt-1ruHxg6fBiAFg?view_as=subscriber"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <i className="fab fa-youtube" />
         </a>
         {/* Medium */}
-        <a href="https://medium.com/@shoreshdavidbrandon" target="_blank">
+        <a
+          href="https://medium.com/@shoreshdavidbrandon"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <i className="fab fa-medium" />
         </a>
         {/* Anchor */}
-        <a href="https://anchor.fm/shoreshdavidbrandon" target="_blank">
+        <a
+          href="https://anchor.fm/shoresh-david-brandon"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <i className="fas fa-anchor" />
         </a>
       </div>
