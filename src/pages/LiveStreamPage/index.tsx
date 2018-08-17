@@ -8,40 +8,44 @@ const fullUrl = baseUrl + restUrl;
 
 export const LiveStreamPage = () => {
   return (
-    <React.Fragment>
-      <Container fluid>
-        <div className="padding-100">
-          <Row>
-            <div className="live-meta">
-              <img
-                src="https://tikvaproductions.com/wp-content/uploads/2018/02/page-1-tree.png"
-                alt=""
-                className="img-fluid"
-              />
+    <Container fluid>
+      <div className="padding-100">
+        <Row>
+          <div className="live-meta">
+            <img
+              src="https://tikvaproductions.com/wp-content/uploads/2018/02/page-1-tree.png"
+              alt=""
+              className="img-fluid"
+            />
 
-              <h2>Watch Us LIVE!</h2>
-              <p>Every Friday at 7:30pm est.</p>
-            </div>
-          </Row>
-          <Row>
-            <Col>
-              <iframe
-                src="http://embed.truthcasting.com/video/100002774/161796"
-                scrolling="no"
-                allowFullScreen
-                className="livestream-iframe"
-              />
-            </Col>
-            <Col lg="6">
-              <a href={fullUrl} target="_blank">
-                <Button color="primary" block>
-                  Please Donate Here Now – Thank You!
-                </Button>
-              </a>
-            </Col>
-          </Row>
-        </div>
-      </Container>
-    </React.Fragment>
+            <h2>Watch Us LIVE!</h2>
+            <p>Every Friday at 7:30pm est.</p>
+          </div>
+        </Row>
+        <Row>
+          <Col lg="8">
+            <iframe
+              id="ls_embed_1533942514"
+              src="https://livestream.com/accounts/27606702/events/8324228/player?width=640&height=360&enableInfoAndActivity=true&autoPlay=true&mute=false"
+              // width="800"
+              // height="600"
+              style={{ height: 460 }}
+              frameBorder="0"
+              scrolling="no"
+              allowFullScreen
+            >
+              {' '}
+            </iframe>
+          </Col>
+          <Col lg="4">
+            <a href={fullUrl} target="_blank" rel="noopener noreferrer">
+              <Button color="primary" block>
+                Please Donate Here Now – Thank You!
+              </Button>
+            </a>
+          </Col>
+        </Row>
+      </div>
+    </Container>
   );
 };
