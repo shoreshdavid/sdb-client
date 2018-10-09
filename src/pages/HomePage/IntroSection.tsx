@@ -9,7 +9,7 @@ export const IntroSection = () => {
         <Col lg={{ size: 8, offset: 2 }} xl={{ size: 6, offset: 3 }}>
           <div style={{ textAlign: 'center', marginBottom: 80 }}>
             <img
-              src="https://tikvaproductions.com/wp-content/uploads/2018/02/page-1-tree.png"
+              src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/home-sdb-logo.png"
               width={82}
               height={89}
               alt="Shoresh David Brandon Logo"

@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
 import {
   Button,
   Card,
@@ -15,7 +14,7 @@ export const Product = ({ product }) => {
   return (
     <Card>
       <CardImg src={product.featuredImage} alt={product.name} />
-      <Link to={product.storeLink} target="_blank" rel="noopener noreferrer">
+      <a href={product.storeLink} target="_blank" rel="noopener noreferrer">
         <CardBody className="card-block">
           <CardTitle>{product.name}</CardTitle>
           <CardSubtitle>${product.price}</CardSubtitle>
@@ -24,7 +23,7 @@ export const Product = ({ product }) => {
         <CardFooter>
           <Button>Purchase</Button>
         </CardFooter>
-      </Link>
+      </a>
     </Card>
   );
 };

@@ -1,76 +1,73 @@
-import { EmailBanner } from 'components/EmailBanner';
-import { Error } from 'components/Error';
+import Axios from 'axios';
 import { Loading } from 'components/Loading';
-import gql from 'graphql-tag';
+import { Part } from 'components/Part';
 import * as React from 'react';
-import { Query } from 'react-apollo';
-// import ReactHtmlParser from 'react-html-parser';
-// import { Link } from 'react-router-dom';
 import { Col, Container, Row } from 'reactstrap';
+import { API_URL } from '../../constants';
 
-const query = gql`
-  query service($slug: String!) {
-    service(where: { slug: $slug }) {
-      title
-      category
-      content
-      videoUri
-      featuredImage
-    }
+export class SingleServicePage extends React.Component<any, any> {
+  public state = {
+    loading: true,
+    error: null,
+    service: {} as any,
+  };
+
+  public componentDidMount() {
+    Axios.get(`${API_URL}/services/${this.props.match.params.slug}`)
+      .then(res => this.setState({ loading: false, service: res.data.data }))
+      .catch(err =>
+        this.setState({ loading: false, error: err.response.statusText }),
+      );
   }
-`;
 
-export const SingleServicePage = ({ match }) => (
-  <React.Fragment>
-    <Container fluid className="service-container">
-      <Query query={query} variables={{ slug: match.params.slug }}>
-        {({ loading, error, data }) => {
-          if (loading) {
-            return <Loading />;
-          }
-          if (error) {
-            return <Error error={error} />;
-          }
+  public render() {
+    const { service } = this.state;
 
-          const { service } = data;
-
-          return (
-            <Row>
-              <Col xs="12" sm="12" lg="4">
-                <img src={service.featuredImage} alt="" />
-                <h4
-                  style={{
-                    color: '#000',
-                    padding: '30px 0 10px 0',
-                    fontSize: 18,
-                  }}
-                >
-                  {service.title}
-                </h4>
-                <p style={{ fontSize: 14 }}>
-                  Last night's amazing worship service. Check it out!
-                </p>
-                {/* <p>{service.description}</p> */}
-              </Col>
-              <Col xs="12" sm="10" lg="8">
-                <div className="series-item">
-                  <div className="series-item-detail">
-                    <div className="series-item-title">{service.title}</div>
-                    <div className="series-item-links">
-                      <div>
-                        <i className="fa fa-video" />
-                        <i className="fa fa-microphone" />
-                        <i className="fa fa-receipt" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Col>
-            </Row>
-          );
-        }}
-      </Query>
-    </Container>
-    <EmailBanner />
-  </React.Fragment>
-);
+    if (this.state.loading) {
+      return <Loading />;
+    }
+    if (this.state.error) {
+      return (
+        <div>
+          We are sorry. Something went wrong. Please refresh and try again.
+          Server message: {this.state.error}
+        </div>
+      );
+    }
+    const renderParts = service.parts.length ? (
+      service.parts.map(part => (
+        <Part
+          key={part._id}
+          title={part.title}
+          mediumLink={part.mediumLink}
+          anchorLink={part.anchorLink}
+          youtubeLink={part.youtubeLink}
+        />
+      ))
+    ) : (
+      <div>No Parts...</div>
+    );
+    return (
+      <Container fluid className="service-container">
+        <Row>
+          <Col xs="12" sm="12" lg="4">
+            <img src={this.state.service.featuredImage} alt="" />
+            <h4
+              style={{
+                color: '#000',
+                padding: '30px 0 10px 0',
+                fontSize: 18,
+              }}
+            >
+              {this.state.service.title}
+            </h4>
+            <p style={{ fontSize: 14 }}>{this.state.service.description}</p>
+          </Col>
+          <Col xs="12" sm="10" lg="8">
+            {renderParts}
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
+}

@@ -6,7 +6,7 @@ export class Accordion extends React.Component<any, any> {
 
   public toggle = () => {
     this.setState({ collapse: !this.state.collapse });
-  }
+  };
 
   public render() {
     const { text, heading } = this.props;

@@ -1,6 +1,9 @@
 .series-item {
   border-bottom: 1px solid #dfe4eb;
   margin-bottom: 25px;
+  .series-item-links {
+    color: grey;
+  }
 }
 
 .series-item-detail {

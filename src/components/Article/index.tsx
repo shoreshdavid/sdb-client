@@ -18,7 +18,7 @@ export const Article = ({ article }) => (
         <div className="card-speaker">
           <span className="cate">
             <Link
-              to="/articles/"
+              to={`/discoveries/${article.slug}`}
               title={`View all posts in ${article.category}`}
             >
               {article.category}
@@ -26,7 +26,7 @@ export const Article = ({ article }) => (
           </span>
         </div>
         <h4 className="card-title">
-          <Link to={`/articles/${article.slug}`} className="sv-custom-color">
+          <Link to={`/discoveries/${article.slug}`} className="sv-custom-color">
             {article.title}
           </Link>
         </h4>
@@ -40,7 +40,7 @@ export const Article = ({ article }) => (
           <i className="fa fa-microphone" />
           <i className="fa fa-receipt" />
         </div>
-        <Link to={`/articles/${article.slug}`} className="card-read-more">
+        <Link to={`/discoveries/${article.slug}`} className="card-read-more">
           <i className="fa fa-arrow-right" />
         </Link>
       </div>

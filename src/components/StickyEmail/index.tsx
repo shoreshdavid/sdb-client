@@ -9,13 +9,13 @@ export class StickyEmail extends React.Component {
     name: '',
     email: '',
   };
-  
+
   public toggle = () => {
     this.setState({
       open: !this.state.open,
     });
   }
-  
+
   public handleSubmit = e => {
     e.preventDefault();
     Axios.post(`${API_URL}/sub`, {
@@ -33,7 +33,7 @@ export class StickyEmail extends React.Component {
         <Collapse isOpen={this.state.open}>
           <div className="sticky-email-open">
             <img
-              src="https://s3.amazonaws.com/sdb-images/sticky-email.png"
+              src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/free-book-aweber-cta.png"
               alt="free ebooks"
             />
             <div className="sticky-email-body">

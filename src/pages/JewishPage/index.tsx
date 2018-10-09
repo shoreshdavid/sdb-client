@@ -47,6 +47,17 @@ export class JewishPage extends React.Component<any, any> {
     if (this.state.error) {
       return <Error error={this.state.error} />;
     }
+    if (!this.state.jewish.length) {
+      return (
+        <Container fluid className="padding-50">
+          <Row>
+            <Col lg="3">
+              <h1>No Jewish items yet.</h1>
+            </Col>
+          </Row>
+        </Container>
+      );
+    }
     return (
       <Container fluid className="padding-50">
         <div className="jewish-page">

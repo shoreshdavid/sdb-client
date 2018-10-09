@@ -1,52 +1,32 @@
-import * as moment from 'moment';
+/* tslint:disable */
 import * as React from 'react';
-import BigCalendar from 'react-big-calendar';
 import { Col, Container, Row } from 'reactstrap';
-import { events } from './data';
-import './styles.scss';
 
-BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment));
-
-export class EventsPage extends React.Component {
-  public state = {
-    events: events,
-    alert: null,
-  };
-  public selectedEvent = event => {
-    alert(event.title);
-  }
-  public eventColors = (event: any, start: any, end: any, isSelected: any) => {
-    let backgroundColor = 'event-';
-    event.color
-      ? (backgroundColor = backgroundColor + event.color)
-      : (backgroundColor = backgroundColor + 'default');
-    return {
-      className: backgroundColor,
-    };
-  }
+export class EventsPage extends React.Component<any, any> {
+  // public state = {
+  //   loading: true,
+  //   error: null,
+  //   events: [],
+  //   alert: null,
+  // };
   public render() {
     return (
       <Container fluid className="padding-50">
-          <Row>
-            <Col
-              xs={12}
-              md={10}
-              xl={{ size: 6, offset: 3 }}
-              className="ml-auto mr-auto"
-            >
-              <BigCalendar
-                style={{ height: '100vh' }}
-                selectable
-                events={this.state.events}
-                defaultView="month"
-                scrollToTime={new Date(1970, 1, 1, 6)}
-                defaultDate={new Date()}
-                // onSelectEvent={event => this.selectedEvent(event)}
-                // onSelectSlot={slotInfo => this.addNewEventAlert(slotInfo)}
-                eventPropGetter={this.eventColors}
-              />
-            </Col>
-          </Row>
+        <Row>
+          <Col
+            xs={12}
+            md={10}
+            xl={{ size: 6, offset: 3 }}
+            className="ml-auto mr-auto"
+          >
+            <iframe
+              src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;ctz=America%2FNew_York"
+              style={{ width: 800, height: 600 }}
+              frameBorder="0"
+              scrolling="no"
+            />
+          </Col>
+        </Row>
       </Container>
     );
   }

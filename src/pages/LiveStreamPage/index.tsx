@@ -13,7 +13,7 @@ export const LiveStreamPage = () => {
         <Row>
           <div className="live-meta">
             <img
-              src="https://tikvaproductions.com/wp-content/uploads/2018/02/page-1-tree.png"
+              src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/home-sdb-logo.png"
               alt=""
               className="img-fluid"
             />
@@ -27,15 +27,11 @@ export const LiveStreamPage = () => {
             <iframe
               id="ls_embed_1533942514"
               src="https://livestream.com/accounts/27606702/events/8324228/player?width=640&height=360&enableInfoAndActivity=true&autoPlay=true&mute=false"
-              // width="800"
-              // height="600"
               style={{ height: 460 }}
               frameBorder="0"
               scrolling="no"
               allowFullScreen
-            >
-              {' '}
-            </iframe>
+            />
           </Col>
           <Col lg="4">
             <a href={fullUrl} target="_blank" rel="noopener noreferrer">

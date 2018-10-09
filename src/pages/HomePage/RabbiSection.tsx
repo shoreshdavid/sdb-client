@@ -8,7 +8,7 @@ export const RabbiSection = () => {
       <Col lg={{ size: 8, offset: 2 }}>
         <div className="center">
           <img
-            src="https://tikvaproductions.com/wp-content/uploads/2018/03/rabbiDonCircle.png"
+            src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/rabbi-don-circle.png"
             alt="Rabbi Don Goldstein"
             className="img-fluid"
           />

@@ -27,7 +27,6 @@ import { SingleDiscoveryPage } from 'pages/SingleDiscoveryPage';
 import { SingleServicePage } from 'pages/SingleServicePage';
 
 import './assets/scss/bootstrap.scss';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 
 import 'style/scss/application.scss';
 

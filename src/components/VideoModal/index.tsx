@@ -10,7 +10,7 @@ export class VideoModal extends React.Component<any, any> {
     this.setState({
       modal: !this.state.modal,
     });
-  }
+  };
 
   public render() {
     return (

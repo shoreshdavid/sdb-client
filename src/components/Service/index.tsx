@@ -22,11 +22,6 @@ export class Service extends React.Component<any, any> {
           </div>
           <div className="card-information">
             <div className="card-content">
-              <div className="card-speaker">
-                <span className="cate">
-                  <Link to="/services">{service.category}</Link>
-                </span>
-              </div>
               <h4 className="card-title">
                 <Link to={`/services/${service.slug}`}>{service.title}</Link>
               </h4>

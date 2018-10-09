@@ -16,6 +16,7 @@ export class ProductListPage extends React.Component<any, any> {
   public componentDidMount() {
     Axios.get(`${API_URL}/products`)
       .then(res => {
+        console.log(res);
         this.setState({
           loading: false,
           products: res.data.data,
@@ -36,15 +37,26 @@ export class ProductListPage extends React.Component<any, any> {
     if (this.state.error) {
       return <Error error={this.state.error} />;
     }
+    if (!this.state.products.length) {
+      return (
+        <Container fluid className="padding-50">
+          <Row>
+            <Col lg="3">
+              <h1>No Products yet</h1>
+            </Col>
+          </Row>
+        </Container>
+      );
+    }
     return (
       <Container fluid className="padding-50">
-      <Row>
+        <Row>
           {this.state.products.map(product => (
             <Col lg="3" key={product.slug}>
               <Product product={product} />
             </Col>
           ))};
-          </Row>
+        </Row>
       </Container>
     );
   }

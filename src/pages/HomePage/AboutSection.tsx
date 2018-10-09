@@ -7,7 +7,7 @@ export const AboutSection = () => {
       <Col lg={{ size: 8, offset: 2 }}>
         <div style={{ textAlign: 'center', marginBottom: 20 }}>
           <img
-            src="https://tikvaproductions.com/wp-content/uploads/2018/02/page-1-tree.png"
+            src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/home-sdb-logo.png"
             alt="Shoresh David Brandon Logo"
             className="img-fluid"
           />
@@ -32,7 +32,10 @@ export const AboutSection = () => {
             http://gethealedfast.com
           </a>{' '}
           for our healing teachings... and{' '}
-          <a href="https://tikvaproductions.com/wp-content/uploads/2018/04/friendbook9thPrinting.pdf">
+          <a
+            href="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/pdf/friend-book-ninth-printing.pdf"
+            target="_blank"
+          >
             <strong>click here</strong>
           </a>{' '}
           to read Rabbi Don’s worldwide best selling book for free

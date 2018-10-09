@@ -19,27 +19,33 @@ export const Part = ({
         <div className="series-item-title">{title}</div>
         <div className="series-item-links">
           <div>
-            <a
-              href={`https://${youtubeLink}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="fa fa-video" />
-            </a>
-            <a
-              href={`https://${anchorLink}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="fa fa-microphone" />
-            </a>
-            <a
-              href={`https://${mediumLink}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="fa fa-receipt" />
-            </a>
+            {youtubeLink && (
+              <a
+                href={`https://${youtubeLink}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fa fa-video" />
+              </a>
+            )}
+            {anchorLink && (
+              <a
+                href={`https://${anchorLink}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fa fa-microphone" />
+              </a>
+            )}
+            {mediumLink && (
+              <a
+                href={`https://${mediumLink}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fa fa-receipt" />
+              </a>
+            )}
           </div>
         </div>
       </div>

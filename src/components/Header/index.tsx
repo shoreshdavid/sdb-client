@@ -35,13 +35,13 @@ export class Header extends React.Component<any, any> {
         <Navbar light expand="md">
           <Link to="/">
             <img
-              src="http://tikvaproductions.com/wp-content/uploads/2018/02/page-1-tree.png"
+              src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/sdb-nav-logo.png"
               alt="Shoresh David Brandon logo"
             />
           </Link>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
+            <Nav className="ml-auto" navbar style={{marginRight: 25}}>
               <NavItem>
                 <NavLink exact to="/" activeClassName="navlink-active">
                   Home
