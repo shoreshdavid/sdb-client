@@ -8,7 +8,6 @@
     "test": "NODE_PATH=src node scripts/test.js --env=jsdom",
     "deploy": "aws --profile shoreshdavidbrandon s3 cp build s3://shoreshdavidbrandon.com --recursive",
     "prettier:tsx": "npx prettier --write 'src/**/*.tsx'",
-    "prettier:css": "npx prettier --write 'src/**/*.css'",
     "prettier:scss": "npx prettier --write 'src/**/*.scss'"
   },
   "dependencies": {
