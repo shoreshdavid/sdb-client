@@ -27,12 +27,9 @@ export class DiscoveriesPage extends React.Component<any, any> {
             articles: articleRes.data.data,
             tabs: tabRes.data.data,
           });
-          console.log(articleRes);
-          console.log(tabRes);
         }),
       )
       .catch(err => {
-        console.log(err);
         this.setState({
           loading: false,
           error: err,
@@ -54,7 +51,6 @@ export class DiscoveriesPage extends React.Component<any, any> {
       return <Error error={this.state.error} />;
     }
 
-    console.log(this.props);
     const renderTabs = this.state.tabs.map(tab => (
       <ListGroupItem
         key={tab._id}
@@ -83,12 +79,12 @@ export class DiscoveriesPage extends React.Component<any, any> {
         </Col>
       ))
     ) : (
-      <div>No results in {this.state.category}</div>
+      <div className="padding-50">No results in {this.state.category}</div>
     );
 
     return (
-      <Container fluid>
-        <Row className="padding-50">
+      <Container fluid className="padding-50">
+        <Row>
           <Col xs="12" sm="12" lg="4" xl="3">
             <ListGroup>{renderTabs}</ListGroup>
           </Col>

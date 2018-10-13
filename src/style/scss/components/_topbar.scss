@@ -72,16 +72,10 @@
       flex-direction: row;
     }
   }
+}
 
-  // .topbar-left {
-  //   align-items: center;
-  //   justify-content: center !important;
-  //   margin-left: 0;
-  // }
-
-  // .topbar-right {
-  //   align-items: center;
-  //   justify-content: center !important;
-  //   margin-right: 0;
-  // }
+@media only screen and (max-width: 800px) {
+  .topbar {
+    display: none;
+  }
 }

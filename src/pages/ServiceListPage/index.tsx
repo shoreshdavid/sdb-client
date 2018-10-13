@@ -94,8 +94,8 @@ export class ServiceListPage extends React.Component<any, any> {
     //   return <h1>No data..</h1>;
     // }
     return (
-      <Container fluid>
-        <Row className="padding-50">
+      <Container fluid className="padding-50">
+        <Row>
           <Col xs="12" sm="12" md="4" lg="3" xl="3">
             <ListGroup>{renderTabs}</ListGroup>
           </Col>

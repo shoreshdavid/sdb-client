@@ -6,21 +6,20 @@ import { Col, Container, Row } from 'reactstrap';
 import { Button } from 'reactstrap';
 import { API_URL } from '../../constants';
 
-const JewishCard = ({ image, title, body, link }) => {
-  const shrinkTitle = title.substring(0, 32) + '...';
-  const shrinkBody = body.substring(0, 116) + '...';
+const JewishCard = ({ image, title, link }) => {
   return (
     <div className="jewish-card center">
-      <img src={image} alt={title} />
-      <a href={link} target="_blank" rel="noopener noreferrer">
-        <h3 className="jewish-card-title">{shrinkTitle}</h3>
-      </a>
-      <p>{shrinkBody}</p>
-      <a href={link} target="_blank" rel="noopener noreferrer">
-        <Button block color="primary">
-          Read More
-        </Button>
-      </a>
+      <img src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/bg-image.svg" alt={title} />
+      <div className="jewish-card__body">
+        <a href={link} target="_blank" rel="noopener noreferrer">
+          <h3 className="jewish-card-title">{title}</h3>
+        </a>
+        <a href={link} target="_blank" rel="noopener noreferrer">
+          <Button block color="primary">
+            Read More
+          </Button>
+        </a>
+      </div>
     </div>
   );
 };
@@ -63,11 +62,10 @@ export class JewishPage extends React.Component<any, any> {
         <div className="jewish-page">
           <Row>
             {this.state.jewish.map(j => (
-              <Col sm="12" lg="4" key={j._id}>
+              <Col sm="12" lg="3" key={j._id}>
                 <JewishCard
                   image={j.featuredImage}
                   title={j.title}
-                  body={j.description}
                   link={j.link}
                 />
               </Col>
