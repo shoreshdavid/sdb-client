@@ -16,14 +16,12 @@ export class ProductListPage extends React.Component<any, any> {
   public componentDidMount() {
     Axios.get(`${API_URL}/products`)
       .then(res => {
-        console.log(res);
         this.setState({
           loading: false,
           products: res.data.data,
         });
       })
       .catch(err => {
-        console.log(err);
         this.setState({
           loading: false,
           error: err,
