@@ -2,12 +2,16 @@ import Axios from 'axios';
 import * as React from 'react';
 import { Button, Collapse, FormGroup, Input } from 'reactstrap';
 import { API_URL } from '../../constants';
+import { Error } from '../Error';
 
-export class StickyEmail extends React.Component {
+export class StickyEmail extends React.Component<any, any> {
   public state = {
     open: false,
     name: '',
     email: '',
+
+    data: null,
+    error: null,
   };
 
   public toggle = () => {
@@ -16,11 +20,17 @@ export class StickyEmail extends React.Component {
     });
   }
 
-  public handleSubmit = e => {
-    e.preventDefault();
-    Axios.post(`${API_URL}/sub`, {
-      email: e.target.email.value,
-      name: e.target.name.value,
+  public handleSubmit = (event) => {
+    event.preventDefault();
+    Axios.post(`${API_URL}/email`, {
+      email: this.state.email,
+      name: this.state.name,
+    })
+    .then(res => {
+      this.setState({ data: 'Registration successful!' });
+    })
+    .catch(err => {
+      this.setState({ error: err.response.data.error.message });
     });
   }
 
@@ -35,12 +45,11 @@ export class StickyEmail extends React.Component {
             <img
               src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/free-book-aweber-cta.png"
               alt="free ebooks"
-            />
+              />
             <div className="sticky-email-body">
-              {/* {this.state.loading && <Loading />}
-                {this.state.error && <Error error={this.state.error} />} */}
-
-              <form onSubmit={e => this.handleSubmit(e)}>
+              {this.state.error && <Error error={this.state.error} />}
+              {this.state.data && <div>{this.state.data}</div>}
+              <form>
                 <FormGroup>
                   <Input
                     placeholder="Name"
@@ -61,7 +70,7 @@ export class StickyEmail extends React.Component {
                     onChange={e => this.setState({ email: e.target.value })}
                   />
                 </FormGroup>
-                <Button color="primary" type="submit" block>
+                <Button color="primary" block onClick={(event) => this.handleSubmit(event)}>
                   Free Book &amp; Sermons
                 </Button>
               </form>
