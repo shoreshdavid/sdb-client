@@ -26,6 +26,8 @@ import { ServiceListPage } from 'pages/ServiceListPage';
 import { SingleDiscoveryPage } from 'pages/SingleDiscoveryPage';
 import { SingleServicePage } from 'pages/SingleServicePage';
 
+import registerServiceWorker from './registerServiceWorker';
+
 import './assets/scss/bootstrap.scss';
 
 import 'style/scss/application.scss';
@@ -62,3 +64,5 @@ render(
   </BrowserRouter>,
   document.getElementById('root'),
 );
+
+registerServiceWorker();
