@@ -3,7 +3,7 @@
     "outDir": "build",
     "module": "esnext",
     "target": "es5",
-    "lib": ["es6", "dom", "esnext.asynciterable"],
+    "lib": ["es6", "dom", "esnext.asynciterable", "es2015", "es2015.collection", "es2015.core", "esnext"],
     "sourceMap": true,
     "allowJs": false,
     "jsx": "react",
@@ -21,7 +21,7 @@
       "*": ["./*"],
       "components/*": ["src/components/*"],
       "containers/*": ["src/containers/*"],
-      "pages/*": ["src/pages/*"],
+      "pages/*": ["src/pages/*"]
     }
   },
   "exclude": [
