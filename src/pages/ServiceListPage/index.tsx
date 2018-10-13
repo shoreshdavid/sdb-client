@@ -29,13 +29,12 @@ export class ServiceListPage extends React.Component<any, any> {
           });
         }),
       )
-      .catch(err => 
+      .catch(err =>
         this.setState({
           loading: false,
           error: err.response.data.error,
-        })
+        }),
       );
-      
   }
 
   public toggleFilter = category => {

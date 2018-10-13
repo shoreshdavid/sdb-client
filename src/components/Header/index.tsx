@@ -40,7 +40,7 @@ export class Header extends React.Component<any, any> {
           </Link>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar style={{marginRight: 25}}>
+            <Nav className="ml-auto" navbar style={{ marginRight: 25 }}>
               <NavItem>
                 <NavLink exact to="/" activeClassName="navlink-active">
                   Home

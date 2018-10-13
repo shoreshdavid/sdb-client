@@ -9,7 +9,10 @@ import { API_URL } from '../../constants';
 const JewishCard = ({ image, title, link }) => {
   return (
     <div className="jewish-card center">
-      <img src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/bg-image.svg" alt={title} />
+      <img
+        src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/bg-image.svg"
+        alt={title}
+      />
       <div className="jewish-card__body">
         <a href={link} target="_blank" rel="noopener noreferrer">
           <h3 className="jewish-card-title">{title}</h3>
