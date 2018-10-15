@@ -19,7 +19,7 @@ export const DonatePage = () => (
           rel="noopener noreferrer"
         >
           <Button block color="primary">
-            Donate Now
+            Donate Here - Thank You
           </Button>
         </a>
       </div>
@@ -38,8 +38,22 @@ export const DonatePage = () => (
           If you prefer to modify or delete your personal information, or
           opt-out of our email newsletter, please email our office.
         </p>
-        Shoresh David Messianic Synagogue of Brandon – 445 Lithia Pinecrest Rd,
-        Brandon FL 33511 office@ShoreshDavidBrandon.org 813-699-4155
+        <p>
+          Shoresh David Messianic Synagogue of Brandon – 445 Lithia Pinecrest
+          Rd, Brandon FL 33511
+        </p>
+        <p>
+          <a
+            href="mailto:office@shoreshdavidbrandon.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            office@shoreshdavidbrandon.org
+          </a>
+        </p>
+        <p>
+          <a href="tel:+1-813-699-4155">813-699-4155</a>
+        </p>
       </div>
     </Col>
   </Container>

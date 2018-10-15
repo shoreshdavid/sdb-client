@@ -45,7 +45,7 @@ export class StickyEmail extends React.Component<any, any> {
             <img
               src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/free-book-aweber-cta.png"
               alt="free ebooks"
-              />
+            />
             <div className="sticky-email-body">
               {this.state.error && <Error error={this.state.error} />}
               {this.state.data && <div>{this.state.data}</div>}
