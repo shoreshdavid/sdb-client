@@ -1,29 +1,3 @@
-.donate-ul {
-  list-style: none;
-  padding: 0;
-  li {
-    margin-bottom: 25px;
-  }
-  a {
-    margin-left: 25px;
-    color: $primary-color;
-    text-align: center;
-    font-size: 18px;
-    text-decoration: underline !important;
-    &:hover {
-      text-decoration: underline !important;
-      color: $brand-charcoal !important;
-    }
-  }
-}
-
-.donate-child-icon {
-  text-align: center;
-  margin-top: 25px;
-  margin-bottom: 50px;
-  i {
-    font-size: 90px;
-    text-align: center;
-    color: $primary-color;
-  }
+.donate-page {
+  padding: 25px;
 }
