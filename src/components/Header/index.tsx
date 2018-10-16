@@ -34,7 +34,7 @@ export class Header extends React.Component<any, any> {
         <Navbar light expand="md">
           <Link to="/">
             <img
-              src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/sdb-nav-logo.png"
+              src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/header-logo.png"
               alt="Shoresh David Brandon logo"
             />
           </Link>
