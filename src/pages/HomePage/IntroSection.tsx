@@ -1,3 +1,4 @@
+import { Image } from 'components/Image';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { Col, Container, Row } from 'reactstrap';
@@ -8,7 +9,7 @@ export const IntroSection = () => {
       <Row>
         <Col lg={{ size: 8, offset: 2 }} xl={{ size: 6, offset: 3 }}>
           <div style={{ textAlign: 'center', marginBottom: 80 }}>
-            <img
+            <Image
               src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/home-sdb-logo.png"
               width={82}
               height={89}

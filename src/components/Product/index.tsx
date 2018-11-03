@@ -6,22 +6,31 @@ import {
   CardFooter,
   CardImg,
   CardSubtitle,
-  CardText,
   CardTitle,
 } from 'reactstrap';
 
 export const Product = ({ product }) => {
   return (
     <Card>
-      <CardImg src={product.featuredImage} alt={product.name} />
-      <a href={product.storeLink} target="_blank" rel="noopener noreferrer">
+      <CardImg
+        src={product.featuredImage}
+        alt={product.name}
+        style={{ height: 350 }}
+      />
+      <a
+        href={product.storeLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ color: 'black' }}
+      >
         <CardBody className="card-block">
           <CardTitle>{product.name}</CardTitle>
           <CardSubtitle>${product.price}</CardSubtitle>
-          <CardText>{product.description}</CardText>
         </CardBody>
         <CardFooter>
-          <Button>Purchase</Button>
+          <Button color="primary" block>
+            Purchase
+          </Button>
         </CardFooter>
       </a>
     </Card>

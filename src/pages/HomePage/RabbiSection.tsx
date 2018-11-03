@@ -1,3 +1,4 @@
+import { Image } from 'components/Image';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { Col, Container } from 'reactstrap';
@@ -7,7 +8,7 @@ export const RabbiSection = () => {
     <Container fluid className="rabbi-container">
       <Col lg={{ size: 8, offset: 2 }}>
         <div className="center">
-          <img
+          <Image
             src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/rabbi-don-circle.png"
             alt="Rabbi Don Goldstein"
             className="img-fluid"

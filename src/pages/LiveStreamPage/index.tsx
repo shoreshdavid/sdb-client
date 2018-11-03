@@ -1,3 +1,4 @@
+import { Image } from 'components/Image';
 import * as React from 'react';
 import { Button, Col, Container, Row } from 'reactstrap';
 
@@ -12,7 +13,7 @@ export const LiveStreamPage = () => {
       <div className="padding-100">
         <Row>
           <div className="live-meta">
-            <img
+            <Image
               src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/home-sdb-logo.png"
               alt=""
               className="img-fluid"

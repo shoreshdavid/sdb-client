@@ -1,3 +1,4 @@
+import { Image } from 'components/Image';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -5,7 +6,7 @@ export const Article = ({ article }) => (
   <div className="card-item">
     <div className="card-thumb">
       <a>
-        <img
+        <Image
           src={article.featuredImage}
           className="attachment-large size-large"
           alt={article.slug}

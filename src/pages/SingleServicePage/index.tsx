@@ -1,4 +1,5 @@
 import Axios from 'axios';
+import { Image } from 'components/Image';
 import { Loading } from 'components/Loading';
 import { Part } from 'components/Part';
 import * as React from 'react';
@@ -51,7 +52,7 @@ export class SingleServicePage extends React.Component<any, any> {
       <Container fluid className="service-container">
         <Row>
           <Col xs="12" sm="12" lg="4">
-            <img src={this.state.service.featuredImage} alt="" />
+            <Image src={this.state.service.featuredImage} alt="" />
             <h4
               style={{
                 color: '#000',

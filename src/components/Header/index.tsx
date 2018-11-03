@@ -1,3 +1,4 @@
+import { Image } from 'components/Image';
 import * as React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import {
@@ -33,7 +34,7 @@ export class Header extends React.Component<any, any> {
       <div className="sdb-nav">
         <Navbar light expand="md">
           <Link to="/">
-            <img
+            <Image
               src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/header-logo.png"
               alt="Shoresh David Brandon logo"
             />

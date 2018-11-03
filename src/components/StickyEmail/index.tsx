@@ -1,8 +1,9 @@
 import Axios from 'axios';
+import { Error } from 'components/Error';
+import { Image } from 'components/Image';
 import * as React from 'react';
 import { Button, Collapse, FormGroup, Input } from 'reactstrap';
 import { API_URL } from '../../constants';
-import { Error } from '../Error';
 
 export class StickyEmail extends React.Component<any, any> {
   public state = {
@@ -42,7 +43,7 @@ export class StickyEmail extends React.Component<any, any> {
         </Button>
         <Collapse isOpen={this.state.open}>
           <div className="sticky-email-open">
-            <img
+            <Image
               src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/free-book-aweber-cta.png"
               alt="free ebooks"
             />

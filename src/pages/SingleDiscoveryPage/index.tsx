@@ -1,4 +1,5 @@
 import Axios from 'axios';
+import { Image } from 'components/Image';
 // import { Error } from 'components/Error';
 import { Loading } from 'components/Loading';
 import { Part } from 'components/Part';
@@ -52,7 +53,7 @@ export class SingleDiscoveryPage extends React.Component<any, any> {
       <Container fluid className="service-container">
         <Row>
           <Col xs="12" sm="12" lg="4">
-            <img src={this.state.discovery.featuredImage} alt="" />
+            <Image src={this.state.discovery.featuredImage} alt="" />
             <h4
               style={{
                 color: '#000',

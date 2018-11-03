@@ -1,3 +1,4 @@
+import { Image } from 'components/Image';
 import * as React from 'react';
 import { Col, Container } from 'reactstrap';
 
@@ -6,7 +7,7 @@ export const AboutSection = () => {
     <Container fluid id="aboutSection" className="about-container">
       <Col lg={{ size: 8, offset: 2 }}>
         <div style={{ textAlign: 'center', marginBottom: 20 }}>
-          <img
+          <Image
             src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/home-sdb-logo.png"
             alt="Shoresh David Brandon Logo"
             className="img-fluid"
