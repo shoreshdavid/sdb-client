@@ -1,14 +1,14 @@
 import * as React from 'react';
 
 interface IPartProps {
-  title: string;
+  partNumber: number;
   youtubeLink: string;
   anchorLink: string;
   mediumLink: string;
 }
 
 export const Part = ({
-  title,
+  partNumber,
   youtubeLink,
   anchorLink,
   mediumLink,
@@ -16,33 +16,21 @@ export const Part = ({
   return (
     <div className="series-item">
       <div className="series-item-detail">
-        <div className="series-item-title">{title}</div>
+        <div className="series-item-title">Part {partNumber}</div>
         <div className="series-item-links">
           <div>
             {youtubeLink && (
-              <a
-                href={`https://${youtubeLink}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={youtubeLink} target="_blank" rel="noopener noreferrer">
                 <i className="fa fa-video" />
               </a>
             )}
             {anchorLink && (
-              <a
-                href={`https://${anchorLink}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={anchorLink} target="_blank" rel="noopener noreferrer">
                 <i className="fa fa-microphone" />
               </a>
             )}
             {mediumLink && (
-              <a
-                href={`https://${mediumLink}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={mediumLink} target="_blank" rel="noopener noreferrer">
                 <i className="fa fa-receipt" />
               </a>
             )}

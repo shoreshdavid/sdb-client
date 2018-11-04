@@ -21,18 +21,18 @@ export class StickyEmail extends React.Component<any, any> {
     });
   }
 
-  public handleSubmit = (event) => {
+  public handleSubmit = event => {
     event.preventDefault();
     Axios.post(`${API_URL}/email`, {
       email: this.state.email,
       name: this.state.name,
     })
-    .then(res => {
-      this.setState({ data: 'Registration successful!' });
-    })
-    .catch(err => {
-      this.setState({ error: err.response.data.error.message });
-    });
+      .then(res => {
+        this.setState({ data: 'Registration successful!' });
+      })
+      .catch(err => {
+        this.setState({ error: err.response.data.error.message });
+      });
   }
 
   public render() {
@@ -71,7 +71,11 @@ export class StickyEmail extends React.Component<any, any> {
                     onChange={e => this.setState({ email: e.target.value })}
                   />
                 </FormGroup>
-                <Button color="primary" block onClick={(event) => this.handleSubmit(event)}>
+                <Button
+                  color="primary"
+                  block
+                  onClick={event => this.handleSubmit(event)}
+                >
                   Free Book &amp; Sermons
                 </Button>
               </form>

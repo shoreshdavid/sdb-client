@@ -35,11 +35,12 @@ export class SingleServicePage extends React.Component<any, any> {
         </div>
       );
     }
+
     const renderParts = service.parts.length ? (
       service.parts.map(part => (
         <Part
           key={part._id}
-          title={part.title}
+          partNumber={part.partNumber}
           mediumLink={part.mediumLink}
           anchorLink={part.anchorLink}
           youtubeLink={part.youtubeLink}

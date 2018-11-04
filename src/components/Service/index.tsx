@@ -16,9 +16,11 @@ export const Service = ({ service }) => {
               alt={service.slug}
             />
           </a>
-          <Button color="primary" size="sm" className="card-series">
-            Series
-          </Button>
+          {service.parts.length > 1 ? (
+            <Button color="primary" size="sm" className="card-series">
+              Series
+            </Button>
+          ) : null}
         </div>
         <div className="card-information">
           <div className="card-content">
@@ -30,29 +32,31 @@ export const Service = ({ service }) => {
             </div>
           </div>
           <div className="card-links">
-            <div>
-              <a
-                href="https://youtube.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fa fa-video" />
-              </a>
-              <a
-                href="https://anchor.fm/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fa fa-microphone" />
-              </a>
-              <a
-                href="https://medium.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fa fa-receipt" />
-              </a>
-            </div>
+            {service.parts.length < 2 ? (
+              <div>
+                <a
+                  href={service.parts[0] ? service.parts[0].youtubeLink : null}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fa fa-video" />
+                </a>
+                <a
+                  href={service.parts[0] ? service.parts[0].anchorLink : null}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fa fa-microphone" />
+                </a>
+                <a
+                  href={service.parts[0] ? service.parts[0].mediumLink : null}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fa fa-receipt" />
+                </a>
+              </div>
+            ) : null}
             <Link to={`/services/${service.slug}`} className="card-read-more">
               <i className="fa fa-arrow-right" />
             </Link>

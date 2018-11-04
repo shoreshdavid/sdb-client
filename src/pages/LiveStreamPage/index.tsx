@@ -27,6 +27,7 @@ export const LiveStreamPage = () => {
           <Col lg="8">
             <iframe
               id="ls_embed_1533942514"
+              // tslint:disable-next-line
               src="https://livestream.com/accounts/27606702/events/8324228/player?width=640&height=360&enableInfoAndActivity=true&autoPlay=true&mute=false"
               style={{ height: 460 }}
               frameBorder="0"

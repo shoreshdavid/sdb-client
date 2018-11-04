@@ -40,7 +40,7 @@ export class SingleDiscoveryPage extends React.Component<any, any> {
       discovery.parts.map(part => (
         <Part
           key={part._id}
-          title={part.title}
+          partNumber={part.partNumber}
           mediumLink={part.mediumLink}
           anchorLink={part.anchorLink}
           youtubeLink={part.youtubeLink}
