@@ -12,12 +12,19 @@ export class DiscoveriesPage extends React.Component<any, any> {
     error: null,
     articles: [] as any,
     tabs: [] as any,
-    category: 'witness-real-stories',
+    category: 'evolution',
+    page: 1,
+    count: 0,
+    size: 12,
   };
 
   public componentDidMount() {
     Axios.all([
-      Axios.get(`${API_URL}/articles`),
+      Axios.get(
+        `${API_URL}/articles?category=${this.state.category}&page=${
+          this.state.page
+        }`,
+      ),
       Axios.get(`${API_URL}/tabs/discoveries`),
     ])
       .then(
@@ -26,6 +33,7 @@ export class DiscoveriesPage extends React.Component<any, any> {
             loading: false,
             articles: articleRes.data.data,
             tabs: tabRes.data.data,
+            count: articleRes.data.count,
           });
         }),
       )
@@ -37,10 +45,73 @@ export class DiscoveriesPage extends React.Component<any, any> {
       });
   }
 
-  public toggleFilter = category => {
-    this.setState({
-      category: category,
+  public toggleFilter = async category => {
+    await this.setState({
+      category,
     });
+
+    Axios.get(
+      `${API_URL}/articles?category=${this.state.category}&page=${
+        this.state.page
+      }`,
+    )
+      .then(res => {
+        this.setState({
+          articles: res.data.data,
+        });
+      })
+      .catch(error => {
+        this.setState({
+          error: error,
+        });
+      });
+  }
+
+  public handlePageRequest = () => {
+    const { category, page, size } = this.state;
+    Axios.get(
+      `${API_URL}/articles?category=${category}&page=${page}&size=${size}`,
+    )
+      .then(res => {
+        this.setState({
+          loading: false,
+          articles: res.data.data,
+        });
+      })
+      .catch(err =>
+        this.setState({
+          loading: false,
+          error: err.response.data.error,
+        }),
+      );
+  }
+
+  public goToPage = async (page: number) => {
+    await this.setState({ page });
+    this.handlePageRequest();
+  }
+
+  public handleLeftPage = async () => {
+    if (this.state.page === 1) {
+      return;
+    }
+    await this.setState(prevState => {
+      return {
+        page: prevState.page - 1,
+      };
+    });
+    this.handlePageRequest();
+  }
+  public handleRightPage = async () => {
+    if (this.state.page > Math.ceil(this.state.count / this.state.size) - 1) {
+      return;
+    }
+    await this.setState(prevState => {
+      return {
+        page: prevState.page + 1,
+      };
+    });
+    this.handlePageRequest();
   }
 
   public render() {
@@ -68,20 +139,18 @@ export class DiscoveriesPage extends React.Component<any, any> {
       </ListGroupItem>
     ));
 
-    const filteredArticles = this.state.articles.filter(
-      a => a.category.toLowerCase() === this.state.category.toLowerCase(),
-    );
+    const { count, size, page, articles } = this.state;
+    const range = (from, to, step = 1) => {
+      let i = from;
+      const range = [] as any;
 
-    const renderArticles = filteredArticles.length ? (
-      filteredArticles.map(article => (
-        <Col xs="12" sm="12" md="4" lg="3" xl="4" key={article.slug}>
-          <Article article={article} />
-        </Col>
-      ))
-    ) : (
-      <div className="padding-50">No results in {this.state.category}</div>
-    );
+      while (i <= to) {
+        range.push(i);
+        i += step;
+      }
 
+      return range;
+    };
     return (
       <Container fluid className="padding-50">
         <Row>
@@ -89,7 +158,53 @@ export class DiscoveriesPage extends React.Component<any, any> {
             <ListGroup>{renderTabs}</ListGroup>
           </Col>
           <Col>
-            <Row>{renderArticles}</Row>
+            <Row>
+              {articles.length ? (
+                articles.map(article => (
+                  <Col xs="12" sm="12" md="4" lg="3" xl="4" key={article.slug}>
+                    <Article article={article} />
+                  </Col>
+                ))
+              ) : (
+                <div className="padding-50">
+                  No results in {this.state.category}
+                </div>
+              )}
+            </Row>
+            <div
+              className="row"
+              style={{
+                textAlign: 'center',
+                margin: '0 auto',
+                justifyContent: 'center',
+              }}
+            >
+              <ul className="pagination">
+                <li className="page-item" onClick={this.handleLeftPage}>
+                  <span className="page-link">Previous</span>
+                </li>
+                {range(1, Math.ceil(count / size)).map(
+                  (selectedPage: number, i) => (
+                    <li
+                      className={`page-item ${
+                        page === selectedPage ? 'active' : null
+                      }`}
+                      key={i}
+                    >
+                      <span
+                        className="page-link"
+                        onClick={() => this.goToPage(selectedPage)}
+                      >
+                        {selectedPage}
+                      </span>
+                    </li>
+                  ),
+                )}
+                <li className="page-item" onClick={this.handleRightPage}>
+                  <span className="page-link">Next</span>
+                </li>
+              </ul>
+            </div>
           </Col>
         </Row>
       </Container>
