@@ -16,24 +16,18 @@ export const Article = ({ article }) => (
     </div>
     <div className="card-information">
       <div className="card-content">
-        <div className="card-speaker">
-          <span className="cate">
+        <h4 className="card-title">
+          {article.link ? (
+            <a href={article.link}>{article.title}</a>
+          ) : (
             <Link
               to={`/discoveries/${article.slug}`}
-              title={`View all posts in ${article.category}`}
+              className="sv-custom-color"
             >
-              {article.category}
+              {article.title}
             </Link>
-          </span>
-        </div>
-        <h4 className="card-title">
-          <Link to={`/discoveries/${article.slug}`} className="sv-custom-color">
-            {article.title}
-          </Link>
+          )}
         </h4>
-        <div className="card-description">
-          <p>{article.content}</p>
-        </div>
       </div>
       <div className="card-links">
         <div>
@@ -41,9 +35,15 @@ export const Article = ({ article }) => (
           <i className="fa fa-microphone" />
           <i className="fa fa-receipt" />
         </div>
-        <Link to={`/discoveries/${article.slug}`} className="card-read-more">
-          <i className="fa fa-arrow-right" />
-        </Link>
+        {article.link ? (
+          <a href={article.link}>
+            <i className="fa fa-arrow-right" />
+          </a>
+        ) : (
+          <Link to={`/discoveries/${article.slug}`} className="card-read-more">
+            <i className="fa fa-arrow-right" />
+          </Link>
+        )}
       </div>
     </div>
   </div>

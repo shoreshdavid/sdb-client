@@ -63,7 +63,9 @@ export class SingleServicePage extends React.Component<any, any> {
             >
               {this.state.service.title}
             </h4>
-            <p style={{ fontSize: 14 }}>{this.state.service.description}</p>
+            <p style={{ fontSize: 14 }}>
+              {this.state.service.description}
+            </p>
           </Col>
           <Col xs="12" sm="10" lg="8">
             {renderParts}

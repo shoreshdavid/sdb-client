@@ -23,7 +23,7 @@ export class DiscoveriesPage extends React.Component<any, any> {
       Axios.get(
         `${API_URL}/articles?category=${this.state.category}&page=${
           this.state.page
-        }`,
+        }&size=${this.state.size}`,
       ),
       Axios.get(`${API_URL}/tabs/discoveries`),
     ])
@@ -48,16 +48,19 @@ export class DiscoveriesPage extends React.Component<any, any> {
   public toggleFilter = async category => {
     await this.setState({
       category,
+      page: 1,
     });
-
+    
     Axios.get(
       `${API_URL}/articles?category=${this.state.category}&page=${
         this.state.page
       }`,
-    )
+      )
       .then(res => {
+        console.log(res.data);
         this.setState({
           articles: res.data.data,
+          count: res.data.count,
         });
       })
       .catch(error => {
@@ -102,6 +105,7 @@ export class DiscoveriesPage extends React.Component<any, any> {
     });
     this.handlePageRequest();
   }
+
   public handleRightPage = async () => {
     if (this.state.page > Math.ceil(this.state.count / this.state.size) - 1) {
       return;
@@ -115,6 +119,7 @@ export class DiscoveriesPage extends React.Component<any, any> {
   }
 
   public render() {
+    console.log('STATE: ', this.state);
     if (this.state.loading) {
       return <Loading />;
     }
@@ -142,15 +147,16 @@ export class DiscoveriesPage extends React.Component<any, any> {
     const { count, size, page, articles } = this.state;
     const range = (from, to, step = 1) => {
       let i = from;
-      const range = [] as any;
+      const stack = [] as any;
 
       while (i <= to) {
-        range.push(i);
+        stack.push(i);
         i += step;
       }
 
-      return range;
+      return stack;
     };
+
     return (
       <Container fluid className="padding-50">
         <Row>

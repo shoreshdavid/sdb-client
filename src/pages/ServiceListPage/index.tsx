@@ -51,13 +51,12 @@ export class ServiceListPage extends React.Component<any, any> {
     )
       .then(res => {
         this.setState({
-          loading: false,
           services: res.data.data,
+          count: res.data.count,
         });
       })
       .catch(err =>
         this.setState({
-          loading: false,
           error: err.response.data.error,
         }),
       );
@@ -79,6 +78,7 @@ export class ServiceListPage extends React.Component<any, any> {
     });
     this.handlePageRequest();
   }
+
   public handleRightPage = async () => {
     if (this.state.page > Math.ceil(this.state.count / this.state.size) - 1) {
       return;
@@ -91,10 +91,13 @@ export class ServiceListPage extends React.Component<any, any> {
     this.handlePageRequest();
   }
 
-  public toggleFilter = category => {
-    this.setState({
+  public toggleFilter = async category => {
+    await this.setState({
       category,
+      page: 1
     });
+
+    this.handlePageRequest();
   }
 
   public render() {
@@ -127,18 +130,23 @@ export class ServiceListPage extends React.Component<any, any> {
     if (this.state.error) {
       return <div>{JSON.stringify(this.state.error)}</div>;
     }
+
     const { count, size, page, services } = this.state;
+    console.log('Count: ', count);
+    console.log('Size: ', size);
+    console.log('Math.ceil(count / size): ', Math.ceil(count / size));
     const range = (from, to, step = 1) => {
       let i = from;
-      const range = [] as any;
+      const stack = [] as any;
 
       while (i <= to) {
-        range.push(i);
+        stack.push(i);
         i += step;
       }
 
-      return range;
+      return stack;
     };
+    const pageNumbers = range(1, Math.ceil(count / size));
     return (
       <Container fluid className="padding-50">
         <Row>
@@ -165,8 +173,8 @@ export class ServiceListPage extends React.Component<any, any> {
                 <li className="page-item" onClick={this.handleLeftPage}>
                   <span className="page-link">Previous</span>
                 </li>
-                {range(1, Math.ceil(count / size)).map(
-                  (selectedPage: number, i) => (
+                {pageNumbers &&
+                  pageNumbers.map((selectedPage: number, i) => (
                     <li
                       className={`page-item ${
                         page === selectedPage ? 'active' : null
@@ -180,8 +188,7 @@ export class ServiceListPage extends React.Component<any, any> {
                         {selectedPage}
                       </span>
                     </li>
-                  ),
-                )}
+                  ))}
                 <li className="page-item" onClick={this.handleRightPage}>
                   <span className="page-link">Next</span>
                 </li>
