@@ -1,10 +1,10 @@
+import { Image } from 'components/Image';
 import * as React from 'react';
 import {
   Button,
   Card,
   CardBody,
   CardFooter,
-  CardImg,
   CardSubtitle,
   CardTitle,
 } from 'reactstrap';
@@ -12,10 +12,10 @@ import {
 export const Product = ({ product }) => {
   return (
     <Card>
-      <CardImg
+      <Image
         src={product.featuredImage}
         alt={product.name}
-        style={{ height: 350 }}
+        style={{ height: 400 }}
       />
       <a
         href={product.storeLink}

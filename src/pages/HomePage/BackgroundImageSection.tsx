@@ -14,7 +14,7 @@ export const BackgroundImageSection = () => {
           <Link to="/events">
             <Button color="primary">Events</Button>
           </Link>
-          <Link to="/get-healed-fast">
+          <Link to="/services/get-healed-fast">
             <Button color="primary">Get Healed Fast</Button>
           </Link>
           <p />
