@@ -1,17 +1,19 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
-export const SubFooter = () => {
+import './footer.scss';
+
+export const Footer = () => {
   return (
-    <footer className="subfooter clearfix">
-      <div className="subfooter-copyright">
+    <footer className="footer">
+      <div className="footer-copyright">
         <div>
           2018 © Shoresh David of Brandon | All Rights Reserved |{' '}
           <Link to="/privacy-policy">Privacy Policy</Link>
         </div>
       </div>
 
-      <div className="subfooter-social">
+      <div className="footer-social">
         {/* Facebook */}
         <a
           href="https://www.facebook.com/shoreshdavidbrandon/"

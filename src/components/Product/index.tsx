@@ -1,17 +1,10 @@
-import { Image } from 'components/Image';
 import * as React from 'react';
-import {
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardSubtitle,
-  CardTitle,
-} from 'reactstrap';
+
+import { Image } from 'components/Image';
 
 export const Product = ({ product }) => {
   return (
-    <Card>
+    <div className="card">
       <Image
         src={product.featuredImage}
         alt={product.name}
@@ -23,16 +16,14 @@ export const Product = ({ product }) => {
         rel="noopener noreferrer"
         style={{ color: 'black' }}
       >
-        <CardBody className="card-block">
-          <CardTitle>{product.name}</CardTitle>
-          <CardSubtitle>${product.price}</CardSubtitle>
-        </CardBody>
-        <CardFooter>
-          <Button color="primary" block>
-            Purchase
-          </Button>
-        </CardFooter>
+        <div className="card-body card-block">
+          <h5 className="card-title">{product.name}</h5>
+          <h6 className="card-subtitle">${product.price}</h6>
+        </div>
+        <div className="card-footer">
+          <button className="btn btn-primary btn-block">Purchase</button>
+        </div>
       </a>
-    </Card>
+    </div>
   );
 };

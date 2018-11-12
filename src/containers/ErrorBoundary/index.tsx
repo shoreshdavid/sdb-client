@@ -1,5 +1,4 @@
 import { Error } from 'components/Error';
-import * as Raven from 'raven-js';
 import * as React from 'react';
 
 interface Props {
@@ -8,20 +7,14 @@ interface Props {
 
 interface State {
   hasError: boolean;
+  error: any;
 }
 
-const logException = (ex, context) => {
-  Raven.captureException(ex, {
-    extra: context,
-  });
-};
-
 export class ErrorBoundary extends React.Component<Props, State> {
-  public state = { hasError: false };
+  public state = { hasError: false, error: null };
 
   public componentDidCatch(error: any, info: any) {
-    this.setState({ hasError: true });
-    logException(error, info);
+    this.setState({ hasError: true, error });
   }
 
   public render() {

@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Container } from 'reactstrap';
 
 export const LiveStreamSection = () => {
   return (
-    <Container fluid id="#liveNow" className="live-stream-container">
+    <div id="#liveNow" className="container-fluid live-stream-container">
       <div className="mobile-hidden">
         <svg
           id="bigTriangleCandy"
@@ -29,18 +28,18 @@ export const LiveStreamSection = () => {
       </div>
       <div className="live-btn-group">
         <Link to="/live">
-          <Button color="primary">
+          <button className="btn btn-primary">
             <i className="fa fa-video" />
             LIVE Streaming every Friday @ 7:30pm (CLICK HERE)
-          </Button>
+          </button>
         </Link>
         <Link to="/services">
-          <Button color="primary">
+          <button className="btn btn-primary">
             <i className="fa fa-file-video" />
             Recordings of recent messages
-          </Button>
+          </button>
         </Link>
       </div>
-    </Container>
+    </div>
   );
 };

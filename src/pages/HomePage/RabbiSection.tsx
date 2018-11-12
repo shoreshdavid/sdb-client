@@ -1,12 +1,12 @@
-import { Image } from 'components/Image';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { Col, Container } from 'reactstrap';
+
+import { Image } from 'components/Image';
 
 export const RabbiSection = () => {
   return (
-    <Container fluid className="rabbi-container">
-      <Col lg={{ size: 8, offset: 2 }}>
+    <div className="container-fluid rabbi-container">
+      <div className="col-lg-8 offset-lg-2">
         <div className="center">
           <Image
             src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/rabbi-don-circle.png"
@@ -31,7 +31,7 @@ export const RabbiSection = () => {
         </p>
         <p>
           We invite you to come and worship the God of Abraham, Isaac and Jacob
-          with Messianic Music, Davidic Dance,Anointed Teachings, and Life
+          with Messianic Music, Davidic Dance, Anointed Teachings, and Life
           Changing Healings. We also encourage you to spend some time exploring
           our unique website.
         </p>
@@ -41,7 +41,7 @@ export const RabbiSection = () => {
           years of walking with the Messiah. So come! Discover your roots as
           they are clearly explained.
         </p>
-      </Col>
-    </Container>
+      </div>
+    </div>
   );
 };

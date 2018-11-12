@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { Button, Col, Container } from 'reactstrap';
 
 export const DonatePage = () => (
-  <Container fluid className="padding-50">
-    <Col sm="12" lg={{ size: 8, offset: 2 }} xl={{ size: 6, offset: 3 }}>
+  <div className="container-fluid padding-50">
+    <div className="col-sm-12 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
       <h1 style={{ textAlign: 'center', fontSize: 20, fontWeight: 700 }}>
         Thank You For Supporting Shoresh David Brandon
       </h1>
@@ -18,9 +17,9 @@ export const DonatePage = () => (
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button block color="primary">
+          <button className="btn btn-primary btn-block">
             Donate Here - Thank You
-          </Button>
+          </button>
         </a>
       </div>
 
@@ -55,6 +54,6 @@ export const DonatePage = () => (
           <a href="tel:+1-813-699-4155">813-699-4155</a>
         </p>
       </div>
-    </Col>
-  </Container>
+    </div>
+  </div>
 );

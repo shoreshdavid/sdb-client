@@ -1,4 +1,6 @@
-.subfooter {
+@import '../../style/scss/variables';
+
+.footer {
   display: flex;
   flex: 1;
   flex-direction: row;
@@ -7,9 +9,10 @@
   border-top: 1px solid #e7e4e2;
   padding: 20px;
   position: relative;
+  bottom: 0;
 }
 
-.subfooter-copyright {
+.footer-copyright {
   display: flex;
   flex: 1;
   justify-content: flex-start;
@@ -17,7 +20,7 @@
   margin-left: 20px;
 }
 
-.subfooter-social {
+.footer-social {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -29,11 +32,11 @@
 }
 
 @media only screen and (max-width: 800px) {
-  .subfooter-copyright,
-  .subfooter-social {
+  .footer-copyright,
+  .footer-social {
     display: flex;
     flex: 1;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     align-content: center;

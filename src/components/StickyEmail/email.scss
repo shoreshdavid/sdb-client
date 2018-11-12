@@ -1,3 +1,5 @@
+@import '../../style/scss/variables';
+
 .sticky-email {
   position: sticky;
   z-index: 1000;
@@ -29,10 +31,16 @@
   }
 }
 
+.btn-primary:focus,
+.btn-primary.focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
 @media only screen and (max-width: 800px) {
   .sticky-email {
     width: 100%;
     float: none;
   }
 }
-

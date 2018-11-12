@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import './part.scss';
+
 interface IPartProps {
   partNumber: number;
   youtubeLink: string;

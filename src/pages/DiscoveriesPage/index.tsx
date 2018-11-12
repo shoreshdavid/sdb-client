@@ -3,7 +3,6 @@ import { Article } from 'components/Article';
 import { Error } from 'components/Error';
 import { Loading } from 'components/Loading';
 import * as React from 'react';
-import { Col, Container, ListGroup, ListGroupItem, Row } from 'reactstrap';
 import { API_URL } from '../../constants';
 
 export class DiscoveriesPage extends React.Component<any, any> {
@@ -50,12 +49,12 @@ export class DiscoveriesPage extends React.Component<any, any> {
       category,
       page: 1,
     });
-    
+
     Axios.get(
       `${API_URL}/articles?category=${this.state.category}&page=${
         this.state.page
-      }`,
-      )
+      }&size=${this.state.size}`,
+    )
       .then(res => {
         console.log(res.data);
         this.setState({
@@ -127,21 +126,21 @@ export class DiscoveriesPage extends React.Component<any, any> {
       return <Error error={this.state.error} />;
     }
 
-    const renderTabs = this.state.tabs.map(tab => (
-      <ListGroupItem
-        key={tab._id}
-        action
-        tag="button"
+    const renderTabs = this.state.tabs.map((tab: any, index: number) => (
+      <li
+        className={`list-group-item-action list-group-item ${
+          tab.slug === this.state.category ? 'active' : ''
+        }`}
+        key={index}
         style={{
           marginBottom: 10,
           cursor: 'pointer',
           fontWeight: 700,
         }}
-        active={this.state.category === tab.slug}
         onClick={() => this.toggleFilter(tab.slug)}
       >
         {tab.label}
-      </ListGroupItem>
+      </li>
     ));
 
     const { count, size, page, articles } = this.state;
@@ -158,25 +157,28 @@ export class DiscoveriesPage extends React.Component<any, any> {
     };
 
     return (
-      <Container fluid className="padding-50">
-        <Row>
-          <Col xs="12" sm="12" lg="4" xl="3">
-            <ListGroup>{renderTabs}</ListGroup>
-          </Col>
-          <Col>
-            <Row>
+      <div className="container-fluid padding-50">
+        <div className="row">
+          <div className="col-xs-12 col-sm-12 col-lg-4 col-xl-3">
+            <ul className="list-group">{renderTabs}</ul>
+          </div>
+          <div className="col">
+            <div className="row">
               {articles.length ? (
                 articles.map(article => (
-                  <Col xs="12" sm="12" md="4" lg="3" xl="4" key={article.slug}>
+                  <div
+                    className="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-4"
+                    key={article.slug}
+                  >
                     <Article article={article} />
-                  </Col>
+                  </div>
                 ))
               ) : (
                 <div className="padding-50">
                   No results in {this.state.category}
                 </div>
               )}
-            </Row>
+            </div>
             <div
               className="row"
               style={{
@@ -211,9 +213,9 @@ export class DiscoveriesPage extends React.Component<any, any> {
                 </li>
               </ul>
             </div>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+      </div>
     );
   }
 }

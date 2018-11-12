@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from 'reactstrap';
 
 export const BackgroundImageSection = () => {
   return (
@@ -12,17 +11,17 @@ export const BackgroundImageSection = () => {
         </h3>
         <div className="parallax-button-group">
           <Link to="/events">
-            <Button color="primary">Events</Button>
+            <button className="btn btn-primary">Events</button>
           </Link>
           <Link to="/services/get-healed-fast">
-            <Button color="primary">Get Healed Fast</Button>
+            <button className="btn btn-primary">Get Healed Fast</button>
           </Link>
           <p />
           <Link to="/services">
-            <Button color="primary">Latest Teachings</Button>
+            <button className="btn btn-primary">Latest Teachings</button>
           </Link>
           <Link to="/events">
-            <Button color="primary">Visit Us</Button>
+            <button className="btn btn-primary">Visit Us</button>
           </Link>
         </div>
       </div>

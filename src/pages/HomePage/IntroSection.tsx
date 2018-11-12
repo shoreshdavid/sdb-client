@@ -1,13 +1,13 @@
-import { Image } from 'components/Image';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { Col, Container, Row } from 'reactstrap';
+
+import { Image } from 'components/Image';
 
 export const IntroSection = () => {
   return (
-    <Container fluid className="intro-container">
-      <Row>
-        <Col lg={{ size: 8, offset: 2 }} xl={{ size: 6, offset: 3 }}>
+    <div className="container-fluid intro-container">
+      <div>
+        <div className="col-lg-8 offset-lg-2 col-xl-6 offset-lg-3">
           <div style={{ textAlign: 'center', marginBottom: 80 }}>
             <Image
               src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/home-sdb-logo.png"
@@ -25,10 +25,10 @@ export const IntroSection = () => {
               <h3 className="center">Friday Service: 7:30pm</h3>
             </div>
           </div>
-        </Col>
-      </Row>
-      <Row>
-        <Col lg="7">
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-lg-7">
           <h3>WHY COME TO SHORESH DAVID BRANDON?</h3>
           <p>
             In our joyous Messianic Synagogue, you will meet both Jews and
@@ -52,15 +52,15 @@ export const IntroSection = () => {
             years of walking with the Messiah. So come! Discover your roots as
             they are clearly explained.
           </p>
-        </Col>
-        <Col lg="5">
+        </div>
+        <div className="col-lg-5">
           <iframe
             src="https://player.vimeo.com/video/152749226?autoplay=0&autopause=0"
             allowFullScreen
             width="100%"
           />
-        </Col>
-      </Row>
-    </Container>
+        </div>
+      </div>
+    </div>
   );
 };

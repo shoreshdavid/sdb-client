@@ -1,15 +1,16 @@
+import * as React from 'react';
+import { Fetch } from 'react-refetch-component';
+
 import { Error } from 'components/Error';
 import { Loading } from 'components/Loading';
 import { Product } from 'components/Product';
-import * as React from 'react';
-import { Fetch } from 'react-refetch-component';
-import { Col, Container, Row } from 'reactstrap';
+
 import { API_URL } from '../../constants';
 
 export const ProductListPage = () => {
   return (
-    <Container fluid className="padding-50">
-      <Row>
+    <div className="container-fluid padding-50">
+      <div className="row">
         <Fetch url={`${API_URL}/products`} method="get" lifecycle="onMount">
           {({ loading, error, data }) => {
             if (loading) {
@@ -24,13 +25,13 @@ export const ProductListPage = () => {
             }
 
             return data.data.map(product => (
-              <Col lg="3" key={product.slug}>
+              <div className="col-lg-3" key={product.slug}>
                 <Product product={product} />
-              </Col>
+              </div>
             ));
           }}
         </Fetch>
-      </Row>
-    </Container>
+      </div>
+    </div>
   );
 };

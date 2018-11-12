@@ -1,20 +1,21 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { Col, Container, Form, Input, Row } from 'reactstrap';
+
+import './not-found.scss';
 
 export const NotFoundPage = () => {
   return (
-    <Container fluid className="not-found-container clearfix">
-      <Row>
+    <div className="container-fluid padding-50">
+      <div className="row">
         <h2 className="not-found-page-title">
           Oops, This Page Could Not Be Found!{' '}
         </h2>
-      </Row>
-      <Row>
-        <Col>
+      </div>
+      <div className="row">
+        <div className="col">
           <div className="not-found-status-code">404</div>
-        </Col>
-        <Col>
+        </div>
+        <div className="col">
           <h3 className="not-found-col-heading">Helpful Links</h3>
           <ul className="not-found-links">
             <li>
@@ -50,23 +51,23 @@ export const NotFoundPage = () => {
               <Link to="/donate">DONATE</Link>
             </li>
           </ul>
-        </Col>
-        <Col>
+        </div>
+        <div className="col">
           <h3 className="not-found-col-heading">Search Our Website</h3>
           <p>Can't find what you need? Take a moment and do a search below!</p>
-          <Form>
+          <form>
             <label>Search for:</label>
-            <Input
+            <input
               type="text"
               name="search"
-              className="searchbar"
+              className="form-control searchbar"
               placeholder="Search..."
               aria-required="true"
               aria-label="Search ..."
             />
-          </Form>
-        </Col>
-      </Row>
-    </Container>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 };

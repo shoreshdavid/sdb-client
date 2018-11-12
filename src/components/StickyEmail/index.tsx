@@ -2,8 +2,9 @@ import Axios from 'axios';
 import { Error } from 'components/Error';
 import { Image } from 'components/Image';
 import * as React from 'react';
-import { Button, Collapse, FormGroup, Input } from 'reactstrap';
 import { API_URL } from '../../constants';
+
+import './email.scss';
 
 export class StickyEmail extends React.Component<any, any> {
   public state = {
@@ -16,8 +17,10 @@ export class StickyEmail extends React.Component<any, any> {
   };
 
   public toggle = () => {
-    this.setState({
-      open: !this.state.open,
+    this.setState(prev => {
+      return {
+        open: !prev.open,
+      };
     });
   }
 
@@ -38,10 +41,14 @@ export class StickyEmail extends React.Component<any, any> {
   public render() {
     return (
       <div className="sticky-email">
-        <Button onClick={this.toggle} block style={{ wordWrap: 'break-word' }}>
+        <button
+          className="btn btn-primary btn-block"
+          onClick={this.toggle}
+          style={{ wordWrap: 'break-word' }}
+        >
           Yes, I Want Rabbi Don’s <br /> Free Book &amp; Sermons
-        </Button>
-        <Collapse isOpen={this.state.open}>
+        </button>
+        <div className={`${this.state.open ? 'collapse show' : 'collapse'}`}>
           <div className="sticky-email-open">
             <Image
               src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/free-book-aweber-cta.png"
@@ -51,8 +58,9 @@ export class StickyEmail extends React.Component<any, any> {
               {this.state.error && <Error error={this.state.error} />}
               {this.state.data && <div>{this.state.data}</div>}
               <form>
-                <FormGroup>
-                  <Input
+                <div className="form-group">
+                  <input
+                    className="form-control"
                     placeholder="Name"
                     type="text"
                     autoComplete="name"
@@ -60,9 +68,10 @@ export class StickyEmail extends React.Component<any, any> {
                     value={this.state.name}
                     onChange={e => this.setState({ name: e.target.value })}
                   />
-                </FormGroup>
-                <FormGroup>
-                  <Input
+                </div>
+                <div className="form-group">
+                  <input
+                    className="form-control"
                     placeholder="Email"
                     type="text"
                     autoComplete="email"
@@ -70,18 +79,17 @@ export class StickyEmail extends React.Component<any, any> {
                     value={this.state.email}
                     onChange={e => this.setState({ email: e.target.value })}
                   />
-                </FormGroup>
-                <Button
-                  color="primary"
-                  block
+                </div>
+                <button
+                  className="btn btn-primary btn-block"
                   onClick={event => this.handleSubmit(event)}
                 >
                   Free Book &amp; Sermons
-                </Button>
+                </button>
               </form>
             </div>
           </div>
-        </Collapse>
+        </div>
       </div>
     );
   }

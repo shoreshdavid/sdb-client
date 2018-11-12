@@ -1,11 +1,10 @@
 import { Image } from 'components/Image';
 import * as React from 'react';
-import { Col, Container } from 'reactstrap';
 
 export const AboutSection = () => {
   return (
-    <Container fluid id="aboutSection" className="about-container">
-      <Col lg={{ size: 8, offset: 2 }}>
+    <div id="aboutSection" className="container-fluid about-container">
+      <div className="col-lg-8 offset-lg-2">
         <div style={{ textAlign: 'center', marginBottom: 20 }}>
           <Image
             src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/home-sdb-logo.png"
@@ -17,7 +16,7 @@ export const AboutSection = () => {
           Our Mission
         </h2>
         <hr className="brand-hr" style={{ width: 200, marginBottom: 20 }} />
-        <p className="secondary-text" style={{ textAlign: 'justify' }}>
+        <p className="secondary-text">
           Our mission can be summed up as follows. People everywhere need to be
           healed of many things, both mental/emotional and physical diseases. In
           addition, there are billions worldwide who have not accepted Yeshua as
@@ -41,7 +40,7 @@ export const AboutSection = () => {
           </a>{' '}
           to read Rabbi Don’s worldwide best selling book for free
         </p>
-      </Col>
-    </Container>
+      </div>
+    </div>
   );
 };

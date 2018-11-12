@@ -1,14 +1,13 @@
-.not-found-container {
-  // padding: 150px 0;
-  padding: 100px;
-  margin: 0 auto;
-}
-
 .not-found-page-title {
   margin-bottom: 50px;
   color: #333c4e;
   font-size: 20px;
   font-weight: 700;
+
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
 }
 
 .not-found-status-code {

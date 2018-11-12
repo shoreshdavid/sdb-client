@@ -37,7 +37,10 @@ export const Article = ({ article }) => (
         </div>
         {article.link ? (
           <a href={article.link}>
-            <i className="fa fa-arrow-right" />
+            <i
+              className="fa fa-arrow-right"
+              style={{ flex: 1, textAlign: 'right' }}
+            />
           </a>
         ) : (
           <Link to={`/discoveries/${article.slug}`} className="card-read-more">

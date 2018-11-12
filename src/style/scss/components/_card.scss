@@ -54,25 +54,10 @@
   vertical-align: baseline;
 }
 
-body,
-body p {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 28px;
-  text-transform: none;
-  color: #8f8f8f;
-}
-
 .card-links {
-  display: -webkit-flex;
-  display: -moz-box;
   display: flex;
   align-items: center;
-  -webkit-align-items: center;
   justify-content: space-between;
-  -webkit-justify-content: space-between;
   margin-top: 30px;
   padding: 15px 30px;
   border-top: 1px solid #dfe4eb;

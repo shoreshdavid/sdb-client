@@ -3,7 +3,6 @@ import { Image } from 'components/Image';
 import { Loading } from 'components/Loading';
 import { Part } from 'components/Part';
 import * as React from 'react';
-import { Col, Container, Row } from 'reactstrap';
 import { API_URL } from '../../constants';
 
 export class SingleServicePage extends React.Component<any, any> {
@@ -50,9 +49,9 @@ export class SingleServicePage extends React.Component<any, any> {
       <div>No Parts...</div>
     );
     return (
-      <Container fluid className="service-container">
-        <Row>
-          <Col xs="12" sm="12" lg="4">
+      <div className="container-fluid padding-50">
+        <div className="row">
+          <div className="col-xs-12 col-sm-12 col-lg-4">
             <Image src={this.state.service.featuredImage} alt="" />
             <h4
               style={{
@@ -63,15 +62,11 @@ export class SingleServicePage extends React.Component<any, any> {
             >
               {this.state.service.title}
             </h4>
-            <p style={{ fontSize: 14 }}>
-              {this.state.service.description}
-            </p>
-          </Col>
-          <Col xs="12" sm="10" lg="8">
-            {renderParts}
-          </Col>
-        </Row>
-      </Container>
+            <p style={{ fontSize: 14 }}>{this.state.service.description}</p>
+          </div>
+          <div className="col-xs-12 col-sm-10 col-lg-8">{renderParts}</div>
+        </div>
+      </div>
     );
   }
 }

@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { Container } from 'reactstrap';
 
 export const PrivacyPolicyPage = () => {
   return (
-    <Container fluid>
+    <div className="container-fluid">
       <h1>Privacy Policy</h1>
       <p>
         Protecting your private information is our priority. This Statement of
@@ -137,6 +136,6 @@ export const PrivacyPolicyPage = () => {
         rd Brandon, Florida 33511 Email Address: rabbi@1messiah.org Telephone
         number: 813-699-4155 Effective as of July 09, 2018
       </p>
-    </Container>
+    </div>
   );
 };

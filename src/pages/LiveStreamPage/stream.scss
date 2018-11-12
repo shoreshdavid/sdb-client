@@ -1,0 +1,16 @@
+.stream-iframe {
+  height: 300px;
+  width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  .stream-iframe {
+    height: 200px;
+  }
+}
+
+.live-meta {
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 50px;
+}

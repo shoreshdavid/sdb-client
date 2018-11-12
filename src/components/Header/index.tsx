@@ -1,14 +1,8 @@
 import { Image } from 'components/Image';
 import * as React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import {
-  Badge,
-  Collapse,
-  Nav,
-  Navbar,
-  NavbarToggler,
-  NavItem,
-} from 'reactstrap';
+
+import './header.scss';
 
 export class Header extends React.Component<any, any> {
   public state = {
@@ -22,47 +16,52 @@ export class Header extends React.Component<any, any> {
   }
 
   public render() {
-    // const today = moment();
-    // const otherDate = moment().isoWeekday(5);
-    // const isToday = today.toString() === otherDate.toString();
-
-    // const renderStreamBadge = isToday ? (
-    //   <Badge style={{ backgroundColor: '#aa4ee0' }}>LIVE NOW!</Badge>
-    // ) : null;
-
     return (
       <div className="sdb-nav">
-        <Navbar light expand="md">
+        <nav className="navbar navbar-expand-md navbar-light">
           <Link to="/">
             <Image
               src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/header-logo.png"
               alt="Shoresh David Brandon logo"
             />
           </Link>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar style={{ marginRight: 25 }}>
-              <NavItem>
+          {/* <button type="button" onClick={this.toggle}></button> */}
+          <button
+            type="button"
+            className="navbar-toggler"
+            onClick={this.toggle}
+          >
+            <span className="navbar-toggler-icon" />
+          </button>
+          <div
+            className={`${
+              this.state.isOpen
+                ? 'collapse show navbar-collapse'
+                : 'collapse navbar-collapse'
+            }`}
+          >
+            <ul className="ml-auto navbar-nav" style={{ marginRight: 25 }}>
+              <li className="nav-item">
                 <NavLink exact to="/" activeClassName="navlink-active">
                   Home
                 </NavLink>
-              </NavItem>
-              <NavItem>
+              </li>
+              <li className="nav-item">
                 <NavLink exact to="/services" activeClassName="navlink-active">
                   Teachings
                 </NavLink>
-              </NavItem>
-              <NavItem>
+              </li>
+              <li className="nav-item">
                 <NavLink exact to="/live" activeClassName="navlink-active">
                   Streaming
                 </NavLink>
-              </NavItem>
-              <NavItem>
+              </li>
+              <li className="nav-item">
                 <NavLink exact to="/jewish" activeClassName="navlink-active">
                   Jewish
                 </NavLink>
-              </NavItem>
-              <NavItem>
+              </li>
+              <li className="nav-item">
                 <NavLink
                   exact
                   to="/discoveries"
@@ -70,25 +69,25 @@ export class Header extends React.Component<any, any> {
                 >
                   Discoveries
                 </NavLink>
-              </NavItem>
-              <NavItem>
+              </li>
+              <li className="nav-item">
                 <NavLink exact to="/events" activeClassName="navlink-active">
                   Events
                 </NavLink>
-              </NavItem>
-              <NavItem>
+              </li>
+              <li className="nav-item">
                 <NavLink exact to="/store" activeClassName="navlink-active">
                   Store
                 </NavLink>
-              </NavItem>
-              <NavItem>
+              </li>
+              <li className="nav-item">
                 <NavLink exact to="/donate" activeClassName="navlink-active">
-                  Donate <Badge color="danger">PLEASE</Badge>
+                  Donate <span className="badge badge-danger">PLEASE</span>
                 </NavLink>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Navbar>
+              </li>
+            </ul>
+          </div>
+        </nav>
       </div>
     );
   }

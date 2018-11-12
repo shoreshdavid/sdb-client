@@ -6,10 +6,10 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { ErrorBoundary } from 'containers/ErrorBoundary';
 
 // components
+import { Footer } from 'components/Footer';
 import { Header } from 'components/Header';
 import { ScrollToTop } from 'components/ScrollToTop';
 import { StickyEmail } from 'components/StickyEmail';
-import { SubFooter } from 'components/SubFooter';
 import { TopBar } from 'components/TopBar';
 
 // pages
@@ -44,6 +44,12 @@ render(
           <Route exact path="/live" component={LiveStreamPage} />
           <Route exact path="/store" component={ProductListPage} />
           <Route exact path="/services" component={ServiceListPage} />
+          {/* http://localhost:8080/services/category=rabbi-don/page=1/size=12 */}
+          {/* <Route
+            exact
+            path="/services/category=:category/page=:page/size=:size"
+            component={ServiceListPage}
+          /> */}
           <Route exact path="/services/:slug" component={SingleServicePage} />
           <Route exact path="/discoveries" component={DiscoveriesPage} />
           <Route
@@ -58,7 +64,7 @@ render(
           <Route component={NotFoundPage} />
         </Switch>
         <StickyEmail />
-        <SubFooter />
+        <Footer />
       </ScrollToTop>
     </ErrorBoundary>
   </BrowserRouter>,

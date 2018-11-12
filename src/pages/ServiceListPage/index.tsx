@@ -1,9 +1,7 @@
 import Axios from 'axios';
-// import { Error } from 'components/Error';
 import { Loading } from 'components/Loading';
 import { Service } from 'components/Service';
 import * as React from 'react';
-import { Col, Container, ListGroup, ListGroupItem, Row } from 'reactstrap';
 import { API_URL } from '../../constants';
 
 export class ServiceListPage extends React.Component<any, any> {
@@ -13,9 +11,13 @@ export class ServiceListPage extends React.Component<any, any> {
     services: [] as any,
     tabs: [] as any,
     category: 'rabbi-don',
+
     page: 1,
     count: 0,
     size: 12,
+
+    search: '',
+    results: [],
   };
 
   public componentDidMount() {
@@ -44,22 +46,21 @@ export class ServiceListPage extends React.Component<any, any> {
       );
   }
 
-  public handlePageRequest = () => {
+  public handlePageRequest = async () => {
     const { category, page, size } = this.state;
-    Axios.get(
-      `${API_URL}/services?category=${category}&page=${page}&size=${size}`,
-    )
-      .then(res => {
-        this.setState({
-          services: res.data.data,
-          count: res.data.count,
-        });
-      })
-      .catch(err =>
-        this.setState({
-          error: err.response.data.error,
-        }),
+    try {
+      const res: any = await Axios.get(
+        `${API_URL}/services?category=${category}&page=${page}&size=${size}`,
       );
+      this.setState({
+        services: res.data.data,
+        count: res.data.count,
+      });
+    } catch (err) {
+      this.setState({
+        error: err.response.data.error,
+      });
+    }
   }
 
   public goToPage = async (page: number) => {
@@ -67,7 +68,7 @@ export class ServiceListPage extends React.Component<any, any> {
     this.handlePageRequest();
   }
 
-  public handleLeftPage = async () => {
+  public previous = async () => {
     if (this.state.page === 1) {
       return;
     }
@@ -79,7 +80,7 @@ export class ServiceListPage extends React.Component<any, any> {
     this.handlePageRequest();
   }
 
-  public handleRightPage = async () => {
+  public next = async () => {
     if (this.state.page > Math.ceil(this.state.count / this.state.size) - 1) {
       return;
     }
@@ -94,30 +95,47 @@ export class ServiceListPage extends React.Component<any, any> {
   public toggleFilter = async category => {
     await this.setState({
       category,
-      page: 1
+      page: 1,
     });
 
     this.handlePageRequest();
   }
 
+  // public handleSearchRequest = (e: any) => {
+  //   e.preventDefault();
+  //   Axios.get(`${API_URL}/services/search?searchText=${this.state.search}`)
+  //     .then(res => {
+  //       console.log('res: ', res);
+  //       this.setState({
+  //         data: res.data.data,
+  //       });
+  //     })
+  //     .catch(err => {
+  //       console.log(JSON.stringify(err));
+  //       this.setState({
+  //           error: err.response.data.error,
+  //         });
+  //     });
+  // }
+
   public render() {
     const renderTabs = this.state.tabs.length ? (
-      this.state.tabs.map(tab => {
+      this.state.tabs.map((tab: any, index) => {
         return (
-          <ListGroupItem
-            key={tab._id}
-            action
-            tag="button"
+          <li
+            className={`list-group-item-action list-group-item ${
+              tab.slug === this.state.category ? 'active' : ''
+            }`}
+            key={index}
             style={{
               marginBottom: 10,
               cursor: 'pointer',
               fontWeight: 700,
             }}
-            active={tab.slug === this.state.category}
             onClick={() => this.toggleFilter(tab.slug)}
           >
             {tab.label}
-          </ListGroupItem>
+          </li>
         );
       })
     ) : (
@@ -132,9 +150,6 @@ export class ServiceListPage extends React.Component<any, any> {
     }
 
     const { count, size, page, services } = this.state;
-    console.log('Count: ', count);
-    console.log('Size: ', size);
-    console.log('Math.ceil(count / size): ', Math.ceil(count / size));
     const range = (from, to, step = 1) => {
       let i = from;
       const stack = [] as any;
@@ -148,19 +163,32 @@ export class ServiceListPage extends React.Component<any, any> {
     };
     const pageNumbers = range(1, Math.ceil(count / size));
     return (
-      <Container fluid className="padding-50">
-        <Row>
-          <Col xs="12" sm="12" md="4" lg="3" xl="3">
-            <ListGroup>{renderTabs}</ListGroup>
-          </Col>
-          <Col>
-            <Row>
+      <div className="container-fluid padding-50">
+        <div className="row">
+          <div className="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-3">
+            <ul className="list-group">{renderTabs}</ul>
+          </div>
+          <div className="col">
+            {/* <div className="row" style={{flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                <form onSubmit={(e: any) => this.handleSearchRequest(e)}>
+                  <input
+                    type="text"
+                    value={this.state.search}
+                    onChange={e => this.setState({ search: e.target.value })}
+                    className="form-control"
+                  />
+                  <button className="btn btn-primary" type="submit">
+                    Search
+                  </button>
+                </form>
+              </div> */}
+            <div className="row">
               {services.map(service => (
-                <Col lg="4" xl="4" key={service.slug}>
+                <div className="col-lg-4 col-xl-4" key={service.slug}>
                   <Service service={service} />
-                </Col>
+                </div>
               ))}
-            </Row>
+            </div>
             <div
               className="row"
               style={{
@@ -170,16 +198,21 @@ export class ServiceListPage extends React.Component<any, any> {
               }}
             >
               <ul className="pagination">
-                <li className="page-item" onClick={this.handleLeftPage}>
+                <li
+                  className={
+                    this.state.page === 1 ? 'page-item disabled' : 'page-item'
+                  }
+                  onClick={this.previous}
+                >
                   <span className="page-link">Previous</span>
                 </li>
                 {pageNumbers &&
                   pageNumbers.map((selectedPage: number, i) => (
                     <li
-                      className={`page-item ${
-                        page === selectedPage ? 'active' : null
-                      }`}
                       key={i}
+                      className={`page-item ${
+                        page === selectedPage ? 'active' : ''
+                      }`}
                     >
                       <span
                         className="page-link"
@@ -189,14 +222,21 @@ export class ServiceListPage extends React.Component<any, any> {
                       </span>
                     </li>
                   ))}
-                <li className="page-item" onClick={this.handleRightPage}>
+                <li
+                  className={
+                    page > Math.ceil(count / size) - 1
+                      ? 'page-item disabled'
+                      : 'page-item'
+                  }
+                  onClick={this.next}
+                >
                   <span className="page-link">Next</span>
                 </li>
               </ul>
             </div>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+      </div>
     );
   }
 }

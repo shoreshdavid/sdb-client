@@ -4,7 +4,6 @@ import { Image } from 'components/Image';
 import { Loading } from 'components/Loading';
 import { Part } from 'components/Part';
 import * as React from 'react';
-import { Col, Container, Row } from 'reactstrap';
 import { API_URL } from '../../constants';
 
 import ReactHtmlParser from 'react-html-parser';
@@ -53,9 +52,9 @@ export class SingleDiscoveryPage extends React.Component<any, any> {
     );
     const { featuredImage, content, title } = this.state.discovery;
     return (
-      <Container fluid className="service-container">
-        <Row>
-          <Col xs="12" sm="12" lg="4">
+      <div className="container-fluid padding-50">
+        <div className="row">
+          <div className="col-xs-12 col-sm-12 col-lg-4">
             <Image src={featuredImage} alt="" />
             <h4
               style={{
@@ -66,18 +65,13 @@ export class SingleDiscoveryPage extends React.Component<any, any> {
             >
               {title}
             </h4>
-          </Col>
-          <Col xs="12" sm="10" lg="8">
-            {content && (
-              <div>
-                {ReactHtmlParser(content)}
-              </div>
-            )}
-              {renderParts}
-
-          </Col>
-        </Row>
-      </Container>
+          </div>
+          <div className="col-xs-12 col-sm-10 col-lg-8">
+            {content && <div>{ReactHtmlParser(content)}</div>}
+            {renderParts}
+          </div>
+        </div>
+      </div>
     );
   }
 }

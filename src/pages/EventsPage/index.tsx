@@ -1,33 +1,47 @@
-/* tslint:disable */
 import * as React from 'react';
-import { Col, Container, Row } from 'reactstrap';
+import { Fetch } from 'react-refetch-component';
 
-export class EventsPage extends React.Component<any, any> {
-  // public state = {
-  //   loading: true,
-  //   error: null,
-  //   events: [],
-  //   alert: null,
-  // };
-  public render() {
-    return (
-      <Container fluid className="padding-50">
-        <Row>
-          <Col
-            xs={12}
-            md={10}
-            xl={{ size: 6, offset: 3 }}
-            className="ml-auto mr-auto"
-          >
-            <iframe
-              src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;ctz=America%2FNew_York"
-              style={{ width: 800, height: 600 }}
-              frameBorder="0"
-              scrolling="no"
-            />
-          </Col>
-        </Row>
-      </Container>
-    );
-  }
-}
+import { Error } from 'components/Error';
+import { Image } from 'components/Image';
+import { Loading } from 'components/Loading';
+
+import { API_URL } from '../../constants';
+
+import './event.scss';
+
+export const Event = ({ event }) => {
+  return (
+    <div className="announcement">
+      <div className="row">
+        <div className="col-lg-5">
+          <Image src={event.featuredImage} alt={event.slug} />
+        </div>
+        <div className="col-lg-5 offset-lg-1">
+          <h3>{event.title}</h3>
+          {/* {ReactHtmlParser(announcement.content)} */}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const EventsPage = () => {
+  return (
+    <div className="padding-50">
+      <Fetch url={`${API_URL}/events?size=20`} method="get" lifecycle="onMount">
+        {({ loading, error, data }) => {
+          if (loading) {
+            return <Loading />;
+          }
+          if (error) {
+            return <Error error={error} />;
+          }
+
+          return data.data.map((event: any, i: number) => (
+            <Event event={event} key={i} />
+          ));
+        }}
+      </Fetch>
+    </div>
+  );
+};

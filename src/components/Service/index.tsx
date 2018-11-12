@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from 'reactstrap';
 
 import { Image } from 'components/Image';
 
@@ -17,9 +16,11 @@ export const Service = ({ service }) => {
             />
           </a>
           {service.parts.length > 1 ? (
-            <Button color="primary" size="sm" className="card-series">
-              Series
-            </Button>
+            <Link to={`/services/${service.slug}`}>
+              <button className="btn btn-primary btn-sm card-series">
+                Series
+              </button>
+            </Link>
           ) : null}
         </div>
         <div className="card-information">

@@ -3,41 +3,31 @@ import { Image } from 'components/Image';
 import { Loading } from 'components/Loading';
 import * as React from 'react';
 import { Fetch } from 'react-refetch-component';
-import {
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardTitle,
-  Col,
-  Container,
-  Row,
-} from 'reactstrap';
 import { API_URL } from '../../constants';
+
+import './jewish.scss';
 
 const JewishCard = ({ image, title, link }) => {
   return (
-    <Card className="jewish-card">
+    <div className="jewish-card card">
       <Image src={image} alt={title} />
       <a href={link} target="_blank" rel="noopener noreferrer">
-        <CardBody className="card-block">
-          <CardTitle>{title}</CardTitle>
-        </CardBody>
-        <CardFooter>
-          <Button color="primary" block>
-            Read
-          </Button>
-        </CardFooter>
+        <div className="card-body card-block">
+          <h5 className="card-title">{title}</h5>
+        </div>
+        <div className="c-footer">
+          <button className="btn btn-primary btn-block">Read</button>
+        </div>
       </a>
-    </Card>
+    </div>
   );
 };
 
 export const JewishPage = () => {
   return (
-    <Container fluid className="padding-50">
+    <div className="container-fluid padding-50">
       <div className="jewish-page">
-        <Row>
+        <div className="row">
           <Fetch
             url={`${API_URL}/jewish?size=20`}
             method="get"
@@ -51,19 +41,19 @@ export const JewishPage = () => {
                 return <Error error={error} />;
               }
 
-              return data.data.map(j => (
-                <Col sm="12" lg="3" key={j._id}>
+              return data.data.map((j: any, i: number) => (
+                <div className="col-sm-12 col-lg-3" key={i}>
                   <JewishCard
                     image={j.featuredImage}
                     title={j.title}
                     link={j.link}
                   />
-                </Col>
+                </div>
               ));
             }}
           </Fetch>
-        </Row>
+        </div>
       </div>
-    </Container>
+    </div>
   );
 };
