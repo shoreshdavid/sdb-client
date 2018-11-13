@@ -7,13 +7,15 @@ const donateUrl =
   // tslint:disable-next-line
   'http://www.mcssl.com/SecureCart/SecureCart.aspx?mid=2C37E45F-149B-4853-9879-DC5AA7B39A34&pid=0938126f8abc48f5b748f0113768436a';
 
+const SDBLogo = require('../../assets/img/sdb-logo-md.png');
+
 export const LiveStreamPage = () => {
   return (
     <div className="container-fluid padding-100">
       <div className="row">
         <div className="live-meta">
           <Image
-            src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/home-sdb-logo.png"
+            src={SDBLogo}
             alt="Shoresh David Brandon Logo"
             className="lazyload img-fluid"
           />
