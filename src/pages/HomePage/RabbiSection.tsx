@@ -3,13 +3,15 @@ import { Link } from 'react-router-dom';
 
 import { Image } from 'components/Image';
 
+const rabbi = require('../../assets/img/rabbi-don-circle.png');
+
 export const RabbiSection = () => {
   return (
     <div className="container-fluid rabbi-container">
       <div className="col-lg-8 offset-lg-2">
         <div className="center">
           <Image
-            src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/rabbi-don-circle.png"
+            src={rabbi}
             alt="Rabbi Don Goldstein"
             className="lazyload img-fluid"
           />
@@ -25,7 +27,8 @@ export const RabbiSection = () => {
           service where you come, listen, go home and nothing changes. We don’t
           talk about what God “can” do, you’ll see Him do it! Rabbi Don’s
           messages come from God’s Word and are delivered in an easy to
-          understand way. You can view his past messages by&nbsp;<Link to="/services">
+          understand way. You can view his past messages by&nbsp;
+          <Link to="/services">
             <span>clicking here.</span>
           </Link>
         </p>

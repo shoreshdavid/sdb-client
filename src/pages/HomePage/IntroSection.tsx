@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import { Image } from 'components/Image';
 
+const SDBLogo = require('../../assets/img/sdb-logo-md.png');
+
 export const IntroSection = () => {
   return (
     <div className="container-fluid intro-container">
@@ -10,7 +12,7 @@ export const IntroSection = () => {
         <div className="col-lg-8 offset-lg-2 col-xl-6 offset-lg-3">
           <div style={{ textAlign: 'center', marginBottom: 80 }}>
             <Image
-              src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/home-sdb-logo.png"
+              src={SDBLogo}
               width={82}
               height={89}
               alt="Shoresh David Brandon Logo"

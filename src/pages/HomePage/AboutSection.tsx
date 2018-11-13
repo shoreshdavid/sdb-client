@@ -1,13 +1,15 @@
 import { Image } from 'components/Image';
 import * as React from 'react';
 
+const SDBLogo = require('../../assets/img/sdb-logo-md.png');
+
 export const AboutSection = () => {
   return (
     <div id="aboutSection" className="container-fluid about-container">
       <div className="col-lg-8 offset-lg-2">
         <div style={{ textAlign: 'center', marginBottom: 20 }}>
           <Image
-            src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/home-sdb-logo.png"
+            src={SDBLogo}
             alt="Shoresh David Brandon Logo"
             className="lazyload img-fluid"
           />

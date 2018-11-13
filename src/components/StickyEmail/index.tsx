@@ -6,6 +6,8 @@ import { API_URL } from '../../constants';
 
 import './email.scss';
 
+const book = require('../../assets/img/free-book-aweber-cta.png');
+
 export class StickyEmail extends React.Component<any, any> {
   public state = {
     open: false,
@@ -51,7 +53,7 @@ export class StickyEmail extends React.Component<any, any> {
         <div className={`${this.state.open ? 'collapse show' : 'collapse'}`}>
           <div className="sticky-email-open">
             <Image
-              src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/free-book-aweber-cta.png"
+              src={book}
               alt="free ebooks"
               className="lazyload"
             />

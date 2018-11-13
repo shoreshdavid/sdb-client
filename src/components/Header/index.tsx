@@ -4,6 +4,8 @@ import { Link, NavLink } from 'react-router-dom';
 
 import './header.scss';
 
+const headerLogo = require('../../assets/img/header-logo.png');
+
 export class Header extends React.Component<any, any> {
   public state = {
     isOpen: false,
@@ -21,7 +23,7 @@ export class Header extends React.Component<any, any> {
         <nav className="navbar navbar-expand-md navbar-light">
           <Link to="/">
             <Image
-              src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/header-logo.png"
+              src={headerLogo}
               alt="Shoresh David Brandon logo"
               className="lazyload"
             />
