@@ -23,6 +23,7 @@ export class Header extends React.Component<any, any> {
             <Image
               src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/header-logo.png"
               alt="Shoresh David Brandon logo"
+              className="lazyload"
             />
           </Link>
           {/* <button type="button" onClick={this.toggle}></button> */}

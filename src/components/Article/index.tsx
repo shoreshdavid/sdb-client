@@ -8,7 +8,7 @@ export const Article = ({ article }) => (
       <a>
         <Image
           src={article.featuredImage}
-          className="attachment-large size-large"
+          className="lazyload attachment-large size-large"
           alt={article.slug}
         />
       </a>

@@ -11,7 +11,7 @@ export const Service = ({ service }) => {
           <a>
             <Image
               src={service.featuredImage}
-              className="attachment-large size-large"
+              className="lazyload attachment-large size-large"
               alt={service.slug}
             />
           </a>

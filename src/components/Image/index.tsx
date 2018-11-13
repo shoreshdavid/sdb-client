@@ -7,7 +7,7 @@ export const Image = props => {
   const { src, alt } = props;
   return (
     <img
-      src={src}
+      data-src={src}
       alt={alt}
       onError={(e: any) => (e.target.src = placeholder)}
       {...props}

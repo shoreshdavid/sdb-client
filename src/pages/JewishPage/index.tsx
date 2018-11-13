@@ -10,7 +10,7 @@ import './jewish.scss';
 const JewishCard = ({ image, title, link }) => {
   return (
     <div className="jewish-card card">
-      <Image src={image} alt={title} />
+      <Image src={image} alt={title} className="lazyload" />
       <a href={link} target="_blank" rel="noopener noreferrer">
         <div className="card-body card-block">
           <h5 className="card-title">{title}</h5>

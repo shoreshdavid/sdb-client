@@ -11,7 +11,7 @@ export const RabbiSection = () => {
           <Image
             src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/rabbi-don-circle.png"
             alt="Rabbi Don Goldstein"
-            className="img-fluid"
+            className="lazyload img-fluid"
           />
         </div>
         <div className="center" style={{ margin: '40px 0' }}>

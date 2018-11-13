@@ -55,7 +55,7 @@ export class SingleDiscoveryPage extends React.Component<any, any> {
       <div className="container-fluid padding-50">
         <div className="row">
           <div className="col-xs-12 col-sm-12 col-lg-4">
-            <Image src={featuredImage} alt="" />
+            <Image src={featuredImage} alt={title} className="lazyload" />
             <h4
               style={{
                 color: '#000',

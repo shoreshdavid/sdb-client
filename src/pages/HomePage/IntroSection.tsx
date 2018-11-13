@@ -14,7 +14,7 @@ export const IntroSection = () => {
               width={82}
               height={89}
               alt="Shoresh David Brandon Logo"
-              className="img-fluid"
+              className="lazyload img-fluid"
             />
             <hr className="brand-hr" />
             <h3 className="intro-container-address">
@@ -55,7 +55,8 @@ export const IntroSection = () => {
         </div>
         <div className="col-lg-5">
           <iframe
-            src="https://player.vimeo.com/video/152749226?autoplay=0&autopause=0"
+            src="//player.vimeo.com/video/152749226?autoplay=0&autopause=0"
+            className="lazyload"
             allowFullScreen
             width="100%"
           />

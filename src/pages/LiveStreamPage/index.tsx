@@ -14,8 +14,8 @@ export const LiveStreamPage = () => {
         <div className="live-meta">
           <Image
             src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/home-sdb-logo.png"
-            alt=""
-            className="img-fluid"
+            alt="Shoresh David Brandon Logo"
+            className="lazyload img-fluid"
           />
 
           <h2>Watch Us LIVE!</h2>

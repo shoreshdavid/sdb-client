@@ -9,7 +9,7 @@ export const AboutSection = () => {
           <Image
             src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/home-sdb-logo.png"
             alt="Shoresh David Brandon Logo"
-            className="img-fluid"
+            className="lazyload img-fluid"
           />
         </div>
         <h2 style={{ textAlign: 'center', marginBottom: 20, color: 'black' }}>
@@ -35,6 +35,7 @@ export const AboutSection = () => {
           <a
             href="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/pdf/friend-book-ninth-printing.pdf"
             target="_blank"
+            rel="noreferrer noopener"
           >
             <strong>click here</strong>
           </a>{' '}

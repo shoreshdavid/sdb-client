@@ -14,7 +14,11 @@ export const Event = ({ event }) => {
     <div className="announcement">
       <div className="row">
         <div className="col-lg-5">
-          <Image src={event.featuredImage} alt={event.slug} />
+          <Image
+            src={event.featuredImage}
+            alt={event.slug}
+            className="lazyload"
+          />
         </div>
         <div className="col-lg-5 offset-lg-1">
           <h3>{event.title}</h3>

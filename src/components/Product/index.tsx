@@ -8,6 +8,7 @@ export const Product = ({ product }) => {
       <Image
         src={product.featuredImage}
         alt={product.name}
+        className="lazyload"
         style={{ height: 400 }}
       />
       <a
