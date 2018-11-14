@@ -1,5 +1,12 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faVideo,
+  faMicrophone,
+  faReceipt,
+  faArrowRight,
+} from '@fortawesome/free-solid-svg-icons';
 
 import { Image } from 'components/Image';
 
@@ -40,26 +47,26 @@ export const Service = ({ service }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="fa fa-video" />
+                  <FontAwesomeIcon icon={faVideo} />
                 </a>
                 <a
                   href={service.parts[0] ? service.parts[0].anchorLink : null}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="fa fa-microphone" />
+                  <FontAwesomeIcon icon={faMicrophone} />
                 </a>
                 <a
                   href={service.parts[0] ? service.parts[0].mediumLink : null}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="fa fa-receipt" />
+                  <FontAwesomeIcon icon={faReceipt} />
                 </a>
               </div>
             ) : null}
             <Link to={`/services/${service.slug}`} className="card-read-more">
-              <i className="fa fa-arrow-right" />
+              <FontAwesomeIcon icon={faArrowRight} />
             </Link>
           </div>
         </div>

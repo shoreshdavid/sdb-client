@@ -56,7 +56,6 @@ export class DiscoveriesPage extends React.Component<any, any> {
       }&size=${this.state.size}`,
     )
       .then(res => {
-        console.log(res.data);
         this.setState({
           articles: res.data.data,
           count: res.data.count,
@@ -118,7 +117,6 @@ export class DiscoveriesPage extends React.Component<any, any> {
   }
 
   public render() {
-    console.log('STATE: ', this.state);
     if (this.state.loading) {
       return <Loading />;
     }

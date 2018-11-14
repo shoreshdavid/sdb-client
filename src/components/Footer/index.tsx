@@ -2,6 +2,16 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 
 import './footer.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import {
+  faFacebook,
+  faTwitter,
+  faInstagram,
+  faYoutube,
+  faMedium,
+} from '@fortawesome/free-brands-svg-icons';
+import { faAnchor } from '@fortawesome/free-solid-svg-icons';
 
 export const Footer = () => {
   return (
@@ -20,7 +30,7 @@ export const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-facebook" />
+          <FontAwesomeIcon icon={faFacebook} />
         </a>
         {/* Twitter */}
         <a
@@ -28,7 +38,7 @@ export const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-twitter" />
+          <FontAwesomeIcon icon={faTwitter} />
         </a>
         {/* Twitter */}
         <a
@@ -36,7 +46,7 @@ export const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-instagram" />
+          <FontAwesomeIcon icon={faInstagram} />
         </a>
         {/* YouTube */}
         <a
@@ -44,7 +54,7 @@ export const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-youtube" />
+          <FontAwesomeIcon icon={faYoutube} />
         </a>
         {/* Medium */}
         <a
@@ -52,7 +62,7 @@ export const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-medium" />
+          <FontAwesomeIcon icon={faMedium} />
         </a>
         {/* Anchor */}
         <a
@@ -60,7 +70,7 @@ export const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fas fa-anchor" />
+          <FontAwesomeIcon icon={faAnchor} />
         </a>
       </div>
     </footer>

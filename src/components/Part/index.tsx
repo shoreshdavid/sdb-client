@@ -1,6 +1,12 @@
 import * as React from 'react';
 
 import './part.scss';
+import {
+  faVideo,
+  faMicrophone,
+  faReceipt,
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface IPartProps {
   partNumber: number;
@@ -23,17 +29,17 @@ export const Part = ({
           <div>
             {youtubeLink && (
               <a href={youtubeLink} target="_blank" rel="noopener noreferrer">
-                <i className="fa fa-video" />
+                <FontAwesomeIcon icon={faVideo} />
               </a>
             )}
             {anchorLink && (
               <a href={anchorLink} target="_blank" rel="noopener noreferrer">
-                <i className="fa fa-microphone" />
+                <FontAwesomeIcon icon={faMicrophone} />
               </a>
             )}
             {mediumLink && (
               <a href={mediumLink} target="_blank" rel="noopener noreferrer">
-                <i className="fa fa-receipt" />
+                <FontAwesomeIcon icon={faReceipt} />
               </a>
             )}
           </div>

@@ -1,6 +1,13 @@
 import { Image } from 'components/Image';
 import * as React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
+import {
+  faVideo,
+  faMicrophone,
+  faReceipt,
+  faArrowRight,
+} from '@fortawesome/free-solid-svg-icons';
 
 export const Article = ({ article }) => (
   <div className="card-item">
@@ -31,20 +38,24 @@ export const Article = ({ article }) => (
       </div>
       <div className="card-links">
         <div>
-          <i className="fa fa-video" />
-          <i className="fa fa-microphone" />
-          <i className="fa fa-receipt" />
+          <FontAwesomeIcon icon={faVideo} />
+          <FontAwesomeIcon icon={faMicrophone} />
+          <FontAwesomeIcon icon={faReceipt} />
         </div>
         {article.link ? (
           <a href={article.link}>
-            <i
-              className="fa fa-arrow-right"
+            <FontAwesomeIcon
+              icon={faArrowRight}
               style={{ flex: 1, textAlign: 'right' }}
             />
+            {/* <i
+              className="fa fa-arrow-right"
+              style={{ flex: 1, textAlign: 'right' }}
+            /> */}
           </a>
         ) : (
           <Link to={`/discoveries/${article.slug}`} className="card-read-more">
-            <i className="fa fa-arrow-right" />
+            <FontAwesomeIcon icon={faArrowRight} />
           </Link>
         )}
       </div>

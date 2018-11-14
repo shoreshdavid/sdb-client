@@ -19,7 +19,7 @@
       color: $white !important;
     }
   }
-  i {
+  svg {
     color: $white;
     margin-right: 5px;
     margin-left: 20px;
@@ -32,7 +32,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   margin-left: 20px;
-  i {
+  svg {
     font-size: 12px;
   }
 }
@@ -55,7 +55,7 @@
     align-content: center;
     justify-content: center;
     flex-wrap: wrap;
-    i {
+    svg {
       margin-right: 5px;
     }
     div {

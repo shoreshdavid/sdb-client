@@ -1,5 +1,11 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+import {
+  faDesktop,
+  faVideo,
+  faFileVideo,
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const LiveStreamSection = () => {
   return (
@@ -18,7 +24,9 @@ export const LiveStreamSection = () => {
           <path d="M-1 -1 L50 99 L101 -1 Z" />
         </svg>
       </div>
-      <i className="desktop-icon fa fa-desktop" />
+      <div className="desktop-icon">
+        <FontAwesomeIcon icon={faDesktop} />
+      </div>
       <h2>Teachings that will change your life!</h2>
       <p>
         Rabbi Don offers a wide range of high quality teachings and resources.
@@ -29,13 +37,13 @@ export const LiveStreamSection = () => {
       <div className="live-btn-group">
         <Link to="/live">
           <button className="btn btn-primary">
-            <i className="fa fa-video" />
+            <FontAwesomeIcon icon={faVideo} />
             LIVE Streaming every Friday @ 7:30pm (CLICK HERE)
           </button>
         </Link>
         <Link to="/services">
           <button className="btn btn-primary">
-            <i className="fa fa-file-video" />
+            <FontAwesomeIcon icon={faFileVideo} />
             Recordings of recent messages
           </button>
         </Link>

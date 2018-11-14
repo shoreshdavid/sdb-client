@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import './not-found.scss';
 
@@ -19,35 +20,35 @@ export const NotFoundPage = () => {
           <h3 className="not-found-col-heading">Helpful Links</h3>
           <ul className="not-found-links">
             <li>
-              <i className="fa fa-angle-right" />
+              <FontAwesomeIcon icon="angle-right" />
               <Link to="/">HOME</Link>
             </li>
             <li>
-              <i className="fa fa-angle-right" />
+              <FontAwesomeIcon icon="angle-right" />
               <Link to="/services">TEACHINGS</Link>
             </li>
             <li>
-              <i className="fa fa-angle-right" />
+              <FontAwesomeIcon icon="angle-right" />
               <Link to="/live">STREAMING</Link>
             </li>
             <li>
-              <i className="fa fa-angle-right" />
+              <FontAwesomeIcon icon="angle-right" />
               <Link to="/jewish">JEWISH</Link>
             </li>
             <li>
-              <i className="fa fa-angle-right" />
+              <FontAwesomeIcon icon="angle-right" />
               <Link to="/discoveries">DISCOVERIES</Link>
             </li>
             <li>
-              <i className="fa fa-angle-right" />
+              <FontAwesomeIcon icon="angle-right" />
               <Link to="/events">EVENTS</Link>
             </li>
             <li>
-              <i className="fa fa-angle-right" />
+              <FontAwesomeIcon icon="angle-right" />
               <Link to="/store">STORE</Link>
             </li>
             <li>
-              <i className="fa fa-angle-right" />
+              <FontAwesomeIcon icon="angle-right" />
               <Link to="/donate">DONATE</Link>
             </li>
           </ul>

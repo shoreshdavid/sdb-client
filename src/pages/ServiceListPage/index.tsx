@@ -41,7 +41,7 @@ export class ServiceListPage extends React.Component<any, any> {
       .catch(err =>
         this.setState({
           loading: false,
-          error: err.response.data.error,
+          error: err,
         }),
       );
   }
@@ -147,6 +147,13 @@ export class ServiceListPage extends React.Component<any, any> {
     }
     if (this.state.error) {
       return <div>{JSON.stringify(this.state.error)}</div>;
+    }
+    if (!this.state.services) {
+      <div className="container-fluid padding-50">
+        <div className="row">
+        <h1>Server Error</h1>
+        </div>
+        </div>
     }
 
     const { count, size, page, services } = this.state;

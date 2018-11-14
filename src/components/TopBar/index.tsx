@@ -2,6 +2,14 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 
 import './topbar.scss';
+import {
+  faPhone,
+  faEnvelope,
+  faHome,
+  faVideo,
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookF, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 export const TopBar = () => {
   return (
@@ -9,30 +17,27 @@ export const TopBar = () => {
       <div className="topbar-left">
         {/* Phone */}
         <a href="tel:8136994155">
-          <i className="fa fa-phone" />{' '}
+          <FontAwesomeIcon icon={faPhone} />{' '}
           <span className="topbar-text">813.699.4155</span>
         </a>
         {/* Email */}
-        <div>
-          <a href="mailto:rabbi@1messiah.org">
-            <i className="fa fa-envelope" />
-            rabbi@1messiah.org
-          </a>
-        </div>
+        <a href="mailto:rabbi@1messiah.org">
+          <FontAwesomeIcon icon={faEnvelope} />
+          rabbi@1messiah.org
+        </a>
         {/* Address */}
-        <div>
-          <a
-            // tslint:disable-next-line
-            href="https://www.google.com/maps/place/445+Lithia+Pinecrest+Rd,+Brandon,+FL+33511/@27.9312622,-82.2778947,17z/data=!3m1!4b1!4m5!3m4!1s0x88c2cdb75c8a78c5:0x7afa5e06b1d0c2ca!8m2!3d27.9312622!4d-82.275706"
-            target="_blank"
-          >
-            <i className="fa fa-home" />
-            445 Lithia Pinecrest Rd. Brandon, FL 33511
-          </a>
-        </div>
+        <a
+          // tslint:disable-next-line
+          href="https://www.google.com/maps/place/445+Lithia+Pinecrest+Rd,+Brandon,+FL+33511/@27.9312622,-82.2778947,17z/data=!3m1!4b1!4m5!3m4!1s0x88c2cdb75c8a78c5:0x7afa5e06b1d0c2ca!8m2!3d27.9312622!4d-82.275706"
+          target="_blank"
+        >
+          <FontAwesomeIcon icon={faHome} />
+          445 Lithia Pinecrest Rd. Brandon, FL 33511
+        </a>
         {/* Live Stream */}
         <Link to="/live">
-          <i className="fa fa-video" /> Watch Us Live<span
+          <FontAwesomeIcon icon={faVideo} /> Watch Us Live
+          <span
             className="badge badge-danger"
             style={{ padding: 6, marginLeft: 10 }}
           >
@@ -46,14 +51,14 @@ export const TopBar = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-facebook-f" />
+          <FontAwesomeIcon icon={faFacebookF} />
         </Link>
         <Link
           to="https://www.youtube.com/channel/UC1yOFqmKt-1ruHxg6fBiAFg"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-youtube" />
+          <FontAwesomeIcon icon={faYoutube} />
         </Link>
       </div>
     </div>
