@@ -26,23 +26,27 @@ export const Part = ({
       <div className="series-item-detail">
         <div className="series-item-title">Part {partNumber}</div>
         <div className="series-item-links">
-          <div>
-            {youtubeLink && (
-              <a href={youtubeLink} target="_blank" rel="noopener noreferrer">
+          {youtubeLink && (
+            <a href={youtubeLink} target="_blank" rel="noopener noreferrer">
+              <div className="series-item-square">
                 <FontAwesomeIcon icon={faVideo} />
-              </a>
-            )}
-            {anchorLink && (
-              <a href={anchorLink} target="_blank" rel="noopener noreferrer">
+              </div>
+            </a>
+          )}
+          {anchorLink && (
+            <a href={anchorLink} target="_blank" rel="noopener noreferrer">
+              <div className="series-item-square">
                 <FontAwesomeIcon icon={faMicrophone} />
-              </a>
-            )}
-            {mediumLink && (
-              <a href={mediumLink} target="_blank" rel="noopener noreferrer">
+              </div>
+            </a>
+          )}
+          {mediumLink && (
+            <a href={mediumLink} target="_blank" rel="noopener noreferrer">
+              <div className="series-item-square">
                 <FontAwesomeIcon icon={faReceipt} />
-              </a>
-            )}
-          </div>
+              </div>
+            </a>
+          )}
         </div>
       </div>
     </div>

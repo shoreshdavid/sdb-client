@@ -19,17 +19,23 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
-  svg {
+  .series-item-square {
     border: 1px solid #ddd;
     box-sizing: border-box;
     border-radius: 2px;
     color: #aaa;
     padding: 10px;
     margin-left: 10px;
-    transition: color 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+    transition-property: background-color, color;
+    display: flex;
     &:hover {
-      color: $primary-color;
+      background-color: $primary-color;
       cursor: pointer;
+      border: 1px solid $primary-color;
+      svg {
+        color: $white;
+      }
     }
   }
 }

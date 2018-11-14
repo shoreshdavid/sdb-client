@@ -35,9 +35,9 @@ export const Service = ({ service }) => {
             <h4 className="card-title">
               <Link to={`/services/${service.slug}`}>{service.title}</Link>
             </h4>
-            <div className="card-description">
+            {/* <div className="card-description">
               <p>{service.description}</p>
-            </div>
+            </div> */}
           </div>
           <div className="card-links">
             {service.parts.length < 2 ? (
