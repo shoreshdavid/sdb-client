@@ -1,37 +1,36 @@
 import * as React from 'react';
-import { Fetch } from 'react-refetch-component';
+import { Image } from 'components/Image';
+import { products } from './products';
 
-import { Error } from 'components/Error';
-import { Loading } from 'components/Loading';
-import { Product } from 'components/Product';
-
-import { API_URL } from '../../constants';
-
-export const ProductListPage = () => {
-  return (
-    <div className="container-fluid padding-50">
-      <div className="row">
-        <Fetch url={`${API_URL}/products`} method="get" lifecycle="onMount">
-          {({ loading, error, data }) => {
-            if (loading) {
-              return <Loading />;
-            }
-            if (error) {
-              return <Error error={error} />;
-            }
-
-            if (!data.data.length) {
-              return <div>No products yet.</div>;
-            }
-
-            return data.data.map(product => (
-              <div className="col-lg-3" key={product.slug}>
-                <Product product={product} />
+export const ProductListPage = () => (
+  <div className="container-fluid padding-50">
+    <div className="row">
+      {products.map((product, i: number) => (
+        <div key={i} className="col-lg-3">
+          <div className="card">
+            <Image
+              src={product.featuredImage}
+              alt={product.name}
+              className="lazyload"
+              style={{ height: 400 }}
+            />
+            <a
+              href={product.storeLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: 'black' }}
+            >
+              <div className="card-body card-block">
+                <h5 className="card-title">{product.name}</h5>
+                <h6 className="card-subtitle">${product.price}</h6>
               </div>
-            ));
-          }}
-        </Fetch>
-      </div>
+              <div className="card-footer">
+                <button className="btn btn-primary btn-block">Purchase</button>
+              </div>
+            </a>
+          </div>
+        </div>
+      ))}
     </div>
-  );
-};
+  </div>
+);

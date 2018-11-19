@@ -19,6 +19,11 @@ $pulseTiming: 1.3s;
 }
 
 @keyframes pulseanim {
-  0% { transform: scale(0);}
-  100% { transform: scale(1); opacity: 0;}
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
 }

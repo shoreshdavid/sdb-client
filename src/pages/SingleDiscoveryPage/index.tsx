@@ -38,9 +38,9 @@ export class SingleDiscoveryPage extends React.Component<any, any> {
       );
     }
     const renderParts = discovery.parts.length ? (
-      discovery.parts.map(part => (
+      discovery.parts.map((part, i: number) => (
         <Part
-          key={part._id}
+          key={i}
           partNumber={part.partNumber}
           mediumLink={part.mediumLink}
           anchorLink={part.anchorLink}

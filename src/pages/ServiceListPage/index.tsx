@@ -149,11 +149,13 @@ export class ServiceListPage extends React.Component<any, any> {
       return <div>{JSON.stringify(this.state.error)}</div>;
     }
     if (!this.state.services) {
-      <div className="container-fluid padding-50">
-        <div className="row">
-        <h1>Server Error</h1>
+      return (
+        <div className="container-fluid padding-50">
+          <div className="row">
+            <h1>Server Error</h1>
+          </div>
         </div>
-        </div>
+      );
     }
 
     const { count, size, page, services } = this.state;

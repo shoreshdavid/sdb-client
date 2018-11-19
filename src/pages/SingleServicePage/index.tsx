@@ -52,7 +52,11 @@ export class SingleServicePage extends React.Component<any, any> {
       <div className="container-fluid padding-50">
         <div className="row">
           <div className="col-xs-12 col-sm-12 col-lg-4">
-            <Image src={this.state.service.featuredImage} alt={this.state.service.title} className="lazyload" />
+            <Image
+              src={this.state.service.featuredImage}
+              alt={this.state.service.title}
+              className="lazyload"
+            />
             <h4
               style={{
                 color: '#000',
