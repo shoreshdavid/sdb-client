@@ -186,7 +186,12 @@ export class DiscoveriesPage extends React.Component<any, any> {
               }}
             >
               <ul className="pagination">
-                <li className="page-item" onClick={this.handleLeftPage}>
+                <li
+                  className={
+                    this.state.page === 1 ? 'page-item disabled' : 'page-item'
+                  }
+                  onClick={this.handleLeftPage}
+                >
                   <span className="page-link">Previous</span>
                 </li>
                 {range(1, Math.ceil(count / size)).map(
@@ -206,7 +211,14 @@ export class DiscoveriesPage extends React.Component<any, any> {
                     </li>
                   ),
                 )}
-                <li className="page-item" onClick={this.handleRightPage}>
+                <li
+                  className={
+                    page > Math.ceil(count / size) - 1
+                      ? 'page-item disabled'
+                      : 'page-item'
+                  }
+                  onClick={this.handleRightPage}
+                >
                   <span className="page-link">Next</span>
                 </li>
               </ul>
