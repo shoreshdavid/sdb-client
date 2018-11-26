@@ -7,7 +7,7 @@
   position: relative;
   img {
     height: 400px;
-    width: 700px;
+    width: 100%;
   }
   h3 {
     font-weight: 700;
@@ -24,5 +24,21 @@
     padding: 25px;
     height: 300px;
   }
+}
+
+
+
+@media only screen and (max-width: 800px) {
+  .announcement {
+    img {
+      height: 200px;
+      width: 100%;
+    }
+    .announcement-body {
+      padding: 15px;
+      height: auto;
+    }
+  }
+
 }
 
