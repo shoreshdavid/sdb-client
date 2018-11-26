@@ -25,7 +25,7 @@ export const Part = ({
     <div className="series-item">
       <div className="series-item-detail">
         <div className="series-item-title">Part {partNumber}</div>
-        <div className="series-item-links">
+        <div className="series-item-links" style={{ display: 'flex' }}>
           {youtubeLink && (
             <a href={youtubeLink} target="_blank" rel="noopener noreferrer">
               <div className="series-item-square">
