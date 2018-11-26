@@ -1,5 +1,36 @@
 import * as React from 'react';
 
+const buttons = [
+  {
+    text: 'ONE-TIME DONATIONS HERE – THANK YOU!',
+    link: `http://www.mcssl.com/SecureCart/SecureCart.aspx?mid=2C37E45F-149B-4853-9879-DC5AA7B39A34&pid=0938126f8abc48f5b748f0113768436a`,
+  },
+  {
+    text: '$10.00 MONTHLY DONATIONS HERE – THANK YOU!',
+    link: `http://www.mcssl.com/SecureCart/SecureCart.aspx?mid=2C37E45F-149B-4853-9879-DC5AA7B39A34&pid=e0ceb882e1ab4d13ac7dc87afbbfa7f1`,
+  },
+  {
+    text: '$25.00 MONTHLY DONATIONS HERE – THANK YOU!',
+    link: `http://www.mcssl.com/SecureCart/SecureCart.aspx?mid=2C37E45F-149B-4853-9879-DC5AA7B39A34&pid=602dba4754af4b63b9847146567992b9`,
+  },
+  {
+    text: '$50.00 MONTHLY DONATIONS HERE – THANK YOU!',
+    link: `http://www.mcssl.com/SecureCart/SecureCart.aspx?mid=2C37E45F-149B-4853-9879-DC5AA7B39A34&pid=7cdd9678352743488598313a97c232de`,
+  },
+  {
+    text: '$100.00 MONTHLY DONATIONS HERE – THANK YOU!',
+    link: `http://www.mcssl.com/SecureCart/SecureCart.aspx?mid=2C37E45F-149B-4853-9879-DC5AA7B39A34&pid=1a3140b6f0764d6586ec56be2fed4601`,
+  },
+  {
+    text: '$250.00 MONTHLY DONATIONS HERE – THANK YOU!',
+    link: `http://www.mcssl.com/SecureCart/SecureCart.aspx?mid=2C37E45F-149B-4853-9879-DC5AA7B39A34&pid=f3592581987b443dba5a701e980c9768`,
+  },
+  {
+    text: '$500.00 MONTHLY DONATIONS HERE – THANK YOU!',
+    link: `http://www.mcssl.com/SecureCart/SecureCart.aspx?mid=2C37E45F-149B-4853-9879-DC5AA7B39A34&pid=4c7f2c62537a40158a33c5db5dc41386`,
+  },
+];
+
 export const DonatePage = () => (
   <div className="container-fluid padding-50">
     <div className="col-sm-12 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
@@ -10,18 +41,18 @@ export const DonatePage = () => (
         (You can designate where your donation will be applied on the next page)
       </p>
 
-      <div style={{ marginTop: 25, marginBottom: 25 }}>
-        <a
-          href="http://www.mcssl.com/SecureCart/ViewCart.aspx?mid=2C37E45F-
-          149B-4853-9879-DC5AA7B39A34&sctoken=438e6301091e4bd09f6e7dbbd2e8d32a&bhjs=1&bhqs=1"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <button className="btn btn-primary btn-block">
-            Donate Here - Thank You
-          </button>
-        </a>
-      </div>
+      {buttons.map((b, i) => (
+        <div style={{ marginTop: 25, marginBottom: 25 }} key={i}>
+          <a href={b.link} target="_blank" rel="noopener noreferrer">
+            <button
+              className="btn btn-primary btn-block"
+              style={{ fontWeight: 600, padding: 10 }}
+            >
+              {b.text}
+            </button>
+          </a>
+        </div>
+      ))}
 
       <div>
         <p>
