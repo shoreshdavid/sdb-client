@@ -13,7 +13,7 @@ $pulseTiming: 1.3s;
   width: $pulseSize;
   height: $pulseSize;
   border-radius: $pulseSize;
-  background-color: black;
+  background-color: #f09a3e;
   outline: 1px solid transparent;
   animation: pulseanim $pulseTiming ease-in-out infinite;
 }

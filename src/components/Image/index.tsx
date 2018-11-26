@@ -1,7 +1,6 @@
 import * as React from 'react';
 
-const placeholder =
-  'https://www.bristolgate.com/wp-content/uploads/2018/09/orionthemes-placeholder-image.png';
+const placeholder = require('../../assets/img/image-not-found.jpg');
 
 export const Image = props => {
   const { src, alt } = props;
