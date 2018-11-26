@@ -2,7 +2,7 @@ import * as React from 'react';
 
 export const PrivacyPolicyPage = () => {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid" style={{ padding: 25 }}>
       <h1>Privacy Policy</h1>
       <p>
         Protecting your private information is our priority. This Statement of
@@ -16,24 +16,26 @@ export const PrivacyPolicyPage = () => {
         statement.
       </p>
       <h3>Collection of your Personal Information</h3>
-      In order to better provide you with products and services offered on our
-      Site, Shoresh David Brandon may collect personally identifiable
-      information, such as your: – First and Last Name – Mailing Address –
-      E-mail Address – Phone Number If you purchase Shoresh David Brandon’s
-      products and services, we collect billing and credit card information.
-      This information is used to complete the purchase transaction. We do not
-      collect any personal information about you unless you voluntarily provide
-      it to us. However, you may be required to provide certain personal
-      information to us when you elect to use certain products or services
-      available on the Site. These may include: (a) registering for an account
-      on our Site; (b) entering a sweepstakes or contest sponsored by us or one
-      of our partners; (c) signing up for special offers from selected third
-      parties; (d) sending us an email message; (e) submitting your credit card
-      or other payment information when ordering and purchasing products and
-      services on our Site. To wit, we will use your information for, but not
-      limited to, communicating with you in relation to services and/or products
-      you have requested from us. We also may gather additional personal or
-      non-personal information in the future.
+      <p>
+        In order to better provide you with products and services offered on our
+        Site, Shoresh David Brandon may collect personally identifiable
+        information, such as your: – First and Last Name – Mailing Address –
+        E-mail Address – Phone Number If you purchase Shoresh David Brandon’s
+        products and services, we collect billing and credit card information.
+        This information is used to complete the purchase transaction. We do not
+        collect any personal information about you unless you voluntarily
+        provide it to us. However, you may be required to provide certain
+        personal information to us when you elect to use certain products or
+        services available on the Site. These may include: (a) registering for
+        an account on our Site; (b) entering a sweepstakes or contest sponsored
+        by us or one of our partners; (c) signing up for special offers from
+        selected third parties; (d) sending us an email message; (e) submitting
+        your credit card or other payment information when ordering and
+        purchasing products and services on our Site. To wit, we will use your
+        information for, but not limited to, communicating with you in relation
+        to services and/or products you have requested from us. We also may
+        gather additional personal or non-personal information in the future.
+      </p>
       <h3>Use of your Personal Information</h3>
       <p>
         Shoresh David Brandon collects and uses your personal information to
