@@ -6,7 +6,7 @@
   margin-bottom: 35px;
   position: relative;
   img {
-    height: 300px;
+    height: 400px;
     width: 700px;
   }
   h3 {
@@ -20,35 +20,9 @@
     font-size: 18px;
     line-height: 28px;
   }
-}
-
-.announcement-wrapper {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-column-gap: 30px;
-  grid-row-gap: 15px;
-  padding: 25px;
-}
-
-.announcement-item {
-  grid-column: span 3;
-}
-
-.announcement-item-details {
-  padding: 15px;
-}
-
-@media screen and (max-width: 680px) {
-  .announcement-wrapper {
-    padding: 10px;
-  }
-  .announcement-item {
-    grid-column: span 12;
+  .announcement-body {
+    padding: 25px;
+    height: 300px;
   }
 }
 
-@media (max-width: 1200px) and (min-width: 680px) {
-  .announcement-item {
-    grid-column: span 12;
-  }
-}
