@@ -1,21 +1,22 @@
 export const products = [
   {
+    order: 1,
     name: 'Healing Teachings DVD',
     price: 19.95,
     featuredImage:
       'https://shoreshdavidbrandon.org/wordpress/wp-content/uploads/2017/06/HEALINGCD.png',
     storeLink:
-      'http://www.mcssl.com/SecureCart/SecureCart.aspx?mid=2C37E45F-149B-4853-9879-DC5AA7B39A34&pid=823365852a594f9cb679a3f02e012baf',
-    order: 1,
+      'https://www.mcssl.com/SecureCart/SecureCart.aspx?mid=2C37E45F-149B-4853-9879-DC5AA7B39A34&pid=823365852a594f9cb679a3f02e012baf',
   },
   {
+    order: 2,
     name: "God's Healing Scriptures CD",
     price: 19.95,
     featuredImage:
       'https://shoreshdavidbrandon.org/wordpress/wp-content/uploads/2017/06/HEALINGscripturesCD.png',
     storeLink:
-      'http://www.mcssl.com/SecureCart/SecureCart.aspx?mid=2C37E45F-149B-4853-9879-DC5AA7B39A34&pid=79cb5db62cd64ad196b1a9dac5506885',
-    order: 2,
+      'https://www.mcssl.com/SecureCart/SecureCart.aspx?mid=2C37E45F-149B-4853-9879-DC5AA7B39A34&pid=79cb5db62cd64ad196b1a9dac5506885',
+    hasAudio: true,
   },
   {
     name: 'Get Healed Fast Related Teachings DVD',
@@ -23,7 +24,7 @@ export const products = [
     featuredImage:
       'https://shoreshdavidbrandon.org/wordpress/wp-content/uploads/2017/06/relatedteachingDVDcover1.png',
     storeLink:
-      'http://www.mcssl.com/SecureCart/SecureCart.aspx?mid=2C37E45F-149B-4853-9879-DC5AA7B39A34&pid=9ee63af63bbc45dab3edba13935cf41f',
+      'https://www.mcssl.com/SecureCart/SecureCart.aspx?mid=2C37E45F-149B-4853-9879-DC5AA7B39A34&pid=9ee63af63bbc45dab3edba13935cf41f',
     order: 3,
   },
   {
@@ -40,9 +41,9 @@ export const products = [
     price: 12.95,
     featuredImage:
       'https://shoreshdavidbrandon.org/wordpress/wp-content/uploads/2015/06/friend-book-large-e1502219848599.jpg',
-    storeLink:
-      'http://www.mcssl.com/SecureCart/SecureCart.aspx?mid=2C37E45F-149B-4853-9879-DC5AA7B39A34&pid=9d865f53a1ed447fbcce45c376490e0d',
+    storeLink: '',
     order: 5,
+    links: [{}],
   },
   {
     name: 'The Fig Tree Blossoms',

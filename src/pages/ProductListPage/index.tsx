@@ -24,6 +24,13 @@ export const ProductListPage = () => (
                 <h5 className="card-title">{product.name}</h5>
                 <h6 className="card-subtitle">${product.price}</h6>
               </div>
+              {product.hasAudio ? (
+                <audio
+                  src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/extra/healing-cd-preview.mp3"
+                  controls
+                  style={{ width: '100%', margin: '20px 0' }}
+                />
+              ) : null}
               <div className="card-footer">
                 <button className="btn btn-primary btn-block">Purchase</button>
               </div>

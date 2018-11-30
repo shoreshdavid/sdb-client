@@ -28,11 +28,12 @@
 }
 
 .card-content {
-  min-height: 130px;
+  min-height: 100px;
 }
 
 .card-title {
   line-height: 24px;
+  text-align: center;
   a {
     font-family: 'Open Sans', sans-serif;
     font-size: 18px;
