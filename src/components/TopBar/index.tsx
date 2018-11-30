@@ -46,20 +46,20 @@ export const TopBar = () => {
         </Link>
       </div>
       <div className="topbar-right">
-        <Link
-          to="https://www.facebook.com/shoreshdavidbrandon/"
+        <a
+          href="https://www.facebook.com/shoreshdavidbrandon/"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FontAwesomeIcon icon={faFacebookF} />
-        </Link>
-        <Link
-          to="https://www.youtube.com/channel/UC1yOFqmKt-1ruHxg6fBiAFg"
+        </a>
+        <a
+          href="https://www.youtube.com/channel/UC1yOFqmKt-1ruHxg6fBiAFg"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FontAwesomeIcon icon={faYoutube} />
-        </Link>
+        </a>
       </div>
     </div>
   );
