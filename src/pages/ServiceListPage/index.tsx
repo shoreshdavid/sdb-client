@@ -178,19 +178,6 @@ export class ServiceListPage extends React.Component<any, any> {
             <ul className="list-group">{renderTabs}</ul>
           </div>
           <div className="col">
-            {/* <div className="row" style={{flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <form onSubmit={(e: any) => this.handleSearchRequest(e)}>
-                  <input
-                    type="text"
-                    value={this.state.search}
-                    onChange={e => this.setState({ search: e.target.value })}
-                    className="form-control"
-                  />
-                  <button className="btn btn-primary" type="submit">
-                    Search
-                  </button>
-                </form>
-              </div> */}
             <div className="row">
               {services.map(service => (
                 <div className="col-lg-4 col-xl-4" key={service.slug}>
