@@ -1,7 +1,9 @@
 import Axios from 'axios';
+import * as React from 'react';
+
 import { Error } from 'components/Error';
 import { Image } from 'components/Image';
-import * as React from 'react';
+
 import { API_URL } from '../../constants';
 
 import './email.scss';
@@ -52,11 +54,7 @@ export class StickyEmail extends React.Component<any, any> {
         </button>
         <div className={`${this.state.open ? 'collapse show' : 'collapse'}`}>
           <div className="sticky-email-open">
-            <Image
-              src={book}
-              alt="free ebooks"
-              className="lazyload"
-            />
+            <Image src={book} alt="free ebooks" className="lazyload" />
             <div className="sticky-email-body">
               {this.state.error && <Error error={this.state.error} />}
               {this.state.data && <div>{this.state.data}</div>}

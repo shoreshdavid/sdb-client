@@ -1,5 +1,8 @@
 {
-  "extends": ["tslint-react"],
+  "extends": [
+    "tslint-react",
+    "tslint-config-prettier"
+  ],
   "rules": {
     "align": [true, "parameters", "arguments", "statements"],
     "ban": false,
@@ -48,6 +51,7 @@
     "no-switch-case-fall-through": true,
     "no-trailing-whitespace": false,
     "no-unused-expression": true,
+    "object-literal-sort-keys": false,
     "one-line": [
       true,
       "check-catch",
