@@ -1,8 +1,10 @@
 import Axios from 'axios';
-import { Article } from 'components/Article';
+import * as React from 'react';
+
+import { Card } from 'components/Card';
 import { Error } from 'components/Error';
 import { Loading } from 'components/Loading';
-import * as React from 'react';
+
 import { API_URL } from '../../constants';
 
 export class DiscoveriesPage extends React.Component<any, any> {
@@ -163,14 +165,24 @@ export class DiscoveriesPage extends React.Component<any, any> {
           <div className="col">
             <div className="row">
               {articles.length ? (
-                articles.map(article => (
-                  <div
-                    className="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-4"
-                    key={article.slug}
-                  >
-                    <Article article={article} />
-                  </div>
-                ))
+                articles.map(
+                  ({ title, featuredImage, slug, link }, i: number) => (
+                    <div
+                      className="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-4"
+                      key={i}
+                    >
+                      {/* <Article article={article} /> */}
+                      <Card
+                        title={title}
+                        featuredImage={featuredImage}
+                        slug={slug}
+                        // isSeries={service.parts.length > 1 ? true : false}
+                        link={link}
+                        type="discoveries"
+                      />
+                    </div>
+                  ),
+                )
               ) : (
                 <div className="padding-50">
                   No results in {this.state.category}

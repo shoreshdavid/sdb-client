@@ -1,7 +1,9 @@
 import Axios from 'axios';
-import { Loading } from 'components/Loading';
-import { Service } from 'components/Service';
 import * as React from 'react';
+
+import { Card } from 'components/Card';
+import { Loading } from 'components/Loading';
+
 import { API_URL } from '../../constants';
 
 export class ServiceListPage extends React.Component<any, any> {
@@ -181,7 +183,13 @@ export class ServiceListPage extends React.Component<any, any> {
             <div className="row">
               {services.map(service => (
                 <div className="col-lg-4 col-xl-4" key={service.slug}>
-                  <Service service={service} />
+                  <Card
+                    title={service.title}
+                    featuredImage={service.featuredImage}
+                    slug={service.slug}
+                    isSeries={service.parts.length > 1 ? true : false}
+                    type="services"
+                  />
                 </div>
               ))}
             </div>
