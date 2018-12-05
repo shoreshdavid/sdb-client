@@ -1,3 +1,4 @@
+import * as Sentry from '@sentry/browser';
 import * as React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
@@ -31,6 +32,10 @@ import registerServiceWorker from './registerServiceWorker';
 import './assets/scss/bootstrap.scss';
 
 import 'style/scss/application.scss';
+
+Sentry.init({
+  dsn: 'https://e0f935078b9d453db1ff925285d49017@sentry.io/1337810',
+});
 
 render(
   <BrowserRouter>
