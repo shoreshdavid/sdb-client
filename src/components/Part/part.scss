@@ -3,6 +3,9 @@
 .series-item {
   border-bottom: 1px solid #dfe4eb;
   margin-bottom: 25px;
+  &:last-child {
+    border: none;
+  }
   .series-item-links {
     color: grey;
   }

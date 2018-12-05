@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
-import './footer.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import './footer.scss';
 
 import {
   faFacebook,
-  faTwitter,
   faInstagram,
-  faYoutube,
   faMedium,
+  faTwitter,
+  faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
 import { faAnchor } from '@fortawesome/free-solid-svg-icons';
 

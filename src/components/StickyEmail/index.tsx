@@ -1,7 +1,6 @@
 import Axios from 'axios';
 import * as React from 'react';
 
-import { Error } from 'components/Error';
 import { Image } from 'components/Image';
 
 import { API_URL } from '../../constants';
@@ -28,18 +27,18 @@ export class StickyEmail extends React.Component<any, any> {
     });
   }
 
-  public handleSubmit = event => {
+  public handleSubmit = async (event: any) => {
     event.preventDefault();
-    Axios.post(`${API_URL}/email`, {
-      email: this.state.email,
-      name: this.state.name,
-    })
-      .then(res => {
-        this.setState({ data: 'Registration successful!' });
-      })
-      .catch(err => {
-        this.setState({ error: err.response.data.error.message });
+    try {
+      await Axios.post(`${API_URL}/email`, {
+        email: this.state.email,
+        name: this.state.name,
       });
+
+      this.setState({ data: 'Registration successful!' });
+    } catch (error) {
+      this.setState({ error: error.response.data.message });
+    }
   }
 
   public render() {
@@ -56,7 +55,20 @@ export class StickyEmail extends React.Component<any, any> {
           <div className="sticky-email-open">
             <Image src={book} alt="free ebooks" className="lazyload" />
             <div className="sticky-email-body">
-              {this.state.error && <Error error={this.state.error} />}
+              {this.state.error && (
+                <div
+                  style={{
+                    background: 'red',
+                    padding: 5,
+                    color: 'white',
+                    fontWeight: 600,
+                    textAlign: 'center',
+                    margin: '10px 0',
+                  }}
+                >
+                  {this.state.error}
+                </div>
+              )}
               {this.state.data && <div>{this.state.data}</div>}
               <form>
                 <div className="form-group">

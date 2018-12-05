@@ -6,6 +6,7 @@ import { Part } from 'components/Part';
 import * as React from 'react';
 import { API_URL } from '../../constants';
 
+import { Error } from 'components/Error';
 import ReactHtmlParser from 'react-html-parser';
 
 export class SingleDiscoveryPage extends React.Component<any, any> {
@@ -30,12 +31,7 @@ export class SingleDiscoveryPage extends React.Component<any, any> {
       return <Loading />;
     }
     if (this.state.error) {
-      return (
-        <div>
-          We are sorry. Something went wrong. Please refresh and try again.
-          Server message: {this.state.error}
-        </div>
-      );
+      return <Error error={this.state.error} />;
     }
     const renderParts = discovery.parts.length ? (
       discovery.parts.map((part, i: number) => (

@@ -5,8 +5,11 @@
   z-index: 1000;
   bottom: 0;
   top: 0;
+  right: 20px;
   width: 300px;
   float: right;
+  box-shadow: 0 0 5px #bbb;
+  background-color: #fff;
   button {
     background-color: #2c5a85;
     color: $white;

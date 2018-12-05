@@ -5,6 +5,7 @@ import { Link, NavLink } from 'react-router-dom';
 import './header.scss';
 
 const headerLogo = require('../../assets/img/header-logo.png');
+const smallLogo = require('../../assets/img/sdb-logo-md.png');
 
 export class Header extends React.Component<any, any> {
   public state = {
@@ -22,13 +23,21 @@ export class Header extends React.Component<any, any> {
       <div className="sdb-nav">
         <nav className="navbar navbar-expand-md navbar-light">
           <Link to="/">
-            <Image
-              src={headerLogo}
-              alt="Shoresh David Brandon logo"
-              className="lazyload"
-            />
+            {window.innerWidth < 600 ? (
+              <Image
+                src={smallLogo}
+                style={{ width: 50, height: 50 }}
+                alt="Shoresh David Brandon logo"
+                className="lazyload"
+              />
+            ) : (
+              <Image
+                src={headerLogo}
+                alt="Shoresh David Brandon logo"
+                className="lazyload"
+              />
+            )}
           </Link>
-          {/* <button type="button" onClick={this.toggle}></button> */}
           <button
             type="button"
             className="navbar-toggler"
@@ -43,14 +52,14 @@ export class Header extends React.Component<any, any> {
                 : 'collapse navbar-collapse'
             }`}
           >
-            <ul className="ml-auto navbar-nav" style={{ marginRight: 25 }}>
+            <ul className="ml-auto navbar-nav">
               <li className="nav-item">
                 <NavLink exact to="/" activeClassName="navlink-active">
                   Home
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink exact to="/services" activeClassName="navlink-active">
+                <NavLink to="/services" activeClassName="navlink-active">
                   Teachings
                 </NavLink>
               </li>
@@ -65,11 +74,7 @@ export class Header extends React.Component<any, any> {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink
-                  exact
-                  to="/discoveries"
-                  activeClassName="navlink-active"
-                >
+                <NavLink to="/discoveries" activeClassName="navlink-active">
                   Discoveries
                 </NavLink>
               </li>

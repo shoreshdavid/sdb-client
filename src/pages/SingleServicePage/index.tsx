@@ -1,8 +1,11 @@
 import Axios from 'axios';
+import * as React from 'react';
+
+import { Error } from 'components/Error';
 import { Image } from 'components/Image';
 import { Loading } from 'components/Loading';
 import { Part } from 'components/Part';
-import * as React from 'react';
+
 import { API_URL } from '../../constants';
 
 export class SingleServicePage extends React.Component<any, any> {
@@ -26,13 +29,9 @@ export class SingleServicePage extends React.Component<any, any> {
     if (this.state.loading) {
       return <Loading />;
     }
+
     if (this.state.error) {
-      return (
-        <div>
-          We are sorry. Something went wrong. Please refresh and try again.
-          Server message: {this.state.error}
-        </div>
-      );
+      return <Error error={this.state.error} />;
     }
 
     const renderParts = service.parts.length ? (
@@ -57,15 +56,16 @@ export class SingleServicePage extends React.Component<any, any> {
               alt={this.state.service.title}
               className="lazyload"
             />
-            <h4
+            <h1
               style={{
                 color: '#000',
-                padding: '30px 0 10px 0',
-                fontSize: 18,
+                padding: '10px 0 10px 0',
+                fontSize: 20,
+                textAlign: 'center',
               }}
             >
               {this.state.service.title}
-            </h4>
+            </h1>
             <p style={{ fontSize: 14 }}>{this.state.service.description}</p>
           </div>
           <div className="col-xs-12 col-sm-10 col-lg-8">{renderParts}</div>

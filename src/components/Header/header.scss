@@ -22,15 +22,33 @@
   }
 }
 
+.nav-item {
+  // float: right;
+  // display: flex;
+  // flex: 1;
+  // justify-content: flex-end;
+  // padding: 0;
+  margin: 0;
+  margin-top: 15px;
+  &:last-child {
+    margin-bottom: 15px;
+  }
+}
+
 .navlink-active {
   color: $primary-color !important;
+}
+
+.show {
+  border-top: 1px solid #eee;
+  margin-top: 20px;
 }
 
 @media only screen and (max-width: 800px) {
   .sdb-nav {
     a {
       margin-left: 5px;
-      margin-top: 0;
+      margin-top: 10px;
       font-size: 16px;
       font-weight: 700;
     }
