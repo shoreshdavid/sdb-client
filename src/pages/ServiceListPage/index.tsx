@@ -2,6 +2,7 @@ import Axios from 'axios';
 import * as React from 'react';
 
 import { Card } from 'components/Card';
+import { Error } from 'components/Error';
 import { Loading } from 'components/Loading';
 
 import { API_URL } from '../../constants';
@@ -17,9 +18,6 @@ export class ServiceListPage extends React.Component<any, any> {
     page: 1,
     count: 0,
     size: 12,
-
-    search: '',
-    results: [],
   };
 
   public componentDidMount() {
@@ -28,7 +26,7 @@ export class ServiceListPage extends React.Component<any, any> {
       Axios.get(
         `${API_URL}/services?category=${category}&page=${page}&size=${size}`,
       ),
-      Axios.get(`${API_URL}/tabs/services`),
+      Axios.get(`${API_URL}/tabs?pageType=Teachings`),
     ])
       .then(
         Axios.spread((serviceRes, tabRes) => {
@@ -40,10 +38,10 @@ export class ServiceListPage extends React.Component<any, any> {
           });
         }),
       )
-      .catch(err =>
+      .catch((error: any) =>
         this.setState({
           loading: false,
-          error: err,
+          error: error.response.data.message,
         }),
       );
   }
@@ -52,15 +50,15 @@ export class ServiceListPage extends React.Component<any, any> {
     const { category, page, size } = this.state;
     try {
       const res: any = await Axios.get(
-        `${API_URL}/services?category=${category}&page=${page}&size=${size}`,
+        `${API_URL}/services/?category=${category}&page=${page}&size=${size}`,
       );
       this.setState({
         services: res.data.data,
         count: res.data.count,
       });
-    } catch (err) {
+    } catch (error) {
       this.setState({
-        error: err.response.data.error,
+        error: error.response.data.message,
       });
     }
   }
@@ -103,23 +101,6 @@ export class ServiceListPage extends React.Component<any, any> {
     this.handlePageRequest();
   }
 
-  // public handleSearchRequest = (e: any) => {
-  //   e.preventDefault();
-  //   Axios.get(`${API_URL}/services/search?searchText=${this.state.search}`)
-  //     .then(res => {
-  //       console.log('res: ', res);
-  //       this.setState({
-  //         data: res.data.data,
-  //       });
-  //     })
-  //     .catch(err => {
-  //       console.log(JSON.stringify(err));
-  //       this.setState({
-  //           error: err.response.data.error,
-  //         });
-  //     });
-  // }
-
   public render() {
     const renderTabs = this.state.tabs.length ? (
       this.state.tabs.map((tab: any, index) => {
@@ -148,7 +129,7 @@ export class ServiceListPage extends React.Component<any, any> {
       return <Loading />;
     }
     if (this.state.error) {
-      return <div>{JSON.stringify(this.state.error)}</div>;
+      return <Error error={this.state.error} />;
     }
     if (!this.state.services) {
       return (

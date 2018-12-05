@@ -20,13 +20,10 @@ export class DiscoveriesPage extends React.Component<any, any> {
   };
 
   public componentDidMount() {
+    const { category, size, page } = this.state;
     Axios.all([
-      Axios.get(
-        `${API_URL}/articles?category=${this.state.category}&page=${
-          this.state.page
-        }&size=${this.state.size}`,
-      ),
-      Axios.get(`${API_URL}/tabs/discoveries`),
+      Axios.get(`${API_URL}/articles/${category}?page=${page}&size=${size}`),
+      Axios.get(`${API_URL}/tabs?pageType=Discoveries`),
     ])
       .then(
         Axios.spread((articleRes, tabRes) => {
@@ -38,10 +35,10 @@ export class DiscoveriesPage extends React.Component<any, any> {
           });
         }),
       )
-      .catch(err => {
+      .catch((error: any) => {
         this.setState({
           loading: false,
-          error: err,
+          error: error.response.data.message,
         });
       });
   }
@@ -53,7 +50,7 @@ export class DiscoveriesPage extends React.Component<any, any> {
     });
 
     Axios.get(
-      `${API_URL}/articles?category=${this.state.category}&page=${
+      `${API_URL}/articles/${this.state.category}?page=${
         this.state.page
       }&size=${this.state.size}`,
     )
@@ -72,9 +69,7 @@ export class DiscoveriesPage extends React.Component<any, any> {
 
   public handlePageRequest = () => {
     const { category, page, size } = this.state;
-    Axios.get(
-      `${API_URL}/articles?category=${category}&page=${page}&size=${size}`,
-    )
+    Axios.get(`${API_URL}/articles/${category}?page=${page}&size=${size}`)
       .then(res => {
         this.setState({
           loading: false,
