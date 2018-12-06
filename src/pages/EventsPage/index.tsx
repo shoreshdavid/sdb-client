@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Helmet } from 'react-helmet';
 import { Fetch } from 'react-refetch-component';
 
 import { Error } from 'components/Error';
@@ -23,29 +24,34 @@ export const Event = ({ event }) => {
 
 export const EventsPage = () => {
   return (
-    <div className="container-fluid padding-50">
-      <div className="row">
-        <Fetch
-          url={`${API_URL}/events?size=20`}
-          method="get"
-          lifecycle="onMount"
-        >
-          {({ loading, error, data }) => {
-            if (loading) {
-              return <Loading />;
-            }
-            if (error) {
-              return <Error error={error} />;
-            }
+    <React.Fragment>
+      <Helmet>
+        <title>Events At Shoresh David Brandon</title>
+      </Helmet>
+      <div className="container-fluid padding-50">
+        <div className="row">
+          <Fetch
+            url={`${API_URL}/events?size=20`}
+            method="get"
+            lifecycle="onMount"
+          >
+            {({ loading, error, data }) => {
+              if (loading) {
+                return <Loading />;
+              }
+              if (error) {
+                return <Error error={error} />;
+              }
 
-            return data.data.map((event: any, i: number) => (
-              <div key={i} className="col-lg-6">
-                <Event event={event} />
-              </div>
-            ));
-          }}
-        </Fetch>
+              return data.data.map((event: any, i: number) => (
+                <div key={i} className="col-lg-6">
+                  <Event event={event} />
+                </div>
+              ));
+            }}
+          </Fetch>
+        </div>
       </div>
-    </div>
+    </React.Fragment>
   );
 };

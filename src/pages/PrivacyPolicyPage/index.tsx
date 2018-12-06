@@ -1,7 +1,11 @@
 import * as React from 'react';
+import { Helmet } from 'react-helmet';
 
-export const PrivacyPolicyPage = () => {
-  return (
+export const PrivacyPolicyPage = () => (
+  <React.Fragment>
+    <Helmet>
+      <title>Privacy Policy | Shoresh David Brandon</title>
+    </Helmet>
     <div className="container-fluid" style={{ padding: 25 }}>
       <h1>Privacy Policy</h1>
       <p>
@@ -139,5 +143,5 @@ export const PrivacyPolicyPage = () => {
         number: 813-699-4155 Effective as of July 09, 2018
       </p>
     </div>
-  );
-};
+  </React.Fragment>
+);

@@ -1,11 +1,15 @@
-import * as React from 'react';
-import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import * as React from 'react';
+import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 
 import './not-found.scss';
 
-export const NotFoundPage = () => {
-  return (
+export const NotFoundPage = () => (
+  <React.Fragment>
+    <Helmet>
+      <title>Page Not Found | Shoresh David Brandon</title>
+    </Helmet>
     <div className="container-fluid padding-50">
       <div className="row">
         <h2 className="not-found-page-title">
@@ -70,5 +74,5 @@ export const NotFoundPage = () => {
         </div>
       </div>
     </div>
-  );
-};
+  </React.Fragment>
+);

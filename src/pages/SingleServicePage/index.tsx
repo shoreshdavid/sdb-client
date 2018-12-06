@@ -1,5 +1,6 @@
 import Axios from 'axios';
 import * as React from 'react';
+import { Helmet } from 'react-helmet';
 
 import { Error } from 'components/Error';
 import { Image } from 'components/Image';
@@ -24,14 +25,14 @@ export class SingleServicePage extends React.Component<any, any> {
   }
 
   public render() {
-    const { service } = this.state;
+    const { loading, error, service } = this.state;
 
-    if (this.state.loading) {
+    if (loading) {
       return <Loading />;
     }
 
-    if (this.state.error) {
-      return <Error error={this.state.error} />;
+    if (error) {
+      return <Error error={error} />;
     }
 
     const renderParts = service.parts.length ? (
@@ -50,29 +51,35 @@ export class SingleServicePage extends React.Component<any, any> {
       </div>
     );
     return (
-      <div className="container-fluid padding-50">
-        <div className="row">
-          <div className="col-xs-12 col-sm-12 col-lg-4">
-            <Image
-              src={this.state.service.featuredImage}
-              alt={this.state.service.title}
-              className="lazyload"
-            />
-            <h1
-              style={{
-                color: '#000',
-                padding: '10px 0 10px 0',
-                fontSize: 20,
-                textAlign: 'center',
-              }}
-            >
-              {this.state.service.title}
-            </h1>
-            <p style={{ fontSize: 14 }}>{this.state.service.description}</p>
+      <React.Fragment>
+        <Helmet>
+          <title>{service.title}</title>
+          {/* <link rel="canonical" href="http://mysite.com/example" /> */}
+        </Helmet>
+        <div className="container-fluid padding-50">
+          <div className="row">
+            <div className="col-xs-12 col-sm-12 col-lg-4">
+              <Image
+                src={this.state.service.featuredImage}
+                alt={this.state.service.title}
+                className="lazyload"
+              />
+              <h1
+                style={{
+                  color: '#000',
+                  padding: '10px 0 10px 0',
+                  fontSize: 20,
+                  textAlign: 'center',
+                }}
+              >
+                {service.title}
+              </h1>
+              <p style={{ fontSize: 14 }}>{service.description}</p>
+            </div>
+            <div className="col-xs-12 col-sm-10 col-lg-8">{renderParts}</div>
           </div>
-          <div className="col-xs-12 col-sm-10 col-lg-8">{renderParts}</div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

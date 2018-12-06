@@ -1,5 +1,6 @@
 import Axios from 'axios';
 import * as React from 'react';
+import { Helmet } from 'react-helmet';
 
 import { Card } from 'components/Card';
 import { Error } from 'components/Error';
@@ -152,87 +153,92 @@ export class DiscoveriesPage extends React.Component<any, any> {
     };
 
     return (
-      <div className="container-fluid padding-50">
-        <div className="row">
-          <div className="col-xs-12 col-sm-12 col-lg-4 col-xl-3">
-            <ul className="list-group">{renderTabs}</ul>
-          </div>
-          <div className="col">
-            <div className="row">
-              {articles.length ? (
-                articles.map(
-                  ({ title, featuredImage, slug, link }, i: number) => (
-                    <div
-                      className="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-4"
-                      key={i}
-                    >
-                      {/* <Article article={article} /> */}
-                      <Card
-                        title={title}
-                        featuredImage={featuredImage}
-                        slug={slug}
-                        // isSeries={service.parts.length > 1 ? true : false}
-                        link={link}
-                        type="discoveries"
-                      />
-                    </div>
-                  ),
-                )
-              ) : (
-                <div className="padding-50">
-                  No results in {this.state.category}
-                </div>
-              )}
+      <React.Fragment>
+        <Helmet>
+          <title>SDB | Biblical Based Articles & Discoveries</title>
+        </Helmet>
+        <div className="container-fluid padding-50">
+          <div className="row">
+            <div className="col-xs-12 col-sm-12 col-lg-4 col-xl-3">
+              <ul className="list-group">{renderTabs}</ul>
             </div>
-            <div
-              className="row"
-              style={{
-                textAlign: 'center',
-                margin: '0 auto',
-                justifyContent: 'center',
-              }}
-            >
-              <ul className="pagination">
-                <li
-                  className={
-                    this.state.page === 1 ? 'page-item disabled' : 'page-item'
-                  }
-                  onClick={this.handleLeftPage}
-                >
-                  <span className="page-link">Previous</span>
-                </li>
-                {range(1, Math.ceil(count / size)).map(
-                  (selectedPage: number, i) => (
-                    <li
-                      className={`page-item ${
-                        page === selectedPage ? 'active' : null
-                      }`}
-                      key={i}
-                    >
-                      <span
-                        className="page-link"
-                        onClick={() => this.goToPage(selectedPage)}
+            <div className="col">
+              <div className="row">
+                {articles.length ? (
+                  articles.map(
+                    ({ title, featuredImage, slug, link }, i: number) => (
+                      <div
+                        className="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-4"
+                        key={i}
                       >
-                        {selectedPage}
-                      </span>
-                    </li>
-                  ),
+                        {/* <Article article={article} /> */}
+                        <Card
+                          title={title}
+                          featuredImage={featuredImage}
+                          slug={slug}
+                          // isSeries={service.parts.length > 1 ? true : false}
+                          link={link}
+                          type="discoveries"
+                        />
+                      </div>
+                    ),
+                  )
+                ) : (
+                  <div className="padding-50">
+                    No results in {this.state.category}
+                  </div>
                 )}
-                <li
-                  className={
-                    page > Math.ceil(count / size) - 1
-                      ? 'page-item disabled'
-                      : 'page-item'
-                  }
-                  onClick={this.handleRightPage}
-                >
-                  <span className="page-link">Next</span>
-                </li>
-              </ul>
+              </div>
+              <div
+                className="row"
+                style={{
+                  textAlign: 'center',
+                  margin: '0 auto',
+                  justifyContent: 'center',
+                }}
+              >
+                <ul className="pagination">
+                  <li
+                    className={
+                      this.state.page === 1 ? 'page-item disabled' : 'page-item'
+                    }
+                    onClick={this.handleLeftPage}
+                  >
+                    <span className="page-link">Previous</span>
+                  </li>
+                  {range(1, Math.ceil(count / size)).map(
+                    (selectedPage: number, i) => (
+                      <li
+                        className={`page-item ${
+                          page === selectedPage ? 'active' : null
+                        }`}
+                        key={i}
+                      >
+                        <span
+                          className="page-link"
+                          onClick={() => this.goToPage(selectedPage)}
+                        >
+                          {selectedPage}
+                        </span>
+                      </li>
+                    ),
+                  )}
+                  <li
+                    className={
+                      page > Math.ceil(count / size) - 1
+                        ? 'page-item disabled'
+                        : 'page-item'
+                    }
+                    onClick={this.handleRightPage}
+                  >
+                    <span className="page-link">Next</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

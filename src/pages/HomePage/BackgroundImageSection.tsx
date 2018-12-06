@@ -13,9 +13,9 @@ export const BackgroundImageSection = () => {
           <Link to="/events">
             <button className="btn btn-primary">Events</button>
           </Link>
-          <Link to="/services/get-healed-fast">
+          <a href="https://gethealedfast.com" target="_blank">
             <button className="btn btn-primary">Get Healed Fast</button>
-          </Link>
+          </a>
           <p />
           <Link to="/services">
             <button className="btn btn-primary">Latest Teachings</button>

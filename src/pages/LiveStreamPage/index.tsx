@@ -1,5 +1,7 @@
-import { Image } from 'components/Image';
 import * as React from 'react';
+import { Helmet } from 'react-helmet';
+
+import { Image } from 'components/Image';
 
 import './stream.scss';
 
@@ -9,8 +11,11 @@ const donateUrl =
 
 const SDBLogo = require('../../assets/img/sdb-logo-md.png');
 
-export const LiveStreamPage = () => {
-  return (
+export const LiveStreamPage = () => (
+  <React.Fragment>
+    <Helmet>
+      <title>Live Streaming | Shoresh David Brandon</title>
+    </Helmet>
     <div className="container-fluid padding-100">
       <div className="row">
         <div className="live-meta">
@@ -46,5 +51,5 @@ export const LiveStreamPage = () => {
         </div>
       </div>
     </div>
-  );
-};
+  </React.Fragment>
+);
