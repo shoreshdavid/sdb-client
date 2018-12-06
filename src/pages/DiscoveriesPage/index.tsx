@@ -23,7 +23,9 @@ export class DiscoveriesPage extends React.Component<any, any> {
   public componentDidMount() {
     const { category, size, page } = this.state;
     Axios.all([
-      Axios.get(`${API_URL}/articles/${category}?page=${page}&size=${size}`),
+      Axios.get(
+        `${API_URL}/articles?category=${category}&page=${page}&size=${size}`,
+      ),
       Axios.get(`${API_URL}/tabs?pageType=Discoveries`),
     ])
       .then(
@@ -51,7 +53,7 @@ export class DiscoveriesPage extends React.Component<any, any> {
     });
 
     Axios.get(
-      `${API_URL}/articles/${this.state.category}?page=${
+      `${API_URL}/articles?category=${this.state.category}&page=${
         this.state.page
       }&size=${this.state.size}`,
     )
@@ -70,7 +72,9 @@ export class DiscoveriesPage extends React.Component<any, any> {
 
   public handlePageRequest = () => {
     const { category, page, size } = this.state;
-    Axios.get(`${API_URL}/articles/${category}?page=${page}&size=${size}`)
+    Axios.get(
+      `${API_URL}/articles?category=${category}&page=${page}&size=${size}`,
+    )
       .then(res => {
         this.setState({
           loading: false,
@@ -189,52 +193,56 @@ export class DiscoveriesPage extends React.Component<any, any> {
                   </div>
                 )}
               </div>
-              <div
-                className="row"
-                style={{
-                  textAlign: 'center',
-                  margin: '0 auto',
-                  justifyContent: 'center',
-                }}
-              >
-                <ul className="pagination">
-                  <li
-                    className={
-                      this.state.page === 1 ? 'page-item disabled' : 'page-item'
-                    }
-                    onClick={this.handleLeftPage}
-                  >
-                    <span className="page-link">Previous</span>
-                  </li>
-                  {range(1, Math.ceil(count / size)).map(
-                    (selectedPage: number, i) => (
-                      <li
-                        className={`page-item ${
-                          page === selectedPage ? 'active' : null
-                        }`}
-                        key={i}
-                      >
-                        <span
-                          className="page-link"
-                          onClick={() => this.goToPage(selectedPage)}
+              {count > 12 ? (
+                <div
+                  className="row"
+                  style={{
+                    textAlign: 'center',
+                    margin: '0 auto',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <ul className="pagination">
+                    <li
+                      className={
+                        this.state.page === 1
+                          ? 'page-item disabled'
+                          : 'page-item'
+                      }
+                      onClick={this.handleLeftPage}
+                    >
+                      <span className="page-link">Previous</span>
+                    </li>
+                    {range(1, Math.ceil(count / size)).map(
+                      (selectedPage: number, i) => (
+                        <li
+                          className={`page-item ${
+                            page === selectedPage ? 'active' : null
+                          }`}
+                          key={i}
                         >
-                          {selectedPage}
-                        </span>
-                      </li>
-                    ),
-                  )}
-                  <li
-                    className={
-                      page > Math.ceil(count / size) - 1
-                        ? 'page-item disabled'
-                        : 'page-item'
-                    }
-                    onClick={this.handleRightPage}
-                  >
-                    <span className="page-link">Next</span>
-                  </li>
-                </ul>
-              </div>
+                          <span
+                            className="page-link"
+                            onClick={() => this.goToPage(selectedPage)}
+                          >
+                            {selectedPage}
+                          </span>
+                        </li>
+                      ),
+                    )}
+                    <li
+                      className={
+                        page > Math.ceil(count / size) - 1
+                          ? 'page-item disabled'
+                          : 'page-item'
+                      }
+                      onClick={this.handleRightPage}
+                    >
+                      <span className="page-link">Next</span>
+                    </li>
+                  </ul>
+                </div>
+              ) : null}
             </div>
           </div>
         </div>
