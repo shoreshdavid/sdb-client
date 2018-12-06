@@ -45,7 +45,9 @@ export class SingleServicePage extends React.Component<any, any> {
         />
       ))
     ) : (
-      <div>No Parts...</div>
+      <div>
+        <p>We're sorry. It doesn't appear this service has any parts.</p>
+      </div>
     );
     return (
       <div className="container-fluid padding-50">

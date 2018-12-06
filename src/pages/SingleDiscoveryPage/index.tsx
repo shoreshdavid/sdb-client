@@ -44,7 +44,9 @@ export class SingleDiscoveryPage extends React.Component<any, any> {
         />
       ))
     ) : (
-      <h1>No Parts...</h1>
+      <div>
+        <p>We're sorry. It doesn't appear this article has any parts.</p>
+      </div>
     );
     const { featuredImage, content, title } = this.state.discovery;
     return (

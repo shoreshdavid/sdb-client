@@ -133,11 +133,7 @@ export class ServiceListPage extends React.Component<any, any> {
     }
     if (!this.state.services) {
       return (
-        <div className="container-fluid padding-50">
-          <div className="row">
-            <h1>Server Error</h1>
-          </div>
-        </div>
+        <Error error="We are not sure what happened but we did receive a error in our logs." />
       );
     }
 
