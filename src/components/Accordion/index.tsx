@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import './accordion.scss';
+
 export class Accordion extends React.Component<any, any> {
   public state = { open: false };
 

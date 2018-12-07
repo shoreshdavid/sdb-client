@@ -53,7 +53,10 @@ export const DonatePage = () => (
             <a href={b.link} target="_blank" rel="noopener noreferrer">
               <button
                 className="btn btn-primary btn-block"
-                style={{ fontWeight: 600, padding: 10 }}
+                style={{
+                  fontWeight: 600,
+                  padding: 10,
+                }}
               >
                 {b.text}
               </button>

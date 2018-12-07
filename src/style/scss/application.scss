@@ -28,3 +28,20 @@ p {
 .brand-hr {
   border-color: $primary-color;
 }
+
+.accordion-button {
+  margin-bottom: 1rem;
+  background-color: $white;
+  color: $black;
+  border: none;
+  text-align: left;
+  padding: 25px;
+  outline: none;
+  span {
+    margin-left: 15px;
+  }
+  &:hover {
+    background-color: $white;
+    color: $primary-color;
+  }
+}
