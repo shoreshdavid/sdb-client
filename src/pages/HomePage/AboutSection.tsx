@@ -18,7 +18,7 @@ export const AboutSection = () => {
           Our Mission
         </h2>
         <hr className="brand-hr" style={{ width: 200, marginBottom: 20 }} />
-        <p className="secondary-text">
+        <p>
           Our mission can be summed up as follows. People everywhere need to be
           healed of many things, both mental/emotional and physical diseases. In
           addition, there are billions worldwide who have not accepted Yeshua as

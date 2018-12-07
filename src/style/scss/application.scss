@@ -1,20 +1,30 @@
 // Variables
 @import 'variables';
 
+@font-face {
+  font-family: LemonMilk;
+  src: url("../../assets/font/LemonMilk.otf");
+}
+
 // Mixins
-@import 'mixins';
+@mixin padding-container($padding) {
+  padding: $padding;
+}
 
 // Base
 @import 'base/reset';
 @import 'base/general';
-@import 'base/text';
-@import 'base/parallax';
 
 // Utilities
 @import 'utilities';
 
 // Components
-@import 'components/accordion';
-@import 'components/card';
 @import 'components/containers';
-@import 'components/hr';
+
+p {
+  text-align: justify !important;
+}
+
+.brand-hr {
+  border-color: $primary-color;
+}

@@ -70,23 +70,22 @@ export class DiscoveriesPage extends React.Component<any, any> {
       });
   }
 
-  public handlePageRequest = () => {
+  public handlePageRequest = async () => {
     const { category, page, size } = this.state;
-    Axios.get(
-      `${API_URL}/articles?category=${category}&page=${page}&size=${size}`,
-    )
-      .then(res => {
-        this.setState({
-          loading: false,
-          articles: res.data.data,
-        });
-      })
-      .catch(err =>
-        this.setState({
-          loading: false,
-          error: err.response.data.error,
-        }),
+    try {
+      const res = await Axios.get(
+        `${API_URL}/articles?category=${category}&page=${page}&size=${size}`,
       );
+      this.setState({
+        loading: false,
+        articles: res.data.data,
+      });
+    } catch (error) {
+      this.setState({
+        loading: false,
+        error: error.response.data.error,
+      });
+    }
   }
 
   public goToPage = async (page: number) => {
@@ -175,12 +174,10 @@ export class DiscoveriesPage extends React.Component<any, any> {
                         className="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-4"
                         key={i}
                       >
-                        {/* <Article article={article} /> */}
                         <Card
                           title={title}
                           featuredImage={featuredImage}
                           slug={slug}
-                          // isSeries={service.parts.length > 1 ? true : false}
                           link={link}
                           type="discoveries"
                         />

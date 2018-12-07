@@ -7,15 +7,15 @@ import { LiveStreamSection } from 'pages/HomePage/LiveStreamSection';
 import { RabbiSection } from 'pages/HomePage/RabbiSection';
 import { StatementSection } from 'pages/HomePage/StatementSection';
 
-export const HomePage = () => {
-  return (
-    <React.Fragment>
-      <BackgroundImageSection />
-      <IntroSection />
-      <LiveStreamSection />
-      <StatementSection />
-      <RabbiSection />
-      <AboutSection />
-    </React.Fragment>
-  );
-};
+import './home.scss';
+
+export const HomePage = () => (
+  <React.Fragment>
+    <BackgroundImageSection />
+    <IntroSection />
+    <LiveStreamSection />
+    <StatementSection />
+    <RabbiSection />
+    <AboutSection />
+  </React.Fragment>
+);
