@@ -1,13 +1,11 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
+// import { Image } from 'components/Image';
+
 import './card.scss';
 
-// purple 5A17C7
-// royal blue 031AF7
-// light blue 00ADFF
-
-const colors = ['#5A17C7', '#031AF7', '#08D316', '#00ADFF', '#FF4600', 'red'];
+const colors = ['#5A17C7', '#031AF7', '#08D316', '#00ADFF', '#FF4600'];
 
 export const Card = ({
   featuredImage,
@@ -22,6 +20,15 @@ export const Card = ({
   return (
     <div className="card-item">
       <div className="card-thumb" style={{ backgroundColor: rand }}>
+        {/* {featuredImage ? (
+          <Image src={featuredImage} alt={title} />
+        ) : (
+          <div className="card-thumb-title">
+            <span>{title}</span>
+          </div>
+        )} */}
+
+        {/* TODO: Delete this div/span */}
         <div className="card-thumb-title">
           <span>{title}</span>
         </div>
