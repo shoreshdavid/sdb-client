@@ -163,22 +163,25 @@ export class ServiceListPage extends React.Component<any, any> {
             </div>
             <div className="col">
               <div className="row">
-                {services.map(service => (
-                  <div className="col-lg-4 col-xl-4" key={service.slug}>
-                    <Card
-                      title={service.title}
-                      featuredImage={service.featuredImage}
-                      slug={service.slug}
-                      isSeries={service.parts.length > 1 ? true : false}
-                      type="services"
-                      link={
-                        service.slug === 'how-to-get-healed-and-stay-healed'
-                          ? 'https://gethealedfast.com/'
-                          : null
-                      }
-                    />
-                  </div>
-                ))}
+                {services.map(
+                  ({ title, featuredImage, slug, parts, color }, i: number) => (
+                    <div className="col-lg-4 col-xl-4" key={i}>
+                      <Card
+                        title={title}
+                        featuredImage={featuredImage}
+                        slug={slug}
+                        isSeries={parts.length > 1 ? true : false}
+                        type="services"
+                        color={color}
+                        link={
+                          slug === 'how-to-get-healed-and-stay-healed'
+                            ? 'https://gethealedfast.com/'
+                            : null
+                        }
+                      />
+                    </div>
+                  ),
+                )}
               </div>
               {count > 12 ? (
                 <div

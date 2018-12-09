@@ -31,13 +31,14 @@ export const JewishPage = () => {
                 }
 
                 return data.data.map(
-                  ({ featuredImage, link, title }, i: number) => (
+                  ({ featuredImage, link, title, color }, i: number) => (
                     <div className="col-sm-12 col-lg-3" key={i}>
                       <Card
                         title={title}
                         featuredImage={featuredImage}
                         slug={null}
                         link={link}
+                        color={color}
                         isSeries={false}
                         type="jewish"
                       />
