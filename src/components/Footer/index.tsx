@@ -1,9 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import './footer.scss';
-
 import {
   faFacebook,
   faInstagram,
@@ -12,15 +9,16 @@ import {
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
 import { faAnchor } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import './footer.scss';
 
 export const Footer = () => {
   return (
-    <footer className="footer">
+    <footer>
       <div className="footer-copyright">
-        <div>
-          2018 © Shoresh David of Brandon | All Rights Reserved |{' '}
-          <Link to="/privacy-policy">Privacy Policy</Link>
-        </div>
+        2018 © Shoresh David of Brandon | All Rights Reserved |{' '}
+        <Link to="/privacy-policy"> Privacy Policy</Link>
       </div>
 
       <div className="footer-social">

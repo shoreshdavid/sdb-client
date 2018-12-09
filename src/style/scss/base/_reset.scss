@@ -13,7 +13,7 @@ html {
   -webkit-text-size-adjust: 100%; /* 2 */
   -webkit-font-smoothing: antialiased;
   font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial,
-      sans-serif, 'Apple Color Emoji';
+    sans-serif, 'Apple Color Emoji';
 }
 
 /* Sections
@@ -25,6 +25,11 @@ html {
 
 body {
   margin: 0;
+  height: 100%;
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100vh;
 }
 
 // @font-face {

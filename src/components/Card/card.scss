@@ -49,26 +49,28 @@
   display: flex;
   flex: 1;
   justify-content: center;
-  // background-image: url("https://s3.amazonaws.com/images.shoreshdavidbrandon.com/youtube.png");
-  // background-size: cover;
-  // background-repeat: no-repeat !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  flex: 1;
+  justify-content: center;
   width: 100%;
   height: 175px;
-
 }
-    .card-thumb-title {
-      display: flex;
-      flex: 1;
-      flex-direction: column;
-      justify-content: center;
-      align-self: center;
-      color: white;
-      font-family: LemonMilk;
-      text-align: center;
-      position: absolute;
-      word-wrap: wrap;
-      max-width: 80%;
-      // margin-top: 20px;
-      font-size: 16px;
-      text-shadow: 0 0 1px lighten(#000, 30);
-    }
+
+.card-thumb-title {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  color: white;
+  font-family: LemonMilk;
+  text-align: center;
+  position: absolute;
+  word-wrap: wrap;
+  max-width: 80%;
+  // margin-top: 20px;
+  font-size: 16px;
+  text-shadow: 0 0 1px lighten(#000, 30);
+}

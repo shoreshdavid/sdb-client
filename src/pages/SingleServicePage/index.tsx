@@ -59,21 +59,18 @@ export class SingleServicePage extends React.Component<any, any> {
         </Helmet>
         <div className="container-fluid padding-50">
           <div className="row">
-            <div className="col-xs-12 col-sm-12 col-lg-4">
+            <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4 single-left-side">
               <div
-                className="card-thumb"
+                className="thumb"
                 style={{
-                  backgroundImage: image,
+                  backgroundImage: `url("${image}")`,
                   backgroundColor: service.color ? service.color : '#000',
-                  height: '100%',
-                  width: '100%',
-                  backgroundSize: 'contain',
                 }}
               >
                 {service.featuredImage ? (
                   <img src={service.featuredImage} alt={service.title} />
                 ) : (
-                  <div className="card-thumb-title">
+                  <div className="thumb-title">
                     <span>{service.title}</span>
                   </div>
                 )}
@@ -88,7 +85,7 @@ export class SingleServicePage extends React.Component<any, any> {
               </h1>
               <p style={{ fontSize: 14 }}>{service.description}</p>
             </div>
-            <div className="col-xs-12 col-sm-10 col-lg-8">
+            <div className="col-xs-12 col-sm-12 col-md-6 col-lg-8">
               {renderParts}
               <div className="single-page-content">
                 {service.content && (

@@ -57,6 +57,7 @@ export class ServiceListPage extends React.Component<any, any> {
         services: res.data.data,
         count: res.data.count,
       });
+      window.scrollTo(0, 0);
     } catch (error) {
       this.setState({
         error: error.response.data.message,
@@ -158,14 +159,17 @@ export class ServiceListPage extends React.Component<any, any> {
         </Helmet>
         <div className="container-fluid padding-50">
           <div className="row">
-            <div className="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-3">
+            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
               <ul className="list-group">{renderTabs}</ul>
             </div>
             <div className="col">
               <div className="row">
                 {services.map(
                   ({ title, featuredImage, slug, parts, color }, i: number) => (
-                    <div className="col-lg-4 col-xl-4" key={i}>
+                    <div
+                      className="col-sm-12 col-md-6 col-lg-6 col-xl-4"
+                      key={i}
+                    >
                       <Card
                         title={title}
                         featuredImage={featuredImage}

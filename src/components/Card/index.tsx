@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 import './card.scss';
 
 const jewishImg = require('../../assets/img/jewish.png');
-const serviceImg = require('../../assets/img/service-background.png');
-
-// const d = require('../../assets/img/jewish.png')
+const serviceImg = require('../../assets/img/service-background-new.png');
 
 export const Card = ({
   featuredImage,
@@ -26,16 +24,10 @@ export const Card = ({
           ) : (
           )} */}
       <div
+        className="card-thumb"
         style={{
           backgroundImage: img,
           backgroundColor: color,
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          display: 'flex',
-          flex: 1,
-          justifyContent: 'center',
-          width: '100%',
-          height: 200,
         }}
       >
         <div className="card-thumb-title">

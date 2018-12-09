@@ -1,16 +1,30 @@
 @import '../../style/scss/variables';
 
-.footer {
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
   display: flex;
   flex: 1;
-  flex-direction: row;
-  flex-wrap: wrap;
-  background-color: #ffffff;
-  border-top: 1px solid #e7e4e2;
-  padding: 20px;
-  position: relative;
-  bottom: 0;
+  justify-content: center;
+  align-items: center;
 }
+
+// .footer {
+//   display: flex;
+//   flex: 1;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+//   background-color: #ffffff;
+//   border-top: 1px solid #e7e4e2;
+//   padding: 20px;
+//   position: absolute;
+//   bottom: 0;
+// }
 
 .footer-copyright {
   display: flex;

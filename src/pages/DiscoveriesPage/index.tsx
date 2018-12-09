@@ -80,6 +80,7 @@ export class DiscoveriesPage extends React.Component<any, any> {
         loading: false,
         articles: res.data.data,
       });
+      window.scrollTo(0, 0);
     } catch (error) {
       this.setState({
         loading: false,
@@ -162,7 +163,7 @@ export class DiscoveriesPage extends React.Component<any, any> {
         </Helmet>
         <div className="container-fluid padding-50">
           <div className="row">
-            <div className="col-xs-12 col-sm-12 col-lg-4 col-xl-3">
+            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
               <ul className="list-group">{renderTabs}</ul>
             </div>
             <div className="col">
@@ -174,7 +175,7 @@ export class DiscoveriesPage extends React.Component<any, any> {
                       i: number,
                     ) => (
                       <div
-                        className="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-4"
+                        className="col-sm-12 col-md-6 col-lg-6 col-xl-4"
                         key={i}
                       >
                         <Card

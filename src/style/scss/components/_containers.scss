@@ -134,9 +134,51 @@
   padding: 50px;
 }
 
-// Media Queries
+.single-left-side {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  .thumb {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    background-repeat: no-repeat;
+    min-height: 30vh;
+    height: 175px;
+    width: 100%;
+    background-size: cover;
+  }
+  .thumb-title {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    color: white;
+    font-family: LemonMilk;
+    text-align: center;
+    position: absolute;
+    word-wrap: wrap;
+    max-width: 80%;
+    // margin-top: 20px;
+    font-size: 16px;
+    text-shadow: 0 0 1px lighten(#000, 30);
+  }
+  // p {
+  //   position: relative;
+  // }
+}
 
+// Media Queries
 @media only screen and (max-width: 800px) {
+  .single-left-side {
+    margin-bottom: 10px;
+    // height: auto;
+    // padding-bottom: 100px;
+    // padding: 100px;
+  }
   .accordion-container,
   .rabbi-container,
   .about-container,

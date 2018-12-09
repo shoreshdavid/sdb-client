@@ -49,3 +49,12 @@
   font-weight: 400;
   text-transform: capitalize;
 }
+
+@media only screen and (max-width: 800px) {
+  .series-item {
+    margin-bottom: 30px;
+  }
+  .series-item-detail {
+    margin-bottom: 20px;
+  }
+}

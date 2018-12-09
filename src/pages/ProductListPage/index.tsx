@@ -13,7 +13,10 @@ export const ProductListPage = () => (
     <div className="container-fluid padding-50">
       <div className="row">
         {products.map((product, i: number) => (
-          <div key={i} className="col-lg-3">
+          <div
+            key={i}
+            className="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4"
+          >
             <div className="card">
               <Image
                 src={product.featuredImage}

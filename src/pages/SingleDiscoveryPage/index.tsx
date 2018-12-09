@@ -9,6 +9,8 @@ import { Part } from 'components/Part';
 
 import { API_URL } from '../../constants';
 
+const image = require('../../assets/img/service-background-new.png');
+
 export class SingleDiscoveryPage extends React.Component<any, any> {
   public state = {
     loading: true,
@@ -56,34 +58,32 @@ export class SingleDiscoveryPage extends React.Component<any, any> {
         </Helmet>
         <div className="container-fluid padding-50">
           <div className="row">
-            <div className="col-xs-12 col-sm-12 col-lg-4">
+            <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4 single-left-side">
               <div
-                className="card-thumb"
+                className="thumb"
                 style={{
-                  backgroundImage:
-                    'url("../../assets/img/service-background.png")',
+                  backgroundImage: `url("${image}")`,
                   backgroundColor: color ? color : '#000',
-                  height: 175,
-                  width: 400,
-                  // backgroundSize: 'contain',
+                  height: 100,
                 }}
               >
                 {featuredImage ? (
                   <img src={featuredImage} alt={title} />
                 ) : (
-                  <div className="card-thumb-title">
+                  <div className="thumb-title">
                     <span>{title}</span>
                   </div>
                 )}
               </div>
               <h1
                 style={{
-                  padding: '5px 0 10px 0',
                   fontSize: 18,
+                  padding: '5px 0 10px 0',
                 }}
               >
                 {title}
               </h1>
+              {/* <p style={{ fontSize: 14 }}>{description}</p> */}
             </div>
             <div className="col-xs-12 col-sm-10 col-lg-8">
               {renderParts}
