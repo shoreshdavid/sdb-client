@@ -4,7 +4,6 @@ import { Helmet } from 'react-helmet';
 import ReactHtmlParser from 'react-html-parser';
 
 import { Error } from 'components/Error';
-import { Image } from 'components/Image';
 import { Loading } from 'components/Loading';
 import { Part } from 'components/Part';
 
@@ -49,7 +48,7 @@ export class SingleDiscoveryPage extends React.Component<any, any> {
         <p>We're sorry. It doesn't appear this article has any parts.</p>
       </div>
     );
-    const { featuredImage, content, title } = this.state.discovery;
+    const { featuredImage, content, title, color } = this.state.discovery;
     return (
       <React.Fragment>
         <Helmet>
@@ -58,20 +57,37 @@ export class SingleDiscoveryPage extends React.Component<any, any> {
         <div className="container-fluid padding-50">
           <div className="row">
             <div className="col-xs-12 col-sm-12 col-lg-4">
-              <Image src={featuredImage} alt={title} className="lazyload" />
-              <h4
+              <div
+                className="card-thumb"
                 style={{
-                  color: '#000',
-                  padding: '30px 0 10px 0',
+                  backgroundImage:
+                    'url("../../assets/img/service-background.png")',
+                  backgroundColor: color ? color : '#000',
+                  height: 175,
+                  width: 400,
+                  // backgroundSize: 'contain',
+                }}
+              >
+                {featuredImage ? (
+                  <img src={featuredImage} alt={title} />
+                ) : (
+                  <div className="card-thumb-title">
+                    <span>{title}</span>
+                  </div>
+                )}
+              </div>
+              <h1
+                style={{
+                  padding: '5px 0 10px 0',
                   fontSize: 18,
                 }}
               >
                 {title}
-              </h4>
+              </h1>
             </div>
             <div className="col-xs-12 col-sm-10 col-lg-8">
-              {content && <div>{ReactHtmlParser(content)}</div>}
               {renderParts}
+              {content && <div>{ReactHtmlParser(content)}</div>}
             </div>
           </div>
         </div>

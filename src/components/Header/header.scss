@@ -39,12 +39,13 @@
   color: $primary-color !important;
 }
 
-.show {
-  border-top: 1px solid #eee;
-  margin-top: 20px;
-}
+
 
 @media only screen and (max-width: 800px) {
+  .show {
+    border-top: 1px solid #eee;
+    margin-top: 20px;
+  }
   .sdb-nav {
     a {
       margin-left: 5px;

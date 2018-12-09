@@ -1,13 +1,15 @@
 import Axios from 'axios';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
+import ReactHtmlParser from 'react-html-parser';
 
 import { Error } from 'components/Error';
-import { Image } from 'components/Image';
 import { Loading } from 'components/Loading';
 import { Part } from 'components/Part';
 
 import { API_URL } from '../../constants';
+
+const image = require('../../assets/img/service-background.png');
 
 export class SingleServicePage extends React.Component<any, any> {
   public state = {
@@ -54,29 +56,46 @@ export class SingleServicePage extends React.Component<any, any> {
       <React.Fragment>
         <Helmet>
           <title>{service.title}</title>
-          {/* <link rel="canonical" href="http://mysite.com/example" /> */}
         </Helmet>
         <div className="container-fluid padding-50">
           <div className="row">
             <div className="col-xs-12 col-sm-12 col-lg-4">
-              <Image
-                src={this.state.service.featuredImage}
-                alt={this.state.service.title}
-                className="lazyload"
-              />
+              <div
+                className="card-thumb"
+                style={{
+                  backgroundImage: image,
+                  backgroundColor: service.color ? service.color : '#000',
+                  height: '100%',
+                  width: '100%',
+                  backgroundSize: 'contain',
+                }}
+              >
+                {service.featuredImage ? (
+                  <img src={service.featuredImage} alt={service.title} />
+                ) : (
+                  <div className="card-thumb-title">
+                    <span>{service.title}</span>
+                  </div>
+                )}
+              </div>
               <h1
                 style={{
-                  color: '#000',
-                  padding: '10px 0 10px 0',
-                  fontSize: 20,
-                  textAlign: 'center',
+                  fontSize: 18,
+                  padding: '5px 0 10px 0',
                 }}
               >
                 {service.title}
               </h1>
               <p style={{ fontSize: 14 }}>{service.description}</p>
             </div>
-            <div className="col-xs-12 col-sm-10 col-lg-8">{renderParts}</div>
+            <div className="col-xs-12 col-sm-10 col-lg-8">
+              {renderParts}
+              <div className="single-page-content">
+                {service.content && (
+                  <div>{ReactHtmlParser(service.content)}</div>
+                )}
+              </div>
+            </div>
           </div>
         </div>
       </React.Fragment>

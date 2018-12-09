@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 
 import './card.scss';
 
+const jewishImg = require('../../assets/img/jewish.png');
+const serviceImg = require('../../assets/img/service-background.png');
+
+// const d = require('../../assets/img/jewish.png')
+
 export const Card = ({
   featuredImage,
   title,
@@ -12,16 +17,30 @@ export const Card = ({
   color,
   type,
 }: any) => {
+  const img =
+    type === 'jewish' ? `url("${jewishImg}")` : `url("${serviceImg}")`;
   return (
     <div className="card-item">
-      <div className="card-thumb" style={{ backgroundColor: color }}>
-        {featuredImage ? (
-          <img src={featuredImage} alt={title} />
-        ) : (
-          <div className="card-thumb-title">
-            <span>{title}</span>
-          </div>
-        )}
+      {/* {featuredImage ? (
+            <img src={featuredImage} alt={title} />
+          ) : (
+          )} */}
+      <div
+        style={{
+          backgroundImage: img,
+          backgroundColor: color,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          display: 'flex',
+          flex: 1,
+          justifyContent: 'center',
+          width: '100%',
+          height: 200,
+        }}
+      >
+        <div className="card-thumb-title">
+          <span>{title}</span>
+        </div>
 
         {isSeries ? (
           <Link to={`/${type}/${slug}`}>
