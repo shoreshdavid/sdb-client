@@ -48,12 +48,20 @@ render(
           <Route exact path="/" component={HomePage} />
           <Route exact path="/live" component={LiveStreamPage} />
           <Route exact path="/store" component={ProductListPage} />
-          <Route exact path="/services" component={ServiceListPage} />
-          <Route exact path="/services/:slug" component={SingleServicePage} />
-          <Route exact path="/discoveries" component={DiscoveriesPage} />
+          <Route exact path="/services/:category" component={ServiceListPage} />
           <Route
             exact
-            path="/discoveries/:slug"
+            path="/services/:category/:slug"
+            component={SingleServicePage}
+          />
+          <Route
+            exact
+            path="/discoveries/:category"
+            component={DiscoveriesPage}
+          />
+          <Route
+            exact
+            path="/discoveries/:category/:slug"
             component={SingleDiscoveryPage}
           />
           <Route exact path="/events" component={EventsPage} />

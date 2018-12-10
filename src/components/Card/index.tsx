@@ -14,6 +14,7 @@ export const Card = ({
   link,
   color,
   type,
+  category,
 }: any) => {
   const img =
     type === 'jewish' ? `url("${jewishImg}")` : `url("${serviceImg}")`;
@@ -35,7 +36,7 @@ export const Card = ({
         </div>
 
         {isSeries ? (
-          <Link to={`/${type}/${slug}`}>
+          <Link to={`/${type}/${category}/${slug}`}>
             <button className="btn btn-primary btn-sm card-series">
               Series
             </button>
@@ -49,7 +50,7 @@ export const Card = ({
               {title}
             </a>
           ) : (
-            <Link to={`/${type}/${slug}`}>{title}</Link>
+            <Link to={`/${type}/${category}/${slug}`}>{title}</Link>
           )}
         </h4>
       </div>

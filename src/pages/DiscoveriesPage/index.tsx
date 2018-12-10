@@ -6,6 +6,7 @@ import { Card } from 'components/Card';
 import { Error } from 'components/Error';
 import { Loading } from 'components/Loading';
 
+import { Link } from 'react-router-dom';
 import { API_URL } from '../../constants';
 
 export class DiscoveriesPage extends React.Component<any, any> {
@@ -21,7 +22,8 @@ export class DiscoveriesPage extends React.Component<any, any> {
   };
 
   public componentDidMount() {
-    const { category, size, page } = this.state;
+    const { size, page } = this.state;
+    const { category } = this.props.match.params;
     Axios.all([
       Axios.get(
         `${API_URL}/articles?category=${category}&page=${page}&size=${size}`,
@@ -46,32 +48,40 @@ export class DiscoveriesPage extends React.Component<any, any> {
       });
   }
 
-  public toggleFilter = async category => {
-    await this.setState({
-      category,
-      page: 1,
-    });
-
-    Axios.get(
-      `${API_URL}/articles?category=${this.state.category}&page=${
-        this.state.page
-      }&size=${this.state.size}`,
-    )
-      .then(res => {
-        this.setState({
-          articles: res.data.data,
-          count: res.data.count,
-        });
-      })
-      .catch(error => {
-        this.setState({
-          error: error,
-        });
-      });
+  public async componentDidUpdate(prevProps: any) {
+    if (prevProps.match.params.category !== this.props.match.params.category) {
+      await this.setState({ page: 1 });
+      this.handlePageRequest();
+    }
   }
 
+  // public toggleFilter = async category => {
+  //   await this.setState({
+  //     category,
+  //     page: 1,
+  //   });
+
+  //   Axios.get(
+  //     `${API_URL}/articles?category=${this.state.category}&page=${
+  //       this.state.page
+  //     }&size=${this.state.size}`,
+  //   )
+  //     .then(res => {
+  //       this.setState({
+  //         articles: res.data.data,
+  //         count: res.data.count,
+  //       });
+  //     })
+  //     .catch(error => {
+  //       this.setState({
+  //         error: error,
+  //       });
+  //     });
+  // }
+
   public handlePageRequest = async () => {
-    const { category, page, size } = this.state;
+    const { page, size } = this.state;
+    const { category } = this.props.match.params;
     try {
       const res = await Axios.get(
         `${API_URL}/articles?category=${category}&page=${page}&size=${size}`,
@@ -127,20 +137,21 @@ export class DiscoveriesPage extends React.Component<any, any> {
     }
 
     const renderTabs = this.state.tabs.map((tab: any, index: number) => (
-      <li
-        className={`list-group-item-action list-group-item ${
-          tab.slug === this.state.category ? 'active' : ''
-        }`}
-        key={index}
-        style={{
-          marginBottom: 10,
-          cursor: 'pointer',
-          fontWeight: 700,
-        }}
-        onClick={() => this.toggleFilter(tab.slug)}
-      >
-        {tab.label}
-      </li>
+      <Link key={index} to={`/discoveries/${tab.slug}`}>
+        <li
+          className={`list-group-item-action list-group-item ${
+            tab.slug === this.props.match.params.category ? 'active' : ''
+          }`}
+          key={index}
+          style={{
+            marginBottom: 10,
+            cursor: 'pointer',
+            fontWeight: 700,
+          }}
+        >
+          {tab.label}
+        </li>
+      </Link>
     ));
 
     const { count, size, page, articles } = this.state;
@@ -171,7 +182,7 @@ export class DiscoveriesPage extends React.Component<any, any> {
                 {articles.length ? (
                   articles.map(
                     (
-                      { title, featuredImage, slug, link, color },
+                      { title, featuredImage, slug, link, color, category },
                       i: number,
                     ) => (
                       <div
@@ -181,6 +192,7 @@ export class DiscoveriesPage extends React.Component<any, any> {
                         <Card
                           title={title}
                           featuredImage={featuredImage}
+                          category={category}
                           slug={slug}
                           link={link}
                           color={color}

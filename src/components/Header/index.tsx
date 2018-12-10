@@ -1,13 +1,13 @@
 import { Image } from 'components/Image';
 import * as React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, withRouter } from 'react-router-dom';
 
 import './header.scss';
 
 const headerLogo = require('../../assets/img/header-logo.png');
 const smallLogo = require('../../assets/img/sdb-logo-md.png');
 
-export class Header extends React.Component<any, any> {
+export class WrappedHeader extends React.Component<any, any> {
   public state = {
     isOpen: false,
   };
@@ -28,14 +28,9 @@ export class Header extends React.Component<any, any> {
                 src={smallLogo}
                 style={{ width: 50, height: 50 }}
                 alt="Shoresh David Brandon logo"
-                className="lazyload"
               />
             ) : (
-              <Image
-                src={headerLogo}
-                alt="Shoresh David Brandon logo"
-                className="lazyload"
-              />
+              <Image src={headerLogo} alt="Shoresh David Brandon logo" />
             )}
           </Link>
           <button
@@ -59,7 +54,13 @@ export class Header extends React.Component<any, any> {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/services" activeClassName="navlink-active">
+                <NavLink
+                  to="/services/rabbi-don"
+                  isActive={() =>
+                    this.props.location.pathname.includes('services')
+                  }
+                  activeClassName="navlink-active"
+                >
                   Teachings
                 </NavLink>
               </li>
@@ -74,7 +75,13 @@ export class Header extends React.Component<any, any> {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/discoveries" activeClassName="navlink-active">
+                <NavLink
+                  to="/discoveries/evolution"
+                  isActive={() =>
+                    this.props.location.pathname.includes('discoveries')
+                  }
+                  activeClassName="navlink-active"
+                >
                   Discoveries
                 </NavLink>
               </li>
@@ -100,3 +107,5 @@ export class Header extends React.Component<any, any> {
     );
   }
 }
+
+export const Header = withRouter(WrappedHeader);

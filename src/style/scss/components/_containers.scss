@@ -135,11 +135,6 @@
 }
 
 .single-left-side {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
   .thumb {
     display: flex;
     flex: 1;
@@ -162,13 +157,9 @@
     position: absolute;
     word-wrap: wrap;
     max-width: 80%;
-    // margin-top: 20px;
     font-size: 16px;
     text-shadow: 0 0 1px lighten(#000, 30);
   }
-  // p {
-  //   position: relative;
-  // }
 }
 
 // Media Queries

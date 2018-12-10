@@ -6,6 +6,7 @@ import { Card } from 'components/Card';
 import { Error } from 'components/Error';
 import { Loading } from 'components/Loading';
 
+import { Link } from 'react-router-dom';
 import { API_URL } from '../../constants';
 
 export class ServiceListPage extends React.Component<any, any> {
@@ -22,7 +23,8 @@ export class ServiceListPage extends React.Component<any, any> {
   };
 
   public componentDidMount() {
-    const { category, size, page } = this.state;
+    const { size, page } = this.state;
+    const { category } = this.props.match.params;
     Axios.all([
       Axios.get(
         `${API_URL}/services?category=${category}&page=${page}&size=${size}`,
@@ -47,8 +49,16 @@ export class ServiceListPage extends React.Component<any, any> {
       );
   }
 
+  public async componentDidUpdate(prevProps: any) {
+    if (prevProps.match.params.category !== this.props.match.params.category) {
+      await this.setState({ page: 1 });
+      this.handlePageRequest();
+    }
+  }
+
   public handlePageRequest = async () => {
-    const { category, page, size } = this.state;
+    const { page, size } = this.state;
+    const { category } = this.props.match.params;
     try {
       const res: any = await Axios.get(
         `${API_URL}/services/?category=${category}&page=${page}&size=${size}`,
@@ -94,33 +104,33 @@ export class ServiceListPage extends React.Component<any, any> {
     this.handlePageRequest();
   }
 
-  public toggleFilter = async category => {
-    await this.setState({
-      category,
-      page: 1,
-    });
+  // public toggleFilter = async category => {
+  //   await this.setState({
+  //     category,
+  //     page: 1,
+  //   });
 
-    this.handlePageRequest();
-  }
+  //   this.handlePageRequest();
+  // }
 
   public render() {
     const renderTabs = this.state.tabs.length ? (
       this.state.tabs.map((tab: any, index) => {
         return (
-          <li
-            className={`list-group-item-action list-group-item ${
-              tab.slug === this.state.category ? 'active' : ''
-            }`}
-            key={index}
-            style={{
-              marginBottom: 10,
-              cursor: 'pointer',
-              fontWeight: 700,
-            }}
-            onClick={() => this.toggleFilter(tab.slug)}
-          >
-            {tab.label}
-          </li>
+          <Link key={index} to={`/services/${tab.slug}`}>
+            <li
+              className={`list-group-item-action list-group-item ${
+                tab.slug === this.props.match.params.category ? 'active' : ''
+              }`}
+              style={{
+                marginBottom: 10,
+                cursor: 'pointer',
+                fontWeight: 700,
+              }}
+            >
+              {tab.label}
+            </li>
+          </Link>
         );
       })
     ) : (
@@ -165,7 +175,10 @@ export class ServiceListPage extends React.Component<any, any> {
             <div className="col">
               <div className="row">
                 {services.map(
-                  ({ title, featuredImage, slug, parts, color }, i: number) => (
+                  (
+                    { title, featuredImage, slug, parts, color, category },
+                    i: number,
+                  ) => (
                     <div
                       className="col-sm-12 col-md-6 col-lg-6 col-xl-4"
                       key={i}
@@ -173,6 +186,7 @@ export class ServiceListPage extends React.Component<any, any> {
                       <Card
                         title={title}
                         featuredImage={featuredImage}
+                        category={category}
                         slug={slug}
                         isSeries={parts.length > 1 ? true : false}
                         type="services"
