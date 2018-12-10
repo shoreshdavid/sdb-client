@@ -1,18 +1,17 @@
-import * as React from 'react';
-import { Link } from 'react-router-dom';
 import {
   faDesktop,
-  faVideo,
   faFileVideo,
+  faVideo,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 export const LiveStreamSection = () => {
   return (
     <div id="#liveNow" className="container-fluid live-stream-container">
       <div className="mobile-hidden">
         <svg
-          id="bigTriangleCandy"
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
           width="100%"

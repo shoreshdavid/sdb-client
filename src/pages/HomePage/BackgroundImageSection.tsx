@@ -20,9 +20,13 @@ export const BackgroundImageSection = () => {
           <Link to="/services">
             <button className="btn btn-primary">Latest Teachings</button>
           </Link>
-          <Link to="/events">
+          <a
+            // tslint:disable-next-line
+            href="https://www.google.com/maps/place/445+Lithia+Pinecrest+Rd,+Brandon,+FL+33511/@27.9312622,-82.2778947,17z/data=!3m1!4b1!4m5!3m4!1s0x88c2cdb75c8a78c5:0x7afa5e06b1d0c2ca!8m2!3d27.9312622!4d-82.275706"
+            target="_blank"
+          >
             <button className="btn btn-primary">Visit Us</button>
-          </Link>
+          </a>
         </div>
       </div>
     </div>
