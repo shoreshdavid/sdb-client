@@ -1,7 +1,7 @@
 import * as Sentry from '@sentry/browser';
 import * as React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 
 // Containers
 import { ErrorBoundary } from 'containers/ErrorBoundary';
@@ -48,12 +48,15 @@ render(
           <Route exact path="/" component={HomePage} />
           <Route exact path="/live" component={LiveStreamPage} />
           <Route exact path="/store" component={ProductListPage} />
+
+          <Redirect exact path="/services" to="/services/rabbi-don" />
           <Route exact path="/services/:category" component={ServiceListPage} />
           <Route
             exact
             path="/services/:category/:slug"
             component={SingleServicePage}
           />
+          <Redirect exact path="/discoveries" to="/discoveries/evolution" />
           <Route
             exact
             path="/discoveries/:category"
