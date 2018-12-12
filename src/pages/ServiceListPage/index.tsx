@@ -104,15 +104,6 @@ export class ServiceListPage extends React.Component<any, any> {
     this.handlePageRequest();
   }
 
-  // public toggleFilter = async category => {
-  //   await this.setState({
-  //     category,
-  //     page: 1,
-  //   });
-
-  //   this.handlePageRequest();
-  // }
-
   public render() {
     const renderTabs = this.state.tabs.length ? (
       this.state.tabs.map((tab: any, index) => {

@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 
+import './donate.scss';
+
 // tslint:disable
 const buttons = [
   {
@@ -38,12 +40,10 @@ export const DonatePage = () => (
     <Helmet>
       <title>Donate To Shoresh David Brandon</title>
     </Helmet>
-    <div className="container-fluid padding-50">
-      <div className="col-sm-12 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
-        <h1 style={{ textAlign: 'center', fontSize: 20, fontWeight: 700 }}>
-          Thank You For Supporting Shoresh David Brandon
-        </h1>
-        <p style={{ textAlign: 'center', fontSize: 18 }}>
+    <div className="container-fluid donate padding-50">
+      <div className="col-xs-12 col-sm-12 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
+        <h1>Thank You For Supporting Shoresh David Brandon</h1>
+        <p>
           (You can designate where your donation will be applied on the next
           page)
         </p>
@@ -51,15 +51,7 @@ export const DonatePage = () => (
         {buttons.map((b, i) => (
           <div style={{ marginTop: 25, marginBottom: 25 }} key={i}>
             <a href={b.link} target="_blank" rel="noopener noreferrer">
-              <button
-                className="btn btn-primary btn-block"
-                style={{
-                  fontWeight: 600,
-                  padding: 10,
-                }}
-              >
-                {b.text}
-              </button>
+              <button className="btn btn-primary">{b.text}</button>
             </a>
           </div>
         ))}
