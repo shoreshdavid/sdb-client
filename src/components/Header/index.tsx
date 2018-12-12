@@ -111,17 +111,35 @@ export class WrappedHeader extends React.Component<any, any> {
                   Jewish
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink
-                  to="/discoveries/evolution"
-                  isActive={() =>
-                    this.props.location.pathname.includes('discoveries')
-                  }
-                  activeClassName="navlink-active"
-                >
-                  Discoveries
-                </NavLink>
+              {/*  */}
+              <li className="nav-item dropdown-link">
+                <div className="dropdown">
+                  <li className="nav-item">
+                    <NavLink
+                      to="/discoveries/evolution"
+                      isActive={() =>
+                        this.props.location.pathname.includes('discoveries')
+                      }
+                      activeClassName="navlink-active"
+                    >
+                      Discoveries
+                    </NavLink>
+                  </li>
+                  <div className="dropdown-content">
+                    <Link to="/discoveries/evolution">Evolution</Link>
+                    <Link to="/discoveries/heaven-and-hell">
+                      Heaven And Hell
+                    </Link>
+                    <Link to="/discoveries/prophecy">Prophecy</Link>
+                    <Link to="/discoveries/supernatural">Supernatural</Link>
+                    <Link to="/discoveries/usa-middle-east">
+                      USA &amp; Middle East
+                    </Link>
+                    <Link to="/discoveries/life-issues">Life Issues</Link>
+                  </div>
+                </div>
               </li>
+              {/*  */}
               <li className="nav-item">
                 <NavLink exact to="/events" activeClassName="navlink-active">
                   Events
