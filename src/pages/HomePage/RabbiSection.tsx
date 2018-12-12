@@ -28,7 +28,7 @@ export const RabbiSection = () => {
           talk about what God “can” do, you’ll see Him do it! Rabbi Don’s
           messages come from God’s Word and are delivered in an easy to
           understand way. You can view his past messages by&nbsp;
-          <Link to="/services">
+          <Link to="/services/rabbi-don">
             <span>clicking here.</span>
           </Link>
         </p>

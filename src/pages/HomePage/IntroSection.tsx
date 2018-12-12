@@ -39,7 +39,7 @@ export const IntroSection = () => {
             and nothing changes. We don’t talk about what God “can” do, you’ll
             see Him do it! Rabbi Don’s messages come from God’s Word and are
             delivered in an easy to understand way. You can view his past
-            messages by clicking <Link to="/services">here</Link>.
+            messages by clicking <Link to="/services/rabbi-don">here</Link>.
           </p>
           <p>
             We invite you to come and worship the God of Abraham, Isaac and

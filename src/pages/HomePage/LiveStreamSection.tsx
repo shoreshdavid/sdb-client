@@ -40,7 +40,7 @@ export const LiveStreamSection = () => {
             LIVE Streaming every Friday @ 7:30pm (CLICK HERE)
           </button>
         </Link>
-        <Link to="/services">
+        <Link to="/services/rabbi-don">
           <button className="btn btn-primary">
             <FontAwesomeIcon icon={faFileVideo} />
             Recordings of recent messages

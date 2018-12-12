@@ -29,7 +29,7 @@ export const NotFoundPage = () => (
             </li>
             <li>
               <FontAwesomeIcon icon="angle-right" />
-              <Link to="/services">TEACHINGS</Link>
+              <Link to="/services/rabbi-don">TEACHINGS</Link>
             </li>
             <li>
               <FontAwesomeIcon icon="angle-right" />
@@ -41,7 +41,7 @@ export const NotFoundPage = () => (
             </li>
             <li>
               <FontAwesomeIcon icon="angle-right" />
-              <Link to="/discoveries">DISCOVERIES</Link>
+              <Link to="/discoveries/evolution">DISCOVERIES</Link>
             </li>
             <li>
               <FontAwesomeIcon icon="angle-right" />
