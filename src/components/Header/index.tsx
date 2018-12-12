@@ -53,17 +53,54 @@ export class WrappedHeader extends React.Component<any, any> {
                   Home
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink
-                  to="/services/rabbi-don"
-                  isActive={() =>
-                    this.props.location.pathname.includes('services')
-                  }
-                  activeClassName="navlink-active"
-                >
-                  Teachings
-                </NavLink>
+              {/*  */}
+              {/*  */}
+              <li className="nav-item dropdown-link">
+                <div className="dropdown">
+                  <NavLink
+                    to="/services/rabbi-don"
+                    isActive={() =>
+                      this.props.location.pathname.includes('services')
+                    }
+                    activeClassName="navlink-active"
+                  >
+                    Teachings
+                  </NavLink>
+                  <div className="dropdown-content">
+                    <Link to="/services/rabbi-don">
+                      Rabbi Don's Video Teachings
+                    </Link>
+                    <a href="https://gethealedfast.com" target="_blank">
+                      Get Healed Fast
+                    </a>
+                    <Link to="/services/increase-your-income">
+                      Increase Your Income
+                    </Link>
+                    <a
+                      href="https://www.ihaveafriendwhoisjewish.com/"
+                      target="_blank"
+                    >
+                      Rabbi Don's Best Selling Book
+                    </a>
+                    <a
+                      // tslint:disable-next-line
+                      href="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/pdf/discipleship-book-by-rabbi-don-goldstein.pdf"
+                      target="_blank"
+                    >
+                      Rabbi Don's Discipleship Book
+                    </a>
+
+                    <Link to="/services/special-speakers">
+                      Special Speakers
+                    </Link>
+                    <Link to="/services/bible-studies">Bible Studies</Link>
+                    <Link to="/services/end-times">End Times</Link>
+                    <Link to="/services/holy-days">Holy Days</Link>
+                  </div>
+                </div>
               </li>
+              {/*  */}
+              {/*  */}
               <li className="nav-item">
                 <NavLink exact to="/live" activeClassName="navlink-active">
                   Streaming
