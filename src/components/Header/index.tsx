@@ -68,7 +68,7 @@ export class WrappedHeader extends React.Component<any, any> {
                   </NavLink>
                   <div className="dropdown-content">
                     <Link to="/services/rabbi-don">
-                      Rabbi Don's Video Teachings
+                      Rabbi Don's Teachings &amp; Others
                     </Link>
                     <a href="https://gethealedfast.com" target="_blank">
                       Get Healed Fast
