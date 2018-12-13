@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
+import Parser from 'react-html-parser';
 import { Fetch } from 'react-refetch-component';
 
 import { Error } from 'components/Error';
@@ -16,7 +17,7 @@ export const Event = ({ event }) => {
       <Image src={event.featuredImage} alt={event.slug} className="lazyload" />
       <div className="announcement-body">
         <h3>{event.title}</h3>
-        <p>{event.content}</p>
+        {Parser(event.content)}
       </div>
     </div>
   );
@@ -25,7 +26,7 @@ export const Event = ({ event }) => {
 export const EventsPage = () => (
   <React.Fragment>
     <Helmet>
-      <title>Events At Shoresh David Brandon</title>
+      <title>Events | Shoresh David Brandon</title>
     </Helmet>
     <div className="container-fluid padding-50">
       <div className="row">

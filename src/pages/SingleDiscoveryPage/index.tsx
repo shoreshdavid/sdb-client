@@ -1,11 +1,11 @@
 import Axios from 'axios';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
-import ReactHtmlParser from 'react-html-parser';
+import Parser from 'react-html-parser';
 
 import { Error } from 'components/Error';
 import { Loading } from 'components/Loading';
-import { Part } from 'components/Part';
+// import { Part } from 'components/Part';
 
 import { API_URL } from '../../constants';
 
@@ -27,7 +27,7 @@ export class SingleDiscoveryPage extends React.Component<any, any> {
   }
 
   public render() {
-    const { discovery } = this.state;
+    // const { discovery } = this.state;
 
     if (this.state.loading) {
       return <Loading />;
@@ -35,21 +35,21 @@ export class SingleDiscoveryPage extends React.Component<any, any> {
     if (this.state.error) {
       return <Error error={this.state.error} />;
     }
-    const renderParts = discovery.parts.length ? (
-      discovery.parts.map((part, i: number) => (
-        <Part
-          key={i}
-          partNumber={part.partNumber}
-          mediumLink={part.mediumLink}
-          anchorLink={part.anchorLink}
-          youtubeLink={part.youtubeLink}
-        />
-      ))
-    ) : (
-      <div>
-        <p>We're sorry. It doesn't appear this article has any parts.</p>
-      </div>
-    );
+    // const renderParts = discovery.parts.length ? (
+    //   discovery.parts.map((part, i: number) => (
+    //     <Part
+    //       key={i}
+    //       partNumber={part.partNumber}
+    //       mediumLink={part.mediumLink}
+    //       anchorLink={part.anchorLink}
+    //       youtubeLink={part.youtubeLink}
+    //     />
+    //   ))
+    // ) : (
+    //   <div>
+    //     <p>We're sorry. It doesn't appear this article has any parts.</p>
+    //   </div>
+    // );
     const { featuredImage, content, title, color } = this.state.discovery;
     return (
       <React.Fragment>
@@ -86,8 +86,8 @@ export class SingleDiscoveryPage extends React.Component<any, any> {
               {/* <p style={{ fontSize: 14 }}>{description}</p> */}
             </div>
             <div className="col-xs-12 col-sm-10 col-lg-8">
-              {renderParts}
-              {content && <div>{ReactHtmlParser(content)}</div>}
+              {/* {renderParts} */}
+              {Parser(content)}
             </div>
           </div>
         </div>

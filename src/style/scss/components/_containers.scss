@@ -162,6 +162,13 @@
   }
 }
 
+.single-page__right {
+  iframe {
+    width: 100%;
+    height: 500px;
+  }
+}
+
 // Media Queries
 @media only screen and (max-width: 800px) {
   .single-left-side {

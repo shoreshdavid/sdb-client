@@ -55,30 +55,6 @@ export class DiscoveriesPage extends React.Component<any, any> {
     }
   }
 
-  // public toggleFilter = async category => {
-  //   await this.setState({
-  //     category,
-  //     page: 1,
-  //   });
-
-  //   Axios.get(
-  //     `${API_URL}/articles?category=${this.state.category}&page=${
-  //       this.state.page
-  //     }&size=${this.state.size}`,
-  //   )
-  //     .then(res => {
-  //       this.setState({
-  //         articles: res.data.data,
-  //         count: res.data.count,
-  //       });
-  //     })
-  //     .catch(error => {
-  //       this.setState({
-  //         error: error,
-  //       });
-  //     });
-  // }
-
   public handlePageRequest = async () => {
     const { page, size } = this.state;
     const { category } = this.props.match.params;
