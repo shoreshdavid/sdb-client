@@ -5,12 +5,17 @@ import { Image } from 'components/Image';
 
 import { products } from './products';
 
+const cards = require('../../assets/img/cards.png');
+
 export const ProductListPage = () => (
   <React.Fragment>
     <Helmet>
       <title>Products | Shoresh David Brandon</title>
     </Helmet>
     <div className="container-fluid padding-50">
+      <div style={{ textAlign: 'center' }}>
+        <img src={cards} alt="credit card icons" />
+      </div>
       <div className="row">
         {products.map((product, i: number) => (
           <div

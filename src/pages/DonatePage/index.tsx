@@ -3,6 +3,8 @@ import { Helmet } from 'react-helmet';
 
 import './donate.scss';
 
+const cards = require('../../assets/img/cards.png');
+
 // tslint:disable
 const buttons = [
   {
@@ -47,6 +49,9 @@ export const DonatePage = () => (
           (You can designate where your donation will be applied on the next
           page)
         </p>
+        <div style={{ textAlign: 'center' }}>
+          <img src={cards} alt="credit card icons" />
+        </div>
 
         {buttons.map((b, i) => (
           <div style={{ marginTop: 25, marginBottom: 25 }} key={i}>
