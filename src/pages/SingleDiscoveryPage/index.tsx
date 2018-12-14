@@ -27,29 +27,12 @@ export class SingleDiscoveryPage extends React.Component<any, any> {
   }
 
   public render() {
-    // const { discovery } = this.state;
-
     if (this.state.loading) {
       return <Loading />;
     }
     if (this.state.error) {
       return <Error error={this.state.error} />;
     }
-    // const renderParts = discovery.parts.length ? (
-    //   discovery.parts.map((part, i: number) => (
-    //     <Part
-    //       key={i}
-    //       partNumber={part.partNumber}
-    //       mediumLink={part.mediumLink}
-    //       anchorLink={part.anchorLink}
-    //       youtubeLink={part.youtubeLink}
-    //     />
-    //   ))
-    // ) : (
-    //   <div>
-    //     <p>We're sorry. It doesn't appear this article has any parts.</p>
-    //   </div>
-    // );
     const { featuredImage, content, title, color } = this.state.discovery;
     return (
       <React.Fragment>
@@ -83,10 +66,8 @@ export class SingleDiscoveryPage extends React.Component<any, any> {
               >
                 {title}
               </h1>
-              {/* <p style={{ fontSize: 14 }}>{description}</p> */}
             </div>
-            <div className="col-xs-12 col-sm-10 col-lg-8">
-              {/* {renderParts} */}
+            <div className="col-xs-12 col-sm-10 col-lg-8 single-page__right">
               {Parser(content)}
             </div>
           </div>
