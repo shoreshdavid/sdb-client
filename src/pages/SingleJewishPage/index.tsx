@@ -8,7 +8,7 @@ import { Loading } from 'components/Loading';
 
 import { API_URL } from '../../constants';
 
-const image = require('../../assets/img/service-background-new.png');
+const image = require('../../assets/img/jewish.png');
 
 export class SingleJewishPage extends React.Component<any, any> {
   public state = {
