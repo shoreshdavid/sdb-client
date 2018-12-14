@@ -22,7 +22,7 @@ export const JewishPage = () => {
               method="get"
               lifecycle="onMount"
             >
-              {({ loading, error, data }) => {
+              {({ loading, error, data }: any) => {
                 if (loading) {
                   return <Loading />;
                 }
@@ -31,12 +31,15 @@ export const JewishPage = () => {
                 }
 
                 return data.data.map(
-                  ({ featuredImage, link, title, color }, i: number) => (
+                  (
+                    { featuredImage, link, title, slug, color }: any,
+                    i: number,
+                  ) => (
                     <div className="col-sm-12 col-lg-3" key={i}>
                       <Card
                         title={title}
                         featuredImage={featuredImage}
-                        slug={null}
+                        slug={slug}
                         link={link}
                         color={color}
                         isSeries={false}

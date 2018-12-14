@@ -20,8 +20,8 @@ export class SingleServicePage extends React.Component<any, any> {
   public componentDidMount() {
     Axios.get(`${API_URL}/services/${this.props.match.params.slug}`)
       .then(res => this.setState({ loading: false, service: res.data.data }))
-      .catch(err =>
-        this.setState({ loading: false, error: err.response.statusText }),
+      .catch(error =>
+        this.setState({ loading: false, error: error.response.data.message }),
       );
   }
 

@@ -25,6 +25,7 @@ import { PrivacyPolicyPage } from 'pages/PrivacyPolicyPage';
 import { ProductListPage } from 'pages/ProductListPage';
 import { ServiceListPage } from 'pages/ServiceListPage';
 import { SingleDiscoveryPage } from 'pages/SingleDiscoveryPage';
+import { SingleJewishPage } from 'pages/SingleJewishPage';
 import { SingleServicePage } from 'pages/SingleServicePage';
 
 import registerServiceWorker from './registerServiceWorker';
@@ -69,6 +70,7 @@ render(
           />
           <Route exact path="/events" component={EventsPage} />
           <Route exact path="/jewish" component={JewishPage} />
+          <Route exact path="/jewish/:slug" component={SingleJewishPage} />
           <Route exact path="/donate" component={DonatePage} />
           <Route exact path="/privacy-policy" component={PrivacyPolicyPage} />
           <Route component={NotFoundPage} />

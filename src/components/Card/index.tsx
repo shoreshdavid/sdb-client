@@ -18,6 +18,27 @@ export const Card = ({
 }: any) => {
   const img =
     type === 'jewish' ? `url("${jewishImg}")` : `url("${serviceImg}")`;
+
+  // case of external link
+  const renderLink = link ? (
+    <a href={link} target="_blank">
+      {title}
+    </a>
+  ) : type === 'jewish' ? (
+    <Link to={`/${type}/${slug}`}>{title}</Link>
+  ) : (
+    <Link to={`/${type}/${category}/${slug}`}>{title}</Link>
+  );
+  // case of jewish link that does not have `resource/:category/:slug`
+  // case of article/service that _does_ have `resource/:category/:slug`
+
+  // const renderLink = link ? (
+  //   <a href={link} target="_blank">
+  //     {title}
+  //   </a>
+  // ) : (
+  //   <Link to={`/${type}/${category}/${slug}`}>{title}</Link>
+  // );
   return (
     <div className="card-item">
       {/* {featuredImage ? (
@@ -44,15 +65,7 @@ export const Card = ({
         ) : null}
       </div>
       <div className="card-content">
-        <h4 className="card-title">
-          {link ? (
-            <a href={link} target="_blank">
-              {title}
-            </a>
-          ) : (
-            <Link to={`/${type}/${category}/${slug}`}>{title}</Link>
-          )}
-        </h4>
+        <h4 className="card-title">{renderLink}</h4>
       </div>
     </div>
   );
