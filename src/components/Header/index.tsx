@@ -53,8 +53,6 @@ export class WrappedHeader extends React.Component<any, any> {
                   Home
                 </NavLink>
               </li>
-              {/*  */}
-              {/*  */}
               <li className="nav-item dropdown-link">
                 <div className="dropdown">
                   <NavLink
@@ -73,6 +71,12 @@ export class WrappedHeader extends React.Component<any, any> {
                     <a href="https://gethealedfast.com" target="_blank">
                       Get Healed Fast
                     </a>
+                    <Link to="/services/holy-days">"Jewish" Holidays</Link>
+                    <Link to="/services/end-times">End Times</Link>
+                    <Link to="/services/bible-studies">Bible Studies</Link>
+                    <Link to="/services/special-speakers">
+                      Special Speakers
+                    </Link>
                     <Link to="/services/increase-your-income">
                       Increase Your Income
                     </Link>
@@ -89,13 +93,6 @@ export class WrappedHeader extends React.Component<any, any> {
                     >
                       Rabbi Don's Discipleship Book
                     </a>
-
-                    <Link to="/services/special-speakers">
-                      Special Speakers
-                    </Link>
-                    <Link to="/services/bible-studies">Bible Studies</Link>
-                    <Link to="/services/end-times">End Times</Link>
-                    <Link to="/services/holy-days">Holy Days</Link>
                   </div>
                 </div>
               </li>
@@ -114,17 +111,15 @@ export class WrappedHeader extends React.Component<any, any> {
               {/*  */}
               <li className="nav-item dropdown-link">
                 <div className="dropdown">
-                  <li className="nav-item">
-                    <NavLink
-                      to="/discoveries/evolution"
-                      isActive={() =>
-                        this.props.location.pathname.includes('discoveries')
-                      }
-                      activeClassName="navlink-active"
-                    >
-                      Discoveries
-                    </NavLink>
-                  </li>
+                  <NavLink
+                    to="/discoveries/evolution"
+                    isActive={() =>
+                      this.props.location.pathname.includes('discoveries')
+                    }
+                    activeClassName="navlink-active"
+                  >
+                    Discoveries
+                  </NavLink>
                   <div className="dropdown-content">
                     <Link to="/discoveries/evolution">Evolution</Link>
                     <Link to="/discoveries/heaven-and-hell">
