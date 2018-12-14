@@ -36,21 +36,6 @@ export class SingleServicePage extends React.Component<any, any> {
       return <Error error={error} />;
     }
 
-    // const renderParts = service.parts.length ? (
-    //   service.parts.map(part => (
-    //     <Part
-    //       key={part._id}
-    //       partNumber={part.partNumber}
-    //       mediumLink={part.mediumLink}
-    //       anchorLink={part.anchorLink}
-    //       youtubeLink={part.youtubeLink}
-    //     />
-    //   ))
-    // ) : (
-    //   <div>
-    //     <p>We're sorry. It doesn't appear this service has any parts.</p>
-    //   </div>
-    // );
     return (
       <React.Fragment>
         <Helmet>
@@ -85,7 +70,6 @@ export class SingleServicePage extends React.Component<any, any> {
               <p style={{ fontSize: 14 }}>{service.description}</p>
             </div>
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-8">
-              {/* {renderParts} */}
               <div className="single-page-content single-page__right">
                 {ReactHtmlParser(service.content)}
               </div>

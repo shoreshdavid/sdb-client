@@ -5,7 +5,6 @@ import Parser from 'react-html-parser';
 
 import { Error } from 'components/Error';
 import { Loading } from 'components/Loading';
-// import { Part } from 'components/Part';
 
 import { API_URL } from '../../constants';
 
