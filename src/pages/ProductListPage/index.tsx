@@ -22,7 +22,7 @@ export const ProductListPage = () => (
             key={i}
             className="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4"
           >
-            <div className="card">
+            <div className="card" style={{ height: 600, textAlign: 'center' }}>
               <Image
                 src={product.featuredImage}
                 alt={product.name}
@@ -40,17 +40,14 @@ export const ProductListPage = () => (
                   <h6 className="card-subtitle">${product.price}</h6>
                 </div>
                 {product.hasAudio ? (
-                  <audio
-                    src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/extra/healing-cd-preview.mp3"
-                    controls
-                    style={{ width: '100%', margin: '20px 0' }}
-                  />
+                  <div style={{ padding: 15 }}>
+                    <audio
+                      src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/extra/healing-cd-preview.mp3"
+                      controls
+                      style={{ width: '100%' }}
+                    />
+                  </div>
                 ) : null}
-                <div className="card-footer">
-                  <button className="btn btn-primary btn-block">
-                    Purchase
-                  </button>
-                </div>
               </a>
             </div>
           </div>
