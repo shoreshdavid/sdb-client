@@ -48,12 +48,12 @@ export class Pagination extends React.Component<Props, State> {
     //     error: err.response.data.error,
     //   })
     // );
-  }
+  };
 
   public goToPage = async (page: number) => {
     await this.setState({ page });
     this.handlePageRequest();
-  }
+  };
 
   public previous = async () => {
     if (this.state.page === 1) {
@@ -65,7 +65,7 @@ export class Pagination extends React.Component<Props, State> {
       };
     });
     this.handlePageRequest();
-  }
+  };
 
   public next = async () => {
     if (this.state.page > Math.ceil(this.state.count / this.state.size) - 1) {
@@ -77,7 +77,7 @@ export class Pagination extends React.Component<Props, State> {
       };
     });
     this.handlePageRequest();
-  }
+  };
 
   public render() {
     return this.props.children({
