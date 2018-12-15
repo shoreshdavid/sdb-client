@@ -20,7 +20,7 @@ export class StickyEmail extends React.Component<any, any> {
   };
 
   public toggle = () => {
-    this.setState(prev => {
+    this.setState((prev: any) => {
       return {
         open: !prev.open,
       };
@@ -35,7 +35,11 @@ export class StickyEmail extends React.Component<any, any> {
         name: this.state.name,
       });
 
-      this.setState({ data: 'Registration successful!' });
+      await this.setState({ data: 'Registration successful!' });
+      window.open(
+        'https://s3.amazonaws.com/images.shoreshdavidbrandon.com/pdf/friend-book-ninth-printing.pdf',
+        '_blank',
+      );
     } catch (error) {
       this.setState({ error: error.response.data.message });
     }
