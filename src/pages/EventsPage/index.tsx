@@ -43,8 +43,6 @@ export const EventsPage = () => (
               return <Error error={error} />;
             }
 
-            console.log(data);
-
             return data.data.map((event: any, i: number) => (
               <div key={i} className="col-lg-6">
                 <Event event={event} />

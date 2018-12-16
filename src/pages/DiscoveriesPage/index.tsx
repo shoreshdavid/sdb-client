@@ -65,6 +65,7 @@ export class DiscoveriesPage extends React.Component<any, any> {
       this.setState({
         loading: false,
         articles: res.data.data,
+        count: res.data.count,
       });
       window.scrollTo(0, 0);
     } catch (error) {
