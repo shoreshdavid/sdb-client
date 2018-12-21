@@ -8,13 +8,29 @@ const headerLogo = require('../../assets/img/header-logo.png');
 const smallLogo = require('../../assets/img/sdb-logo-md.png');
 
 export class WrappedHeader extends React.Component<any, any> {
+  public static linkRef = React.createRef();
   public state = {
     isOpen: false,
   };
 
+  public componentDidMount() {
+    document.addEventListener('click', (event: any) => {
+      console.log(event);
+      if (event.target.tagName.toLowerCase() === 'a') {
+        this.toggle();
+      }
+    });
+  }
+
   public toggle = () => {
     this.setState({
       isOpen: !this.state.isOpen,
+    });
+  }
+
+  public componentWillUnmount() {
+    document.addEventListener('click', () => {
+      this.toggle();
     });
   }
 
