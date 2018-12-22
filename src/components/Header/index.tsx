@@ -15,7 +15,6 @@ export class WrappedHeader extends React.Component<any, any> {
 
   public componentDidMount() {
     document.addEventListener('click', (event: any) => {
-      console.log(event);
       if (event.target.tagName.toLowerCase() === 'a') {
         this.toggle();
       }
