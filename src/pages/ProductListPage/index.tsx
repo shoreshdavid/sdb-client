@@ -36,27 +36,32 @@ export const ProductListPage = () => (
                 className="lazyload"
                 style={{ height: 400 }}
               />
-              <a
-                href={product.storeLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: 'black' }}
-              >
-                <div className="card-body card-block">
-                  <h5 className="card-title">{product.name}</h5>
-                  <h6 className="card-subtitle">${product.price}</h6>
-                  {product.hasAudio ? (
-                    <div style={{ padding: 15 }}>
-                      <audio
-                        src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/extra/healing-cd-preview.mp3"
-                        controls
-                        style={{ width: '100%' }}
-                      />
-                    </div>
-                  ) : null}
-                  <div>{Parser(product.description)}</div>
+              <div className="card-body card-block">
+                <h5 className="card-title">{product.name}</h5>
+                <h6 className="card-subtitle">${product.price}</h6>
+                <div style={{ margin: '1rem 0' }}>
+                  <a
+                    href={product.storeLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: 'black' }}
+                  >
+                    <button className="btn btn-primary btn-block">
+                      {product.buttonText}
+                    </button>
+                  </a>
                 </div>
-              </a>
+                {product.hasAudio ? (
+                  <div style={{ padding: 15 }}>
+                    <audio
+                      src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/extra/healing-cd-preview.mp3"
+                      controls
+                      style={{ width: '100%' }}
+                    />
+                  </div>
+                ) : null}
+                <div>{Parser(product.description)}</div>
+              </div>
             </div>
           </div>
         ))}

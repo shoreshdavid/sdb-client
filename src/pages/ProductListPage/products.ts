@@ -12,7 +12,8 @@ export const products = [
     featuredImage: healingDvd,
     storeLink:
       'https://www.mcssl.com/SecureCart/SecureCart.aspx?mid=2C37E45F-149B-4853-9879-DC5AA7B39A34&pid=823365852a594f9cb679a3f02e012baf',
-    description: `<p>The entire 5 part series as seen above on DVD</p>`,
+    description: `<p>For full details about this series, <a href="https://gethealedfast.com" target="_blank">click here.</a></p>`,
+    buttonText: 'Buy Here',
   },
   {
     order: 2,
@@ -23,6 +24,7 @@ export const products = [
       'https://www.mcssl.com/SecureCart/SecureCart.aspx?mid=2C37E45F-149B-4853-9879-DC5AA7B39A34&pid=79cb5db62cd64ad196b1a9dac5506885',
     hasAudio: true,
     description: `<p>Internationally acclaimed worshipper Jonathan Settel produced this highly anointed CD with 67 of God’s healing Scriptures. It runs for just over 50 minutes and is ideal to go to sleep to, play in your car, or wherever and whenever you want to wield the Sword of the Spirit against your pain or sickness.</p>`,
+    buttonText: 'Buy Here',
   },
   {
     name: 'Get Healed Fast Related Teachings DVD',
@@ -31,7 +33,8 @@ export const products = [
     storeLink:
       'https://www.mcssl.com/SecureCart/SecureCart.aspx?mid=2C37E45F-149B-4853-9879-DC5AA7B39A34&pid=9ee63af63bbc45dab3edba13935cf41f',
     order: 3,
-    description: `<p>All of the Related Teachings as seen above on DVD.</p>`,
+    description: `<p>For full details about this series, <a href="https://gethealedfast.com" target="_blank">click here.</a></p>`,
+    buttonText: 'Buy Here',
   },
   {
     name: 'A Lawyers Case For The Resurrection',
@@ -78,6 +81,7 @@ export const products = [
       for you.
     </p>
     `,
+    buttonText: 'Buy One Get One Free',
   },
   {
     name: 'I Have A Friend Who\'s Jewish, Do You?',
@@ -132,6 +136,7 @@ export const products = [
     </p>
     <p>And much, much more…</p>
     `,
+    buttonText: 'Buy One Get One Free',
   },
   {
     name: 'The Fig Tree Blossoms',
@@ -178,5 +183,6 @@ export const products = [
       International Messianic Jewish Alliance.
     </p>
     `,
+    buttonText: 'Buy One Get One Free',
   },
 ];
