@@ -44,9 +44,10 @@ export const products = [
     price: 12.95,
     featuredImage:
       'https://images-na.ssl-images-amazon.com/images/I/512TXZQRKTL._SX303_BO1,204,203,200_.jpg',
-    storeLink: '',
+    storeLink:
+      'http://www.mcssl.com/SecureCart/SecureCart.aspx?mid=2C37E45F-149B-4853-9879-DC5AA7B39A34&pid=9d865f53a1ed447fbcce45c376490e0d',
     order: 5,
-    links: [{}],
+    // links: [{}],
   },
   {
     name: 'The Fig Tree Blossoms',
