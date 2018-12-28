@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
+import Parser from 'react-html-parser';
 
 import { Image } from 'components/Image';
 
@@ -25,7 +26,10 @@ export const ProductListPage = () => (
             key={i}
             className="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4"
           >
-            <div className="card" style={{ height: 600, textAlign: 'center' }}>
+            <div
+              className="card"
+              style={{ height: 'auto', textAlign: 'center' }}
+            >
               <Image
                 src={product.featuredImage}
                 alt={product.name}
@@ -41,16 +45,17 @@ export const ProductListPage = () => (
                 <div className="card-body card-block">
                   <h5 className="card-title">{product.name}</h5>
                   <h6 className="card-subtitle">${product.price}</h6>
+                  {product.hasAudio ? (
+                    <div style={{ padding: 15 }}>
+                      <audio
+                        src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/extra/healing-cd-preview.mp3"
+                        controls
+                        style={{ width: '100%' }}
+                      />
+                    </div>
+                  ) : null}
+                  <div>{Parser(product.description)}</div>
                 </div>
-                {product.hasAudio ? (
-                  <div style={{ padding: 15 }}>
-                    <audio
-                      src="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/extra/healing-cd-preview.mp3"
-                      controls
-                      style={{ width: '100%' }}
-                    />
-                  </div>
-                ) : null}
               </a>
             </div>
           </div>
