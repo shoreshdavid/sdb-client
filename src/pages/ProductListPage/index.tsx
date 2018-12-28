@@ -14,7 +14,9 @@ export const ProductListPage = () => (
     </Helmet>
     <div className="container-fluid padding-50">
       <div style={{ textAlign: 'center' }}>
-        <h4>Free Shipping On All Items</h4>
+        <h3 style={{ fontSize: '2.25rem', fontWeight: 700 }}>
+          Free Shipping On All Items
+        </h3>
         <img src={cards} alt="credit card icons" />
       </div>
       <div className="row">
