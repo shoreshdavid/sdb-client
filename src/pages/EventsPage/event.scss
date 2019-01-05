@@ -22,7 +22,8 @@
   }
   .announcement-body {
     padding: 25px;
-    height: 300px;
+    min-height: 300px;
+    height: auto;
   }
 }
 
