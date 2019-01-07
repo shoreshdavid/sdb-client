@@ -97,12 +97,12 @@ export const products = [
     order: 5,
     links: [
       {
-        text: 'Buy English Version',
+        text: 'Buy One Get One Free - English',
         link:
           'http://www.mcssl.com/SecureCart/SecureCart.aspx?mid=2C37E45F-149B-4853-9879-DC5AA7B39A34&pid=9d865f53a1ed447fbcce45c376490e0d',
       },
       {
-        text: 'Buy Spanish Version',
+        text: 'Buy One Get One Free - Spanish',
         link:
           'http://www.mcssl.com/SecureCart/SecureCart.aspx?mid=2C37E45F-149B-4853-9879-DC5AA7B39A34&pid=b5129e3b9dda43fc809de841b957d318',
       },

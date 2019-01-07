@@ -41,8 +41,9 @@ export const ProductListPage = () => (
                 <h6 className="card-subtitle">${product.price}</h6>
                 <div style={{ margin: '1rem 0' }}>
                   {product.links.length > 0 ? (
-                    product.links.map((link: any) => (
+                    product.links.map((link: any, index: number) => (
                       <a
+                        key={index}
                         href={link.link}
                         target="_blank"
                         rel="noopener noreferrer"
