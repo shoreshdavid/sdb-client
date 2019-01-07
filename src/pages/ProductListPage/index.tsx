@@ -40,16 +40,34 @@ export const ProductListPage = () => (
                 <h5 className="card-title">{product.name}</h5>
                 <h6 className="card-subtitle">${product.price}</h6>
                 <div style={{ margin: '1rem 0' }}>
-                  <a
-                    href={product.storeLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ color: 'black' }}
-                  >
-                    <button className="btn btn-primary btn-block">
-                      {product.buttonText}
-                    </button>
-                  </a>
+                  {product.links.length > 0 ? (
+                    product.links.map((link: any) => (
+                      <a
+                        href={link.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: 'black' }}
+                      >
+                        <button
+                          className="btn btn-primary btn-block"
+                          style={{ marginBottom: 16 }}
+                        >
+                          {link.text}
+                        </button>
+                      </a>
+                    ))
+                  ) : (
+                    <a
+                      href={product.storeLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: 'black' }}
+                    >
+                      <button className="btn btn-primary btn-block">
+                        {product.buttonText}
+                      </button>
+                    </a>
+                  )}
                 </div>
                 {product.hasAudio ? (
                   <div style={{ padding: 15 }}>
