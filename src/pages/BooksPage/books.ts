@@ -54,8 +54,19 @@ export const books = [
     image:
       'https://images-na.ssl-images-amazon.com/images/I/512TXZQRKTL._SX303_BO1,204,203,200_.jpg',
     link: null,
-    order: 5,
     links: [
+      {
+        text: 'Buy One Get One Free - English',
+        link:
+          // tslint:disable-next-line
+          'http://www.mcssl.com/SecureCart/SecureCart.aspx?mid=2C37E45F-149B-4853-9879-DC5AA7B39A34&pid=9d865f53a1ed447fbcce45c376490e0d',
+      },
+      {
+        text: 'Buy One Get One Free - Spanish',
+        link:
+          // tslint:disable-next-line
+          'http://www.mcssl.com/SecureCart/SecureCart.aspx?mid=2C37E45F-149B-4853-9879-DC5AA7B39A34&pid=b5129e3b9dda43fc809de841b957d318',
+      },
       {
         text: 'Read English For Free',
         link:
