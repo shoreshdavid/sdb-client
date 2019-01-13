@@ -18,7 +18,7 @@ export const Footer = () => {
     <footer>
       <div className="footer-copyright">
         <span>
-          2018 © Shoresh David of Brandon | All Rights Reserved |{' '}
+          © 2014 - 2019 Shoresh David of Brandon | All Rights Reserved |{' '}
           <Link to="/privacy-policy"> Privacy Policy</Link>
         </span>
         <div className="footer-social">

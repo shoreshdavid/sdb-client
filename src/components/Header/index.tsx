@@ -8,7 +8,6 @@ const headerLogo = require('../../assets/img/header-logo.png');
 const smallLogo = require('../../assets/img/sdb-logo-md.png');
 
 export class WrappedHeader extends React.Component<any, any> {
-  public static linkRef = React.createRef();
   public state = {
     isOpen: false,
   };
@@ -62,7 +61,7 @@ export class WrappedHeader extends React.Component<any, any> {
                 : 'collapse navbar-collapse'
             }`}
           >
-            <ul className="ml-auto navbar-nav">
+            <ul className="ml-auto navbar-nav" style={{ marginRight: 25 }}>
               <li className="nav-item">
                 <NavLink exact to="/" activeClassName="navlink-active">
                   Home
@@ -112,6 +111,11 @@ export class WrappedHeader extends React.Component<any, any> {
                 </div>
               </li>
               {/*  */}
+              <li className="nav-item">
+                <NavLink exact to="/books" activeClassName="navlink-active">
+                  Books
+                </NavLink>
+              </li>
               {/*  */}
               <li className="nav-item">
                 <NavLink exact to="/live" activeClassName="navlink-active">
@@ -162,7 +166,7 @@ export class WrappedHeader extends React.Component<any, any> {
               </li>
               <li className="nav-item">
                 <NavLink exact to="/donate" activeClassName="navlink-active">
-                  Donate <span className="badge badge-danger">PLEASE</span>
+                  Donate
                 </NavLink>
               </li>
             </ul>
