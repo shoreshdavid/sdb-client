@@ -5,8 +5,11 @@ footer {
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1rem;
+  padding: 1.5em;
   background-color: #fff;
+  border-top: 1px solid #eee;
+  color: #8f8f8f;
+  font-size: 14px;
 }
 
 .footer-copyright {
@@ -26,8 +29,9 @@ footer {
   align-items: flex-end;
   margin-right: 20px;
   svg {
+    font-size: 18px;
     color: $primary-color;
-    margin: 0 5px;
+    margin: 0 12px;
   }
 }
 
