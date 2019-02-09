@@ -112,6 +112,15 @@ export class WrappedHeader extends React.Component<any, any> {
               </li>
               {/*  */}
               <li className="nav-item">
+                <NavLink
+                  exact
+                  to="/discoveries/news-from-israel"
+                  activeClassName="navlink-active"
+                >
+                  News From Israel
+                </NavLink>
+              </li>
+              <li className="nav-item">
                 <NavLink exact to="/books" activeClassName="navlink-active">
                   Books
                 </NavLink>
