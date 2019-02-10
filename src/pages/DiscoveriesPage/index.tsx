@@ -15,7 +15,7 @@ export class DiscoveriesPage extends React.Component<any, any> {
     error: null,
     articles: [] as any,
     tabs: [] as any,
-    category: 'evolution',
+    category: 'usa-middle-east',
     page: 1,
     count: 0,
     size: 12,
@@ -132,7 +132,7 @@ export class DiscoveriesPage extends React.Component<any, any> {
     ));
 
     const { count, size, page, articles } = this.state;
-    const range = (from, to, step = 1) => {
+    const range = (from: number, to: number, step = 1) => {
       let i = from;
       const stack = [] as any;
 
@@ -159,7 +159,14 @@ export class DiscoveriesPage extends React.Component<any, any> {
                 {articles.length ? (
                   articles.map(
                     (
-                      { title, featuredImage, slug, link, color, category },
+                      {
+                        title,
+                        featuredImage,
+                        slug,
+                        link,
+                        color,
+                        category,
+                      }: any,
                       i: number,
                     ) => (
                       <div
@@ -180,7 +187,10 @@ export class DiscoveriesPage extends React.Component<any, any> {
                   )
                 ) : (
                   <div className="padding-50">
-                    No results in {this.state.category}
+                    <p>
+                      No discoveries in {this.state.category}. Please choose
+                      another category!
+                    </p>
                   </div>
                 )}
               </div>
