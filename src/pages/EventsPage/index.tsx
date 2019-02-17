@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import Parser from 'react-html-parser';
-import { Fetch } from 'react-refetch-component';
+import Axios from 'axios';
 
 import { Error } from 'components/Error';
 import { Image } from 'components/Image';
@@ -23,34 +23,49 @@ export const Event = ({ event }) => {
   );
 };
 
-export const EventsPage = () => (
-  <React.Fragment>
-    <Helmet>
-      <title>Events | Shoresh David Brandon</title>
-    </Helmet>
-    <div className="container-fluid padding-50">
-      <div className="row">
-        <Fetch
-          url={`${API_URL}/events?page=1&size=20`}
-          method="get"
-          lifecycle="onMount"
-        >
-          {({ loading, error, data }) => {
-            if (loading) {
-              return <Loading />;
-            }
-            if (error) {
-              return <Error error={error} />;
-            }
+export class EventsPage extends React.Component<any, any> {
+  state = {
+    loading: true,
+    error: null,
+    data: null,
+  }
+  componentDidMount() {
+    this.fetch();
+  }
 
-            return data.data.map((event: any, i: number) => (
+  fetch = async () => {
+    try {
+      const res = await Axios.get(`${API_URL}/events?page=1&size=20`);
+      this.state({ loading: false, data: res.data.data });
+    } catch (error) {
+      this.state({ error });
+    }
+  }
+
+  render() {
+    const {loading, error, data} = this.state;
+
+    if (loading) {
+      return <Loading />;
+    }
+    if (error) {
+      return <Error error={error} />;
+    }
+    return (
+      <React.Fragment>
+        <Helmet>
+          <title>Events | Shoresh David Brandon</title>
+        </Helmet>
+        <div className="container-fluid padding-50">
+          <div className="row">
+            {data.data.map((event: any, i: number) => (
               <div key={i} className="col-lg-6">
                 <Event event={event} />
               </div>
-            ));
-          }}
-        </Fetch>
-      </div>
-    </div>
-  </React.Fragment>
-);
+            ))};
+          </div>
+        </div>
+      </React.Fragment>
+    );
+  }
+}
