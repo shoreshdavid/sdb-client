@@ -23,12 +23,19 @@ export const Event = ({ event }) => {
   );
 };
 
-export class EventsPage extends React.Component<any, any> {
+interface EventsPageState {
+  loading: boolean;
+  error: any;
+  data: any;
+}
+
+export class EventsPage extends React.Component<any, EventsPageState> {
   state = {
     loading: true,
     error: null,
-    data: null,
+    data: null as any,
   }
+
   componentDidMount() {
     this.fetch();
   }
@@ -36,14 +43,14 @@ export class EventsPage extends React.Component<any, any> {
   fetch = async () => {
     try {
       const res = await Axios.get(`${API_URL}/events?page=1&size=20`);
-      this.state({ loading: false, data: res.data.data });
+      this.setState({ loading: false, data: res.data });
     } catch (error) {
-      this.state({ error });
+      this.setState({ error });
     }
   }
 
   render() {
-    const {loading, error, data} = this.state;
+    const { loading, error, data } = this.state;
 
     if (loading) {
       return <Loading />;
