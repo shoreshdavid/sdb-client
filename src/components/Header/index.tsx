@@ -35,7 +35,7 @@ export class WrappedHeader extends React.Component<any, any> {
   public render() {
     return (
       <div className="sdb-nav">
-        <nav className="navbar navbar-expand-md navbar-light">
+        <nav className="navbar navbar-expand-xl navbar-light">
           <Link to="/">
             {window.innerWidth < 600 ? (
               <Image
