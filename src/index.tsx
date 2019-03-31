@@ -37,7 +37,7 @@ import './assets/scss/bootstrap.scss';
 
 import 'style/scss/application.scss';
 
-LogRocket.init('9khqml/exam');
+LogRocket.init('9khqml/shoresh-david-brandon-website');
 setupLogRocketReact(LogRocket);
 
 Sentry.init({
