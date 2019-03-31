@@ -1,4 +1,6 @@
 import * as Sentry from '@sentry/browser';
+import * as LogRocket from 'logrocket';
+import setupLogRocketReact from 'logrocket-react';
 import * as React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
@@ -35,8 +37,18 @@ import './assets/scss/bootstrap.scss';
 
 import 'style/scss/application.scss';
 
+LogRocket.init('9khqml/exam');
+setupLogRocketReact(LogRocket);
+
 Sentry.init({
   dsn: 'https://e0f935078b9d453db1ff925285d49017@sentry.io/1337810',
+});
+
+Sentry.configureScope((scope: any) => {
+  scope.addEventProcessor(async (event: any) => {
+    event.extra.sessionURL = LogRocket.sessionURL;
+    return event;
+  });
 });
 
 render(
