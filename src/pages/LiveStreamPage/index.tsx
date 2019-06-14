@@ -29,8 +29,7 @@ export const LiveStreamPage = () => (
       <div className="row">
         <div className="col-lg-8">
           <iframe
-            // tslint:disable-next-line
-            src="https://livestream.com/accounts/27606702/events/8324228/player?enableInfoAndActivity=true&autoPlay=true&mute=false"
+            src="https://www.youtube.com/embed/qrp3r6OvV58"
             frameBorder="0"
             scrolling="no"
             allowFullScreen
