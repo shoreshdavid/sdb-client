@@ -25,7 +25,7 @@ export const LiveStreamPage = () => (
           <h2>Watch Us LIVE!</h2>
           <p>Every Friday at 7:30pm est.</p>
           <p>If you are seeing last week's live stream, please hard refresh this page. <a href="https://www.getfilecloud.com/blog/2015/03/tech-tip-how-to-do-hard-refresh-in-browsers/#.XTJTopNKhBw" target="_blank">Click here for a how-to.</a></p>
-          <p>If that doesn't help or you are on a mobile device, try going to our YouTube channel (and Subscribe so you get notifications) at https://www.youtube.com/watch?v=uoWrAP7gsIk</p>
+          <p>If that doesn't help or you are on a mobile device, try going to our YouTube channel (and Subscribe so you get notifications) at <a href="https://www.youtube.com/watch?v=uoWrAP7gsIk">this link.</a></p>
         </div>
       </div>
       <div className="row">
