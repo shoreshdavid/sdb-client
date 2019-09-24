@@ -182,11 +182,7 @@ export class ServiceListPage extends React.Component<any, any> {
                         isSeries={parts.length > 1 ? true : false}
                         type="services"
                         color={color}
-                        link={
-                          slug === 'how-to-get-healed-and-stay-healed'
-                            ? 'https://gethealedfast.com/'
-                            : null
-                        }
+                        link={null}
                       />
                     </div>
                   ),
