@@ -1,55 +1,32 @@
-import * as Sentry from '@sentry/browser';
-import * as LogRocket from 'logrocket';
-import setupLogRocketReact from 'logrocket-react';
 import * as React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 
-// Containers
-import { ErrorBoundary } from 'containers/ErrorBoundary';
-
-// components
-import { Footer } from 'components/Footer';
-import { Header } from 'components/Header';
-import { ScrollToTop } from 'components/ScrollToTop';
-import { StickyEmail } from 'components/StickyEmail';
-import { TopBar } from 'components/TopBar';
-
-// pages
-import { BooksPage } from 'pages/BooksPage';
-import { DiscoveriesPage } from 'pages/DiscoveriesPage';
-import { DonatePage } from 'pages/DonatePage';
-import { EventsPage } from 'pages/EventsPage';
-import { HomePage } from 'pages/HomePage';
-import { JewishPage } from 'pages/JewishPage';
-import { LiveStreamPage } from 'pages/LiveStreamPage';
-import { NotFoundPage } from 'pages/NotFoundPage';
-import { PrivacyPolicyPage } from 'pages/PrivacyPolicyPage';
-import { ProductListPage } from 'pages/ProductListPage';
-import { ServiceListPage } from 'pages/ServiceListPage';
-import { SingleDiscoveryPage } from 'pages/SingleDiscoveryPage';
-import { SingleJewishPage } from 'pages/SingleJewishPage';
-import { SingleServicePage } from 'pages/SingleServicePage';
-
+import { Footer } from './components/Footer';
+import { Header } from './components/Header';
+import { ScrollToTop } from './components/ScrollToTop';
+import { StickyEmail } from './components/StickyEmail';
+import { TopBar } from './components/TopBar';
+import { ErrorBoundary } from './containers/ErrorBoundary';
+import { BooksPage } from './pages/BooksPage';
+import { DiscoveriesPage } from './pages/DiscoveriesPage';
+import { DonatePage } from './pages/DonatePage';
+import { EventsPage } from './pages/EventsPage';
+import { HomePage } from './pages/HomePage';
+import { JewishPage } from './pages/JewishPage';
+import { LiveStreamPage } from './pages/LiveStreamPage';
+import { NotFoundPage } from './pages/NotFoundPage';
+import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
+import { ProductListPage } from './pages/ProductListPage';
+import { ServiceListPage } from './pages/ServiceListPage';
+import { SingleDiscoveryPage } from './pages/SingleDiscoveryPage';
+import { SingleJewishPage } from './pages/SingleJewishPage';
+import { SingleServicePage } from './pages/SingleServicePage';
 import registerServiceWorker from './registerServiceWorker';
 
+// tslint:disable-next-line
 import './assets/scss/bootstrap.scss';
-
-import 'style/scss/application.scss';
-
-LogRocket.init('9khqml/shoresh-david-brandon-website');
-setupLogRocketReact(LogRocket);
-
-Sentry.init({
-  dsn: 'https://e0f935078b9d453db1ff925285d49017@sentry.io/1337810',
-});
-
-Sentry.configureScope((scope: any) => {
-  scope.addEventProcessor(async (event: any) => {
-    event.extra.sessionURL = LogRocket.sessionURL;
-    return event;
-  });
-});
+import './style/scss/application.scss';
 
 render(
   <BrowserRouter>

@@ -3,8 +3,8 @@ import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import ReactHtmlParser from 'react-html-parser';
 
-import { Error } from 'components/Error';
-import { Loading } from 'components/Loading';
+import { Error } from '../../components/Error';
+import { Loading } from '../../components/Loading';
 
 import { API_URL } from '../../constants';
 

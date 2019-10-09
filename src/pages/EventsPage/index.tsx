@@ -1,11 +1,11 @@
+import Axios from 'axios';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import Parser from 'react-html-parser';
-import Axios from 'axios';
 
-import { Error } from 'components/Error';
-import { Image } from 'components/Image';
-import { Loading } from 'components/Loading';
+import { Error } from '../../components/Error';
+import { Image } from '../../components/Image';
+import { Loading } from '../../components/Loading';
 
 import { API_URL } from '../../constants';
 
@@ -30,26 +30,26 @@ interface EventsPageState {
 }
 
 export class EventsPage extends React.Component<any, EventsPageState> {
-  state = {
+  public state = {
     loading: true,
     error: null,
     data: null as any,
   };
 
-  componentDidMount() {
+  public componentDidMount() {
     this.fetch();
   }
 
-  fetch = async () => {
+  public fetch = async () => {
     try {
       const res = await Axios.get(`${API_URL}/events?page=1&size=20`);
       this.setState({ loading: false, data: res.data });
     } catch (error) {
       this.setState({ error });
     }
-  };
+  }
 
-  render() {
+  public render() {
     const { loading, error, data } = this.state;
 
     if (loading) {

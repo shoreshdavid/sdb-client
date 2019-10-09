@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import Parser from 'react-html-parser';
 
-import { Image } from 'components/Image';
+import { Image } from '../../components/Image';
 
 import { products } from './products';
 

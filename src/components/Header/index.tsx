@@ -1,6 +1,7 @@
-import { Image } from 'components/Image';
 import * as React from 'react';
 import { Link, NavLink, withRouter } from 'react-router-dom';
+
+import { Image } from '../../components/Image';
 
 import './header.scss';
 
@@ -24,7 +25,7 @@ export class WrappedHeader extends React.Component<any, any> {
     this.setState({
       isOpen: !this.state.isOpen,
     });
-  };
+  }
 
   public componentWillUnmount() {
     document.addEventListener('click', () => {

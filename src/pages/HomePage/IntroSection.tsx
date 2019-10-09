@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Image } from 'components/Image';
+import { Image } from '../../components/Image';
 
 const SDBLogo = require('../../assets/img/sdb-logo-md.png');
 

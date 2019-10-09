@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
-
-import { Image } from 'components/Image';
-
 import { Link } from 'react-router-dom';
+
+import { Image } from '../../components/Image';
+
 import './stream.scss';
 
 const SDBLogo = require('../../assets/img/sdb-logo-md.png');

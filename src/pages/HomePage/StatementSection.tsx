@@ -1,5 +1,6 @@
-import { Accordion } from 'components/Accordion';
 import * as React from 'react';
+
+import { Accordion } from '../../components/Accordion';
 
 export const StatementSection = () => (
   <div className="container-fluid accordion-container">

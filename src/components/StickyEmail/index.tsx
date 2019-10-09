@@ -1,7 +1,7 @@
 import Axios from 'axios';
 import * as React from 'react';
 
-import { Image } from 'components/Image';
+import { Image } from '../../components/Image';
 
 import { API_URL } from '../../constants';
 
@@ -25,7 +25,7 @@ export class StickyEmail extends React.Component<any, any> {
         open: !prev.open,
       };
     });
-  };
+  }
 
   public handleSubmit = async (event: any) => {
     event.preventDefault();
@@ -43,7 +43,7 @@ export class StickyEmail extends React.Component<any, any> {
     } catch (error) {
       this.setState({ error: error.response.data.message });
     }
-  };
+  }
 
   public render() {
     return (

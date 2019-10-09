@@ -1,12 +1,11 @@
 import Axios from 'axios';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
-
-import { Card } from 'components/Card';
-import { Error } from 'components/Error';
-import { Loading } from 'components/Loading';
-
 import { Link } from 'react-router-dom';
+
+import { Card } from '../../components/Card';
+import { Error } from '../../components/Error';
+import { Loading } from '../../components/Loading';
 import { API_URL } from '../../constants';
 
 export class DiscoveriesPage extends React.Component<any, any> {
@@ -74,12 +73,12 @@ export class DiscoveriesPage extends React.Component<any, any> {
         error: error.response.data.error,
       });
     }
-  };
+  }
 
   public goToPage = async (page: number) => {
     await this.setState({ page });
     this.handlePageRequest();
-  };
+  }
 
   public handleLeftPage = async () => {
     if (this.state.page === 1) {
@@ -91,7 +90,7 @@ export class DiscoveriesPage extends React.Component<any, any> {
       };
     });
     this.handlePageRequest();
-  };
+  }
 
   public handleRightPage = async () => {
     if (this.state.page > Math.ceil(this.state.count / this.state.size) - 1) {
@@ -103,7 +102,7 @@ export class DiscoveriesPage extends React.Component<any, any> {
       };
     });
     this.handlePageRequest();
-  };
+  }
 
   public render() {
     if (this.state.loading) {

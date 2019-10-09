@@ -1,7 +1,7 @@
 import * as Sentry from '@sentry/browser';
 import * as React from 'react';
 
-import { Error } from 'components/Error';
+import { Error } from '../../components/Error';
 
 interface Props {
   error?: string;
