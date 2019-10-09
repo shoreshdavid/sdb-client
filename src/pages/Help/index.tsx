@@ -61,14 +61,14 @@ export const HelpPage = () => {
           </p>
 
           <p>
-            On a Mac, press the following keys (excluding the plus (+) signs).{' '}
-            <strong style={{ color: '#000' }}>COMMAND + SHIFT + R</strong>.
+            On a Mac, press and hold all of following keys down together{' '}
+            <strong style={{ color: '#000' }}>COMMAND SHIFT R</strong>.
           </p>
 
           <p>
-            On a Windows or Linux, press the following keys (excluding the plus
-            (+) signs).{' '}
-            <strong style={{ color: '#000' }}>CONTROL + SHIFT + R</strong>.
+            On Windows or Linux, press and hold all of following keys down
+            together. <strong style={{ color: '#000' }}>CONTROL SHIFT R</strong>
+            .
           </p>
 
           <h3 style={{ color: '#000' }}>Mobile Devices:</h3>
