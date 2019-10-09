@@ -4,6 +4,7 @@
 
 dist/
 build/
+.cache/
 
 ### ElasticBeanstalk ###
 .elasticbeanstalk/
