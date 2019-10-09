@@ -48,8 +48,10 @@ export const HelpPage = () => {
           />
 
           <p>
-            If the picture you see above is the same as what you see on the
-            website, then you are all set.
+            If the picture you see above is the same as what you see on the live
+            stream page, you are all set! Skip everything below{' '}
+            <strong style={{ color: '#000' }}>EXCEPT</strong> the last
+            paragraph, entitled "A quick note..."
           </p>
 
           <p>
