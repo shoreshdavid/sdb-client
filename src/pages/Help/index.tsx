@@ -28,10 +28,14 @@ export const HelpPage = () => {
             .
           </p>
 
-          <h2>Guide:</h2>
+          <h2>Step 1:</h2>
 
           <p>
-            Go to the <Link to="/live">live stream page</Link>.
+            Go to the{' '}
+            <a href="https://shoreshdavidbrandon.org/live" target="_blank">
+              live stream page
+            </a>
+            .
           </p>
 
           <img
