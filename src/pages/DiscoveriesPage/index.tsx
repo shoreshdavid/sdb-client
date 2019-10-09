@@ -74,12 +74,12 @@ export class DiscoveriesPage extends React.Component<any, any> {
         error: error.response.data.error,
       });
     }
-  }
+  };
 
   public goToPage = async (page: number) => {
     await this.setState({ page });
     this.handlePageRequest();
-  }
+  };
 
   public handleLeftPage = async () => {
     if (this.state.page === 1) {
@@ -91,7 +91,7 @@ export class DiscoveriesPage extends React.Component<any, any> {
       };
     });
     this.handlePageRequest();
-  }
+  };
 
   public handleRightPage = async () => {
     if (this.state.page > Math.ceil(this.state.count / this.state.size) - 1) {
@@ -103,7 +103,7 @@ export class DiscoveriesPage extends React.Component<any, any> {
       };
     });
     this.handlePageRequest();
-  }
+  };
 
   public render() {
     if (this.state.loading) {

@@ -34,7 +34,7 @@ export class EventsPage extends React.Component<any, EventsPageState> {
     loading: true,
     error: null,
     data: null as any,
-  }
+  };
 
   componentDidMount() {
     this.fetch();
@@ -47,7 +47,7 @@ export class EventsPage extends React.Component<any, EventsPageState> {
     } catch (error) {
       this.setState({ error });
     }
-  }
+  };
 
   render() {
     const { loading, error, data } = this.state;
@@ -69,7 +69,8 @@ export class EventsPage extends React.Component<any, EventsPageState> {
               <div key={i} className="col-lg-6">
                 <Event event={event} />
               </div>
-            ))};
+            ))}
+            ;
           </div>
         </div>
       </React.Fragment>

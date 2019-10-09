@@ -73,12 +73,12 @@ export class ServiceListPage extends React.Component<any, any> {
         error: error.response.data.message,
       });
     }
-  }
+  };
 
   public goToPage = async (page: number) => {
     await this.setState({ page });
     this.handlePageRequest();
-  }
+  };
 
   public previous = async () => {
     if (this.state.page === 1) {
@@ -90,7 +90,7 @@ export class ServiceListPage extends React.Component<any, any> {
       };
     });
     this.handlePageRequest();
-  }
+  };
 
   public next = async () => {
     if (this.state.page > Math.ceil(this.state.count / this.state.size) - 1) {
@@ -102,7 +102,7 @@ export class ServiceListPage extends React.Component<any, any> {
       };
     });
     this.handlePageRequest();
-  }
+  };
 
   public render() {
     const renderTabs = this.state.tabs.length ? (

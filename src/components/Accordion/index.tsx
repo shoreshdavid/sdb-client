@@ -9,7 +9,7 @@ export class Accordion extends React.Component<any, any> {
     this.setState((prev: any) => {
       return { open: !prev.open };
     });
-  }
+  };
 
   public render() {
     const { text, heading } = this.props;

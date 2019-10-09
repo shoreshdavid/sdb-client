@@ -27,8 +27,8 @@ export const AboutSection = () => {
           healing teachings and more to positively change their lives. For He
           said: “I am the way, the truth, and the life! No one comes to the
           Father except through Me.” Go to{' '}
-          <Link to="http://gethealedfast.com/">here</Link>{' '}
-          for our healing teachings... and{' '}
+          <Link to="http://gethealedfast.com/">here</Link> for our healing
+          teachings... and{' '}
           <a
             href="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/pdf/friend-book-ninth-printing.pdf"
             target="_blank"

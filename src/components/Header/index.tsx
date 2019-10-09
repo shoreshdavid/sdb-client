@@ -24,7 +24,7 @@ export class WrappedHeader extends React.Component<any, any> {
     this.setState({
       isOpen: !this.state.isOpen,
     });
-  }
+  };
 
   public componentWillUnmount() {
     document.addEventListener('click', () => {
@@ -82,9 +82,9 @@ export class WrappedHeader extends React.Component<any, any> {
                     <Link to="/services/rabbi-don">
                       Rabbi Don's Teachings &amp; Others
                     </Link>
-                    <a href="https://gethealedfast.com" target="_blank">
+                    <Link to="/services/get-healed-fast/how-to-get-healed-and-stay-healed">
                       Get Healed Fast
-                    </a>
+                    </Link>
                     <Link to="/services/holy-days">"Jewish" Holidays</Link>
                     <Link to="/services/end-times">End Times</Link>
                     <Link to="/services/bible-studies">Bible Studies</Link>
