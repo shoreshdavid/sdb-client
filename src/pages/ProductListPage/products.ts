@@ -12,7 +12,7 @@ export const products = [
     featuredImage: healingDvd,
     storeLink:
       'https://www.mcssl.com/SecureCart/SecureCart.aspx?mid=2C37E45F-149B-4853-9879-DC5AA7B39A34&pid=823365852a594f9cb679a3f02e012baf',
-    description: `<p>For full details about this series, <a href="https://shoreshdavidbrandon.org/services/get-healed-fast/how-to-get-healed-and-stay-healed" target="_blank">click here.</a></p>`,
+    description: `<p>For full details about this series, <a href="https://gethealedfast.com" target="_blank">click here.</a></p>`,
     buttonText: 'Buy Here',
     links: [] as any,
   },
@@ -35,7 +35,7 @@ export const products = [
     storeLink:
       'https://www.mcssl.com/SecureCart/SecureCart.aspx?mid=2C37E45F-149B-4853-9879-DC5AA7B39A34&pid=9ee63af63bbc45dab3edba13935cf41f',
     order: 3,
-    description: `<p>For full details about this series, <a href="https://shoreshdavidbrandon.org/services/get-healed-fast/how-to-get-healed-and-stay-healed" target="_blank">click here.</a></p>`,
+    description: `<p>For full details about this series, <a href="https://gethealedfast.com" target="_blank">click here.</a></p>`,
     buttonText: 'Buy Here',
     links: [] as any,
   },

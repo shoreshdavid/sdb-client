@@ -27,7 +27,7 @@ export class WrappedHeader extends React.Component<any, any> {
   }
 
   public componentWillUnmount() {
-    document.removeEventListener('click', () => {
+    document.addEventListener('click', () => {
       this.toggle();
     });
   }
@@ -82,9 +82,9 @@ export class WrappedHeader extends React.Component<any, any> {
                     <Link to="/services/rabbi-don">
                       Rabbi Don's Teachings &amp; Others
                     </Link>
-                    <Link to="https://shoreshdavidbrandon.org/services/get-healed-fast/how-to-get-healed-and-stay-healed">
+                    <a href="https://gethealedfast.com" target="_blank">
                       Get Healed Fast
-                    </Link>
+                    </a>
                     <Link to="/services/holy-days">"Jewish" Holidays</Link>
                     <Link to="/services/end-times">End Times</Link>
                     <Link to="/services/bible-studies">Bible Studies</Link>
