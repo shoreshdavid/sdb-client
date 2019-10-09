@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import { HelpPage } from '~pages/Help';
 
+import './assets/scss/bootstrap.scss';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { ScrollToTop } from './components/ScrollToTop';
@@ -23,9 +25,6 @@ import { SingleDiscoveryPage } from './pages/SingleDiscoveryPage';
 import { SingleJewishPage } from './pages/SingleJewishPage';
 import { SingleServicePage } from './pages/SingleServicePage';
 import registerServiceWorker from './registerServiceWorker';
-
-// tslint:disable-next-line
-import './assets/scss/bootstrap.scss';
 import './style/scss/application.scss';
 
 render(
@@ -64,6 +63,7 @@ render(
           <Route exact path="/jewish/:slug" component={SingleJewishPage} />
           <Route exact path="/donate" component={DonatePage} />
           <Route exact path="/privacy-policy" component={PrivacyPolicyPage} />
+          <Route exact path="/help" component={HelpPage} />
           <Route component={NotFoundPage} />
         </Switch>
         <StickyEmail />
