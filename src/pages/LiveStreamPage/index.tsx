@@ -23,7 +23,7 @@ export const LiveStreamPage = () => (
           />
 
           <h2>Watch Us LIVE!</h2>
-          <p>Every Friday at 7:30pm est.</p>
+          <p>Every Friday at 8:00pm est.</p>
         </div>
       </div>
       <div className="row">
