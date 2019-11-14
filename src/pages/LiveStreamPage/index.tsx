@@ -21,7 +21,6 @@ export const LiveStreamPage = () => (
             alt="Shoresh David Brandon Logo"
             className="lazyload img-fluid"
           />
-
           <h2>Watch Us LIVE!</h2>
           <p>Every Friday at 8:00pm est.</p>
         </div>
@@ -29,7 +28,7 @@ export const LiveStreamPage = () => (
       <div className="row">
         <div className="col-lg-8">
           <iframe
-            src={`https://www.youtube.com/embed/live_stream?channel=${process.env.CHANNEL_ID}`}
+            src="https://www.youtube.com/embed/live_stream?channel=UC1yOFqmKt-1ruHxg6fBiAFg&autoplay=1"
             frameBorder="0"
             scrolling="no"
             allowFullScreen
