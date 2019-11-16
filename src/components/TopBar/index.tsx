@@ -41,7 +41,7 @@ export const TopBar = () => {
             className="badge badge-danger"
             style={{ padding: 6, marginLeft: 10 }}
           >
-            Fridays @ 8:00PM
+            Fridays @ 8:15PM
           </span>
         </Link>
       </div>
