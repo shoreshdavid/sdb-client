@@ -22,7 +22,7 @@ export const LiveStreamPage = () => (
             className="lazyload img-fluid"
           />
           <h2>Watch Us LIVE!</h2>
-          <h5>Every Friday at 8:15pm eastern.</h5>
+          <h5>Every Friday at 7:30pm eastern.</h5>
         </div>
       </div>
       <div className="row">
