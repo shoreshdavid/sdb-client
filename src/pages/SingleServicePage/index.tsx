@@ -19,7 +19,7 @@ export class SingleServicePage extends React.Component<any, any> {
 
   public componentDidMount() {
     Axios.get(`${API_URL}/services/${this.props.match.params.slug}`)
-      .then(res => this.setState({ loading: false, service: res.data.data }))
+      .then(res => this.setState({ loading: false, service: res.data }))
       .catch(error =>
         this.setState({ loading: false, error: error.response.data.message }),
       );
