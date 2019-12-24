@@ -5,17 +5,7 @@ const scripturesCd = require('../../assets/img/healing-scriptures-cd.png');
 // tslint:disable:max-line-length
 
 export const products = [
-  {
-    order: 1,
-    name: 'Healing Teachings DVD',
-    price: 19.95,
-    featuredImage: healingDvd,
-    storeLink:
-      'https://www.mcssl.com/SecureCart/SecureCart.aspx?mid=2C37E45F-149B-4853-9879-DC5AA7B39A34&pid=823365852a594f9cb679a3f02e012baf',
-    description: `<p>For full details about this series, <a href="https://shoreshdavidbrandon.org/services/get-healed-fast/how-to-get-healed-and-stay-healed">click here.</a></p>`,
-    buttonText: 'Buy Here',
-    links: [] as any,
-  },
+
   {
     order: 2,
     name: 'God\'s Healing Scriptures CD',
@@ -25,17 +15,6 @@ export const products = [
       'https://www.mcssl.com/SecureCart/SecureCart.aspx?mid=2C37E45F-149B-4853-9879-DC5AA7B39A34&pid=79cb5db62cd64ad196b1a9dac5506885',
     hasAudio: true,
     description: `<p>Internationally acclaimed worshipper Jonathan Settel produced this highly anointed CD with 67 of God’s healing Scriptures. It runs for just over 50 minutes and is ideal to go to sleep to, play in your car, or wherever and whenever you want to wield the Sword of the Spirit against your pain or sickness.</p>`,
-    buttonText: 'Buy Here',
-    links: [] as any,
-  },
-  {
-    name: 'Get Healed Fast Related Teachings DVD',
-    price: 19.95,
-    featuredImage: relatedTeachingsDvd,
-    storeLink:
-      'https://www.mcssl.com/SecureCart/SecureCart.aspx?mid=2C37E45F-149B-4853-9879-DC5AA7B39A34&pid=9ee63af63bbc45dab3edba13935cf41f',
-    order: 3,
-    description: `<p>For full details about this series, <a href="https://shoreshdavidbrandon.org/services/get-healed-fast/how-to-get-healed-and-stay-healed">click here.</a></p>`,
     buttonText: 'Buy Here',
     links: [] as any,
   },
