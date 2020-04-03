@@ -19,44 +19,41 @@ export const Card = ({
   const img =
     type === 'jewish' ? `url("${jewishImg}")` : `url("${serviceImg}")`;
 
-  const renderLink = link ? (
-    <a href={link} target="_blank">
-      {title}
-    </a>
-  ) : type === 'jewish' ? (
-    <Link to={`/${type}/${slug}`}>{title}</Link>
-  ) : (
-    <Link to={`/${type}/${category}/${slug}`}>{title}</Link>
-  );
+  const CustomLink = ({children}) => {
+    if (link) {
+      return (
+        <a href={link} target="_blank">
+          {children}
+        </a>
+      );
+    }
+    if (type === 'jewish') {
+      return <Link to={`/${type}/${slug}`}>{children}</Link>
+    }
+    
+    return <Link to={`/${type}/${category}/${slug}`}>{children}</Link>
+    
+  }
+
 
   return (
-    <div className="card-item">
-      {/* {featuredImage ? (
-            <img src={featuredImage} alt={title} />
-          ) : (
-          )} */}
-      <div
-        className="card-thumb"
-        style={{
-          backgroundImage: img,
-          backgroundColor: color,
-        }}
-      >
-        <div className="card-thumb-title">
-          <span>{title}</span>
+    <CustomLink>
+        <div className="card-item">
+          <div
+            className="card-thumb"
+            style={{
+              backgroundImage: img,
+              backgroundColor: color,
+            }}
+          >
+            <div className="card-thumb-title">
+              <span>{title}</span>
+            </div>
+          </div>
+          <div className="card-content">
+            <h4 className="card-title">{title}</h4>
+          </div>
         </div>
-
-        {isSeries ? (
-          <Link to={`/${type}/${category}/${slug}`}>
-            <button className="btn btn-primary btn-sm card-series">
-              Series
-            </button>
-          </Link>
-        ) : null}
-      </div>
-      <div className="card-content">
-        <h4 className="card-title">{renderLink}</h4>
-      </div>
-    </div>
+      </CustomLink>
   );
 };
