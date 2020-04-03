@@ -6,7 +6,6 @@ import Parser from 'react-html-parser';
 import { Error } from '../../components/Error';
 import { Image } from '../../components/Image';
 import { Loading } from '../../components/Loading';
-
 import { API_URL } from '../../constants';
 
 import './event.scss';

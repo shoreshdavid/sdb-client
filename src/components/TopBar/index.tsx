@@ -1,6 +1,3 @@
-import * as React from 'react';
-import { Link } from 'react-router-dom';
-
 import { faFacebookF, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import {
   faEnvelope,
@@ -9,6 +6,9 @@ import {
   faVideo,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import * as React from 'react';
+import { Link } from 'react-router-dom';
+
 import './topbar.scss';
 
 export const TopBar = () => {

@@ -11,7 +11,7 @@ export const JewishPage = () => {
   const [state, setState] = React.useState({
     loading: true,
     error: null,
-    data: null,
+    data: null as any,
   });
 
   React.useEffect(() => {
@@ -43,21 +43,17 @@ export const JewishPage = () => {
       <div className="container-fluid padding-50">
         <div className="jewish-page">
           <div className="row">
-            {state.data.map(
-              ({ featuredImage, link, title, slug, color }: any, i: number) => (
-                <div className="col-sm-12 col-lg-3" key={i}>
-                  <Card
-                    title={title}
-                    featuredImage={featuredImage}
-                    slug={slug}
-                    link={link}
-                    color={color}
-                    isSeries={false}
-                    type="jewish"
-                  />
-                </div>
-              ),
-            )}
+            {state.data.map(({ link, title, slug, color }: any, i: number) => (
+              <div className="col-sm-12 col-lg-3" key={i}>
+                <Card
+                  title={title}
+                  slug={slug}
+                  link={link}
+                  color={color}
+                  type="jewish"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>

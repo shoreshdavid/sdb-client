@@ -57,21 +57,6 @@ export const NotFoundPage = () => (
             </li>
           </ul>
         </div>
-        <div className="col">
-          <h3 className="not-found-col-heading">Search Our Website</h3>
-          <p>Can't find what you need? Take a moment and do a search below!</p>
-          <form>
-            <label>Search for:</label>
-            <input
-              type="text"
-              name="search"
-              className="form-control searchbar"
-              placeholder="Search..."
-              aria-required="true"
-              aria-label="Search ..."
-            />
-          </form>
-        </div>
       </div>
     </div>
   </React.Fragment>

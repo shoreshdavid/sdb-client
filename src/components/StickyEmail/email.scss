@@ -3,9 +3,9 @@
 .sticky-email {
   position: sticky;
   z-index: 1000;
+  // top: 0;
   bottom: 0;
-  top: 0;
-  right: 20px;
+  right: 0;
   width: 300px;
   float: right;
   box-shadow: 0 0 5px #bbb;

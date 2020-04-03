@@ -38,7 +38,7 @@
 }
 
 .parallax {
-  background-image: url('../../assets/img/home-banner-fruit.jpg');
+  background-image: url('../../assets/img/western-wall.jpg');
   height: 700px;
   background-attachment: fixed;
   background-position: center;
@@ -55,15 +55,21 @@
   font-weight: 700;
   font-size: 52px;
   text-align: center;
+  text-shadow: 0 0 4px rgba(0,0,0,0.3);
+  -webkit-text-stroke: 1px black;
+  -webkit-text-fill-color: white;
 }
 
 .parallax-subheader {
   color: $white;
-  font-weight: 300;
+  font-weight: 700;
   font-size: 24px;
   text-align: center;
   margin-top: -30px;
   margin-bottom: 50px;
+  text-shadow: 0 0 4px rgba(0,0,0,0.6);
+  // -webkit-text-stroke: 0.4px black;
+  // -webkit-text-fill-color: white;
 }
 
 .parallax-button-group {

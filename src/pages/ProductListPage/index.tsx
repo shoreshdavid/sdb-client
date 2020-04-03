@@ -2,11 +2,10 @@ import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import Parser from 'react-html-parser';
 
+import cards from '../../assets/img/cards.png';
 import { Image } from '../../components/Image';
 
 import { products } from './products';
-
-const cards = require('../../assets/img/cards.png');
 
 export const ProductListPage = () => (
   <React.Fragment>

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 
-import './donate.scss';
+import cards from '../../assets/img/cards.png';
 
-const cards = require('../../assets/img/cards.png');
+import './donate.scss';
 
 // tslint:disable
 const buttons = [

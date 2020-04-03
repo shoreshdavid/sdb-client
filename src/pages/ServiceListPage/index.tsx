@@ -83,7 +83,7 @@ export class ServiceListPage extends React.Component<any, any> {
     if (this.state.page === 1) {
       return;
     }
-    await this.setState(prevState => {
+    await this.setState((prevState) => {
       return {
         page: prevState.page - 1,
       };
@@ -95,7 +95,7 @@ export class ServiceListPage extends React.Component<any, any> {
     if (this.state.page > Math.ceil(this.state.count / this.state.size) - 1) {
       return;
     }
-    await this.setState(prevState => {
+    await this.setState((prevState) => {
       return {
         page: prevState.page + 1,
       };
@@ -175,10 +175,8 @@ export class ServiceListPage extends React.Component<any, any> {
                     >
                       <Card
                         title={title}
-                        featuredImage={featuredImage}
                         category={category}
                         slug={slug}
-                        isSeries={parts.length > 1 ? true : false}
                         type="services"
                         color={color}
                         link={null}

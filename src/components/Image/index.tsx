@@ -1,8 +1,15 @@
 import * as React from 'react';
 
-const placeholder = require('../../assets/img/image-not-found.jpg');
+import placeholder from '../../assets/img/image-not-found.jpg';
 
-export const Image = props => {
+interface Props {
+  src: string;
+  alt?: string;
+  className?: string;
+  style?: any;
+}
+
+export const Image = (props: Props) => {
   const { src, alt } = props;
   return (
     <img

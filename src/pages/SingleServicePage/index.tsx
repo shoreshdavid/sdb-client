@@ -3,12 +3,10 @@ import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import ReactHtmlParser from 'react-html-parser';
 
+import image from '../../assets/img/service-background.png';
 import { Error } from '../../components/Error';
 import { Loading } from '../../components/Loading';
-
 import { API_URL } from '../../constants';
-
-const image = require('../../assets/img/service-background.png');
 
 export class SingleServicePage extends React.Component<any, any> {
   public state = {
@@ -19,8 +17,8 @@ export class SingleServicePage extends React.Component<any, any> {
 
   public componentDidMount() {
     Axios.get(`${API_URL}/services/${this.props.match.params.slug}`)
-      .then(res => this.setState({ loading: false, service: res.data }))
-      .catch(error =>
+      .then((res) => this.setState({ loading: false, service: res.data }))
+      .catch((error) =>
         this.setState({ loading: false, error: error.response.data.message }),
       );
   }
@@ -62,7 +60,6 @@ export class SingleServicePage extends React.Component<any, any> {
               <h1
                 style={{
                   fontSize: 18,
-                  padding: '5px 0 10px 0',
                 }}
               >
                 {service.title}

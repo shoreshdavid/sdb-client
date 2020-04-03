@@ -1,12 +1,11 @@
 import * as React from 'react';
 import { Link, NavLink, withRouter } from 'react-router-dom';
 
+import headerLogo from '../../assets/img/header-logo.png';
+import smallLogo from '../../assets/img/sdb-logo-md.png';
 import { Image } from '../../components/Image';
 
 import './header.scss';
-
-const headerLogo = require('../../assets/img/header-logo.png');
-const smallLogo = require('../../assets/img/sdb-logo-md.png');
 
 export class WrappedHeader extends React.Component<any, any> {
   public state = {

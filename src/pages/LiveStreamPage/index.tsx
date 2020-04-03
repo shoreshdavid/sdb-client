@@ -2,11 +2,10 @@ import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 
+import SDBLogo from '../../assets/img/sdb-logo-md.png';
 import { Image } from '../../components/Image';
 
 import './stream.scss';
-
-const SDBLogo = require('../../assets/img/sdb-logo-md.png');
 
 export const LiveStreamPage = () => (
   <React.Fragment>

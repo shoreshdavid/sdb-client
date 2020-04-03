@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
+import rabbi from '../../assets/img/rabbi-don-circle.png';
 import { Image } from '../../components/Image';
-
-const rabbi = require('../../assets/img/rabbi-don-circle.png');
 
 export const RabbiSection = () => {
   return (

@@ -21,7 +21,16 @@ const CustomLink = ({ link, type, category, slug, children }) => {
   return <Link to={`/${type}/${category}/${slug}`}>{children}</Link>;
 };
 
-export const Card = ({ title, slug, link, color, type, category }) => {
+interface Props {
+  title: string;
+  slug: string;
+  link: string | null;
+  color: string;
+  type: string;
+  category?: string;
+}
+
+export const Card = ({ title, slug, link, color, type, category }: Props) => {
   const img =
     type === 'jewish' ? `url("${jewishImg}")` : `url("${serviceImg}")`;
   console.log(img);

@@ -84,7 +84,7 @@ export class DiscoveriesPage extends React.Component<any, any> {
     if (this.state.page === 1) {
       return;
     }
-    await this.setState(prevState => {
+    await this.setState((prevState) => {
       return {
         page: prevState.page - 1,
       };
@@ -96,7 +96,7 @@ export class DiscoveriesPage extends React.Component<any, any> {
     if (this.state.page > Math.ceil(this.state.count / this.state.size) - 1) {
       return;
     }
-    await this.setState(prevState => {
+    await this.setState((prevState) => {
       return {
         page: prevState.page + 1,
       };
@@ -158,14 +158,7 @@ export class DiscoveriesPage extends React.Component<any, any> {
                 {articles.length ? (
                   articles.map(
                     (
-                      {
-                        title,
-                        featuredImage,
-                        slug,
-                        link,
-                        color,
-                        category,
-                      }: any,
+                      { title, slug, link, color, category }: any,
                       i: number,
                     ) => (
                       <div
@@ -174,7 +167,6 @@ export class DiscoveriesPage extends React.Component<any, any> {
                       >
                         <Card
                           title={title}
-                          featuredImage={featuredImage}
                           category={category}
                           slug={slug}
                           link={link}

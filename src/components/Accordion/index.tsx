@@ -2,36 +2,32 @@ import * as React from 'react';
 
 import './accordion.scss';
 
-export class Accordion extends React.Component<any, any> {
-  public state = { open: false };
+interface Props {
+  text: string;
+  heading: string;
+}
 
-  public toggle = () => {
-    this.setState((prev: any) => {
-      return { open: !prev.open };
-    });
+export const Accordion = ({ text, heading }: Props) => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const toggle = () => {
+    setIsOpen(!isOpen);
   };
 
-  public render() {
-    const { text, heading } = this.props;
-    return (
-      <div>
-        <button
-          onClick={this.toggle}
-          className="btn btn-secondary btn-block accordion-button"
-        >
-          <i
-            className={`icon-primary fas fa-${
-              this.state.open ? 'minus' : 'plus'
-            }`}
-          />{' '}
-          <span>{heading}</span>
-        </button>
-        <div className={`${this.state.open ? 'collapse show' : 'collapse'}`}>
-          <div className="accordion-item-container">
-            <p>{text}</p>
-          </div>
+  return (
+    <div>
+      <button
+        onClick={toggle}
+        className="btn btn-secondary btn-block accordion-button"
+      >
+        <i className={`icon-primary fas fa-${isOpen ? 'minus' : 'plus'}`} />{' '}
+        <span>{heading}</span>
+      </button>
+      <div className={`${isOpen ? 'collapse show' : 'collapse'}`}>
+        <div className="accordion-item-container">
+          <p>{text}</p>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
