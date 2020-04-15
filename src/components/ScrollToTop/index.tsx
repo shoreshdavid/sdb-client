@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useLocation } from 'react-router-dom';
 
 interface Props {
-  children: React.ReactNode;
+  children: any;
 }
 
 export const ScrollToTop = ({ children }: Props) => {

@@ -1,49 +1,19 @@
-import Axios from 'axios';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import Parser from 'react-html-parser';
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { getResourceBySlug } from '~store/reducers/resources';
 
 import image from '../../assets/img/jewish.png';
-import { Error } from '../../components/Error';
-import { Loading } from '../../components/Loading';
-import { API_URL } from '../../constants';
 
 export const SingleJewishPage = () => {
   const { slug } = useParams();
+  const jewishResource: any = useSelector((s: any) =>
+    getResourceBySlug(s.sermons.allSermons, slug as string),
+  );
 
-  const [state, setState] = React.useState({
-    loading: true,
-    error: null,
-    jewish: {} as any,
-  });
-
-  React.useEffect(() => {
-    fetch();
-  },              []);
-
-  const fetch = async () => {
-    try {
-      const res = await Axios.get(`${API_URL}/jewish/${slug}`);
-      setState({ ...state, loading: false, jewish: res.data.data });
-    } catch (error) {
-      setState({
-        ...state,
-        loading: false,
-        error: error.response.data.message,
-      });
-    }
-  };
-
-  if (state.loading) {
-    return <Loading />;
-  }
-
-  if (state.error) {
-    return <Error error={state.error} />;
-  }
-
-  const { featuredImage, content, title, color } = state.jewish;
+  const { featuredImage, content, title, color } = jewishResource;
   return (
     <React.Fragment>
       <Helmet>

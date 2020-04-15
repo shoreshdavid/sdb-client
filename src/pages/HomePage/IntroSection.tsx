@@ -12,10 +12,9 @@ export const IntroSection = () => {
           <div style={{ textAlign: 'center', marginBottom: 80 }}>
             <Image
               src={SDBLogo}
-              width={82}
-              height={89}
+              // width={82}
+              // height={89}
               alt="Shoresh David Brandon Logo"
-              className="lazyload img-fluid"
             />
             <hr className="brand-hr" />
             <h3 className="intro-container-address">

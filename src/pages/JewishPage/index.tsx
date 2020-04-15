@@ -1,18 +1,18 @@
 import Axios from 'axios';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
+import { useDispatch, useSelector } from 'react-redux';
+import { loadResources } from '~store/actions/resources';
+import { getResourcesByType } from '~store/reducers/resources';
 
 import { Card } from '../../components/Card';
-import { Error } from '../../components/Error';
-import { Loading } from '../../components/Loading';
 import { API_URL } from '../../constants';
 
 export const JewishPage = () => {
-  const [state, setState] = React.useState({
-    loading: true,
-    error: null,
-    data: null as any,
-  });
+  const dispatch = useDispatch();
+  const resources = useSelector((s: any) =>
+    getResourcesByType(s.resources.allResources, 'jewish'),
+  );
 
   React.useEffect(() => {
     fetch();
@@ -20,20 +20,12 @@ export const JewishPage = () => {
 
   const fetch = async () => {
     try {
-      const res = await Axios.get(`${API_URL}/jewish?size=20`);
-      setState({ ...state, data: res.data.data, loading: false });
+      const res = await Axios.get(`${API_URL}/resources`);
+      dispatch(loadResources(res.data.data));
     } catch (error) {
-      setState({ ...state, error, loading: false });
+      console.log(error);
     }
   };
-
-  if (state.loading) {
-    return <Loading />;
-  }
-
-  if (state.error) {
-    return <Error error={state.error} />;
-  }
 
   return (
     <React.Fragment>
@@ -43,17 +35,19 @@ export const JewishPage = () => {
       <div className="container-fluid padding-50">
         <div className="jewish-page">
           <div className="row">
-            {state.data.map(({ link, title, slug, color }: any, i: number) => (
-              <div className="col-sm-12 col-lg-3" key={i}>
-                <Card
-                  title={title}
-                  slug={slug}
-                  link={link}
-                  color={color}
-                  type="jewish"
-                />
-              </div>
-            ))}
+            {resources.map(
+              ({ externalLink, title, slug, color }: any, i: number) => (
+                <div className="col-sm-12 col-lg-3" key={i}>
+                  <Card
+                    title={title}
+                    slug={slug}
+                    link={externalLink}
+                    color={color}
+                    type="jewish"
+                  />
+                </div>
+              ),
+            )}
           </div>
         </div>
       </div>

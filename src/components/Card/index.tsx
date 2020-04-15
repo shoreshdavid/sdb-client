@@ -33,7 +33,7 @@ interface Props {
 export const Card = ({ title, slug, link, color, type, category }: Props) => {
   const img =
     type === 'jewish' ? `url("${jewishImg}")` : `url("${serviceImg}")`;
-  console.log(img);
+
   return (
     <div className="sdb-card">
       <CustomLink type={type} link={link} slug={slug} category={category}>
