@@ -158,7 +158,14 @@ export class DiscoveriesPage extends React.Component<any, any> {
                 {articles.length ? (
                   articles.map(
                     (
-                      { title, slug, link, color, category }: any,
+                      {
+                        title,
+                        slug,
+                        link,
+                        color,
+                        category,
+                        featuredImage,
+                      }: any,
                       i: number,
                     ) => (
                       <div
@@ -171,6 +178,7 @@ export class DiscoveriesPage extends React.Component<any, any> {
                           slug={slug}
                           link={link}
                           color={color}
+                          featuredImage={featuredImage}
                           type="discoveries"
                         />
                       </div>

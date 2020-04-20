@@ -2,7 +2,6 @@ import * as types from '../../store/types';
 
 const initialState = {
   allEvents: {},
-  allEventIds: [],
   selectedEventId: null,
 };
 
@@ -12,7 +11,6 @@ export const eventsReducer = (state = initialState, action: any) => {
       return {
         ...state,
         allEvents: action.payload.entities.events,
-        allEventIds: action.payload.result,
       };
 
     case types.SELECT_EVENT:

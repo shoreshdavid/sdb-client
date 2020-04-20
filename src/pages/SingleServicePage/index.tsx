@@ -1,57 +1,56 @@
+import Axios from 'axios';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
-import ReactHtmlParser from 'react-html-parser';
-import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { getSermonBySlug } from '~store/reducers/sermons';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory, useParams } from 'react-router-dom';
+import { API_URL } from '~constants';
+import { loadSermon } from '~store/actions/sermons';
 
-import image from '../../assets/img/service-background.png';
+import { DetailView } from '../../components/DetailView';
+import { useQuery } from '../../utils/useQuery';
 
 export const SingleServicePage = () => {
+  const queryParams = useQuery();
+  const history = useHistory();
   const { slug } = useParams();
-  const sermon: any = useSelector((s: any) =>
-    getSermonBySlug(s.sermons.allSermons, slug as string),
+  const dispatch = useDispatch();
+  const sermon: any = useSelector(
+    (s: any) => s.sermons.allSermons[slug as string],
   );
+
+  React.useEffect(() => {
+    fetch();
+  },              [slug]);
+
+  const fetch = async () => {
+    try {
+      const res = await Axios.get(`${API_URL}/sermons/${sermon.id}`);
+      dispatch(loadSermon(res.data.data));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const partFromQueryParams = queryParams.get('part')?.toString();
+
+  const selectedPart =
+    sermon?.parts?.length > 0
+      ? sermon.parts.find((node: any) => {
+          return node.order === partFromQueryParams;
+        })
+      : null;
 
   return (
     <React.Fragment>
       <Helmet>
         <title>{sermon.title}</title>
       </Helmet>
-      <div className="container-fluid padding-50">
-        <div className="row">
-          <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4 single-left-side">
-            <div
-              className="thumb"
-              style={{
-                backgroundImage: `url("${image}")`,
-                backgroundColor: sermon.color ? sermon.color : '#000',
-              }}
-            >
-              {sermon.featuredImage ? (
-                <img src={sermon.featuredImage} alt={sermon.title} />
-              ) : (
-                <div className="thumb-title">
-                  <span>{sermon.title}</span>
-                </div>
-              )}
-            </div>
-            <h1
-              style={{
-                fontSize: 18,
-              }}
-            >
-              {sermon.title}
-            </h1>
-            <p style={{ fontSize: 14 }}>{sermon.description}</p>
-          </div>
-          <div className="col-xs-12 col-sm-12 col-md-6 col-lg-8">
-            <div className="single-page-content single-page__right">
-              {ReactHtmlParser(sermon.content)}
-            </div>
-          </div>
-        </div>
-      </div>
+      <DetailView
+        data={sermon}
+        history={history}
+        partFromQueryParams={partFromQueryParams}
+        selectedPart={selectedPart}
+      />
     </React.Fragment>
   );
 };

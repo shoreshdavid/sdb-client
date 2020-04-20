@@ -2,7 +2,6 @@ import * as types from '../../store/types';
 
 const initialState = {
   allResources: {},
-  allResourceIds: [],
   selectedResourceId: null,
 };
 
@@ -12,7 +11,12 @@ export const resourcesReducer = (state = initialState, action: any) => {
       return {
         ...state,
         allResources: action.payload.entities.resources,
-        allResourceIds: action.payload.result,
+      };
+
+    case types.LOAD_RESOURCE:
+      return {
+        ...state,
+        allResources: action.payload.entities.resources,
       };
 
     case types.SELECT_RESOURCE:
@@ -34,6 +38,8 @@ export const getResourcesByType = (allResources: any, type: Type) => {
     .sort((a: any, b: any) => (a.order > b.order) as any);
 };
 
-export const getResourceBySlug = (allResources: any, slug: string) => {
-  return Object.values(allResources).find((node: any) => node.slug === slug);
+export const searchResources = (allResources: any, query: string) => {
+  return Object.values(allResources)
+    .filter((node: any) => node.title === query)
+    .sort((a: any, b: any) => (a.order > b.order) as any);
 };

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 
 interface Tab {
-  link: string;
+  value: string;
   label: string;
 }
 
@@ -15,10 +15,10 @@ export const Tabs = ({ tabs, activeCategory }: Props) => {
   return (
     <div>
       {tabs.map((tab: Tab) => (
-        <Link key={tab.link} to={`/services/${tab.link}`}>
+        <Link key={tab.value} to={`/services/${tab.value}`}>
           <li
             className={`list-group-item-action list-group-item ${
-              tab.link === activeCategory ? 'active' : ''
+              tab.value === activeCategory ? 'active' : ''
             }`}
             style={{
               marginBottom: 10,

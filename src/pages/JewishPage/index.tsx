@@ -36,13 +36,17 @@ export const JewishPage = () => {
         <div className="jewish-page">
           <div className="row">
             {resources.map(
-              ({ externalLink, title, slug, color }: any, i: number) => (
+              (
+                { externalLink, title, slug, color, featuredImage }: any,
+                i: number,
+              ) => (
                 <div className="col-sm-12 col-lg-3" key={i}>
                   <Card
                     title={title}
                     slug={slug}
                     link={externalLink}
                     color={color}
+                    featuredImage={featuredImage}
                     type="jewish"
                   />
                 </div>
