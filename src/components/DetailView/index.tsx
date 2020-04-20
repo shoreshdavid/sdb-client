@@ -15,11 +15,8 @@ interface Props {
 
 const LeftSide = ({ title, color, parts, category, slug }) => {
   const history = useHistory();
-  const handleSelect = (e: any) => {
-    // console.log(e.target.value);
-    // console.log(query.get('part'));
-    // // query.set('part', e.target.value.toString());
 
+  const handleSelect = (e: any) => {
     history.push(`/services/${category}/${slug}/?part=${e.target.value}`);
   };
 
@@ -42,20 +39,16 @@ const LeftSide = ({ title, color, parts, category, slug }) => {
         className="form-control"
         style={{ marginTop: 16 }}
       >
-        {parts.map((part: any) => (
-          <option value={part.order}>Part {part.order}</option>
-        ))}
+        {parts?.length > 0 &&
+          parts.map((part: any) => (
+            <option value={part.order}>Part {part.order}</option>
+          ))}
       </select>
     </div>
   );
 };
 
-const RightSide = ({
-  data,
-  history,
-  partFromQueryParams,
-  selectedPart,
-}: any) => {
+const RightSide = ({ data, selectedPart }: any) => {
   const query = useQuery();
   const partNumber = query.get('part');
   if (data?.parts?.length > 0) {
@@ -88,7 +81,7 @@ const RightSide = ({
     return (
       <div className="col-xs-12 col-sm-12 col-md-6 col-lg-8">
         <div className="single-page__right">
-          <iframe src={data.video} title={data.title} allowFullScreen />
+          <iframe src={data?.video} title={data?.title} allowFullScreen />
         </div>
       </div>
     );
@@ -101,12 +94,7 @@ const RightSide = ({
   );
 };
 
-export const DetailView = ({
-  data,
-  history,
-  partFromQueryParams,
-  selectedPart,
-}: Props) => (
+export const DetailView = ({ data, history }: Props) => (
   <div className="container-fluid padding-50">
     <div className="row">
       <LeftSide
@@ -116,12 +104,7 @@ export const DetailView = ({
         category={data.category}
         slug={data.slug}
       />
-      <RightSide
-        data={data}
-        history={history}
-        partFromQueryParams={partFromQueryParams}
-        selectedPart={selectedPart}
-      />
+      <RightSide data={data} history={history} />
     </div>
   </div>
 );
