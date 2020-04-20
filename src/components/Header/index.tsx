@@ -47,9 +47,9 @@ export class WrappedHeader extends React.Component<any, any> {
               <Image src={headerLogo} alt="Shoresh David Brandon logo" />
             )}
           </Link>
-          <div style={{ flex: 1, justifyContent: 'center' }}>
+          {/* <div style={{ flex: 1, justifyContent: 'center' }}>
             <input className="form-control" placeholder="Search" />
-          </div>
+          </div> */}
           <button
             type="button"
             className="navbar-toggler"
