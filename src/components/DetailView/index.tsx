@@ -1,6 +1,8 @@
 import * as h from 'history';
 import * as React from 'react';
 import ReactHtmlParser from 'react-html-parser';
+import { useHistory } from 'react-router-dom';
+import { useQuery } from '~utils/useQuery';
 
 import image from '../../assets/img/service-background.png';
 
@@ -11,7 +13,16 @@ interface Props {
   selectedPart?: any;
 }
 
-const LeftSide = ({ title, color }) => {
+const LeftSide = ({ title, color, parts, category, slug }) => {
+  const history = useHistory();
+  const handleSelect = (e: any) => {
+    // console.log(e.target.value);
+    // console.log(query.get('part'));
+    // // query.set('part', e.target.value.toString());
+
+    history.push(`/services/${category}/${slug}/?part=${e.target.value}`);
+  };
+
   return (
     <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4 single-left-side">
       <div
@@ -25,6 +36,16 @@ const LeftSide = ({ title, color }) => {
           <span>{title}</span>
         </div>
       </div>
+      <select
+        name="part"
+        onChange={handleSelect}
+        className="form-control"
+        style={{ marginTop: 16 }}
+      >
+        {parts.map((part: any) => (
+          <option value={part.order}>Part {part.order}</option>
+        ))}
+      </select>
     </div>
   );
 };
@@ -35,40 +56,15 @@ const RightSide = ({
   partFromQueryParams,
   selectedPart,
 }: any) => {
+  const query = useQuery();
+  const partNumber = query.get('part');
   if (data?.parts?.length > 0) {
     return (
       <div className="col-xs-12 col-sm-12 col-md-6 col-lg-8">
-        <div className="single-page-content single-page__right">
-          <div
-            style={{
-              display: 'flex',
-              flex: 1,
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}
-          >
-            <div>
-              {data.parts
-                .sort((a: any, b: any) => a.order - b.order)
-                .map((part: any) => (
-                  <button
-                    className={
-                      partFromQueryParams === part.order
-                        ? 'btn-tertiary btn-tertiary__solid'
-                        : 'btn-tertiary btn-tertiary__outlined'
-                    }
-                    key={part.order}
-                    onClick={() =>
-                      history.push(
-                        `/services/${data.category}/${data.slug}/?part=${part.order}`,
-                      )
-                    }
-                  >
-                    {part.title ? part.title : `Part ${part.order}`}
-                  </button>
-                ))}
-            </div>
-          </div>
+        <div className="single-page__right">
+          <h1>
+            {data.title} - Part {partNumber}
+          </h1>
           <div
             style={{
               display: 'flex',
@@ -91,7 +87,7 @@ const RightSide = ({
   if (data?.video && !data.content) {
     return (
       <div className="col-xs-12 col-sm-12 col-md-6 col-lg-8">
-        <div className="single-page-content single-page__right">
+        <div className="single-page__right">
           <iframe src={data.video} title={data.title} allowFullScreen />
         </div>
       </div>
@@ -100,9 +96,7 @@ const RightSide = ({
 
   return (
     <div className="col-xs-12 col-sm-12 col-md-6 col-lg-8">
-      <div className="single-page-content single-page__right">
-        {ReactHtmlParser(data.content)}
-      </div>
+      <div className="single-page__right">{ReactHtmlParser(data.content)}</div>
     </div>
   );
 };
@@ -115,7 +109,13 @@ export const DetailView = ({
 }: Props) => (
   <div className="container-fluid padding-50">
     <div className="row">
-      <LeftSide title={data.title} color={data.color} />
+      <LeftSide
+        title={data.title}
+        color={data.color}
+        parts={data.parts}
+        category={data.category}
+        slug={data.slug}
+      />
       <RightSide
         data={data}
         history={history}
