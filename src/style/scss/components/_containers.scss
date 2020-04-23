@@ -166,8 +166,16 @@
 }
 
 .single-page__right {
+  width: 100%;
   max-width: 100%;
   overflow: hidden;
+  .content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
   h1 {
     font-size: 20px;
     margin: 0;
@@ -180,7 +188,7 @@
   iframe {
     width: 100%;
     min-height: 400px;
-    height: 500px;
+    max-height: 500px;
   }
 }
 

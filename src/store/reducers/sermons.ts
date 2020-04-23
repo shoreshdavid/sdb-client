@@ -9,7 +9,6 @@ export const sermonsReducer = (state = initialState, action: any) => {
   switch (action.type) {
     case types.LOAD_SERMON:
       const { sermon } = action.payload.sermon;
-      console.log(sermon);
       return {
         ...state,
         allSermons: {

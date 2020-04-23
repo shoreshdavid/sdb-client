@@ -12,7 +12,7 @@ const middlewares = [thunk];
 const persistConfig = {
   key: 'SDB:',
   blacklist: [],
-  whitelist: ['sermons', 'events', 'resources', 'user'],
+  whitelist: ['sermons', 'events', 'resources'],
   keyPrefix: '',
   storage,
 };

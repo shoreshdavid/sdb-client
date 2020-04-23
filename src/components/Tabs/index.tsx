@@ -6,16 +6,20 @@ interface Tab {
   label: string;
 }
 
+type Resource = 'article' | 'sermon';
+
 interface Props {
+  resource: Resource;
   tabs: Tab[];
   activeCategory: string;
 }
 
-export const Tabs = ({ tabs, activeCategory }: Props) => {
+export const Tabs = ({ resource, tabs, activeCategory }: Props) => {
+  const link = resource === 'article' ? 'discoveries' : 'services';
   return (
     <div>
       {tabs.map((tab: Tab) => (
-        <Link key={tab.value} to={`/services/${tab.value}`}>
+        <Link key={tab.value} to={`/${link}/${tab.value}`}>
           <li
             className={`list-group-item-action list-group-item ${
               tab.value === activeCategory ? 'active' : ''

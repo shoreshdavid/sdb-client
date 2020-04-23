@@ -46,28 +46,7 @@ p {
   }
 }
 
-.btn-tertiary {
-  min-width: 160px;
-  padding: 8px;
-  border-radius: 4px;
-  margin-right: 16px;
-}
 
-.btn-tertiary__outlined {
-  background-color: #fff;
-  border: 1px solid #414141;
-  color: #414141;
-  transition: all 200ms ease-in-out;
-  &:hover {
-    cursor: pointer;
-    background-color: #414141;
-    border: 1px solid transparent;
-    color: #fff;
-  }
-}
-
-.btn-tertiary__solid {
-  background-color: #414141;
-  border: 1px solid transparent;
-  color: #fff;
+h1 {
+  line-height: initial !important;
 }

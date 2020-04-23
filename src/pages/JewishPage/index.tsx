@@ -48,6 +48,7 @@ export const JewishPage = () => {
                     color={color}
                     featuredImage={featuredImage}
                     type="jewish"
+                    showTitle={true}
                   />
                 </div>
               ),
