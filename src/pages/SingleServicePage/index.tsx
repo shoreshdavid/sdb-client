@@ -24,7 +24,7 @@ export const SingleServicePage = () => {
 
   const fetch = async () => {
     try {
-      const res = await Axios.get(`${API_URL}/sermons/${sermon.id}`);
+      const res = await Axios.get(`${API_URL}/sermons/${slug}`);
       dispatch(loadSermon(res.data.data));
     } catch (error) {
       console.log(error);
@@ -43,7 +43,7 @@ export const SingleServicePage = () => {
   return (
     <React.Fragment>
       <Helmet>
-        <title>{sermon.title}</title>
+        <title>{sermon?.title || ''}</title>
       </Helmet>
       <DetailView
         data={sermon}
