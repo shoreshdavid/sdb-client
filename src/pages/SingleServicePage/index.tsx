@@ -24,7 +24,7 @@ export const SingleServicePage = () => {
 
   const fetch = async () => {
     try {
-      const res = await Axios.get(`${API_URL}/sermons/${slug}`);
+      const res = await Axios.get(`${API_URL}/sermons/slug/${slug}`);
       dispatch(loadSermon(res.data.data));
     } catch (error) {
       console.log(error);
@@ -46,7 +46,7 @@ export const SingleServicePage = () => {
         <title>{sermon?.title || ''}</title>
       </Helmet>
       <DetailView
-        data={sermon}
+        data={sermon || {}}
         history={history}
         partFromQueryParams={partFromQueryParams}
         selectedPart={selectedPart}

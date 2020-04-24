@@ -1,5 +1,7 @@
+import { Button } from '@material-ui/core';
 import * as React from 'react';
 import { Link, NavLink, withRouter } from 'react-router-dom';
+import { persistor } from '~store/store';
 
 import headerLogo from '../../assets/img/header-logo.png';
 import smallLogo from '../../assets/img/sdb-logo-md.png';
@@ -26,6 +28,10 @@ export class WrappedHeader extends React.Component<any, any> {
     });
   }
 
+  public handleDeleteCache = () => {
+    persistor.purge();
+  }
+
   public componentWillUnmount() {
     document.addEventListener('click', () => {
       this.toggle();
@@ -47,9 +53,7 @@ export class WrappedHeader extends React.Component<any, any> {
               <Image src={headerLogo} alt="Shoresh David Brandon logo" />
             )}
           </Link>
-          {/* <div style={{ flex: 1, justifyContent: 'center' }}>
-            <input className="form-control" placeholder="Search" />
-          </div> */}
+
           <button
             type="button"
             className="navbar-toggler"
@@ -173,6 +177,9 @@ export class WrappedHeader extends React.Component<any, any> {
                 </NavLink>
               </li>
             </ul>
+            <Button color="secondary" onClick={this.handleDeleteCache}>
+              Delete Cache
+            </Button>
           </div>
         </nav>
       </div>

@@ -26,7 +26,7 @@ export const SingleDiscoveryPage = () => {
 
   const fetch = async () => {
     try {
-      const res = await Axios.get(`${API_URL}/resources/${resource.id}`);
+      const res = await Axios.get(`${API_URL}/resources/slug/${resource.slug}`);
       dispatch(loadResource(res.data.data));
     } catch (error) {
       console.log(error);
@@ -45,10 +45,10 @@ export const SingleDiscoveryPage = () => {
   return (
     <React.Fragment>
       <Helmet>
-        <title>{resource.title}</title>
+        <title>{resource?.title}</title>
       </Helmet>
       <DetailView
-        data={resource}
+        data={resource || {}}
         history={history}
         partFromQueryParams={partFromQueryParams}
         selectedPart={selectedPart}

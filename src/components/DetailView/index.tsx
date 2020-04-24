@@ -120,20 +120,29 @@ const RightSide = ({ data, selectedPart }: any) => {
   );
 };
 
-export const DetailView = ({ data, history, selectedPart }: Props) => (
-  <div className="container-fluid padding-50">
-    <div className="row">
-      <LeftSide
-        title={data.title || ''}
-        color={data.color}
-        parts={data.parts}
-        category={data.category}
-        slug={data.slug}
-        featuredImage={data.featuredImage}
-        selectedPart={selectedPart}
-        showTitle={data?.showTitle}
-      />
-      <RightSide data={data} history={history} selectedPart={selectedPart} />
+export const DetailView = ({ data, history, selectedPart }: Props) => {
+  // if (!data) {
+  //   return (
+  //     <div>
+  //       <p>Something went wrong.</p>
+  //     </div>
+  //   );
+  // }
+  return (
+    <div className="container-fluid padding-50">
+      <div className="row">
+        <LeftSide
+          title={data?.title || ''}
+          color={data?.color}
+          parts={data?.parts}
+          category={data?.category}
+          slug={data?.slug}
+          featuredImage={data?.featuredImage}
+          selectedPart={selectedPart}
+          showTitle={data?.showTitle}
+        />
+        <RightSide data={data} history={history} selectedPart={selectedPart} />
+      </div>
     </div>
-  </div>
-);
+  );
+};
