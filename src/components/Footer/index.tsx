@@ -1,3 +1,5 @@
+import { faFacebook, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -18,7 +20,7 @@ export const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {/* <FontAwesomeIcon icon={faFacebook} /> */}
+            <FontAwesomeIcon icon={faFacebook} />
           </a>
           {/* YouTube */}
           <a
@@ -26,7 +28,7 @@ export const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {/* <FontAwesomeIcon icon={faYoutube} /> */}
+            <FontAwesomeIcon icon={faYoutube} />
           </a>
         </div>
       </div>
