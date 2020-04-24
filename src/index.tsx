@@ -10,7 +10,7 @@ import './assets/scss/bootstrap.scss';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { ScrollToTop } from './components/ScrollToTop';
-// import { StickyEmail } from './components/StickyEmail';
+import { StickyEmail } from './components/StickyEmail';
 import { TopBar } from './components/TopBar';
 import { ErrorBoundary } from './containers/ErrorBoundary';
 import { BooksPage } from './pages/BooksPage';
@@ -78,7 +78,7 @@ render(
               <Route exact path="/help" component={HelpPage} />
               <Route component={NotFoundPage} />
             </Switch>
-            {/* <StickyEmail /> */}
+            <StickyEmail />
             <Footer />
           </ScrollToTop>
         </ErrorBoundary>
