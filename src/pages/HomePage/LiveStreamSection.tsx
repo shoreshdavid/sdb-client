@@ -1,9 +1,9 @@
-import {
-  faDesktop,
-  faFileVideo,
-  faVideo,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import {
+//   faDesktop,
+//   faFileVideo,
+//   faVideo,
+// } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -24,7 +24,7 @@ export const LiveStreamSection = () => {
         </svg>
       </div>
       <div className="desktop-icon">
-        <FontAwesomeIcon icon={faDesktop} />
+        {/* <FontAwesomeIcon icon={faDesktop} /> */}
       </div>
       <h2>Teachings that will change your life!</h2>
       <p>
@@ -36,13 +36,13 @@ export const LiveStreamSection = () => {
       <div className="live-btn-group">
         <Link to="/live">
           <button className="btn btn-primary">
-            <FontAwesomeIcon icon={faVideo} />
+            {/* <FontAwesomeIcon icon={faVideo} /> */}
             LIVE Streaming every Friday @ 7:30pm (CLICK HERE)
           </button>
         </Link>
         <Link to="/services/rabbi-don">
           <button className="btn btn-primary">
-            <FontAwesomeIcon icon={faFileVideo} />
+            {/* <FontAwesomeIcon icon={faFileVideo} /> */}
             Recordings of recent messages
           </button>
         </Link>

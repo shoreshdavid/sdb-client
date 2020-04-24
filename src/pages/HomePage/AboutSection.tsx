@@ -26,7 +26,7 @@ export const AboutSection = () => {
           their Messiah. Therefore, we reach out internationally with our
           healing teachings and more to positively change their lives. For He
           said: “I am the way, the truth, and the life! No one comes to the
-          Father except through Me.” Go to{' '}
+          Father except through Me.” Go{' '}
           <Link to="/services/get-healed-fast/how-to-get-healed-and-stay-healed">
             here
           </Link>{' '}

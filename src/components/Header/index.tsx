@@ -36,7 +36,7 @@ export class WrappedHeader extends React.Component<any, any> {
     return (
       <div className="sdb-nav">
         <nav className="navbar navbar-expand-xl navbar-light">
-          <Link to="/">
+          <Link to="/" style={{ marginLeft: 0, flex: 1 }}>
             {window.innerWidth < 600 ? (
               <Image
                 src={smallLogo}
@@ -47,6 +47,9 @@ export class WrappedHeader extends React.Component<any, any> {
               <Image src={headerLogo} alt="Shoresh David Brandon logo" />
             )}
           </Link>
+          {/* <div style={{ flex: 1, justifyContent: 'center' }}>
+            <input className="form-control" placeholder="Search" />
+          </div> */}
           <button
             type="button"
             className="navbar-toggler"
@@ -110,16 +113,7 @@ export class WrappedHeader extends React.Component<any, any> {
                   </div>
                 </div>
               </li>
-              {/*  */}
-              <li className="nav-item">
-                <NavLink
-                  exact
-                  to="/discoveries/usa-middle-east"
-                  activeClassName="navlink-active"
-                >
-                  News From Israel
-                </NavLink>
-              </li>
+
               <li className="nav-item">
                 <NavLink exact to="/books" activeClassName="navlink-active">
                   Books

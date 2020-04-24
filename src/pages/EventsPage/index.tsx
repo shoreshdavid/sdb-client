@@ -1,7 +1,7 @@
 import Axios from 'axios';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
-import Parser from 'react-html-parser';
+import ReactMarkdown from 'react-markdown';
 
 import { Error } from '../../components/Error';
 import { Image } from '../../components/Image';
@@ -16,63 +16,56 @@ export const Event = ({ event }) => {
       <Image src={event.featuredImage} alt={event.slug} className="lazyload" />
       <div className="announcement-body">
         <h3>{event.title}</h3>
-        {Parser(event.content)}
+        <ReactMarkdown source={event.content} />
       </div>
     </div>
   );
 };
 
-interface EventsPageState {
-  loading: boolean;
-  error: any;
-  data: any;
-}
-
-export class EventsPage extends React.Component<any, EventsPageState> {
-  public state = {
+export const EventsPage = () => {
+  const [state, setState] = React.useState({
     loading: true,
     error: null,
     data: null as any,
+  });
+
+  React.useEffect(() => {
+    fetch();
+  },              []);
+
+  const fetch = async () => {
+    try {
+      const res = await Axios.get(`${API_URL}/events`);
+      setState({ ...state, loading: false, data: res.data });
+    } catch (error) {
+      setState({ ...state, error, loading: false });
+    }
   };
 
-  public componentDidMount() {
-    this.fetch();
+  const { loading, error, data } = state;
+
+  if (loading) {
+    return <Loading />;
+  }
+  if (error) {
+    return <Error error={error} />;
   }
 
-  public fetch = async () => {
-    try {
-      const res = await Axios.get(`${API_URL}/events?page=1&size=20`);
-      this.setState({ loading: false, data: res.data });
-    } catch (error) {
-      this.setState({ error });
-    }
-  }
-
-  public render() {
-    const { loading, error, data } = this.state;
-
-    if (loading) {
-      return <Loading />;
-    }
-    if (error) {
-      return <Error error={error} />;
-    }
-    return (
-      <React.Fragment>
-        <Helmet>
-          <title>Events | Shoresh David Brandon</title>
-        </Helmet>
-        <div className="container-fluid padding-50">
-          <div className="row">
-            {data.data.map((event: any, i: number) => (
-              <div key={i} className="col-lg-6">
-                <Event event={event} />
-              </div>
-            ))}
-            ;
-          </div>
+  return (
+    <React.Fragment>
+      <Helmet>
+        <title>Events | Shoresh David Brandon</title>
+      </Helmet>
+      <div className="container-fluid padding-50">
+        <div className="row">
+          {data.data.map((event: any, i: number) => (
+            <div key={i} className="col-lg-6">
+              <Event event={event} />
+            </div>
+          ))}
+          ;
         </div>
-      </React.Fragment>
-    );
-  }
-}
+      </div>
+    </React.Fragment>
+  );
+};

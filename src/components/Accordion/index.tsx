@@ -26,6 +26,7 @@ export const Accordion = ({ text, heading }: Props) => {
       <div className={`${isOpen ? 'collapse show' : 'collapse'}`}>
         <div className="accordion-item-container">
           <p>{text}</p>
+          <i className={`fas fa-chevron-${isOpen ? 'down' : 'up'}`} />
         </div>
       </div>
     </div>
