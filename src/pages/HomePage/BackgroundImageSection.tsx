@@ -7,8 +7,7 @@ export const BackgroundImageSection = () => {
       <div>
         <h1 className="parallax-header">Important Notice</h1>
         <h3 className="parallax-subheader">
-          Due to COVID19 (CoronaVirus), we are not physically meeting at the
-          synagogue until further notice.
+          The synagogue will resume services for adults only (No young children yet) on June 19th at 7:30pm. Social distancing will apply.
         </h3>
       </div>
     </div>
