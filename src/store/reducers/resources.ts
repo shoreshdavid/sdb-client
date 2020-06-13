@@ -19,7 +19,7 @@ export const resourcesReducer = (state = initialState, action: any) => {
         ...state,
         allResources: {
           ...state.allResources,
-          [resource.slug]: {
+          [resource?.slug]: {
             ...resource,
           },
         },
@@ -39,13 +39,13 @@ type Type = 'jewish' | 'article';
 
 export const getResourcesByType = (allResources: any, type: Type) => {
   return Object.values(allResources)
-    .filter((node: any) => node.resourceType === type)
-    .sort((a: any, b: any) => (a.order > b.order) as any);
+    .filter((node: any) => node?.resourceType === type)
+    .sort((a: any, b: any) => (a?.order > b?.order) as any);
 };
 
 export const getResourcesByCategory = (allResources: any, category: string) => {
-  return Object.values(allResources).filter(
-    (node: any) => node.category === category,
+  return Object.values(allResources)?.filter(
+    (node: any) => node?.category === category,
   );
 };
 
@@ -59,7 +59,7 @@ export const searchResources = (allResources: any, query: string) => {
   }
 
   Object.values(allResources).map((node: any) => {
-    if (node.title.toLowerCase().indexOf(query.toLowerCase()) > -1) {
+    if (node?.title?.toLowerCase().indexOf(query?.toLowerCase()) > -1) {
       results.push(node);
     }
   });
