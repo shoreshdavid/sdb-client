@@ -1,6 +1,5 @@
-import { Button } from '@material-ui/core';
 import * as React from 'react';
-import { Link, NavLink, useHistory, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { persistor } from '~store/store';
 
 import headerLogo from '../../assets/img/header-logo.png';
@@ -10,19 +9,18 @@ import { Image } from '../../components/Image';
 import './header.scss';
 
 export const Header = () => {
-  const history = useHistory();
   const location = useLocation();
   const [isOpen, setIsOpen] = React.useState(false);
 
   React.useEffect(() => {
     document.addEventListener('click', (event: any) => {
       if (event.target.tagName.toLowerCase() === 'a') {
-        toggle();
+        setIsOpen(false);
       }
     });
     return () =>
       document.addEventListener('click', () => {
-        this.toggle();
+        setIsOpen(false);
       });
   },              []);
 
@@ -154,22 +152,17 @@ export const Header = () => {
                 Store
               </NavLink>
             </li>
-            {/* <li className="nav-item">
-                <NavLink exact to="/donate" activeClassName="navlink-active">
-                  Donate
-                </NavLink>
-              </li> */}
+            <li className="nav-item">
+              <NavLink exact to="/donate" activeClassName="navlink-active">
+                Donate
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <a href="#" onClick={handleDeleteCache}>
+                Delete Cache
+              </a>
+            </li>
           </ul>
-          <Button
-            color="primary"
-            style={{ marginRight: 8 }}
-            onClick={() => history.push('/donate')}
-          >
-            Donate
-          </Button>
-          <Button color="secondary" onClick={handleDeleteCache}>
-            Delete Cache
-          </Button>
         </div>
       </nav>
     </div>
