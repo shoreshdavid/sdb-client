@@ -12,6 +12,7 @@ interface Props {
   history: h.History;
   partFromQueryParams?: string | undefined;
   selectedPart?: any;
+  resource?: 'services' | 'discoveries';
 }
 
 const LeftSide = ({
@@ -23,11 +24,12 @@ const LeftSide = ({
   featuredImage,
   selectedPart,
   showTitle,
+  resource,
 }) => {
   const history = useHistory();
 
   const handleSelect = (event: any) => {
-    history.push(`/services/${category}/${slug}?part=${event.target.value}`);
+    history.push(`/${resource}/${category}/${slug}?part=${event.target.value}`);
   };
 
   return (
@@ -120,14 +122,12 @@ const RightSide = ({ data, selectedPart }: any) => {
   );
 };
 
-export const DetailView = ({ data, history, selectedPart }: Props) => {
-  // if (!data) {
-  //   return (
-  //     <div>
-  //       <p>Something went wrong.</p>
-  //     </div>
-  //   );
-  // }
+export const DetailView = ({
+  data,
+  history,
+  selectedPart,
+  resource,
+}: Props) => {
   return (
     <div className="container-fluid padding-50">
       <div className="row">
@@ -140,6 +140,7 @@ export const DetailView = ({ data, history, selectedPart }: Props) => {
           featuredImage={data?.featuredImage}
           selectedPart={selectedPart}
           showTitle={data?.showTitle}
+          resource={resource}
         />
         <RightSide data={data} history={history} selectedPart={selectedPart} />
       </div>

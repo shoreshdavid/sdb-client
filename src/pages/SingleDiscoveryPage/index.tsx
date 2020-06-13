@@ -52,6 +52,7 @@ export const SingleDiscoveryPage = () => {
         history={history}
         partFromQueryParams={partFromQueryParams}
         selectedPart={selectedPart}
+        resource="discoveries"
       />
     </React.Fragment>
   );

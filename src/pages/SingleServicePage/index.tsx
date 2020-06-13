@@ -50,6 +50,7 @@ export const SingleServicePage = () => {
         history={history}
         partFromQueryParams={partFromQueryParams}
         selectedPart={selectedPart}
+        resource="services"
       />
     </React.Fragment>
   );
