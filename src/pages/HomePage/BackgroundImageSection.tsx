@@ -7,14 +7,8 @@ export const BackgroundImageSection = () => {
       <div>
         <h1 className="parallax-header">Important Notice</h1>
         <h3 className="parallax-subheader">
-          The synagogue will resume services for adults only (No young children yet) on June 19th at 7:30pm. Social distancing will apply.
+          Due to the rise in Covid 19 cases in Florida, we will remain closed to live services until further notice. However, you can watch Rabbi Don Goldstein’s recorded messages at 7:30PM on Friday nights. If you want to receive them, make sure to sign up in the blue box below in the right corner.
         </h3>
-        <br />
-        <div style={{ alignItems: 'center', justifyContent: 'center' }}>
-         <a href="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/covid+19+guidelines+for+services.docx">
-           <button className="btn btn-primary">Guidelines</button>
-         </a>
-        </div>
       </div>
     </div>
   );
