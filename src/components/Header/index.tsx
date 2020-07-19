@@ -76,7 +76,7 @@ export const Header = () => {
                   <Link to="/services/rabbi-don">
                     Rabbi Don's Teachings &amp; Others
                   </Link>
-                  <Link to="/services/get-healed-fast/how-to-get-healed-and-stay-healed">
+                  <Link to="/services/get-healed-fast/how-to-get-healed-and-stay-healed?part=1">
                     Get Healed Fast
                   </Link>
                   <Link to="/services/holy-days">"Jewish" Holidays</Link>
