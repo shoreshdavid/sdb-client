@@ -26,7 +26,7 @@ export const EventsPage = () => {
   const [state, setState] = React.useState({
     loading: true,
     error: null,
-    data: null as any,
+    data: [],
   });
 
   React.useEffect(() => {
@@ -47,6 +47,7 @@ export const EventsPage = () => {
   if (loading) {
     return <Loading />;
   }
+  
   if (error) {
     return <Error error={error} />;
   }
@@ -58,7 +59,7 @@ export const EventsPage = () => {
       </Helmet>
       <div className="container-fluid padding-50">
         <div className="row">
-          {data.data.map((event: any, i: number) => (
+          {data.data.sort((a: any, b: any) => a.order < b.order).map((event: any, i: number) => (
             <div key={i} className="col-lg-6">
               <Event event={event} />
             </div>
