@@ -59,7 +59,7 @@ export const EventsPage = () => {
       </Helmet>
       <div className="container-fluid padding-50">
         <div className="row">
-          {data.data.sort((a: any, b: any) => a.order < b.order).map((event: any, i: number) => (
+          {data.data.sort((a: any, b: any) => a.order - b.order).map((event: any, i: number) => (
             <div key={i} className="col-lg-6">
               <Event event={event} />
             </div>
