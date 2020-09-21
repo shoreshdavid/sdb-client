@@ -103,11 +103,6 @@ export const Header = () => {
               </div>
             </li>
 
-            <li className="nav-item">
-              <NavLink exact to="/books" activeClassName="navlink-active">
-                Books
-              </NavLink>
-            </li>
             {/*  */}
             <li className="nav-item">
               <NavLink exact to="/live" activeClassName="navlink-active">
