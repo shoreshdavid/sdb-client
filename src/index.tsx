@@ -13,7 +13,6 @@ import { ScrollToTop } from './components/ScrollToTop';
 import { StickyEmail } from './components/StickyEmail';
 import { TopBar } from './components/TopBar';
 import { ErrorBoundary } from './containers/ErrorBoundary';
-import { BooksPage } from './pages/BooksPage';
 import { DiscoveriesPage } from './pages/DiscoveriesPage';
 import { DonatePage } from './pages/DonatePage';
 import { EventsPage } from './pages/EventsPage';
@@ -42,7 +41,6 @@ render(
               <Route exact path="/" component={HomePage} />
               <Route exact path="/live" component={LiveStreamPage} />
               <Route exact path="/store" component={ProductListPage} />
-              <Route exact path="/books" component={BooksPage} />
 
               <Redirect exact path="/services" to="/services/rabbi-don" />
               <Route
