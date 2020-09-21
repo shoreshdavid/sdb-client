@@ -195,4 +195,19 @@ export const products = [
     buttonText: 'Buy One Get One Free',
     links: [] as any,
   },
+  {
+     name: 'Ok Lord, Now What?',
+    price: 00.00,
+    featuredImage: '',
+    storeLink: '',
+    order: 7,
+    description: `
+<p>Since many people grow up Jewish and then get saved into what is now a mostly Christianized version of Messianic Judaism, their well-meaning Christian friends and family often tell them that they are no longer Jewish. They are also then educated into Christianity, told they don’t need to celebrate the “Jewish” holidays anymore, and just don’t know how to stay Jewish and believe In Yeshua (Jesus). That is why I, now a Messianic Jewish Rabbi wrote this booklet: “Ok Lord… Now What?” It guides the new believer onto the path of maintaining their Jewishness, while fulfilling their rich destiny as a believer.</p>
+<p>While it was written from a Jew to Jews, the Christian reader will gain wonderful insights into the foundations of their own faith, and why things are done as they are. It is a totally free read, so I hope you enjoy it.</p>
+`,
+    links: [
+      text: 'Read English For Free',
+      link: 'https://s3.amazonaws.com/images.shoreshdavidbrandon.com/pdf/discipleship-book-by-rabbi-don-goldstein.pdf',
+    ],
+  },
 ];
