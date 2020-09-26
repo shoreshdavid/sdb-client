@@ -27,7 +27,7 @@ export const AboutSection = () => {
           healing teachings and more to positively change their lives. For He
           said: “I am the way, the truth, and the life! No one comes to the
           Father except through Me.” Go{' '}
-          <Link to="/services/get-healed-fast/how-to-get-healed-and-stay-healed">
+          <Link to="/services/get-healed-fast/how-to-get-healed-and-stay-healed?part=1">
             here
           </Link>{' '}
           for our healing teachings... and{' '}
