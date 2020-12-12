@@ -27,7 +27,7 @@ export const LiveStreamPage = () => (
       <div className="row">
         <div className="col-lg-8">
           <iframe
-            src="https://www.youtube.com/embed/h1l_bLrGL6s"
+            src="https://www.youtube.com/embed/UxxKzZSKQZk"
             frameBorder="0"
             scrolling="no"
             allowFullScreen
