@@ -105,19 +105,14 @@ const RightSide = ({ data, selectedPart }: any) => {
     );
   }
 
-  if (data?.video && !data.content) {
-    return (
-      <div className="col-xs-12 col-sm-12 col-md-6 col-lg-8">
-        <div className="single-page__right">
-          <iframe src={data?.video} allowFullScreen />
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="col-xs-12 col-sm-12 col-md-6 col-lg-8">
-      <div className="single-page__right">{ReactHtmlParser(data.content)}</div>
+      <div className="single-page__right">
+        <iframe src={data?.video} allowFullScreen />
+        {data?.content && (
+          <div style={{ marginTop: 24 }}>{ReactHtmlParser(data.content)}</div>
+        )}
+      </div>
     </div>
   );
 };
