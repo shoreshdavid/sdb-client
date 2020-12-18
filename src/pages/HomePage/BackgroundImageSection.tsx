@@ -5,7 +5,10 @@ export const BackgroundImageSection = () => {
   return (
     <div className="parallax">
       <div>
-        <h1 className="parallax-header">A Joyous Messianic Synagogue</h1>
+        <h1 className="parallax-header" style={{ color: '#CC000' }}>THE SYNAGOGUE BUILDING IS CLOSED UNTIL AFTER NEW YEARS</h1>
+
+
+        <h2 className="parallax-header">A Joyous Messianic Synagogue</h2>
         <h3 className="parallax-subheader">
           Where both Jews and non-Jews worship in loving harmony.
         </h3>
