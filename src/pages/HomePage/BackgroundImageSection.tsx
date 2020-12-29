@@ -9,6 +9,9 @@ export const BackgroundImageSection = () => {
         <h3 className="parallax-subheader">
           Where both Jews and non-Jews worship in loving harmony.
         </h3>
+        <p>
+          Please join us @ 7:00pm for a powerful prayer meeting. And Friday at 7:30pm for a New Year service.
+        </p>
         <div className="parallax-button-group">
           <Link to="/events">
             <button className="btn btn-primary">Events</button>
