@@ -48,6 +48,11 @@
   flex: 1;
   align-items: center;
   justify-content: center;
+  
+  p {
+    text-shadow: 0 0 4px rgba(0,0,0,0.6);
+    font-size: 16px;
+  }
 }
 
 .parallax-header {
@@ -58,6 +63,7 @@
   text-shadow: 0 0 4px rgba(0,0,0,0.3);
   -webkit-text-stroke: 1px black;
   -webkit-text-fill-color: white;
+  margin-bottom: 40px;
 }
 
 .parallax-subheader {
@@ -68,9 +74,9 @@
   margin-top: -30px;
   margin-bottom: 50px;
   text-shadow: 0 0 4px rgba(0,0,0,0.6);
-  // -webkit-text-stroke: 0.4px black;
-  // -webkit-text-fill-color: white;
 }
+
+
 
 .parallax-button-group {
   text-align: center;
